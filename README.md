@@ -1,0 +1,2 @@
+# fortune
+Life is random.
