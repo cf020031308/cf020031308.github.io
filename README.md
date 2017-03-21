@@ -1,16 +1,18 @@
 Introduction of [fortune](https://en.wikipedia.org/wiki/Fortune_%28Unix%29)
 
-# bootstrap
+## bootstrap
 
 ```bash
 cd content
-find . -type f | xargs -I{} strfile '{}'
-FORTUNEPATH=`fortune -f 2>&1 | sed -n '1s/^.* //p'`
-rm -r $FORTUNEPATH
-ln -s $PWD $FORTUNEPATH
+
+# generate index files
+find . \! -name '*.dat' -type f -exec strfile {} \;
+
+# replace built-in content
+fortune -f 2>&1 | sed -n '1s/^.* //p' | xargs -I{} sh -c "rm -r {} && ln -s $PWD {}"
 ```
 
-# usage
+## usage
 
 ```bash
 fortune
