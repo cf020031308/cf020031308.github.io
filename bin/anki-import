@@ -8,19 +8,11 @@ USAGE
     exit 1;
 fi
 
-FNAME_BASIC="anki_basic.html"
-FNAME_CLOZE="anki_cloze.html"
+FNAME_BASIC="anki_basic.txt"
+FNAME_CLOZE="anki_cloze.txt"
 
 src=${@:1:$# - 1}
 dst=${@:$#:1}
 
-
-if [ ! -d $dst ]; then
-    mkdir -p "$dst"
-fi
-dst=$(cd $dst; pwd)
-
-
-find $src -type f -exec sh -c "cat {} && echo %" \; | sed '$d'
-
-# TODO: .replace('<', '&lt;').replace('>', '&gt;').splitlines().join('<br>')
+find $src -type f -exec sh -c "echo '\"' && cat {} && echo %" \; | sed '$s/^%$/"/;s/^%$/"\
+"/' > $dst/$FNAME_CLOZE
