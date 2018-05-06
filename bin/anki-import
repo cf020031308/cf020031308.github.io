@@ -1,0 +1,26 @@
+#! /bin/sh
+
+if [ $# -lt 2 ]; then
+    cat <<USAGE
+Usage: $0 dir [ path ] ... output_directory
+Example: $0 notes/Literature/20171006 notes/English ~/Downloads/
+USAGE
+    exit 1;
+fi
+
+FNAME_BASIC="anki_basic.html"
+FNAME_CLOZE="anki_cloze.html"
+
+src=${@:1:$# - 1}
+dst=${@:$#:1}
+
+
+if [ ! -d $dst ]; then
+    mkdir -p "$dst"
+fi
+dst=$(cd $dst; pwd)
+
+
+find $src -type f -exec sh -c "cat {} && echo %" \; | sed '$d'
+
+# TODO: .replace('<', '&lt;').replace('>', '&gt;').splitlines().join('<br>')

@@ -1,20 +1,17 @@
-Introduction of [fortune](https://en.wikipedia.org/wiki/Fortune_%28Unix%29)
+# Roy.log
 
-## bootstrap
+A collection of my personal knowledge, and tools to manage it.
 
-```bash
-make install
-make update
-```
+## Personal Knowledge
 
-## recreate dat files
+* [digests, cheatsheets]()
+* [notes, articles]()
+* [work]() of [Euler Project](https://projecteuler.net)
+* [work]() of [Python Challenge]()
 
-```bash
-make update
-```
+## Management Tools
 
-## usage
-
-```bash
-fortune
-```
+* [fortune](https://en.wikipedia.org/wiki/Fortune_%28Unix%29)
+* [anki](https://apps.ankiweb.net/)
+* wiki
+* [blog](https://cf020031308.github.io)

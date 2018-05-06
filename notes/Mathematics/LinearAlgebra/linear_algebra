@@ -1,0 +1,182 @@
+Definition: [$] span(v_1, ..., v_m) = \{a_1v_1 + ... + a_mv_m: a_1, ..., a_m ∈ F\} [/$]
+%
+Definition [$$]\begin{align}
+  & (v_1, ..., v_m) \text{ is linearly independent}
+  & \iff \sum_{j=1}^m a_jv_j = 0 \text{ implies } a_j = 0
+[/$$]
+%
+Note: {{c1::Empty list}} is defined to be linearly independent and it spans {{c2::{0}}}.
+%
+Linear Dependence Lemma [$$]\begin{align}
+  (v_1 \neq 0, ..., v_m) \text{ is linearly dependent, then } \\
+  2 \leq \exists j \leq m \text{ that } \begin{cases}
+    v_j \in span(v_1, ..., v_{j-1}) \\
+    span(v_1, ..., v_{j-1}, v_{j+1}, ..., v_m) = span(v_1, ..., v_m)
+  \end{cases}
+\end{align}[/$$]
+%
+Definition: A vector space is called {{c1::finite dimensional}} if {{c2::some list of vectors in it spans the space}}.
+%
+Theorem: In a {{c1::finite-dimensional}} vector space, the length of every linearly independent list of vectors is {{c2::less than or equal to}} the length of every spanning list of vectors.
+%
+Proposition: Every subspaces of a finite-dimensional vector space is {{c1::finite dimensional}}.
+%
+Definition: A {{c1::basis}} of V is a list of vectors in V that is {{c2::linearly independent and spans V}}.
+%
+Proposition: [$$]\begin{align}
+  & (v_1, ..., v_n) \text{ is a basis of } V \\
+  & \iff \forall v \in V, \text{ uniquely } \exists a_j \in F, \text{ that } \sum_{j=1}^n a_jv_j = v
+\end{align}[/$$]
+%
+Theorem: Every spanning list in a vector space can be reduced to a basis of the vector space.
+%
+Corollary: Every finite-dimensional vector space has a basis.
+%
+Theorem: Every linearly independent list of vectors in a finite-dimensional vector space can be extended to a basis of the vector space.
+%
+Proposition: Suppose V is finite dimensional and U is a subspace of V. Then there is a subspace W of V such that V = U ⊕ W.
+
+## Dimension
+
+- **Theorem**: Any two bases of a finite-dimensional vector space have the same length.
+- **Definition**: The ***dimension*** of a finite-dimensional vector space V is defined to be the length of any basis of the vector space, denoted dimV.
+- **Proposition**: If V is finite dimensional and U is a subspace of V, then dimU ≤ dimV.
+- **Proposition**: If V is finite dimensional, then every spanning list of vectors in V with length dimV is a basis of V.
+- **Proposition**: If V is finite dimensional, then every linearly independent list of vectors in V with length dimV is a basis of V.
+- **Theorem**: If U and W are subspaces of a finite-dimensional vector space, then dim(U + W) = dimU + dimW - dim(U ∩ W).
+- **Proposition**: Suppose V is finite dimensional and U1, ..., Um are subspaces of V such that V = U1 + ... + Um and dimV = dimU1 + ... + dimUm. Then V = U1 ⊕ ... ⊕ Um.
+
+# 3. Linear Maps
+
+## Definitions and Examples
+
+### Linear Map
+
+A ***linear map*** from V to W is a function T: V -> W with the following properties:
+
+- **additivity**: T(u + v) = Tu + Tv for all u, v ∈ V;
+- **homogeneity**: T(av) = a(Tv) for all a ∈ F and all v ∈ V.
+
+Examples:
+
+- **zero**: 0 ∈ 𝓛(V, W) and 0v = 0.
+- **identity**: I ∈ 𝓛(V, V) and Iv = v
+- **differentiation**: T ∈ 𝓛(𝓟(R), 𝓟(R)) and Tp = p'
+- **integration**: T ∈ 𝓛(𝓟(R), R) and Tp = ∫(0->1)p(x)dx
+- **multiplication by** x^2: T ∈ 𝓛(𝓟(R), 𝓟(R)) and (Tp)x = xxp(x)
+- **backward shift**: T ∈ 𝓛(F^∞, F^∞) and T(x1, x2, x3, ...) = (x2, x3, ...)
+- **from F^n to F^m**: T ∈ 𝓛(F^n, F^m) and T(x1, ..., xn) = (a11x1 + ... + a1nxn, ..., am1x1 + ... + amnxn)
+
+### Linear Map as a Vector Space
+
+The set of all linear maps from V to W is denoted 𝓛(V, W).
+
+By defining addition (S + T)v = Sv + Tv for v ∈ V and scalar multiplication (aT)v = a(Tv) for v ∈ V, 𝓛(V, W) is a vector space.
+
+As you should also verify:
+
+1. S + T ∈ 𝓛(V, W)
+2. aT ∈ 𝓛(V, W)
+
+### Product
+
+The ***product*** of S ∈ 𝓛(V, W) and T ∈ 𝓛(U, V) denoted ST is defined as (ST)(v) = S(Tv), ST ∈ 𝓛(U, W).
+And it has most of the usual properties expected of a product:
+
+- **associativity**: (T1T2)T3 = T1(T2T3)
+- **identity**: TI = IT = T
+- **distributive properties**: (S1 + S2)T = S1T + S2T and S(T1 + T2) = ST1 + ST2
+
+Raise a counterexample of commutativity.
+
+## Null Spaces and Ranges
+
+- **Definition**: For T ∈ 𝓛(V, W), the ***null space*** of T, denoted nullT, is the subset of V consisting of those vectors that T maps to 0: nullT = {v ∈ V: Tv = 0}.
+- **Proposition**: If T ∈ 𝓛(V, W), then nullT is a subspace of V.
+- **Definition**: A linear map T: V -> W is called ***injective*** if whenever u, v ∈ V and Tu = Tv, we have u = v.
+- **Proposition**: Let T ∈ 𝓛(V, W). Then V is injective if and only if nullT = {0}.
+- **Definition**: For T ∈ 𝓛(V, W), the ***range*** of T, denoted rangeT, is the subset of W consisting of those vectors that are of the form Tv for some v ∈ V: rangeT = {Tv: v ∈ V}.
+- **Proposition**: If T ∈ 𝓛(V, W), then rangeT is a subspace of W.
+- **Definition**: A linear map T: V -> W is called ***surjective*** if its range equals W.
+- **Theorem**: If V is finite dimensional and T ∈ 𝓛(V, W), then rangeT is a finite-dimensional subspace of W and dimV = dim nullT + dim rangeT.
+- **Corollary**: If V and W are finite-dimensional vector spaces such that dimV > dimW, then no linear map from V to W is injective.
+- **Corollary**: If V and W are finite-dimensional vector spaces such that dimV `<` dimW, then no linear map from V to W is surjective.
+
+## The Matrix of a Linear Map
+
+- **Definition**: An m-by-n ***matrix*** is a rectangular array with m rows and n columns.
+- **Definition**: ***The matrix of a linear map*** T with respect to the bases (v1, ..., vn) of V and (w1, ..., wm) of W, denoted M(T, (v1, ..., vn), (w1, ..., wm)), or just M(T) if the bases are clear from the context, is the m-by-n matrix formed by the a's if Tvk = a(1, k)w1 + ... + a(m, k)wm for each k = 1, ..., n.
+- **Note**: With addition of matrices of the same size defined by adding corresponding entries in the matrices, M(T + S) = M(T) + M(S).
+- **Note**: With product of a scalar and a matrix defined by multiplying each entry in the matrix by the scalar, M(cT) = cM(T).
+- **Note**: With addtition and scalar multiplication defined as above, the set of all m-by-n matrices with entries in F, denoted Mat(m, n, F) is a vector space.
+- **Note**: To make M(TS) = M(T)M(S), define matrix multiplication of m-by-n matrix A and n-by-p matrix B, denoted AB, to be the m-by-p matrix whose entry in row j, column k equals ∑(r=1,n)a(j, r)b(r, k).
+- **Definition**: ***The matrix of a vector*** v, denoted M(v), is the n-by-1 matrix of b's if v = b1v1 + ... + bnvn where (v1, ..., vn) is a basis of V.
+- **Proposition**: Suppose T ∈ 𝓛(V, W) and (v1, ..., vn) is a basis of V and (w1, ..., wm) is a basis of M. Then M(Tv) = M(T)M(v) for every v ∈ V.
+
+## Invertibility
+
+- **Definition**: If T ∈ 𝓛(V, W) is ***invertible***, then the ***inverse*** of T, denoted (T^-1), is the unique element of 𝓛(W,V) such that (T^−1)T = I and T(T^−1) = I.
+- **Proposition**: A linear map is invertible if and only if it is injective and surjective.
+- **Definition**: Two vector spaces are called ***isomorphic*** if there is an invertible linear map from one vector space onto the other one.
+- **Theorem**: Two finite-dimensional vector spaces are isomorphic if and only if they have the same dimension.
+- **Proposition**: Suppose that dimV = n and dimW = m. Then M is an invertible linear map between 𝓛(V, W) and Mat(m, n, F).
+- **Proposition**: If V and W are finite dimensional, then 𝓛(V, W) is finite dimensional and dim 𝓛(V, W) = (dim V)(dim W).
+- **Definition**: A linear map from a vector space to itself, denoted T: V -> V or T ∈ 𝓛(V), is called an ***operator***.
+- **Thereom**: Suppose V is finite dimensional. If T ∈ 𝓛(V), then the following are equivalent:
+    - T is invertible;
+    - T is injective;
+    - T is surjective.
+
+# 4. Polynomials
+
+- **Proposition**: Suppose p ∈ 𝓟(F) is a polynomial with degree m >= 1. Let ℷ ∈ F. Then ℷ is a root of p if and only if there is a polynomial q ∈ 𝓟(F) with degree m - 1 such that p(z) = (z - ℷ)q(z) for all z ∈ F.
+- **Corollary**: Suppose p ∈ 𝓟(F) is a polynomial with degree m >= 0. Then p has at most m distinct roots in F.
+- **Corollary**: Suppose a0, ..., am ∈ F. If a0 + a1z + a2z^2... + amz^m = 0 for all z ∈ F, then a0 = ... = am = 0.
+- **Definition**: The degree of a polynomial is unique, denoted ***deg p***.
+- **Division Algorithm**: Suppose p, q ∈ 𝓟(F), with p ≠ 0. Then there exist polynomials s, r ∈ 𝓟(F) such that q = sp + r and `deg r < deg p`.
+- **Fundamental Theorem of Algebra**: Every nonconstant polynomial with complex coefficients has a root. (As you could not verify yet.)
+- **Corollary**: if p ∈ 𝓟(F) is a nonconstant polynomial, then p has a unique factorization (except for the order of the factors) of the form p(z) = c(z - ℷ1)...(z - ℷm) where c, ℷ1, ..., ℷm ∈ C.
+- **Proposition**: Suppose p is a polynomial with real coefficients. If ℷ ∈ C is a root of p, then so is the ***complex conjugate*** of ℷ. (And these two factors appear the same number of times if they are not equal.)
+- **Proposition**: Let 𝛂, 𝛃 ∈ R. Then there is a polynomial factorization of the form x^2 + 𝛂x + 𝛃 = (x - ℷ1)(x - ℷ2) with ℷ1, ℷ2 ∈ R, if and only if 𝛂^2 >= 4𝛃.
+- **Theorem**: If p ∈ 𝓟(R) is a nonconstant polynomial, then p has a unique factorization (except for the order of the factors) of the form p(x) = c(x - ℷ1)...(x - ℷm)(x^2 + 𝛂1x + 𝛃1)...(x^2 + 𝛂nx + 𝛃n), where c, ℷ1, ..., ℷm ∈ R and (𝛂1, 𝛃1), ..., (𝛂n, 𝛃n) ∈ R^2 with `𝛂j^2 < 4𝛃j` for each j.
+
+# 5. Eigenvalues and Eigenvectors
+
+## Invariant Subspaces
+
+- **Definition**: For T ∈ 𝓛(V) and U a subspace of V, we say the U is ***invariant*** under T if u ∈ U implies Tu ∈ U.
+- **Definition**: A scalar ℷ ∈ F is called an ***eigenvalue*** of T ∈ 𝓛(V) if there exists a nonzero vector u ∈ V such that Tu = ℷu.
+- **Note**: ℷ is an eigenvalue of T if and only if T - ℷI is not invertible/injective/surjective.
+- **Definition**: Suppose T ∈ 𝓛(V) and ℷ ∈ F is an eigenvalue of T. A vector u ∈ V is called an ***eigenvector*** of T (corresponding to ℷ) if Tu = ℷu.
+- **Note**: The set of eigenvectors of T corresponding to ℷ equals null(T - ℷI).
+- **Theorem**: Let T ∈ 𝓛(V). Suppose ℷ1, ..., ℷm are distinct eigenvalues of T and v1, ..., vm are corresponding nonzero eigenvectors. Then (v1, ..., vm) is linearly independent.
+- **Corollary**: Each operator on V has at most dimV distinct eigenvalues.
+
+## Polynomials Applied to Operators
+
+## Upper-Triangular Matrices
+
+- **Theorem**: Every operator on a finite-dimensional, nonzero, complex vector space has an eigenvalue.
+- **Note**: A central goal of linear algebra is to show that given an operator T ∈ 𝓛(V), there exists a basis of V with respect to which T has a reasonably simple matrix.
+- **Definition**: The ***diagonal*** of a square matrix consists of the entries along the straight line from the upper left corner to the bottom right corner.
+- **Definition**: A matrix is called ***upper triangular*** if all the entries below the diagonal equal 0.
+- **Proposition**: Suppose T ∈ 𝓛(V) and (v1, ..., vn) is a basis of V. Then the following are equivalent:
+    1. the matrix of T with respect to (v1, ..., vn) is upper triangular;
+    2. Tvk ∈ span(v1, ..., vk) for each k = 1, ..., n;
+    3. span(v1, ..., vk) is invariant under T for each k = 1, ..., n.
+- **Theorem**: Suppose V is a complex vector space and T ∈ 𝓛(V). Then T has an upper-triangular matrix with respect to some basis of V.
+- **Proposition**: Suppose T ∈ 𝓛(V) has an upper-triangular matrix with respect to some basis of V. Then T is invertible if and only if all the entries on the diagonal of that upper-triangular matrix are nonzero.
+- **Proposition**: Suppose T ∈ 𝓛(V) has an upper-triangular matrix with respect to some basis of V. Then the eigenvalues of T consist precisely of the entries on the diagonal of that upper-triangular matrix.
+
+## Diagonal Matrices
+
+- **Definition**: A ***diagonal matrix*** is a square matrix that is 0 everywhere except possibly along the diagonal.
+- **Proposition**: If T ∈ 𝓛(V) has dimV distinct eigenvalues, then T has a diagonal matrix with respect to some basis of V.
+- **Proposition**: Suppose T ∈ 𝓛(V). Let ℷ1, ..., ℷm denote the distinct eigenvalues of T. Then the following are equivalent:
+    - T has a diagonal matrix with respect to some basis of V;
+    - V has a basis consisting of eigenvalues of T;
+    - there exist one-dimensional subspaces U1, ..., Un of V, each invariant under T, such that V = U1 ⊕ ... ⊕ Un;
+    - V = null(T - ℷ1I) ⊕ ... ⊕ null(T - ℷmI);
+    - dimV = dim null(T - ℷ1I) ⊕ ... ⊕ dim null(T - ℷmI);
+- **Theorem**: Every operator on a finite-dimensional, nonzero, real vector space has an invariant subspace of dimension 1 or 2.
+- **Theorem**: Every operator on an odd-dimensional real vector space has a eigenvalue.
