@@ -2,8 +2,8 @@
 
 if [ $# -lt 2 ]; then
     cat <<USAGE
-Usage: $0 name dir [ path ] ...
-Example: $0 diy notes/Literature/20171006 notes/English
+Usage: $0 fortune_pkg_name [ path ] ...
+Example: $0 diy notes/chinese/20171006 notes/english
 USAGE
     exit 1;
 fi
@@ -11,4 +11,4 @@ fi
 dst=$(fortune -f 2>&1 | sed -n '1p' | awk 'END{print $2}')/$1
 
 # Merge txt files into one and index it
-find ${@:2} -type f -exec sh -c "cat {} && echo %" \; | sed '$d' > $dst && strfile -s $dst && fortune -f
+find ${@:2} -type f -exec sh -c 'cat {} && echo "___"' \; | sed '$d;s/^___$/%/;s/<c[0-9]>//g;s/<\/c[0-9]>//g' > $dst && strfile -s $dst && fortune -f

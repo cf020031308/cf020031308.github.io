@@ -3,7 +3,7 @@
 if [ $# -lt 2 ]; then
     cat <<USAGE
 Usage: $0 dir [ path ] ... output_directory
-Example: $0 notes/Literature/20171006 notes/English ~/Downloads/
+Example: $0 notes/chinese/20171006 notes/english ~/Downloads/
 USAGE
     exit 1;
 fi
