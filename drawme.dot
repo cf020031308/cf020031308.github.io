@@ -1,0 +1,34 @@
+strict digraph {
+    input [label="input"];
+    wiki [label="github wiki"];
+    instapaper [label="instapaper"];
+    subgraph cluster_evernote {
+        label="evernote";
+        inbox [label="inbox"];
+        archives [label="archives"];
+    }
+    subgraph cluster_github {
+        label="github";
+        notes [label="notes"];
+        blog [label="blog"];
+        logs [label="logs"];
+    }
+    anki [label="anki"];
+    fortune [label="fortune"];
+    me [label="me"];
+
+    input -> wiki [label="digest"];
+    input -> instapaper [label="read it later"];
+    instapaper -> inbox [label="mark/note/like"];
+    inbox -> wiki [label="incubate"];
+    inbox -> archives [label="archive"];
+    wiki -> notes [label="good\nparts"];
+    wiki -> blog [label="publish"];
+    wiki -> logs;
+    { notes, logs, blog } -> archives;
+    notes -> anki [label="bin/anki-import"];
+    notes -> fortune [label="bin/fortune-index"];
+
+    { anki, fortune } -> me [label="remember", dir=back];
+    archives -> me [label="search", dir=back];
+}
