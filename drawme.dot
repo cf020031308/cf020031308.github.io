@@ -21,14 +21,15 @@ strict digraph {
     input -> instapaper [label="read it later"];
     instapaper -> inbox [label="mark/note/like"];
     inbox -> wiki [label="incubate"];
-    inbox -> archives [label="archive"];
+    inbox -> archives;
     wiki -> notes [label="good\nparts"];
     wiki -> blog [label="publish"];
     wiki -> logs;
-    { notes, logs, blog } -> archives;
-    notes -> anki [label="bin/anki-import"];
-    notes -> fortune [label="bin/fortune-index"];
+    { notes, blog, logs } -> archives;
+    notes -> anki [label="anki-import"];
+    notes -> fortune [label="fortune-index"];
 
-    { anki, fortune } -> me [label="remember", dir=back];
+    anki -> me [label="remember", dir=back];
+    fortune -> me [label="inspire", dir=back];
     archives -> me [label="search", dir=back];
 }
