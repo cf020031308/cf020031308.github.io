@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<root>
+    <devicevendordef>
+        <vendorname>PFU</vendorname>
+        <vendorid>0x0853</vendorid>
+    </devicevendordef>
+    <deviceproductdef>
+        <productname>HHKB</productname>
+        <productid>0x0100</productid>
+    </deviceproductdef>
+    <devicevendordef>
+        <vendorname>PFU-BT</vendorname>
+        <vendorid>0x04fe</vendorid>
+    </devicevendordef>
+    <deviceproductdef>
+        <productname>HHKB-BT</productname>
+        <productid>0x0202</productid>
+    </deviceproductdef>
+    <deviceproductdef>
+        <productname>APPLE_INTERNAL_KEYBOARD</productname>
+        <productid>0x0259</productid>
+    </deviceproductdef>
+
+    <modifierdef>RIGHT_TO_LEFT</modifierdef>
+
+    <item>
+        <name>single left-handed layout for HHKB keyboard</name>
+        <identifier>private.single_left_handed_layout_for_hhkb</identifier>
+        <device_only>
+            DeviceVendor::PFU, DeviceProduct::HHKB,
+            DeviceVendor::PFU-BT, DeviceProduct::HHKB-BT,
+        </device_only>
+        <autogen>
+            __KeyOverlaidModifier__
+            KeyCode::SPACE,
+            KeyCode::VK_MODIFIER_RIGHT_TO_LEFT,
+            KeyCode::SPACE,
+        </autogen>
+        <block>
+            <modifier_only>ModifierFlag::RIGHT_TO_LEFT</modifier_only>
+            <autogen>__BlockUntilKeyUp__ KeyCode::SPACE</autogen>
+        </block>
+        <autogen>__KeyToKey__ KeyCode::ESCAPE, ModifierFlag::RIGHT_TO_LEFT, KeyCode::BACKSLASH</autogen>
+        <autogen>__KeyToKey__ KeyCode::ESCAPE, KeyCode::BACKQUOTE</autogen>
+        <autogen>__KeyToKey__ KeyCode::1, ModifierFlag::RIGHT_TO_LEFT, KeyCode::0</autogen>
+        <autogen>__KeyToKey__ KeyCode::2, ModifierFlag::RIGHT_TO_LEFT, KeyCode::9</autogen>
+        <autogen>__KeyToKey__ KeyCode::3, ModifierFlag::RIGHT_TO_LEFT, KeyCode::8</autogen>
+        <autogen>__KeyToKey__ KeyCode::4, ModifierFlag::RIGHT_TO_LEFT, KeyCode::7</autogen>
+        <autogen>__KeyToKey__ KeyCode::5, ModifierFlag::RIGHT_TO_LEFT, KeyCode::6</autogen>
+        <autogen>__KeyToKey__ KeyCode::6, ModifierFlag::RIGHT_TO_LEFT, KeyCode::MINUS</autogen>
+        <autogen>__KeyToKey__ KeyCode::7, ModifierFlag::RIGHT_TO_LEFT, KeyCode::EQUAL</autogen>
+
+        <autogen>__KeyToKey__ KeyCode::TAB, ModifierFlag::RIGHT_TO_LEFT, KeyCode::DELETE</autogen>
+        <autogen>__KeyToKey__ KeyCode::Q, ModifierFlag::RIGHT_TO_LEFT, KeyCode::P</autogen>
+        <autogen>__KeyToKey__ KeyCode::W, ModifierFlag::RIGHT_TO_LEFT, KeyCode::O</autogen>
+        <autogen>__KeyToKey__ KeyCode::E, ModifierFlag::RIGHT_TO_LEFT, KeyCode::I</autogen>
+        <autogen>__KeyToKey__ KeyCode::R, ModifierFlag::RIGHT_TO_LEFT, KeyCode::U</autogen>
+        <autogen>__KeyToKey__ KeyCode::T, ModifierFlag::RIGHT_TO_LEFT, KeyCode::Y</autogen>
+        <autogen>__KeyToKey__ KeyCode::Y, ModifierFlag::RIGHT_TO_LEFT, KeyCode::BRACKET_LEFT</autogen>
+        <autogen>__KeyToKey__ KeyCode::U, ModifierFlag::RIGHT_TO_LEFT, KeyCode::BRACKET_RIGHT</autogen>
+
+        <autogen>__KeyToKey__ KeyCode::CONTROL_L, ModifierFlag::RIGHT_TO_LEFT, KeyCode::RETURN</autogen>
+        <autogen>__KeyToKey__ KeyCode::A, ModifierFlag::RIGHT_TO_LEFT, KeyCode::SEMICOLON</autogen>
+        <autogen>__KeyToKey__ KeyCode::S, ModifierFlag::RIGHT_TO_LEFT, KeyCode::L</autogen>
+        <autogen>__KeyToKey__ KeyCode::D, ModifierFlag::RIGHT_TO_LEFT, KeyCode::K</autogen>
+        <autogen>__KeyToKey__ KeyCode::F, ModifierFlag::RIGHT_TO_LEFT, KeyCode::J</autogen>
+        <autogen>__KeyToKey__ KeyCode::G, ModifierFlag::RIGHT_TO_LEFT, KeyCode::H</autogen>
+        <autogen>__KeyToKey__ KeyCode::H, ModifierFlag::RIGHT_TO_LEFT, KeyCode::QUOTE</autogen>
+
+        <autogen>__KeyToKey__ KeyCode::Z, ModifierFlag::RIGHT_TO_LEFT, KeyCode::SLASH</autogen>
+        <autogen>__KeyToKey__ KeyCode::X, ModifierFlag::RIGHT_TO_LEFT, KeyCode::DOT</autogen>
+        <autogen>__KeyToKey__ KeyCode::C, ModifierFlag::RIGHT_TO_LEFT, KeyCode::COMMA</autogen>
+        <autogen>__KeyToKey__ KeyCode::V, ModifierFlag::RIGHT_TO_LEFT, KeyCode::M</autogen>
+        <autogen>__KeyToKey__ KeyCode::B, ModifierFlag::RIGHT_TO_LEFT, KeyCode::N</autogen>
+    </item>
+
+    <item>
+        <name>single left-handed layout for apple keyboard</name>
+        <identifier>private.single_left_handed_layout</identifier>
+        <device_only>DeviceVendor::APPLE_INC, DeviceProduct::APPLE_INTERNAL_KEYBOARD</device_only>
+        <autogen>
+            __KeyOverlaidModifier__
+            KeyCode::SPACE,
+            KeyCode::VK_MODIFIER_RIGHT_TO_LEFT,
+            KeyCode::SPACE,
+        </autogen>
+        <block>
+            <modifier_only>ModifierFlag::RIGHT_TO_LEFT</modifier_only>
+            <autogen>__BlockUntilKeyUp__ KeyCode::SPACE</autogen>
+        </block>
+        <autogen>__KeyToKey__ KeyCode::BACKQUOTE, ModifierFlag::RIGHT_TO_LEFT, KeyCode::BACKSLASH</autogen>
+        <autogen>__KeyToKey__ KeyCode::1, ModifierFlag::RIGHT_TO_LEFT, KeyCode::0</autogen>
+        <autogen>__KeyToKey__ KeyCode::2, ModifierFlag::RIGHT_TO_LEFT, KeyCode::9</autogen>
+        <autogen>__KeyToKey__ KeyCode::3, ModifierFlag::RIGHT_TO_LEFT, KeyCode::8</autogen>
+        <autogen>__KeyToKey__ KeyCode::4, ModifierFlag::RIGHT_TO_LEFT, KeyCode::7</autogen>
+        <autogen>__KeyToKey__ KeyCode::5, ModifierFlag::RIGHT_TO_LEFT, KeyCode::6</autogen>
+        <autogen>__KeyToKey__ KeyCode::6, ModifierFlag::RIGHT_TO_LEFT, KeyCode::MINUS</autogen>
+        <autogen>__KeyToKey__ KeyCode::7, ModifierFlag::RIGHT_TO_LEFT, KeyCode::EQUAL</autogen>
+
+        <autogen>__KeyToKey__ KeyCode::TAB, ModifierFlag::RIGHT_TO_LEFT, KeyCode::DELETE</autogen>
+        <autogen>__KeyToKey__ KeyCode::Q, ModifierFlag::RIGHT_TO_LEFT, KeyCode::P</autogen>
+        <autogen>__KeyToKey__ KeyCode::W, ModifierFlag::RIGHT_TO_LEFT, KeyCode::O</autogen>
+        <autogen>__KeyToKey__ KeyCode::E, ModifierFlag::RIGHT_TO_LEFT, KeyCode::I</autogen>
+        <autogen>__KeyToKey__ KeyCode::R, ModifierFlag::RIGHT_TO_LEFT, KeyCode::U</autogen>
+        <autogen>__KeyToKey__ KeyCode::T, ModifierFlag::RIGHT_TO_LEFT, KeyCode::Y</autogen>
+        <autogen>__KeyToKey__ KeyCode::Y, ModifierFlag::RIGHT_TO_LEFT, KeyCode::BRACKET_LEFT</autogen>
+        <autogen>__KeyToKey__ KeyCode::U, ModifierFlag::RIGHT_TO_LEFT, KeyCode::BRACKET_RIGHT</autogen>
+
+        <autogen>__KeyToKey__ KeyCode::CONTROL_L, ModifierFlag::RIGHT_TO_LEFT, KeyCode::RETURN</autogen>
+        <autogen>__KeyToKey__ KeyCode::A, ModifierFlag::RIGHT_TO_LEFT, KeyCode::SEMICOLON</autogen>
+        <autogen>__KeyToKey__ KeyCode::S, ModifierFlag::RIGHT_TO_LEFT, KeyCode::L</autogen>
+        <autogen>__KeyToKey__ KeyCode::D, ModifierFlag::RIGHT_TO_LEFT, KeyCode::K</autogen>
+        <autogen>__KeyToKey__ KeyCode::F, ModifierFlag::RIGHT_TO_LEFT, KeyCode::J</autogen>
+        <autogen>__KeyToKey__ KeyCode::G, ModifierFlag::RIGHT_TO_LEFT, KeyCode::H</autogen>
+        <autogen>__KeyToKey__ KeyCode::H, ModifierFlag::RIGHT_TO_LEFT, KeyCode::QUOTE</autogen>
+
+        <autogen>__KeyToKey__ KeyCode::Z, ModifierFlag::RIGHT_TO_LEFT, KeyCode::SLASH</autogen>
+        <autogen>__KeyToKey__ KeyCode::X, ModifierFlag::RIGHT_TO_LEFT, KeyCode::DOT</autogen>
+        <autogen>__KeyToKey__ KeyCode::C, ModifierFlag::RIGHT_TO_LEFT, KeyCode::COMMA</autogen>
+        <autogen>__KeyToKey__ KeyCode::V, ModifierFlag::RIGHT_TO_LEFT, KeyCode::M</autogen>
+        <autogen>__KeyToKey__ KeyCode::B, ModifierFlag::RIGHT_TO_LEFT, KeyCode::N</autogen>
+    </item>
+
+    <item>
+        <name>my testcase</name>
+        <identifier>private.my_testcase</identifier>
+    </item>
+</root>

@@ -1,0 +1,82 @@
+" Don't write backup file if vim is being called by "crontab -e"
+au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
+" Don't write backup file if vim is being called by "chpass"
+au BufWrite /private/etc/pw.* set nowritebackup nobackup
+
+syntax enable
+filetype plugin indent on
+
+set nu
+set hlsearch
+set expandtab
+set autoindent
+set smartindent
+set nocompatible
+
+set tabstop=4
+set modelines=0
+set backspace=2
+set shiftwidth=4
+set softtabstop=4
+set laststatus=2
+set t_Co=256
+
+" TODO: :BundleInstall to install new plugins
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+
+" TODO: pip3 install flake8, isort
+Plugin 'vim-syntastic/syntastic'
+Plugin 'Vimjas/vim-python-pep8-indent'
+Plugin 'fisadev/vim-isort'
+
+" go:
+" Plugin 'fatih/vim-go'
+
+" markdown
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+
+" html
+" Plugin 'kchmck/vim-coffee-script'
+Plugin 'mattn/emmet-vim'
+
+" utils
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+
+call vundle#end()
+
+" TODO: pip3 install powerline-status
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
+
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_loc_list_height = 2
+let g:syntastic_enable_balloons = 0
+let g:syntastic_auto_jump = 1
+let g:syntastic_quiet_messages = {"regex": ['F812', 'module level import not at top of file', 'basestring', 'E731', 'reload', 'apply', 'raw_input', 'reduce'] }
+let g:syntastic_lua_checkers = ["luacheck"]
+let g:syntastic_lua_luacheck_args = "--no-unused-args"
+
+
+" emmet. Default hot key to expand abbs is C-y ,
+let g:user_emmet_mode = 'n'  " n for normal and a for all
+" disable emmet then enable it only for html and css
+" let g:user_emmet_install_global = 0
+" autocmd FileType html,css EmmetInstall
+" Sorting with Isort may make the script wrong so sort mannually
+" autocmd BufWritePre *.py Isort
+
+" emacs key
+inoremap <c-k> <esc>c$
+inoremap <c-n> <esc>ja
+inoremap <c-p> <esc>ka
+inoremap <c-v> <esc><c-f>i
+inoremap <alt-v> <esc><c-b>i
+inoremap <c-a> <esc>I
+inoremap <c-e> <esc>A

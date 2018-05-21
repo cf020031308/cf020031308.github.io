@@ -1,0 +1,6 @@
+#!/bin/sh -
+
+
+while read -r ifx; do
+    echo $ifx
+done | jq '[.results[].series[] | {measurement: .name} + .tags? + ([[.columns], .values] | combinations | [transpose[] | {(.[0]): .[1]}] | add)]'

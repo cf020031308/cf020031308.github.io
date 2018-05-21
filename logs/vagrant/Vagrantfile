@@ -1,0 +1,37 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+
+  config.vm.box = "ubuntu/trusty64"
+  config.vm.provider "virtualbox" do |vb|
+    vb.gui = false
+    vb.memory = "1024"
+    vb.linked_clone = true
+  end
+  config.vm.network "private_network", type: "dhcp"
+  config.vm.synced_folder "~/workplace", "/home/vagrant/workplace", group: "root", owner: "root"
+  config.vm.provision :shell, path: "./provision.sh"
+
+  config.vm.define "python", autostart: false do |python|
+      config.vm.hostname = "Python"
+      config.vm.synced_folder "./machines/python/site-packages", "/home/vagrant/.local/lib/python2.7/site-packages"
+      config.vm.provision :shell, path: "./machines/python/provision.sh"
+  end
+
+  config.vm.define "go", autostart: false do |go|
+      config.vm.hostname = "Go"
+      config.vm.synced_folder "./machines/go/gopath", "/home/vagrant/go"
+      config.vm.provision :shell, path: "./machines/go/provision.sh"
+  end
+
+  config.vm.define "node", autostart: false do |node|
+      config.vm.hostname = "Node"
+      config.vm.provision :shell, path: "./machines/node/provision.sh"
+  end
+
+  config.vm.define "c", autostart: false do |c|
+      config.vm.hostname = "C"
+      config.vm.provision :shell, path: "./machines/c/provision.sh"
+  end
+end

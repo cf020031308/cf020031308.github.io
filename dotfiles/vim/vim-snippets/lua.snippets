@@ -1,0 +1,27 @@
+snippet wrr
+	function wrr(objs, key, default_weight)
+	    -- usage:
+	    --     for obj in wrr(objs) do
+	    --         -- do something
+	    --     end
+	    -- obj with zero weight will not be yielded
+	    -- objs will be sorted
+	    local length, weight_sum, i = #objs, 0, 0
+	    for j = 1, length do
+	        weight_sum = weight_sum + (objs[j][key] or default_weight or 0)
+	    end
+	    return function()
+	        if weight_sum <= 0 then return end
+	        i = i + 1
+	        local r, s = random() * weight_sum, 0
+	        for j = i, length do
+	            local w = objs[j][key] or default_weight or 0
+	            s = s + w
+	            if s > r then
+	                weight_sum = weight_sum - w
+	                objs[i], objs[j] = objs[j], objs[i]
+	                return objs[i]
+	            end
+	        end
+	    end
+	end

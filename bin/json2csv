@@ -1,0 +1,8 @@
+#!/bin/sh -
+
+json=`while read -r line; do
+    echo $line
+done`
+cols=`echo $json | jq -r '[.[] | keys_unsorted] | add | unique | join(",")'`
+echo $cols
+echo $json | jq -r ".[] | [.${cols//,/, .}] | @csv"

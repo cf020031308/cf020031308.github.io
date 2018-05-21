@@ -1,0 +1,40 @@
+{
+    "segments": {
+        "left": [
+            {
+                "function": "powerline.lib.shell.run_cmd",
+                "args": {
+                    "cmd": ["task", "_get", "rc.context"]
+                }
+            }
+        ],
+        "right": [
+            {
+                "function": "powerline.lib.shell.run_cmd",
+                "args": {
+                    "cmd": ["task", "+PENDING", "due.before:tomorrow", "_unique", "description"]
+                }
+            },
+            {
+                "function": "powerline.lib.shell.run_cmd",
+                "priority": 50,
+                "args": {
+                    "cmd": ["timew", "pomo_msg.py", ":day"]
+                }
+            },
+            {
+                "function": "powerline.segments.common.time.date",
+                "priority": 60
+            },
+            {
+                "function": "powerline.segments.common.time.date",
+                "name": "time",
+                "priority": 50,
+                "args": {
+                    "format": "%H:%M",
+                    "istime": true
+                }
+            }
+        ]
+    }
+}

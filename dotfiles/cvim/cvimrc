@@ -1,0 +1,1 @@
+let nextmatchpattern = "((?!first)(next|下一页|older|more|>|›|»|forward| )+)"

@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<root>
+    <appdef>
+        <appname>iTerm</appname>
+        <equal>com.googlecode.iterm2</equal>
+    </appdef>
+    <appdef>
+        <appname>Emacs</appname>
+        <equal>org.gnu.Emacs</equal>
+    </appdef>
+    <appdef>
+        <appname>Chrome</appname>
+        <equal>com.google.Chrome</equal>
+    </appdef>
+    <appdef>
+        <appname>Quiver</appname>
+        <equal>com.happenapps.Quiver</equal>
+    </appdef>
+
+    <vkopenurldef>
+        <name>KeyCode::VK_OPEN_URL_FILE_iTerm</name>
+        <url type="file">/Applications/iTerm.app</url>
+    </vkopenurldef>
+    <vkopenurldef>
+        <name>KeyCode::VK_OPEN_URL_FILE_Emacs</name>
+        <url type="file">/Applications/Emacs.app</url>
+    </vkopenurldef>
+    <vkopenurldef>
+        <name>KeyCode::VK_OPEN_URL_FILE_Chrome</name>
+        <url type="file">/Applications/Google Chrome.app</url>
+    </vkopenurldef>
+    <vkopenurldef>
+        <name>KeyCode::VK_OPEN_URL_FILE_Quiver</name>
+        <url type="file">/Applications/Quiver.app</url>
+    </vkopenurldef>
+
+    <deviceproductdef>
+        <productname>APPLE_INTERNAL_TRACKPAD</productname>
+        <productid>0x0259</productid>
+    </deviceproductdef>
+
+    <item>
+        <name>Command_R to iTerm</name>
+        <appendix>switch to iTerm</appendix>
+        <identifier>private.command_r_to_iterm</identifier>
+        <block>
+            <not>iTerm</not>
+            <autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::VK_OPEN_URL_FILE_iTerm</autogen>
+        </block>
+        <block>
+            <only>iTerm</only>
+            <autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::BACKQUOTE, ModifierFlag::COMMAND_L</autogen>
+        </block>
+    </item>
+    <item>
+        <name>Option_R to Chrome</name>
+        <appendix>switch to Chrome</appendix>
+        <identifier>private.option_r_to_chrome</identifier>
+        <block>
+            <not>Chrome</not>
+            <autogen>__KeyToKey__ KeyCode::OPTION_R, KeyCode::VK_OPEN_URL_FILE_Chrome</autogen>
+        </block>
+        <block>
+            <only>Chrome</only>
+            <autogen>__KeyToKey__ KeyCode::OPTION_R, KeyCode::BACKQUOTE, ModifierFlag::COMMAND_L</autogen>
+        </block>
+    </item>
+    <item>
+        <name>Shift_R to Quiver</name>
+        <appendix>switch to Quiver</appendix>
+        <identifier>private.shift_r_to_quiver</identifier>
+        <block>
+            <not>Quiver</not>
+            <autogen>__KeyToKey__ KeyCode::SHIFT_R, KeyCode::VK_OPEN_URL_FILE_Quiver</autogen>
+        </block>
+        <block>
+            <only>Quiver</only>
+            <autogen>__KeyToKey__ KeyCode::SHIFT_R, KeyCode::BACKQUOTE, ModifierFlag::COMMAND_L</autogen>
+        </block>
+    </item>
+
+    <item>
+        <name>Control_L alone to switch input method</name>
+        <identifier>private.control_l_alone_to_switch_input_method</identifier>
+        <autogen>
+            __KeyOverlaidModifier__
+            KeyCode::CONTROL_L,
+            KeyCode::CONTROL_L,
+            KeyCode::SPACE, ModifierFlag::OPTION_L | ModifierFlag::COMMAND_L
+        </autogen>
+    </item>
+
+    <item>
+        <name>reverse vertical scrolling direction except for mac trackpad</name>
+        <identifier>private.reverse_vertical_scrolling_direction_except_for_mac_trackpad</name>
+        <block>
+            <device_only>DeviceVendor::APPLE_INC, DeviceProduct::APPLE_INTERNAL_TRACKPAD</device_only>
+            <autogen>__FlipScrollWheel__</autogen>
+        </block>
+        <autogen>__FlipScrollWheel__ Option::FLIPSCROLLWHEEL_VERTICAL</autogen>
+    </item>
+</root>

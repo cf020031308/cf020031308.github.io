@@ -1,0 +1,2 @@
+#!/bin/sh -e
+printf "GET /?$QUERY_STRING HTTP/1.1\r\n" | dasht-server-http | sed "/form method=/s;\/;lynxcgi:\/\/localhost$0;"

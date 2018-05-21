@@ -1,0 +1,500 @@
+snippet internalip
+	import socket
+	import struct
+	def ${1:is_internal}(${2:ip}):
+	    '''
+	    A: 10.0.0.0    <= ip < 11.0.0.0
+	    l: 127.0.0.0   <= ip < 128.0.0.0
+	    B: 172.16.0.0  <= ip < 172.32.0.0
+	    C: 192.168.0.0 <= ip < 192.169.0.0
+	    '''
+	    addr = struct.unpack('>I', socket.inet_aton($2))[0]
+	    return (
+	        167772160 <= addr < 184549376 or
+	        2130706432 <= addr < 2147483648 or
+	        2886729728 <= addr < 2887778304 or
+	        3232235520 <= addr < 3232301056)
+snippet num2ip
+	import socket
+	import struct
+	socket.inet_ntoa(struct.pack('>I', ${0:num}))
+snippet ip2num
+	import socket
+	import struct
+	struct.unpack('>I', socket.inet_aton(${0:ip}))[0]
+snippet flatten
+	def flatten(${1:d}, ${2:sep}='.', ${3:deep}=-1, _route=None, _items=None):
+	    '''
+	    >>> flatten({'x': 3, 'y': {'z': 4}})
+	    [('x', 3), ('y.z', 4)]
+	    '''
+	    _route = _route or []
+	    if _items is None:
+	        _items = []
+	
+	    if not ($3 and isinstance($1, dict)):
+	        _items.append(($2.join(str(r) for r in _route), $1))
+	        return _items
+	
+	    for k, v in $1.iteritems():
+	        _route.append(k)
+	        flatten(v, $2, $3 - 1, _route, _items)
+	        _route.pop()
+	
+	    return _items
+snippet unflatten
+	def unflatten(${1:l}, ${2:sep}='.'):
+	    '''
+	    >>> unflatten({'x': 3, 'y.z': 4})
+	    {'x': 3, 'y': {'z': 4}}
+	    >>> unflatten([('x', 3), ('y.z', 4)])
+	    {'x': 3, 'y': {'z': 4}}
+	    '''
+	    if isinstance($1, dict):
+	        $1 = $1.iteritems()
+	    ret = {}
+	    for route, v in $1:
+	        cursor = ret
+			if isinstance(route, basestring):
+	            ks = route.split($2)
+	            for k in ks[:-1]:
+	                cursor = cursor.setdefault(k, {})
+	            cursor[ks[-1]] = v
+	        else:
+	            cursor[route] = v
+	    return ret
+snippet script
+	import sys
+	if __name__ == '__main__':
+	    if len(sys.argv) > 1:
+	        '''
+	        $ python script.py func arg1 arg2 kw1=v1 kw2=v2
+	        > print func(arg1, arg2, kw1=v1, kw2=v2)
+	        '''
+	        print(
+	            globals()[sys.argv[1]](
+	                *[arg for arg in sys.argv[2:] if '=' not in arg],
+	                **dict(arg.split('=', 1) for arg in sys.argv[2:] if '=' in arg))
+	        )
+	    else:
+	        print(
+	            'Available Functions:\n%s' % '\n'.join(sorted(
+	                '\t' + k
+	                for k, v in globals().iteritems()
+	                if type(v).__name__ == 'function')))
+snippet ichunk
+	import itertools
+	def ${1:ichunk}(${2:bulk}, ${3:chunksize}=100):
+	    '''
+	    >>> list(ichunk(dict.fromkeys('abcde', 0), 2))
+	    [{'a': 0, 'c': 0}, {'b': 0, 'e': 0}, {'d': 0}]
+	    >>> list(ichunk('abcde', 2))
+	    [['a', 'b'], ['c', 'd'], ['e']]
+	    '''
+	    l = len($2)
+	    if l > $3:
+	        constructor, generator = (
+	    	    (dict, $2.iteritems()) if isinstance($2, dict)
+	    	    else (list, iter($2)))
+	        _next = itertools.izip_longest(*([generator] * $3)).next
+	        for i in xrange(l / $3):
+	            yield constructor(_next())
+	        r = l % $3
+	        if r:
+	            yield constructor(_next()[:r])
+	    elif l:
+	        yield $2
+snippet LRU
+	import collections
+	class LRU:
+	    def __init__(self, size):
+	        self.lru = collections.OrderedDict()
+	        self.size = size
+
+	    def __setitem__(self, key, value):
+	        if key in self.lru:
+	            del self.lru[key]
+	        elif len(self.lru) >= self.size:
+	            self.lru.popitem(last=False)
+	        self.lru[key] = value
+
+	    def __getitem__(self, key):
+	        value = self.lru.pop(key)
+	        self.lru[key] = value
+	        return value
+	
+	    def __contains__(self, key):
+	        return key in self.lru
+snippet dumps
+	import json
+	def dumps(${1:data}):
+	    if not $1:
+	        return ''
+	    elif isinstance($1, basestring):
+	        return $1
+	    elif isinstance($1, (int, float)):
+	        return str($1)
+	    elif isinstance($1, dict):
+	        return json.dumps(
+	            $1, separator=',:', sort_keys=True).replace('"', '')
+	    else:
+	        return ','.join(sorted($1))
+snippet itemgetter
+	class itemgetter:
+	    '''
+	    >>> getter = itemgetter('x', 1, 'y', cast=float)
+	    >>> getter({'x': [1, {'y': 3, 'z': 5}]})
+	    3.0
+	    >>> getter({})
+		0.0
+	    '''
+	    def __init__(self, *keys, **kwargs):
+	        self.keys = keys
+	        self.${1:cast} = kwargs.get('$1')
+	
+	    def __call__(self, obj):
+	        for key in self.keys:
+	            try:
+	                obj = obj[key]
+	            except:
+	                return None if self.$1 is None else self.$1()
+	        if self.$1 is not None:
+	            obj = self.$1(obj)
+	        return obj
+snippet RedisCache
+	import time
+	class ${1:RedisCache}:
+	    '''
+	    usage:
+	        import redis
+	        rd = redis.Redis()
+	        class A:
+		        @$1(rd, $3=3600, $5='my_awesome_cache')
+	            def getsomething(self, $8):
+		            return requests.get(
+	                    a_slow_site, params={'$8': $8}).content
+	    '''
+	    def __init__(self, ${2:db}, ${3:ttl}, ${4:ttlock}=60, ${5:name}='default', ${6:serializer}=None):
+	        self.$2 = $2
+	        self.$3 = $3
+	        self.$4 = $4
+	        self.$5 = $5
+	        self.$6 = $6
+	
+	    def __call__(self, ${7:method}):
+	        self.$7 = $7
+	        return self.get
+	
+	    def get(self, ${8:key}=''):
+	        cache_key = '%s:%s' % (self.$5, $8)
+	        value, cache_value = None, self.$2.get(cache_key)
+	        if not cache_value:
+	            lock_key = 'LOCK:' + cache_key
+	            while not self.$2.set(lock_key, 1, ex=self.$4, nx=True):
+	                time.sleep(2)
+	            else:
+	                cache_value = self.$2.get(cache_key)
+	                try:
+	                    if cache_value is None:
+	                        value = self.$7($8)
+	                        self.$2.set(
+	                            cache_key,
+	                            (value if self.$6 is None
+	                             else self.$6.dumps(value)),
+	                            ex=self.$3 if value else self.$4)
+	                except Exception as e:
+						raise e
+					finally:
+	                    self.$2.delete(lock_key)
+	        return (
+	            value if value is not None
+	            else cache_value if self.$6 is None
+	            else self.$6.loads(cache_value))
+snippet HTTP
+	import os
+	import copy
+	import requests
+	class ${1:HTTP}(object):
+	    '''
+	    E.g.
+	        class ES:
+	            GET = $1(
+	                'GET', 'http://es:9220/index/type', auth=('user', 'pswd'))
+	        POST = $1('POST', 'http://es:9220', 'index')
+	        print ES.GET('/_search', json=dsl).json()
+	        print POST('/_bulk', data=data, auth=('user', 'pswd')).json()
+	    '''
+	    def __init__(self, method, *url, **kwargs):
+	        self.method = method.lower()
+	        self.url = '/'.join(u.lstrip('/') for u in url)
+	        self.kwargs = kwargs
+	        self.session = requests.Session()
+
+	    @staticmethod
+	    def merge_dict(base, addition):
+	        ret = copy.deepcopy(base)
+	        for k, v in addition.iteritems():
+	            if not v:
+	                pass
+	            elif isinstance(v, dict):
+	                ret[k] = $1.merge_dict(ret.get(k, {}), v)
+	            else:
+	                ret[k] = v
+	        return ret
+
+	    def __call__(self, *url, **kwargs):
+	        return self.session.request(
+	            self.method,
+	            '/'.join([self.url] + [u.lstrip('/') for u in url]),
+	            **$1.merge_dict(self.kwargs, kwargs))
+	
+	    def __get__(self, instance, owner):
+	        return self.__call__
+snippet settings
+	import os
+	import yaml
+
+	# load settings from yaml
+	ypath = os.path.join(
+	    os.path.dirname(os.path.abspath(__file__)), '${1:settings.yaml}')
+	if os.path.isfile(ypath):
+	    with open(ypath) as yfile:
+	        globals().update(yaml.load(yfile))
+snippet timeit
+	import time
+	import functools
+	class ${1:timeit}(object):
+	    '''
+	    class A:
+	        @classmethod
+	        @$1
+	        def f(cls, *args, **kwargs):
+	            print 'f: ', cls, args, kwargs
+	
+	        @$1
+	        def g(self, *args, **kwargs):
+	            print 'g: ', self, args, kwargs
+	
+	
+	    @$1
+	    def h(*args, **kwargs):
+	        print 'h: ', args, kwargs
+	    '''
+	    def __init__(self, func):
+	        self.func = func
+	
+	    def __call__(self, *args, **kwargs):
+	        _t = time.time()
+	        ret = self.func(*args, **kwargs)
+	        print '[%s] %s' % (self.func.__name__, time.time() - _t)
+	        return ret
+	
+	    def __get__(self, instance, owner):
+	        return functools.partial(self.__call__, instance)
+snippet logging
+	import logging
+	import logging.config
+	import os
+
+	import settings
+
+
+	PROJECT_DIR = reduce(
+	    lambda c, _: os.path.dirname(c),
+	    range(2),
+	    os.path.realpath(__file__))
+	LOG_DIR = os.path.join(PROJECT_DIR, 'logs')
+	SYSLOG = '/dev/log'
+
+	logging_conf = {
+	    'version': 1,
+	    'disable_existing_loggers': True,
+	    'incremental': False,
+	    'formatters': {
+	        'info': {
+	            'format': '%(asctime)s %(message)s',
+	            'datefmt': '%Y-%m-%dT%H:%M:%S'
+	        },
+	        'trace': {
+	            'format': '%%(%s)s' % ')s %('.join(
+	                'asctime name levelname pathname lineno message'.split()),
+	            'datefmt': '%Y-%m-%dT%H:%M:%S'
+	        },
+	    },
+	    'handlers': {
+	        'console': {
+	            'class': 'logging.StreamHandler',
+	            'level': 'DEBUG',
+	            'formatter': 'info'
+	        },
+	    },
+	    'root': {
+	        'level': settings.LOG_LEVEL,
+	        'handlers': ['console', 'file', 'syslog', 'sentry']
+	    }
+	}
+	handlers = logging_conf['root']['handlers']
+
+	if 'file' in handlers:
+	    if os.path.isdir(LOG_DIR):
+	        logging_conf['handlers']['file'] = {
+	            'class': 'logging.handlers.TimedRotatingFileHandler',
+	            'level': 'INFO',
+	            'formatter': 'info',
+	            'filename': os.path.join(LOG_DIR, 'info.log'),
+	            'when': 'W0',
+	            'backupCount': 4,
+	        }
+	    else:
+	        handlers.remove('file')
+
+	if 'syslog' in handlers:
+	    if os.path.exists(SYSLOG):
+	        logging_conf['handlers']['syslog'] = {
+	            'class': 'logging.handlers.SysLogHandler',
+	            'level': 'WARNING',
+	            'address': SYSLOG,
+	            'formatter': 'info'
+	        }
+	    else:
+	        handlers.remove('syslog')
+
+	if 'sentry' in handlers:
+	    try:
+	        import raven
+	        logging_conf['handlers']['sentry'] = {
+	            'class': 'raven.handlers.logging.SentryHandler',
+	            'level': 'WARNING',
+	            'formatter': 'trace',
+	            'dsn': settings.SENTRY_DSN,
+	            'ignore_exceptions': ['KeyboardInterrupt'],
+	            'release': raven.fetch_git_sha(PROJECT_DIR)
+	        }
+	        logging_conf['root']['handlers'].append('sentry')
+	    except:
+	        handlers.remove('sentry')
+
+	logging.config.dictConfig(logging_conf)
+	getLogger = logging.getLogger
+snippet chown
+	import os
+	def ${1:rchown}(path, uid, gid):
+	    st = os.stat(path)
+	    if uid == st.st_uid and gid == st.st_gid:
+	        return
+	    os.chown(path, uid, gid)
+	    for dirpath, dirnames, filenames in os.walk(path):
+	        for filename in filenames:
+	            os.chown(os.path.join(dirpath, filename), uid, gid)
+	        for i in range(len(dirnames) - 1, -1, -1):
+	            dpath = os.path.join(dirpath, dirnames[i])
+	            st = os.stat(dpath)
+	            if uid == st.st_uid and gid == st.st_gid:
+	                del dirnames[i]
+	                continue
+	            os.chown(dpath, uid, gid)
+snippet BraceExpr
+	import json
+	class BraceExpressionParser:
+	    '''
+	    >>> p = BraceExpressionParser()
+	    >>> p('{1/2,3}')
+	    {u'1': {u'2': {}}, u'3': {}}
+	    >>> import json
+	    >>> json.dumps(p('{4/{5,6}/7,8}/9,'), sort_keys=True)
+	    '{"4": {"5": {"7": {"9": {}}}, "6": {"7": {"9": {}}}}, "8": {"9": {}}}'
+	    '''
+	    def __init__(self, tokens=',/{}'):
+	        self.SEP, self.SUB, self.L_BRACE, self.R_BRACE = tokens
+	
+	    def _parse(self, expr):
+	        tree, leaves = {}, {}
+	
+	        s, b, lvs = '', 0, {id(tree): tree}
+	        for c in expr + self.SEP:
+	            if c == self.L_BRACE:
+	                b += 1
+	                s += c
+	            elif b:
+	                s += c
+	                if c == self.R_BRACE:
+	                    b -= 1
+	                    if not b:
+	                        if s[0] == self.L_BRACE and s[-1] == self.R_BRACE:
+	                            s = s[1:-1]
+	                        tr, ls = self._parse(s)
+	                        for t in lvs.values():
+	                            t.update(tr)
+	                        lvs = ls
+	                        s = ''
+	            elif c in (self.SEP, self.SUB):
+	                if s:
+	                    lf = {}
+	                    for t in lvs.values():
+	                        t[s] = lf
+	                    lvs = {id(lf): lf}
+	                    s = ''
+	                if c == self.SEP:
+	                    leaves.update(lvs)
+	                    lvs = {id(tree): tree}
+	            else:
+	                s += c
+	        assert not b, 'Braces not in pairs'
+	        return tree, leaves
+	
+	    def __call__(self, expr):
+	        return json.loads(json.dumps(self._parse(expr)[0]))
+snippet tornado
+	from gevent import monkey
+	monkey.patch_all()
+	
+	import time
+	
+	import gevent.wsgi
+	import tornado.web
+	import tornado.wsgi
+	import tornado.options
+	
+	import settings
+	
+	
+	class BaseHandler(tornado.web.RequestHandler):
+	    def prepare(self):
+	        # Common headers
+	        self.set_header(
+	            'Last-Modified',
+	            time.strftime(
+	                '%a, %d %b %Y %H:%M:%S GMT', time.gmtime(time.time())))
+	
+	    def cache_control(self, max_age=0):
+	        pass
+	
+	    def get(self, *args, **kwargs):
+	        try:
+	            self.handle(*args, **kwargs)
+	        except AssertionError as e:
+	            self.set_status(400)
+	            self.write(e)
+	
+	
+	routers = []
+	app = tornado.wsgi.WSGIApplication(routers, gzip=True)
+	
+	
+	if __name__ == '__main__':
+	    tornado.options.define('ip', default='0.0.0.0')
+	    tornado.options.define('port', default=9527)
+	    tornado.options.parse_command_line()
+	
+	    # try to enable sentry
+	    try:
+	        from raven.contrib.tornado import AsyncSentryClient, SentryMixin
+	        app.sentry_client = AsyncSentryClient(settings.SENTRY_DSN)
+	        BaseHandler.__bases__ = (SentryMixin, ) + BaseHandler.__bases__
+	    except Exception:
+	        pass
+	
+	    gevent.wsgi.WSGIServer(
+	        (tornado.options.options.ip, tornado.options.options.port),
+	        app
+	    ).serve_forever()

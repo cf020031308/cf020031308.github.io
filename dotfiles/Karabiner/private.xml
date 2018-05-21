@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<root>
+    <include path="diy.xml" />
+    <include path="hhkb.xml" />
+    <include path="single_hand.xml" />
+    <include path="crate.xml" />
+</root>

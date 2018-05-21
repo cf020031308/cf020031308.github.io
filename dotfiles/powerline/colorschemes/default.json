@@ -1,0 +1,6 @@
+{
+    "name": "Default",
+    "groups": {
+        "run_cmd": { "fg": "gray8", "bg": "black", "attrs": [] }
+    }
+}

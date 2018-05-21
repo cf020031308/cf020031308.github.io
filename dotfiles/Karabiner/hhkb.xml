@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+
+<root>
+    <devicevendordef>
+        <vendorname>PFU</vendorname>
+        <vendorid>0x0853</vendorid>
+    </devicevendordef>
+    <deviceproductdef>
+        <productname>HHKB</productname>
+        <productid>0x0100</productid>
+    </deviceproductdef>
+    <devicevendordef>
+        <vendorname>PFU-BT</vendorname>
+        <vendorid>0x04fe</vendorid>
+    </devicevendordef>
+    <deviceproductdef>
+        <productname>HHKB-BT</productname>
+        <productid>0x0202</productid>
+    </deviceproductdef>
+    <item>
+        <name>Backslash to Forward Delete on HHKB</name>
+        <identifier>private.backslash_to_forward_delete_on_hhkb</identifier>
+        <device_only>
+            DeviceVendor::PFU, DeviceProduct::HHKB,
+            DeviceVendor::PFU-BT, DeviceProduct::HHKB-BT,
+        </device_only>
+        <autogen>__KeyToKey__ KeyCode::BACKSLASH, KeyCode::FORWARD_DELETE</autogen>
+    </item>
+    <item>
+        <name>Escape to Backquote on HHKB</name>
+        <identifier>private.escape_to_backquote_on_hhkb</identifier>
+        <device_only>
+            DeviceVendor::PFU, DeviceProduct::HHKB,
+            DeviceVendor::PFU-BT, DeviceProduct::HHKB-BT,
+        </device_only>
+        <autogen>__KeyToKey__ KeyCode::ESCAPE, KeyCode::BACKQUOTE</autogen>
+    </item>
+    <item>
+        <name>F1 ~ F12 to mac functional keys on HHKB</name>
+        <identifier>private.f1_f12_to_mac_functional_keys_on_hhkb</identifier>
+        <device_only>
+            DeviceVendor::PFU, DeviceProduct::HHKB,
+            DeviceVendor::PFU-BT, DeviceProduct::HHKB-BT,
+        </device_only>
+        <autogen>__KeyToKey__ KeyCode::F1, ConsumerKeyCode::BRIGHTNESS_DOWN</autogen>
+        <autogen>__KeyToKey__ KeyCode::F2, ConsumerKeyCode::BRIGHTNESS_UP</autogen>
+        <autogen>__KeyToKey__ KeyCode::F3, KeyCode::MISSION_CONTROL</autogen>
+        <autogen>__KeyToKey__ KeyCode::F4, KeyCode::LAUNCHPAD</autogen>
+        <autogen>__KeyToKey__ KeyCode::F5, ConsumerKeyCode::KEYBOARDLIGHT_LOW</autogen>
+        <autogen>__KeyToKey__ KeyCode::F6, ConsumerKeyCode::KEYBOARDLIGHT_HIGH</autogen>
+        <autogen>__KeyToKey__ KeyCode::F7, ConsumerKeyCode::MUSIC_PREV</autogen>
+        <autogen>__KeyToKey__ KeyCode::F8, ConsumerKeyCode::MUSIC_PLAY</autogen>
+        <autogen>__KeyToKey__ KeyCode::F9, ConsumerKeyCode::MUSIC_NEXT</autogen>
+        <autogen>__KeyToKey__ KeyCode::F10, ConsumerKeyCode::VOLUME_MUTE</autogen>
+        <autogen>__KeyToKey__ KeyCode::F11, ConsumerKeyCode::VOLUME_DOWN</autogen>
+        <autogen>__KeyToKey__ KeyCode::F12, ConsumerKeyCode::VOLUME_UP</autogen>
+    </item>
+    <item>
+        <name>Backquote to Delete on HHKB</name>
+        <identifier>private.backquote_to_delete_on_hhkb</identifier>
+        <device_only>
+            DeviceVendor::PFU, DeviceProduct::HHKB,
+            DeviceVendor::PFU-BT, DeviceProduct::HHKB-BT,
+        </device_only>
+        <autogen>__KeyToKey__ KeyCode::BACKQUOTE, KeyCode::DELETE</autogen>
+    </item>
+    <item>
+        <name>Delete to Backslash on HHKB</name>
+        <identifier>private.delete_to_backslash_on_hhkb</identifier>
+        <device_only>
+            DeviceVendor::PFU, DeviceProduct::HHKB,
+            DeviceVendor::PFU-BT, DeviceProduct::HHKB-BT,
+        </device_only>
+        <autogen>__KeyToKey__ KeyCode::DELETE, KeyCode::BACKSLASH</autogen>
+    </item>
+</root>

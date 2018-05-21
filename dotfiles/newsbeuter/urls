@@ -1,0 +1,23 @@
+"query:Unread Feeds:unread = \"yes\""
+https://blog.cloudflare.com/rss/
+https://blog.ethereum.org/feed/
+http://blog.codingnow.com/atom.xml
+http://antirez.com/rss
+http://www.infoq.com/cn/feed/architecture-design
+https://z.cash/feeds/all-en.rss.xml
+https://taskwarrior.org/feed.rss
+https://dev.mutt.org/hg/mutt/rss-log
+https://github.com/cf020031308.private.atom?token=AFBL-B3t8c2ZtV_Qnd9zZGzZ1uM_QSwDks64RdRJwA==
+exec:~/.newsbeuter/feeds/poloniex.sh
+https://www.v2ex.com/index.xml
+https://www.zhihu.com/rss
+https://sspai.com/feed
+http://www.toodaylab.com/feed
+https://newsboat.org/news.atom
+http://imapfw.offlineimap.org/feed.xml
+https://www.neomutt.org/feed.xml
+http://mrxwlb.com/category/mrxwlb-text/feed/
+https://blog.github.com/all.atom
+http://ifeve.com/feed/
+https://jvns.ca/atom.xml
+exec:~/.newsbeuter/feeds/hackernews.sh

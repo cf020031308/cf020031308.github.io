@@ -1,0 +1,27 @@
+always-display-description true
+auto-reload yes
+max-items 0
+browser "lynx %u"
+bookmark-cmd "~/.newsbeuter/bookmark.sh"
+bookmark-autopilot yes
+download-retries 5
+download-timeout 90
+external-url-viewer "urlview"
+keep-articles-days 90
+prepopulate-query-feeds yes
+refresh-on-startup yes
+reload-threads 5
+articlelist-format "%D    %t"
+
+bind-key j down
+bind-key k up
+bind-key J next
+bind-key K prev
+bind-key H prev-feed
+bind-key L next-feed
+bind-key ^B pageup
+bind-key ^F pagedown
+bind-key s bookmark
+
+highlight articlelist "成都|算法|数据|分布式|cdn|go|广告|DSP|RTB|量化|交易|加速乐|创宇|nginx|redis|openresty|quant|python|lua|zcash" yellow red bold
+ignore-article "https://www.v2ex.com/index.xml" "title =~ \"^\\[(问与答|天黑以后)\\]\""

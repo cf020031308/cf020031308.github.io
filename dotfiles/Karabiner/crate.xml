@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<root>
+    <item>
+        <name> Super Crate Box </name>
+        <identifier>private.super_crate_box</identifier>
+        <device_not>DeviceVendor::APPLE_INC, DeviceProduct::APPLE_INTERNAL_KEYBOARD</device_not>
+        <autogen>__KeyToKey__ KeyCode::Z, KeyCode::CURSOR_LEFT</autogen>
+        <autogen>__KeyToKey__ KeyCode::X, KeyCode::CURSOR_RIGHT</autogen>
+        <autogen>__KeyToKey__ KeyCode::COMMA, KeyCode::X</autogen>
+        <autogen>__KeyToKey__ KeyCode::DOT, KeyCode::Z</autogen>
+    </item>
+</root>
