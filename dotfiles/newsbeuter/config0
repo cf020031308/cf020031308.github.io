@@ -1,7 +1,7 @@
 always-display-description true
 auto-reload yes
 max-items 0
-browser "lynx %u"
+browser "lynx -accept_all_cookies -cookie_file=/tmp/nsb_cookie -cookie_save_file=/tmp/nsb_cookie %u"
 bookmark-cmd "~/.newsbeuter/bookmark.sh"
 bookmark-autopilot yes
 download-retries 5
