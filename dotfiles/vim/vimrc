@@ -6,6 +6,7 @@ au BufWrite /private/etc/pw.* set nowritebackup nobackup
 syntax enable
 filetype plugin indent on
 
+set nu
 set relativenumber
 set hlsearch
 set expandtab
