@@ -38,4 +38,6 @@ do if [ -n "${line}" ]; then
     fi
 fi
 done
-sed -i '' 's/<c\([0-9]\)>/{{c\1::/g;s/<\/c[0-9]>/}}/g' "${F_CLOZE}"
+if [ -e "${F_CLOZE}" ]; then
+    sed -i '' 's/<c\([0-9]\)>/{{c\1::/g;s/<\/c[0-9]>/}}/g' "${F_CLOZE}"
+fi
