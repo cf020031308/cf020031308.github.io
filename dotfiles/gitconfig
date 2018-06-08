@@ -1,0 +1,15 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Roy
+	email = cf020031308@163.com
+[core]
+	editor = vim
+[icdiff]
+    # brew install icdiff
+    # git icdiff
+	options = --highlight --line-numbers
+[alias]
+    # fetch gitlab mr to local: git mr upstream 5
+    mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -
+    # goto web of repo: git open upstream
+    open = !sh -c 'git remote get-url ${1:-origin} | sed -e "s,:,/," -e "s,^git@,https://," -e "s/.git$//" -e "s,.wiki$,/wiki," | xargs open' -
