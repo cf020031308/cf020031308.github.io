@@ -1,0 +1,10 @@
+snippet atom
+	<entry>
+		<title>${1}</title>
+		<link href="${2}" />
+		<id> `system("uuidgen")` </id>
+		<published> `system("date -u +'%Y-%m-%dT%H:%M:%SZ'")` </published>
+		<updated> `system("date -u +'%Y-%m-%dT%H:%M:%SZ'")` </updated>
+		<summary><![CDATA[${3}]]></summary>
+		<content src="${4}"></content>
+	</entry>

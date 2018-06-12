@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf8"?>
+<!--
+     publish a new entry:
+        `rss`
+        1. Generate an entry template with "atom + Tab" via garbas/vim-snipmate;
+        2. Edit the generated entry;
+        3. Update the updated tag in feed.
+     archive:
+        1. `rss previous archive` then edit with `rss archive`;
+        2. `rss rss previous` then edit with `rss previous`;
+        3. Clear entries in `rss`;
+ -->
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="https://github.com/cf020031308/roy.log/blob/master/">
+
+    <title> cf020031308 </title>
+    <subtitle> The Blog of Roy </subtitle>
+    <icon> https://avatars3.githubusercontent.com/u/5262328?s=16&amp;v=4 </icon>
+    <link rel="alternate" href="https://cf020031308.github.io/" />
+    <link rel="related" href="https://github.io/cf020031308" />
+    <link rel="self" href="https://raw.githubusercontent.com/cf020031308/roy.log/master/blog/rss.xml" />
+    <link rel="enclosure" href="https://raw.githubusercontent.com/cf020031308/roy.log/master/blog/previous.xml" length="10" />
+    <link rel="via" href="blog/rss.xml" />
+    <generator uri="https://github.com/cf020031308/agentDoc" version="1.3"> agentDoc </generator>
+    <author>
+        <name> Roy </name>
+        <email> cf020031308@163.com </email>
+    </author>
+    <rights> Copyright (c) 2018-2018. All rights reserved </rights>
+    <updated> 2018-06-12T07:36:28Z </updated>
+
+    <entry>
+        <title> Workplace Refactory </title>
+        <link href="wiki/workplace-refactory.md" />
+        <id> B1D75F81-CAC4-4C51-ABCE-0406C76E83FC </id>
+        <published> 2017-10-17T10:03:00Z </published>
+        <updated> 2018-06-12T10:03:00Z </updated>
+        <summary><![CDATA[]]></summary>
+        <content src=""></content>
+    </entry>
+
+    <entry>
+        <title> That's Why I Say Git is an App on Block Chain </title>
+        <link href="wiki/git-chain.md" />
+        <id> BBB33AF5-CB0B-421B-AD7D-934501C990BD </id>
+        <published> 2017-10-09T10:04:01Z </published>
+        <updated> 2018-06-12T10:04:01Z </updated>
+        <summary><![CDATA[]]></summary>
+        <content src=""></content>
+    </entry>
+
+    <entry>
+        <title> Speed Up the Pipeline in Redis-py </title>
+        <link href="wiki/speedup-redispy-pipeline.md" />
+        <id> 8A7C792B-D5EF-4C70-984B-14A588BC8DFE </id>
+        <published> 2017-10-09T10:06:45Z </published>
+        <updated> 2018-06-12T10:06:45Z </updated>
+        <summary><![CDATA[]]></summary>
+        <content src=""></content>
+    </entry>
+
+</feed>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+    <title> cf020031308 </title>
+    <subtitle> The Blog of Roy </subtitle>
+    <icon> https://avatars3.githubusercontent.com/u/5262328?s=16&amp;v=4 </icon>
+    <link rel="alternate" href="https://cf020031308.github.io/" />
+    <link rel="related" href="https://github.io/cf020031308" />
+    <link rel="self" href="https://raw.githubusercontent.com/cf020031308/roy.log/master/blog/previous.xml" />
+    <link rel="enclosure" href="https://raw.githubusercontent.com/cf020031308/roy.log/master/blog/archive.xml" length="10" />
+    <link rel="via" href="https://github.com/cf020031308/roy.log/blob/master/blog/previous.xml" />
+    <generator uri="https://github.com/cf020031308/agentDoc" version="1.3"> agentDoc </generator>
+    <author>
+        <name> Roy </name>
+        <email> cf020031308@163.com </email>
+    </author>
+    <rights> Copyright (c) 2018-2018. All rights reserved </rights>
+    <updated> 2018-06-12T07:36:28Z </updated>
+
+</feed>
