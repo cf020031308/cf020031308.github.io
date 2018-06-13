@@ -1,0 +1,4 @@
+.card:hover {
+    border-radius: 5%;
+    border-color: black;
+}
