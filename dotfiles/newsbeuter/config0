@@ -4,6 +4,7 @@ max-items 0
 browser "lynx -accept_all_cookies -cookie_file=/tmp/nsb_cookie -cookie_save_file=/tmp/nsb_cookie %u"
 bookmark-cmd "~/.newsbeuter/bookmark.sh"
 bookmark-autopilot yes
+save-path "~/workplace/roy.log.wiki"
 download-retries 5
 download-timeout 90
 external-url-viewer "urlview"
@@ -21,7 +22,7 @@ bind-key H prev-feed
 bind-key L next-feed
 bind-key ^B pageup
 bind-key ^F pagedown
-bind-key s bookmark
+bind-key i bookmark
 
 highlight articlelist "成都|算法|数据|分布式|cdn|go|广告|DSP|RTB|量化|交易|加速乐|创宇|nginx|redis|openresty|quant|python|lua|zcash|china|chinese" yellow red bold
 ignore-article "https://www.v2ex.com/index.xml" "title =~ \"^\\[(问与答|天黑以后)\\]\""

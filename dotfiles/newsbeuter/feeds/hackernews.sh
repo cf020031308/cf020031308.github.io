@@ -21,5 +21,5 @@ BEGIN{print "\
 END{prnit "</feed>"}
 AWK
 )
-curl https://news.ycombinator.com/best 2>&- | xmllint --html --xpath "//table[@class='itemlist']/tr[@class='athing']/td[@class='title'][last()]/a[1]/text() | //table[@class='itemlist']/tr[@class='athing']/td[@class='title'][last()]/a[1]/@href" - | sed 's/href="/\
+curl https://news.ycombinator.com/best 2>&- | xmllint --html --xpath "//table[@class='itemlist']/tr[@class='athing']/td[@class='title'][last()]/a[1]/text() | //table[@class='itemlist']/tr[@class='athing']/td[@class='title'][last()]/a[1]/@href" - 2>&- | sed 's/href="/\
 /g' | sed '1d' | awk -F'"' "$tpl"
