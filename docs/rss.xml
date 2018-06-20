@@ -29,6 +29,16 @@
     <rights> Copyright (c) 2018-2018. All rights reserved </rights>
 
     <entry>
+        <title>【译】Redis Lua 脚本：修复了一些安全漏洞</title>
+        <link href="https://github.com/cf020031308/roy.log/blob/master/translations/Redis-Lua-Scripting-Several-Security-Vulnerabilities-fixed-CN.md" />
+        <id> DF2AC9A3-04E3-4E1B-827F-9E2192EB3C47 </id>
+        <published> 2018-06-20T06:00:19Z </published>
+        <updated> 2018-06-20T06:00:19Z </updated>
+        <summary><![CDATA[]]></summary>
+        <content src="https://raw.githubusercontent.com/cf020031308/roy.log/master/translations/Redis-Lua-Scripting-Several-Security-Vulnerabilities-fixed-CN.md"></content>
+    </entry>
+
+    <entry>
         <title> Boogie Board: 做一块单纯并极致的电子涂鸦板 </title>
         <link href="https://sspai.com/post/43972" />
         <id> 1330737A-C125-4379-ACEE-C131207F889B </id>
