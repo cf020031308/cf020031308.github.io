@@ -1,6 +1,6 @@
 # Redis Lua 脚本：修复了一些安全漏洞
 
-> 原文链接: [http://antirez.com/news/119 ](http://antirez.com/news/119)
+> 原文链接: [http://antirez.com/news/119 ](http://antirez.com/news/119)  
 > 原文题目: Redis Lua scripting: several security vulnerabilities fixed 
 
 一个多月前我收到一封来自 Apple 信息安全团队的邮件。他们在一次审计中发现了一个 Redis Lua 子系统中的安全问题，具体来说是在 cmsgpack 库中。这个库并非 Lua 的一部分，而是我自己按 MessagePack 实现的。在一次合并一个功能改进的 pull request 时引入了安全问题。后来他们又发现了 Lua struct 库的一个新问题，同样这个库也不是 Lua 的，至少不是我们用的这版 Lua 的：我们才刚把源码嵌入到自己的 Lua 实现里，以便能给 Redis 用户使用的 Lua 解释器添加一些功能。然后我就发现了该 struct 库的另一个问题，接着 Alibaba 团队也发现了许多 cmsgpack 的其他问题，并定位了调用这些 Lua API 的代码。我迅速地就被一堆 Lua 相关的漏洞淹没了。
@@ -40,11 +40,13 @@
 
 修复问题的提交如下：
 
+```
 ce17f76b 安全性: 修复 redis-cli 缓冲溢出。
 e89086e0 安全性: 修复 Lua struct 库偏移量处理。
 5ccb6f7a 安全性: 更多 cmsgpack 的修复，来自 @soloestoy。
 1eb08bcd 安全性: 更新 Lua struct 库，提升安全性。
 52a00201 安全性: 修复 Lua cmsgpack 库栈溢出。
+```
 
 第一个提交与此无关，是一个 redis-cli 的缓冲溢出，只有在命令行中传入一个很长的主机参数时才会被利用。其它的才是我们发现的 cmsgpack 与 struct 库的问题。
 
@@ -62,9 +64,11 @@ e89086e0 安全性: 修复 Lua struct 库偏移量处理。
 
 修复的版本为以下 github tag：
 
+```
 3.2.12 
 4.0.10 
 5.0-rc2 
+```
 
 稳定版（4.0.10）仍可在 [http://download.redis.io ](http://download.redis.io) 找到。
 
