@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf8"?>
 <!--
      publish a new entry:
-        `rss`
+        `atom`
         1. Generate an entry template with "atom + Tab" via garbas/vim-snipmate;
         2. Edit the generated entry;
      archive:
-        1. `rss previous archive` then edit with `rss archive`;
-        2. `rss rss previous` then edit with `rss previous`;
-        3. Clear entries in `rss`;
+        1. `atom previous archive` then edit with `atom archive`;
+        2. `atom atom previous` then edit with `atom previous`;
+        3. Clear entries in `atom`;
  -->
 <feed xmlns="http://www.w3.org/2005/Atom">
 
