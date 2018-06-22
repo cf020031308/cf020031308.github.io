@@ -3,7 +3,8 @@ https://blog.cloudflare.com/rss/
 https://blog.ethereum.org/feed/
 http://blog.codingnow.com/atom.xml
 http://antirez.com/rss
-http://www.infoq.com/cn/feed/architecture-design
+https://feed.infoq.com/cn/articles
+https://feed.infoq.com/articles
 https://z.cash/feeds/all-en.rss.xml
 https://taskwarrior.org/feed.rss
 https://dev.mutt.org/hg/mutt/rss-log
@@ -27,3 +28,4 @@ https://www.economist.com/feeds/print-sections/77729/china.xml
 https://www.economist.com/feeds/print-sections/77/business.xml
 https://www.economist.com/feeds/print-sections/79/finance-and-economics.xml
 http://etcchain.org/roy.log/atom.xml
+http://www.michael-noll.com/feed.xml
