@@ -32,7 +32,7 @@
         <link href="https://github.com/cf020031308/roy.log/blob/master/translations/Redis-Lua-Scripting-Several-Security-Vulnerabilities-fixed-CN.md" />
         <id> DF2AC9A3-04E3-4E1B-827F-9E2192EB3C47 </id>
         <published> 2018-06-20T06:00:19Z </published>
-        <summary><![CDATA[]]></summary>
+        <summary><![CDATA[原文 http://antirez.com/news/119]]></summary>
         <content src="https://raw.githubusercontent.com/cf020031308/roy.log/master/translations/Redis-Lua-Scripting-Several-Security-Vulnerabilities-fixed-CN.md"></content>
     </entry>
 
@@ -50,7 +50,7 @@
         <link href="https://github.com/cf020031308/roy.log/blob/master/wiki/git-chain.md" />
         <id> BBB33AF5-CB0B-421B-AD7D-934501C990BD </id>
         <published> 2017-10-09T10:04:01Z </published>
-        <summary><![CDATA[]]></summary>
+        <summary><![CDATA[Blockchain = block + chain + concensus. Without concensus it is no difference with git something.]]></summary>
         <content src="https://raw.githubusercontent.com/cf020031308/roy.log/master/wiki/git-chain.md"></content>
     </entry>
 
