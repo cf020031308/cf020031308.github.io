@@ -91,18 +91,18 @@ snippet ichunk
 	    >>> list(ichunk('abcde', 2))
 	    [['a', 'b'], ['c', 'd'], ['e']]
 	    '''
-	    l = len($2)
-	    if l > $3:
+	    length = len($2)
+	    if length > $3:
 	        constructor, generator = (
 	    	    (dict, $2.iteritems()) if isinstance($2, dict)
 	    	    else (list, iter($2)))
 	        _next = itertools.izip_longest(*([generator] * $3)).next
-	        for i in xrange(l / $3):
+	        for i in range(length / $3):
 	            yield constructor(_next())
-	        r = l % $3
+	        r = length % $3
 	        if r:
 	            yield constructor(_next()[:r])
-	    elif l:
+	    elif length:
 	        yield $2
 snippet LRU
 	import collections
