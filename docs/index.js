@@ -66,14 +66,14 @@ var updateDom = function(meta, entries rssEl) {
     g_rssEl = rssEl;
 }
 
-var g_isLoading = false;
 var updateFeed = function() {
-    if (!g_isLoading) {
-        console.log("LOADING ...")
-    } else if (!g_rssEl) {
+    if (!g_rssEl) {
         console.log("NO MORE FEEDS.")
     } else {
-        g_isLoading = true;
+        var _updateFeed = updateFeed;
+        updateFeed = function() {
+            console.log("LOADING ...")
+        }
         var req = window.XMLHttpRequest? (new XMLHttpRequest()): (new ActiveXObject("Microsoft.XMLHTTP"));
         req.responseType = "document";
         req.onreadystatechange = function() {
@@ -82,7 +82,7 @@ var updateFeed = function() {
             } else {
                 updateDom({"error": "FAILED TO LOAD."}, [], void 0);
             }
-            g_isLoading = false;
+            updateFeed = _updateFeed;
         };
         req.open("get", g_rssEl.href, true);
         req.send();
