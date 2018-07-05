@@ -4,7 +4,7 @@ max-items 0
 browser "lynx -accept_all_cookies -cookie_file=/tmp/nsb_cookie -cookie_save_file=/tmp/nsb_cookie %u"
 bookmark-cmd "~/.newsbeuter/bookmark.sh"
 bookmark-autopilot yes
-save-path "~/workplace/roy.log.wiki"
+save-path "~/workplace/roy.log/wiki"
 download-retries 5
 download-timeout 90
 external-url-viewer "urlview"

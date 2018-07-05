@@ -38,6 +38,7 @@ Plugin 'fisadev/vim-isort'
 " markdown
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'ferrine/md-img-paste.vim'
 
 " html
 " Plugin 'kchmck/vim-coffee-script'
@@ -63,6 +64,8 @@ let g:syntastic_auto_jump = 1
 let g:syntastic_quiet_messages = {"regex": ['F812', 'module level import not at top of file', 'basestring', 'E731', 'reload', 'apply', 'raw_input', 'reduce'] }
 let g:syntastic_lua_checkers = ["luacheck"]
 let g:syntastic_lua_luacheck_args = "--no-unused-args"
+" call mdip#MarkdownClipboardImage()
+let g:mdip_imgdir = "_img"
 
 
 " emmet. Default hot key to expand abbs is C-y ,

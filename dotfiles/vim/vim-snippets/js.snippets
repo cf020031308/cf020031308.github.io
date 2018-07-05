@@ -1,0 +1,16 @@
+snippet http
+	var http(method, url, params, callback) = function() {
+		var req = window.XMLHttpRequest? (new XMLHttpRequest()): (new ActiveXObject("Microsoft.XMLHTTP");
+		req.onreadystatechange = function() {
+			if (req.readyState == 4) {
+				callback(req);
+			}
+		};
+		req.open(method, url, true);
+		req.send(params);
+	}
+snippet template
+	"${1:}".replace(/\S*(<% (\S+) %>)\S*/g, function(m, tpl, name) {
+		var value = name.split(".").reduce(function(x, y) { return x && x[y]; }, {${2:}});
+		return value?m.replace(tpl, value):"";
+	}
