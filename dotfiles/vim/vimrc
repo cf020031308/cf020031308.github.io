@@ -13,6 +13,7 @@ set expandtab
 set autoindent
 set smartindent
 set nocompatible
+set scrollbind
 
 set tabstop=4
 set modelines=0
