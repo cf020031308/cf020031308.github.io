@@ -12,4 +12,4 @@
     # fetch gitlab mr to local: git mr upstream 5
     mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -
     # goto web of repo: git open upstream
-    open = !sh -c 'git remote get-url ${1:-origin} | sed -e "s,:,/," -e "s,^git@,https://," -e "s/.git$//" -e "s,.wiki$,/wiki," | xargs -I{hub} open "{hub}"$(test -d "${2:-/}" && echo "/tree/master/$2" || echo "/blob/master/$2") ' -
+    open = !sh -c 'git remote get-url origin | sed -e "/^git@/s,:,/," -e "s,^git@,https://," -e "s/.git$//" -e "s,.wiki$,/wiki," | xargs -I{hub} open "{hub}"$(test "$1" && test -d "$1" && echo "/tree/master/$1")$(test "$1" && test -f "$1" && echo "/blob/master/$1") ' -
