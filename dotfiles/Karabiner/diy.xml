@@ -13,8 +13,8 @@
         <equal>com.google.Chrome</equal>
     </appdef>
     <appdef>
-        <appname>Quiver</appname>
-        <equal>com.happenapps.Quiver</equal>
+        <appname>WeChat</appname>
+        <equal>com.tencent.xinWeChat</equal>
     </appdef>
 
     <vkopenurldef>
@@ -30,8 +30,8 @@
         <url type="file">/Applications/Google Chrome.app</url>
     </vkopenurldef>
     <vkopenurldef>
-        <name>KeyCode::VK_OPEN_URL_FILE_Quiver</name>
-        <url type="file">/Applications/Quiver.app</url>
+        <name>KeyCode::VK_OPEN_URL_FILE_WeChat</name>
+        <url type="file">/Applications/WeChat.app</url>
     </vkopenurldef>
 
     <deviceproductdef>
@@ -66,15 +66,15 @@
         </block>
     </item>
     <item>
-        <name>Shift_R to Quiver</name>
-        <appendix>switch to Quiver</appendix>
-        <identifier>private.shift_r_to_quiver</identifier>
+        <name>Shift_R to WeChat</name>
+        <appendix>switch to WeChat</appendix>
+        <identifier>private.shift_r_to_wechat</identifier>
         <block>
-            <not>Quiver</not>
-            <autogen>__KeyToKey__ KeyCode::SHIFT_R, KeyCode::VK_OPEN_URL_FILE_Quiver</autogen>
+            <not>WeChat</not>
+            <autogen>__KeyToKey__ KeyCode::SHIFT_R, KeyCode::VK_OPEN_URL_FILE_WeChat</autogen>
         </block>
         <block>
-            <only>Quiver</only>
+            <only>WeChat</only>
             <autogen>__KeyToKey__ KeyCode::SHIFT_R, KeyCode::BACKQUOTE, ModifierFlag::COMMAND_L</autogen>
         </block>
     </item>
