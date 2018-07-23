@@ -10,7 +10,21 @@ snippet http
 		req.send(params);
 	}
 snippet template
-	"${1:}".replace(/\S*(<% (\S+) %>)\S*/g, function(m, tpl, name) {
-		var value = name.split(".").reduce(function(x, y) { return x && x[y]; }, {${2:}});
-		return value?m.replace(tpl, value):"";
+	var template = document.getElementById("{1:id}");
+	var templateText = template.textContent;
+	var render = Templater(templateText);
+	function Templater(templateText) {
+	  return new Function(
+	    "page",
+	    "var output=" +
+	    JSON.stringify(templateText)
+	    .replace(/<%=(.+?)%>/g, '"+($1)+"')
+	    .replace(/<%(.+?)%>/g, '";$1\noutput+="') +
+	    ";return output;"
+	  );
 	}
+	var Page = {
+	title: "Home",
+	links: ['Google','CSS-Tricks','Codrops']
+	}
+	document.body.innerHTML = render(Page);
