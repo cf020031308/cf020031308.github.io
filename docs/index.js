@@ -1,6 +1,3 @@
-var CONTAINER_ID = "timeline";
-var ENTRY_TPL_ID = "entry_tpl";
-
 var __getDomText = function(el, names) {
     var data = {};
     for (var i = 0; i < names.length; i++) {
@@ -14,77 +11,97 @@ var __getDomText = function(el, names) {
 var _parseAtom = function(xml) {
     var feed = xml.querySelector('feed');
 
-    var meta = _getDomText(
-        feed, ["title", "subtitle", "icon", "generator", "rights", "updated"]);
-    var author = feed.querySelect("author");
-    if (author) meta["author"] = _getDomText(author, ["name", "email"]);
+    var ret = __getDomText(
+        feed, ["title", "subtitle", "icon", "rights", "updated"]);
 
-    var entries = {};
+    var generator = feed.querySelector("generator");
+    if (generator) ret["generator"] = {
+        uri: generator.getAttribute("uri"),
+        text: generator.textContent.trim()
+    };
+
+    var author = feed.querySelector("author");
+    if (author) ret["author"] = __getDomText(author, ["name", "email", "logo"]);
+
+    ret["entry"] = [];
     var entriesEl = feed.querySelectorAll("entry");
     for (var i = 0; i < entriesEl.length; i++) {
         var entryEl = entriesEl[i];
-        var entry = _getDomText(
-            entryEl,
-            ["title", "id", "published", "updated", "summary", "content"]);
+        var entry = __getDomText(
+            entryEl, ["title", "id", "published", "content"]);
         if (entry["published"]) entry["published"] = new Date(entry["published"]);
-        if (entry["updated"]) entry["updated"] = new Date(entry["updated"]);
 
         var link = entryEl.querySelector("link");
-        if (link) entry["link"] = link.href;
+        if (link) entry["link"] = link.getAttribute("href");
 
         var content = entryEl.querySelector("content");
-        if (content && content.src) entry["src"] = content.src;
+        if (content && content.getAttribute("src")) entry["src"] = content.getAttribute("src");
 
-        entries[entry["id"]] = entry;
+        ret["entry"].push(entry);
     };
 
-    var rssEl = feed.querySelect('link[rel="enclosure"]');
-    return meta, entries, rssEl;
+    ret["rss"] = feed.querySelector('link[rel="enclosure"]');
+    return ret
 }
 
-var g_meta = {};
-var g_entries = [];
-var g_rssEl = document.head.querySelector('link[type="application/atom+xml"]');
-var updateDom = function(meta, entries rssEl) {
-    var dom = CONTAINER_ID && document.getElementById(CONTAINER_ID) || document.body;
 
-    for (var k in meta) if (g_meta[k] === void 0) {
-        g_meta[k] = meta[k]
-        // TODO: update DOM
-    }
-    for (var i = 0; i < entries.length; i++) {
-        var entry = entries[i];
-        for (var j = 0; j <= g_entries.length; j++) {
-            var g_entry = g_entries[j];
-            if (!(entry["published"] >= g_entry["published"])) {
-                g_entries.splice(j++, 0, entry);
-                // TODO: insert DOM
-                break
-            }
+var decode_entity = function(s) {
+    return s.replace(/&(amp|gt|lt);/g, function(w) {
+        return {"&amp;": "&", "&gt;": ">", "&lt;": "<"}[w]; });
+}
+
+
+var Template = function(template) {
+    var output = ["with(input){", 'var output="";'];
+    var lines = template.split("\n");
+    for (var i = 0; i < lines.length; i++) {
+        var line = lines[i].trim();
+        if (line[0] === "<") {
+            line = "output+=" + JSON.stringify(line).replace(/\$([\w.]+)/g, '"+($1)+"') + ";";
+        } else {
+            line = line.replace();
         }
+        output.push(line);
     }
-    g_rssEl = rssEl;
-}
+    output.push("return output;", "}");
+    return new Function("input", output.join("\n"));
+};
 
-var updateFeed = function() {
-    if (!g_rssEl) {
-        console.log("NO MORE FEEDS.")
-    } else {
-        var _updateFeed = updateFeed;
-        updateFeed = function() {
-            console.log("LOADING ...")
-        }
-        var req = window.XMLHttpRequest? (new XMLHttpRequest()): (new ActiveXObject("Microsoft.XMLHTTP"));
-        req.responseType = "document";
-        req.onreadystatechange = function() {
-            if (req.readyState == 4 && req.status < 500 && req.responseXML) {
-                updateDom(_parseAtom(req.responseXML));
-            } else {
-                updateDom({"error": "FAILED TO LOAD."}, [], void 0);
-            }
-            updateFeed = _updateFeed;
-        };
-        req.open("get", g_rssEl.href, true);
-        req.send();
+
+var main = function() {
+    var _main = main;
+    main = function() {
+        console.log("LOADING ...")
     }
-}
+    var req = window.XMLHttpRequest? (new XMLHttpRequest()): (new ActiveXObject("Microsoft.XMLHTTP"));
+    req.responseType = "document";
+    req.onreadystatechange = function() {
+        if (req.readyState == 4 && req.status < 500 && req.responseXML) {
+            var data = _parseAtom(req.responseXML);
+            var tplEls = document.getElementsByTagName('template');
+            var rms = [];
+            for (var i = 0; i < tplEls.length; i++) {
+                var tplEl = tplEls[i];
+                var tpl = decode_entity(tplEl.innerHTML);
+                if (tplEl.getAttribute("position") === "head") {
+                    var el = document.createElement("div");
+                    document.head.appendChild(el);
+                    el.outerHTML = Template(tpl)(data);
+                    rms.push(tplEl);
+                } else {
+                    tplEl.outerHTML = Template(tpl)(data);
+                }
+            }
+            for (var i = 0; i < rms.length; i++) {
+                rms[i].parentNode.removeChild(rms[i]);
+            }
+        // } else {
+        }
+        main = _main;
+    };
+    var rssEl = document.head.querySelector('link[type="application/atom+xml"]');
+    req.open("get", rssEl.href, true);
+    req.send();
+};
+
+main();
