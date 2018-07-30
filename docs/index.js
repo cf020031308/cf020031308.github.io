@@ -45,12 +45,6 @@ var _parseAtom = function(xml) {
 }
 
 
-var decode_entity = function(s) {
-    return s.replace(/&(amp|gt|lt);/g, function(w) {
-        return {"&amp;": "&", "&gt;": ">", "&lt;": "<"}[w]; });
-}
-
-
 var Template = function(template) {
     var output = ["with(input){", 'var output="";'];
     var lines = template.split("\n");
@@ -59,7 +53,9 @@ var Template = function(template) {
         if (line[0] === "<") {
             line = "output+=" + JSON.stringify(line).replace(/\$([\w.]+)/g, '"+($1)+"') + ";";
         } else {
-            line = line.replace();
+            line = line.replace(
+                /&(amp|gt|lt);/g,
+                function(w) {return {"&amp;": "&", "&gt;": ">", "&lt;": "<"}[w]; });
         }
         output.push(line);
     }
@@ -82,7 +78,7 @@ var main = function() {
             var rms = [];
             for (var i = 0; i < tplEls.length; i++) {
                 var tplEl = tplEls[i];
-                var tpl = decode_entity(tplEl.innerHTML);
+                var tpl = tplEl.innerHTML;
                 if (tplEl.getAttribute("position") === "head") {
                     var el = document.createElement("div");
                     document.head.appendChild(el);
