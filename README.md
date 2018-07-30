@@ -23,7 +23,7 @@ A collection of my personal knowledge, and tools to manage it.
 * [github wiki](https://github.com/cf020031308/roy.log/wiki)
     + [agentDoc](https://github.com/cf020031308/agentDoc)
 * [blog](https://cf020031308.github.io)
-    + [ ] [mdwiki](https://github.com/Dynalon/mdwiki)
+    + [ ] [feedBlog](https://github.com/cf020031308/feedBlog)
 * [anki](https://apps.ankiweb.net/)
     + [anki-import](./bin/anki-import)
 * [fortune](https://en.wikipedia.org/wiki/Fortune_%28Unix%29)
