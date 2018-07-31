@@ -1,0 +1,70 @@
+<html>
+<head>
+    <link type="application/atom+xml" rel="alternate" title="cf020031308 Atom Feed" href="atom.xml">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<template position="head">
+<link rel="icon" type="image/x-icon" href="$icon" />
+<title > $title </title>
+</template>
+
+<template>
+<header>
+    <h1> $title </h1>
+    <h2> $subtitle </h2>
+</header>
+<nav>
+    <section>
+        with(author) {
+            <img alt="Author's Avatar" src="$logo" />
+            <h3> $name </h3>
+            <a href="mailto:$email">
+                <img alt="" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2709.png" />
+            </a>
+        }
+    </section>
+</nav>
+<main>
+    for (var i = 0; i < entry.length; i++) with(entry[i]) {
+        <article id="$id">
+            <h4><a target="_blank" href="$link"> $title </a></h4>
+            <p> $content </p>
+            <div>
+                <div> Published at $formatDate(published) </div>
+                <!--div><a href="/TODO"> Comment </a></div-->
+            </div>
+        </article>
+    }
+</main>
+<footer>
+    <div> $rights </div>
+</footer>
+</template>
+
+<script src="index.js"></script>
+<script>
+    var rssEl = document.head.querySelector('link[type="application/atom+xml"]');
+    var req = http("get", rssEl.href);
+    if (req.readyState == 4 && req.status < 500 && req.responseXML) {
+        var data = xml2obj(req.responseXML.querySelector("feed"));
+        var tplEls = document.getElementsByTagName("template");
+        for (var i = 0; i < tplEls.length; i++) {
+            var tplEl = tplEls[i];
+            var tpl = decode_entity(tplEl.innerHTML);
+            if (tplEl.getAttribute("position") === "head") {
+                var el = document.createElement("div");
+                document.head.appendChild(el);
+                el.outerHTML = Template(tpl)(data);
+                tplEl.parentNode.removeChild(tplEl);
+                i--;
+            } else {
+                tplEl.outerHTML = Template(tpl)(data);
+            }
+        }
+    }
+</script>
+
+</body>
+</html>

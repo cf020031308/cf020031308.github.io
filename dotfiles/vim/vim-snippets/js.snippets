@@ -1,13 +1,8 @@
 snippet http
-	var http(method, url, params, callback) = function() {
+	var http(method, url, callback) = function() {
 		var req = window.XMLHttpRequest? (new XMLHttpRequest()): (new ActiveXObject("Microsoft.XMLHTTP");
-		req.onreadystatechange = function() {
-			if (req.readyState == 4) {
-				callback(req);
-			}
-		};
-		req.open(method, url, true);
-		req.send(params);
+		if (callback) req.onreadystatechange = callback;
+		req.open(method, url, !!callback);
 	}
 snippet template
 	var Template = function(template) {
@@ -26,4 +21,30 @@ snippet template
 	    }
 	    output.push("return output;", "}");
 	    return new Function("input", output.join("\n"));
+	};
+snippet xml2obj
+	var xml2obj = function(xml) {
+	    var obj = {
+	        toString: function() {
+	            return xml.textContent.trim();
+	        }
+	    }
+	    for (var i = 0; i < xml.children.length; i++) {
+	        var key = xml.children[i].tagName.toLowerCase();
+	        var value = xml2obj(xml.children[i]);
+	        if (!obj[key]) {
+	            obj[key] = value;
+	        } else if (obj[key].constructor === Array) {
+	            obj[key].push(value);
+	        } else {
+	            obj[key] = [obj[key], value];
+	        }
+	    }
+	    var attrs = xml.getAttributeNames();
+	    for (var i = 0; i < attrs.length; i++) {
+	        var attr = attrs[i];
+	        if (obj[attr]) attr = "$" + attr;
+	        obj[attr] = xml.getAttribute(attr).trim();
+	    }
+	    return obj;
 	};
