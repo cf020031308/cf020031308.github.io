@@ -54,29 +54,3 @@ var http = function(method, url, callback) {
     req.send();
     return req;
 };
-
-var formatDate = function(d) {
-    d = new Date(d);
-    var n = new Date();
-    if (d > n) {
-        return "the future";
-    } else {
-        var diff = parseInt((n.valueOf() - d.valueOf()) / 3600000);
-        if (diff === 0) {
-            return "just now";
-        } else if (diff === 1) {
-            return "1 hour ago";
-        } else if (diff < 24) {
-            return parseInt(diff) + " hours ago";
-        } else {
-            diff = parseInt(diff / 24);
-            if (diff < 2) {
-                return "1 day ago";
-            } else if (diff < 7) {
-                return diff + " days ago";
-            } else {
-                return d.toLocaleString();
-            }
-        }
-    }
-}
