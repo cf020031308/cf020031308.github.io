@@ -4,5 +4,6 @@ snippet atom
 		<link href="https://github.com/cf020031308/roy.log/blob/master/${2:}" />
 		<id> `system("uuidgen")` </id>
 		<published> `system("date -u +'%Y-%m-%dT%H:%M:%SZ'")` </published>
-		<content src="https://raw.githubusercontent.com/cf020031308/roy.log/master/${4:}"><![CDATA[${3:}]]></content>
+		<summary><![CDATA[${3:}]]></summary>
+		<content src="https://raw.githubusercontent.com/cf020031308/roy.log/master/${4:}"></content>
 	</entry>

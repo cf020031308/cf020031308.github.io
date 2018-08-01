@@ -30,9 +30,9 @@
     <h3> Recent Articles </h3>
     for (var i = 0; i < entry.length; i++) with(entry[i]) {
         <article id="$id">
-            <a target="_blank" href="$link">
+            <a target="_blank" href="$link.href">
                 <h4> $title </h4>
-                <p> $content </p>
+                <p> $summary </p>
             </a>
             <div>
                 <div> Published at $formatDate(published) </div>

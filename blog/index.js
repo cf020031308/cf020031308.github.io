@@ -38,7 +38,7 @@ var Template = function(template) {
     for (var i = 0; i < lines.length; i++) {
         var line = lines[i].trim();
         if (line[0] === "<") {
-            line = "output+=" + JSON.stringify(line).replace(/\$([\w.\[\]()]+)/g, '"+($1)+"') + ";";
+            line = "output+=" + JSON.stringify(line).replace(/\$([\w.\$\[\]()]+)/g, '"+($1)+"') + ";";
         }
         output.push(line);
     }
