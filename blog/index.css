@@ -1,8 +1,22 @@
-nav {
-    display: none;
+:root {
+    font-family: Helvetica, Arial, Sans-serif;
+}
+
+
+@media (max-width: 6000px) {
+    nav {
+        display: none
+    }
+}
+
+
+article {
+    padding: 5px 10px 5px 10px;
+    margin: 5px 10px 5px 10px;
 }
 
 
 article:hover {
-    border: 1px solid black;
+    background-color: rgba(45, 45, 45, 0.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }

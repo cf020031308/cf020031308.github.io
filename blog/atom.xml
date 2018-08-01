@@ -1,14 +1,4 @@
 <?xml version="1.0" encoding="utf8"?>
-<!--
-     publish a new entry:
-        `atom`
-        1. Generate an entry template with "atom + Tab" via garbas/vim-snipmate;
-        2. Edit the generated entry;
-     archive:
-        1. `atom previous archive` then edit with `atom archive`;
-        2. `atom atom previous` then edit with `atom previous`;
-        3. Clear entries in `atom`;
- -->
 <feed xmlns="http://www.w3.org/2005/Atom">
 
     <title> cf020031308 </title>
@@ -16,9 +6,8 @@
     <icon> https://avatars3.githubusercontent.com/u/5262328?s=16&amp;v=4 </icon>
     <link rel="alternate" href="https://cf020031308.github.io/" />
     <link rel="related" href="https://github.io/cf020031308" />
-    <link rel="self" href="rss.xml" />
+    <link rel="self" href="atom.xml" />
     <link rel="enclosure" href="previous.xml" />
-    <link rel="via" href="https://github.com/cf020031308/roy.log/blob/master/docs/rss.xml" />
     <author>
         <name> Roy </name>
         <logo> https://avatars3.githubusercontent.com/u/5262328 </logo>
@@ -28,10 +17,10 @@
 
     <entry>
         <title>【译】Redis Lua 脚本：修复了一些安全漏洞</title>
-        <link href="https://github.com/cf020031308/roy.log/blob/master/translations/Redis-Lua-Scripting-Several-Security-Vulnerabilities-fixed-CN.md" />
+        <link href="https://github.com/cf020031308/cf020031308.github.io/blob/master/translations/Redis-Lua-Scripting-Several-Security-Vulnerabilities-fixed-CN.md" />
         <id> DF2AC9A3-04E3-4E1B-827F-9E2192EB3C47 </id>
         <published> 2018-06-20T06:00:19Z </published>
-        <content src="https://raw.githubusercontent.com/cf020031308/roy.log/master/translations/Redis-Lua-Scripting-Several-Security-Vulnerabilities-fixed-CN.md"><![CDATA[原文 http://antirez.com/news/119]]></content>
+        <content src="https://raw.githubusercontent.com/cf020031308/cf020031308.github.io/master/translations/Redis-Lua-Scripting-Several-Security-Vulnerabilities-fixed-CN.md"><![CDATA[原文 http://antirez.com/news/119]]></content>
     </entry>
 
     <entry>
@@ -44,26 +33,26 @@
 
     <entry>
         <title> That's Why I Say Git is an App on Block Chain </title>
-        <link href="https://github.com/cf020031308/roy.log/blob/master/articles/git-chain.md" />
+        <link href="https://github.com/cf020031308/cf020031308.github.io/blob/master/articles/git-chain.md" />
         <id> BBB33AF5-CB0B-421B-AD7D-934501C990BD </id>
         <published> 2017-10-09T10:04:01Z </published>
-        <content src="https://raw.githubusercontent.com/cf020031308/roy.log/master/articles/git-chain.md"><![CDATA[Blockchain = block + chain + concensus. Without concensus it is no difference with git something.]]></content>
+        <content src="https://raw.githubusercontent.com/cf020031308/cf020031308.github.io/master/articles/git-chain.md"><![CDATA[Blockchain = block + chain + concensus. Without concensus it is no difference with git something.]]></content>
     </entry>
 
     <entry>
         <title> Speed Up the Pipeline in Redis-py </title>
-        <link href="https://github.com/cf020031308/roy.log/blob/master/articles/speedup-redispy-pipeline.md" />
+        <link href="https://github.com/cf020031308/cf020031308.github.io/blob/master/articles/speedup-redispy-pipeline.md" />
         <id> 8A7C792B-D5EF-4C70-984B-14A588BC8DFE </id>
         <published> 2017-10-09T10:06:45Z </published>
-        <content src="https://raw.githubusercontent.com/cf020031308/roy.log/master/articles/speedup-redispy-pipeline.md"><![CDATA[Here are three ways to speed up the pipeline of redis when you doing massive insertions with redis-py, a library of python.]]></content>
+        <content src="https://raw.githubusercontent.com/cf020031308/cf020031308.github.io/master/articles/speedup-redispy-pipeline.md"><![CDATA[Here are three ways to speed up the pipeline of redis when you doing massive insertions with redis-py, a library of python.]]></content>
     </entry>
 
     <entry>
         <title> Workplace Refactory </title>
-        <link href="https://github.com/cf020031308/roy.log/blob/master/articles/workplace-refactory.md" />
+        <link href="https://github.com/cf020031308/cf020031308.github.io/blob/master/articles/workplace-refactory.md" />
         <id> B1D75F81-CAC4-4C51-ABCE-0406C76E83FC </id>
         <published> 2017-10-17T10:03:00Z </published>
-        <content src="https://raw.githubusercontent.com/cf020031308/roy.log/master/articles/workplace-refactory.md"><![CDATA[Put as more things into containers and clouds as possible.]]></content>
+        <content src="https://raw.githubusercontent.com/cf020031308/cf020031308.github.io/master/articles/workplace-refactory.md"><![CDATA[Put as more things into containers and clouds as possible.]]></content>
     </entry>
 
 </feed>
