@@ -40,18 +40,16 @@
     }
     for (var i = 0; i < entry.length; i++) with(entry[i]) {
         <article id="$id">
-            <a target="_blank" href="$link.href">
-                <h4> $title </h4>
-                <div>
-                    <div> $formatDate(published) </div>
-                    <!--div><a href="/TODO"> Comment </a></div-->
-                </div>
-                if (entry[i].content && content.src) {
-                    <blockquote cite="$content.src"> $summary </blockquote>
-                } else {
-                    <blockquote> $summary </blockquote>
-                }
-            </a>
+            <h4><a target="_blank" href="$link.href"> $title </a></h4>
+            <div>
+                <time datetime="$published" pubdate="pubdate"> $formatDate(published) </time>
+                <!--div><a href="/TODO"> Comment </a></div-->
+            </div>
+            if (entry[i].content && content.src) {
+                <blockquote cite="$content.src"> $summary </blockquote>
+            } else {
+                <blockquote> $summary </blockquote>
+            }
         </article>
     }
 </main>
