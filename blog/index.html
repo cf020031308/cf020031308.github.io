@@ -2,14 +2,12 @@
 <head>
     <link type="application/atom+xml" rel="alternate" title="cf020031308 Atom Feed" href="atom.xml">
     <link rel="stylesheet" href="index.css">
+    <template>
+    <link rel="icon" type="image/x-icon" href="$icon" />
+    <title > $title </title>
+    </template>
 </head>
 <body>
-
-<template position="head">
-<link rel="icon" type="image/x-icon" href="$icon" />
-<title > $title </title>
-</template>
-
 <template>
 <header>
     <h1> $title </h1>
@@ -41,10 +39,8 @@
     for (var i = 0; i < entry.length; i++) with(entry[i]) {
         <article id="$id">
             <h4><a target="_blank" href="$link.href"> $title </a></h4>
-            <div>
-                <time datetime="$published" pubdate="pubdate"> $formatDate(published) </time>
-                <!--div><a href="/TODO"> Comment </a></div-->
-            </div>
+            <time datetime="$published" pubdate="pubdate"> $formatDate(published) </time>
+            <!--div><a href="/TODO"> Comment </a></div-->
             if (entry[i].content && content.src) {
                 <blockquote cite="$content.src"> $summary </blockquote>
             } else {
@@ -65,18 +61,9 @@
     if (req.readyState == 4 && req.status < 500 && req.responseXML) {
         var data = xml2obj(req.responseXML.querySelector("feed"));
         var tplEls = document.getElementsByTagName("template");
-        for (var i = 0; i < tplEls.length; i++) {
-            var tplEl = tplEls[i];
-            var tpl = decode_entity(tplEl.innerHTML);
-            if (tplEl.getAttribute("position") === "head") {
-                var el = document.createElement("div");
-                document.head.appendChild(el);
-                el.outerHTML = Template(tpl)(data);
-                tplEl.parentNode.removeChild(tplEl);
-                i--;
-            } else {
-                tplEl.outerHTML = Template(tpl)(data);
-            }
+        while (tplEls.length) {
+            var tplEl = tplEls[0];
+            tplEl.outerHTML = Template(decode_entity(tplEl.innerHTML))(data);
         }
     }
 </script>
