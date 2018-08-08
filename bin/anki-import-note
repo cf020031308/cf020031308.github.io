@@ -2,8 +2,8 @@
 
 if [ $# -lt 2 ]; then
     cat <<USAGE
-Usage: ./bin/anki-import path ... output_directory
-Example: ./bin/anki-import notes/chinese/20171006 notes/english/* ~/Downloads/
+Usage: ./bin/anki-import-note path ... output_directory
+Example: ./bin/anki-import-note notes/chinese/20171006 notes/english/* ~/Downloads/
 USAGE
     exit 1;
 fi
@@ -26,7 +26,14 @@ chunk=""
 for spath in "${src}"
 do if [ -e "${spath}" ]; then
     imgd="$GITHUB_REL/$(dirname ${spath})/_img/"
-    for line in $(cat "${spath}" && echo "___")
+    for line in $(cat "${spath}" | python -c '
+import re
+import sys
+import json
+
+for m in re.findall(r"<fc>(.*?)</fc>", sys.stdin.read(), re.M | re.I | re.S):
+    print(json.dumps(m.strip(), ensure_ascii=False))
+    print("___")')
     do if [ -n "${line}" ]; then
         if [ "${line}" == "___" ]; then
             case "${chunk}" in
@@ -35,10 +42,10 @@ do if [ -e "${spath}" ]; then
                 *)
                     fname="${F_BASIC}";;
             esac
-            echo "\"${chunk}${IFS}\"" | sed 's,!\[[^]]*\](\./_img/\([^)]*\)),<img src='"'$imgd"'\1'"'"' />,g' >> "${fname}"
+            echo "${chunk}" | sed 's,!\[[^]]*\](\./_img/\([^)]*\)),<img src='"'$imgd"'\1'"'"' />,g' >> "${fname}"
             chunk=""
         else
-            chunk="${chunk}${IFS}${line}"
+            chunk="${chunk}${line}"
         fi
     fi
     done

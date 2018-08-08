@@ -1,0 +1,49 @@
+#! /bin/sh
+
+if [ $# -lt 2 ]; then
+    cat <<USAGE
+Usage: ./bin/anki-import-digest path ... output_directory
+Example: ./bin/anki-import-digest notes/chinese/20171006 notes/english/* ~/Downloads/
+USAGE
+    exit 1;
+fi
+GITHUB_REL="https://raw.githubusercontent.com/cf020031308/roy.log/master"
+src=${@:1:$# - 1}
+dst=${@:$#:1}
+
+F_BASIC="${dst}/anki_basic.txt"
+F_CLOZE="${dst}/anki_cloze.txt"
+if [ -e "${F_BASIC}" ]; then
+    rm "${F_BASIC}"
+fi
+if [ -e "${F_CLOZE}" ]; then
+    rm "${F_CLOZE}"
+fi
+
+IFS="
+"
+chunk=""
+for spath in "${src}"
+do if [ -e "${spath}" ]; then
+    imgd="$GITHUB_REL/$(dirname ${spath})/_img/"
+    for line in $(cat "${spath}" && echo "___")
+    do if [ -n "${line}" ]; then
+        if [ "${line}" == "___" ]; then
+            case "${chunk}" in
+                *\<c1\>*)
+                    fname="${F_CLOZE}";;
+                *)
+                    fname="${F_BASIC}";;
+            esac
+            echo "\"${chunk}${IFS}\"" | sed 's,!\[[^]]*\](\./_img/\([^)]*\)),<img src='"'$imgd"'\1'"'"' />,g' >> "${fname}"
+            chunk=""
+        else
+            chunk="${chunk}${IFS}${line}"
+        fi
+    fi
+    done
+fi
+done
+if [ -e "${F_CLOZE}" ]; then
+    sed -i '' 's/<c\([0-9]\)>/{{c\1::/g;s/<\/c[0-9]>/}}/g' "${F_CLOZE}"
+fi
