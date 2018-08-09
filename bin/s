@@ -1,0 +1,70 @@
+#!/usr/local/bin/python
+
+import os
+import sys
+
+
+url, utf8, space = {
+    'bd': (
+        'https://www.baidu.com/s?ie=UTF-8&wd={query}',
+        True,
+        ' ',
+    ),
+    'zh': (
+        'https://www.zhihu.com/search?type=content&sort=upvote&q={query}',
+        True,
+        '+',
+    ),
+    'bk': (
+        'http://book.douban.com/subject_search?search_text={query}&cat=1001',
+        False,
+        ' ',
+    ),
+    'mv': (
+        'http://movie.douban.com/subject_search?search_text={query}&cat=1002',
+        True,
+        ' ',
+    ),
+    'cn': (
+        'http://translate.google.cn/#auto/zh-CN/{query}',
+        True,
+        ' ',
+    ),
+    'en': (
+        'http://translate.google.cn/#auto/en/{query}',
+        True,
+        ' ',
+    ),
+    'git': (
+        'https://github.com/search?o=desc&q={query}&s=stars'
+        '&type=Repositories&utf8=%E2%9C%93',
+        True,
+        '+',
+    ),
+    'stack': (
+        'http://stackoverflow.com/search?q={query}',
+        True,
+        '+',
+    ),
+    'docker': (
+        'https://hub.docker.com/search/?isAutomated=0&isOfficial=0'
+        '&page=1&pullCount=0&q={query}&starCount=0',
+        True,
+        ' ',
+    ),
+    'tb': (
+        'http://s.taobao.com/search?oe=utf-8&f=8&q={query}',
+        True,
+        ' ',
+    ),
+    'to': (
+        'https://rarbg.is/torrents.php?search={query}',
+        True,
+        '+',
+    ),
+}[sys.argv[1]]
+s = space.join(sys.argv[2:])
+if utf8:
+    s = s.encode('utf8')
+url = url.replace('{query}', s)
+os.system('open "%s"' % url)
