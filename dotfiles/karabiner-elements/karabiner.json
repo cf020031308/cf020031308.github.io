@@ -9,52 +9,58 @@
             "complex_modifications": {
                 "parameters": {
                     "basic.simultaneous_threshold_milliseconds": 50,
-                    "basic.to_delayed_action_delay_milliseconds": 500,
-                    "basic.to_if_alone_timeout_milliseconds": 1000,
-                    "basic.to_if_held_down_threshold_milliseconds": 500
+                    "basic.to_delayed_action_delay_milliseconds": 100,
+                    "basic.to_if_alone_timeout_milliseconds": 100,
+                    "basic.to_if_held_down_threshold_milliseconds": 100
                 },
                 "rules": [
                     {
                         "description": "Option_R to Chrome",
-                        "manipulators": [{
-                            "from": {
-                                "key_code": "right_option"
-                            },
-                            "to": [
-                                {
-                                    "shell_command": "open -a 'Google Chrome'"
-                                }
-                            ],
-                            "type": "basic"
-                        }]
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "right_option"
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a 'Google Chrome'"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
                     },
                     {
                         "description": "Shift_R to WeChat",
-                        "manipulators": [{
-                            "from": {
-                                "key_code": "right_shift"
-                            },
-                            "to": [
-                                {
-                                    "shell_command": "open -a 'WeChat'"
-                                }
-                            ],
-                            "type": "basic"
-                        }]
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "right_shift"
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a 'WeChat'"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
                     },
                     {
                         "description": "Command_R to iTerm",
-                        "manipulators": [{
-                            "from": {
-                                "key_code": "right_command"
-                            },
-                            "to": [
-                                {
-                                    "shell_command": "open -a 'iTerm'"
-                                }
-                            ],
-                            "type": "basic"
-                        }]
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "right_command"
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a 'iTerm'"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
                     },
                     {
                         "description": "Change caps_lock to control if pressed with other keys, to escape if pressed alone.",
