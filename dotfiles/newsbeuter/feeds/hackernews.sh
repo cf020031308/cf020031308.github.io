@@ -1,5 +1,6 @@
 #!/bin/sh -
 
+host="https://news.ycombinator.com"
 utctime=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 tpl=$(cat <<AWK
 BEGIN{print "\
@@ -16,10 +17,11 @@ BEGIN{print "\
     <published>$utctime</published>\
     <link href=\"%s\">%s</link>\
     <author><name>Roy</name></author>\
+    <content type=\"html\" xml:base=\"$host\"><![CDATA[<a href=\"/item?id=%s\">comments</a>]]></content>\
   </entry>\
-", \$2, \$1, \$1, \$1}
+", \$3, \$1, \$2, \$2, \$1}
 END{prnit "</feed>"}
 AWK
 )
-curl https://news.ycombinator.com/best 2>&- | xmllint --html --xpath "//table[@class='itemlist']/tr[@class='athing']/td[@class='title'][last()]/a[1]/text() | //table[@class='itemlist']/tr[@class='athing']/td[@class='title'][last()]/a[1]/@href" - 2>&- | sed 's/href="/\
-/g' | sed '1d' | awk -F'"' "$tpl"
+curl ${host}/best 2>&- | xmllint --html --xpath "//table[@class='itemlist']/tr[@class='athing']/@id | //table[@class='itemlist']/tr[@class='athing']/td[@class='title'][last()]/a[1]/text() | //table[@class='itemlist']/tr[@class='athing']/td[@class='title'][last()]/a[1]/@href" - 2>&- | sed -e 's/id="/\
+/g' -e 's/" href=//g' | sed '1d' | awk -F'"' "$tpl"
