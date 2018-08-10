@@ -2,6 +2,7 @@
 
 import os
 import sys
+import urllib
 
 
 url, utf8, space = {
@@ -65,6 +66,6 @@ url, utf8, space = {
 }[sys.argv[1]]
 s = space.join(sys.argv[2:])
 if utf8:
-    s = s.encode('utf8')
+    s = urllib.quote(s)
 url = url.replace('{query}', s)
-os.system('open "%s"' % url)
+os.system('open "%s" &' % url)

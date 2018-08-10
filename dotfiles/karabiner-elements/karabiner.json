@@ -15,7 +15,7 @@
                 },
                 "rules": [
                     {
-                        "description": "Option_R to Chrome",
+                        "description": "Option_R to Safari",
                         "manipulators": [
                             {
                                 "from": {
@@ -23,7 +23,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'Google Chrome'"
+                                        "shell_command": "open -a 'Safari'"
                                     }
                                 ],
                                 "type": "basic"
@@ -1148,7 +1148,24 @@
             ],
             "name": "Default profile",
             "selected": true,
-            "simple_modifications": [],
+            "simple_modifications": [
+                {
+                    "from": {
+                        "key_code": "left_command"
+                    },
+                    "to": {
+                        "key_code": "left_option"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "left_option"
+                    },
+                    "to": {
+                        "key_code": "left_command"
+                    }
+                }
+            ],
             "virtual_hid_keyboard": {
                 "country_code": 0
             }
