@@ -31,8 +31,15 @@ import re
 import sys
 import json
 
-for m in re.findall(r"<fc>(.*?)</fc>", sys.stdin.read(), re.M | re.I | re.S):
-    print(json.dumps(m.strip(), ensure_ascii=False))
+
+flags = re.M | re.S
+for m in re.findall(r"<fc>(.*?)</fc>", sys.stdin.read(), flags=flags | re.I):
+    m = re.sub(
+        r"(\${1,2})([^$]*?)(\${1,2})",
+        lambda m: "[%s]%s[/%s]" % m.groups(),
+        m.strip(),
+        flags=flags)
+    print(json.dumps(m, ensure_ascii=False))
     print("___")')
     do if [ -n "${line}" ]; then
         if [ "${line}" == "___" ]; then
