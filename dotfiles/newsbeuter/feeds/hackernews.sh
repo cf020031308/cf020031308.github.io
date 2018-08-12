@@ -17,9 +17,10 @@ BEGIN{print "\
     <published>$utctime</published>\
     <link href=\"%s\">%s</link>\
     <author><name>Roy</name></author>\
-    <content type=\"html\" xml:base=\"$host\"><![CDATA[<a href=\"/item?id=%s\">comments</a>]]></content>\
+    <summary type=\"html\"><![CDATA[<a href=\"$host/item?id=%s\">comments</a>]]></summary>\
+    <content src=\"$host/item?id=%s\"></content>\
   </entry>\
-", \$3, \$1, \$2, \$2, \$1}
+", \$3, \$1, \$2, \$2, \$1, \$1}
 END{prnit "</feed>"}
 AWK
 )
