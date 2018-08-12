@@ -10,26 +10,32 @@ strict digraph {
     subgraph cluster_github {
         label="github";
         notes [label="notes"];
-        blog [label="blog"];
+        articles [label="articles\n& translations"];
         logs [label="logs"];
+        feeds [label="feeds"];
+        blog [label="blog"];
     }
     anki [label="anki"];
     fortune [label="fortune"];
-    me [label="me"];
+    output [label="output"];
 
-    input -> wiki [label="digest"];
+    input -> wiki [label="note"];
     input -> instapaper [label="read it later"];
     instapaper -> inbox [label="mark/note/like"];
     inbox -> wiki [label="incubate"];
     inbox -> archives;
-    wiki -> notes [label="good\nparts"];
-    wiki -> blog [label="publish"];
-    wiki -> logs;
-    { notes, blog, logs } -> archives;
+    wiki -> notes [label="digest"];
+    wiki -> articles [label="writing"];
+    wiki -> logs [label="useless"];
+    articles -> feeds [label="publish"];
+    feeds -> blog [label="render"];
+    { notes, articles, logs } -> archives;
     notes -> anki [label="anki-import"];
     notes -> fortune [label="fortune-index"];
 
-    anki -> me [label="remember", dir=back];
-    fortune -> me [label="inspire", dir=back];
-    archives -> me [label="search", dir=back];
+    feeds -> output [label="subscribe"];
+    blog -> output [label="display"];
+    anki -> output [label="remember"];
+    fortune -> output [label="inspire"];
+    archives -> output [label="search"];
 }
