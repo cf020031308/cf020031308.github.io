@@ -1,10 +1,6 @@
 always-display-description true
 auto-reload yes
 max-items 0
-browser "lynx -accept_all_cookies -cookie_file=/tmp/nsb_cookie -cookie_save_file=/tmp/nsb_cookie %u"
-bookmark-cmd "~/.newsbeuter/bookmark.sh"
-bookmark-autopilot yes
-save-path "~/workplace/roy.log/wiki"
 download-retries 5
 download-timeout 90
 external-url-viewer "urlview"
@@ -13,6 +9,16 @@ prepopulate-query-feeds yes
 refresh-on-startup yes
 reload-threads 5
 articlelist-format "%D    %t"
+
+bookmark-cmd "~/.newsbeuter/bookmark.sh"
+bookmark-autopilot yes
+save-path "~/workplace/roy.log/wiki"
+
+browser "lynx -accept_all_cookies -cookie_file=/tmp/nsb_cookie -cookie_save_file=/tmp/nsb_cookie %u"
+macro o set browser "open %u" ; open-in-browser ; set browser "lynx -accept_all_cookies -cookie_file=/tmp/nsb_cookie -cookie_save_file=/tmp/nsb_cookie %u"
+macro O set browser "open %u" ; open-in-browser-and-mark-read ; set browser "lynx -accept_all_cookies -cookie_file=/tmp/nsb_cookie -cookie_save_file=/tmp/nsb_cookie %u"
+
+# macro q set bookmark-cmd "~/.newsbeuter/send-unread-to-instapaper.sh" ; bookmark ; mark-all-feeds-read ; hard-quit
 
 bind-key j down
 bind-key k up
@@ -24,5 +30,5 @@ bind-key ^B pageup
 bind-key ^F pagedown
 bind-key i bookmark
 
-highlight articlelist "成都|算法|数据|分布式|cdn|go|广告|DSP|RTB|量化|交易|加速乐|创宇|nginx|redis|openresty|quant|python|lua|zcash|china|chinese|evernote|印象笔记|lynx|newsbeuter|newsboat|taskwarrior|mutt" yellow red bold
+highlight articlelist "成都|算法|数据|分布式|cdn|go|广告|DSP|RTB|量化|交易|加速乐|创宇|nginx|redis|openresty|quant|python|lua|zcash|china|chinese|evernote|印象笔记|lynx|newsbeuter|newsboat|taskwarrior|mutt|karabiner|julia|电子科|南开|成外" yellow red bold
 ignore-article "https://www.v2ex.com/index.xml" "title =~ \"^\\[(问与答|天黑以后)\\]\""
