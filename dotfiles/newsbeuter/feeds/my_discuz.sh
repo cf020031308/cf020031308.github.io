@@ -4,6 +4,10 @@ AUTH="$HOME/.accounts/my_discuz"
 COOKIE="/tmp/my_cookie"
 UA='Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:39.0) Gecko/20100101 Firefox/39.0'
 
+if [ ! -e "${AUTH}" ]; then
+    exit 0
+fi
+
 host=$(sed -n '1p' "${AUTH}")
 auth=$(sed -n '2p' "${AUTH}")
 
