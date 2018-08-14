@@ -3,7 +3,7 @@
 watch_list='{BTC_ETH, BTC_ZEC, BTC_XMR, USDT_BTC, USDT_ETH, USDT_ZEC, USDT_ETC, USDT_XMR}'
 api="https://poloniex.com/public?command=returnTicker"
 
-prices=`proxychains4 curl 2>&- $api | jq "with_entries(.value |= (.last | tonumber))"`
+prices=`curl 2>&- $api | jq "with_entries(.value |= (.last | tonumber))"`
 btc=`echo "$prices" | jq ".USDT_BTC"`
 if [ $btc ]; then
     time=`date +"%H:%M:%S"`
