@@ -30,5 +30,5 @@ bind-key ^B pageup
 bind-key ^F pagedown
 bind-key i bookmark
 
-highlight articlelist "成都|算法|数据|分布式|cdn|go|广告|DSP|RTB|量化|交易|加速乐|创宇|nginx|redis|openresty|quant|python|lua|zcash|china|chinese|evernote|印象笔记|lynx|newsbeuter|newsboat|taskwarrior|mutt|karabiner|julia|电子科|南开|成外" yellow red bold
+highlight articlelist "成都|算法|数据|分布式|cdn|go|广告|DSP|RTB|量化|交易|加速乐|创宇|nginx|redis|openresty|quant|python|lua|zcash|china|chinese|evernote|印象笔记|lynx|newsbeuter|newsboat|taskwarrior|mutt|karabiner|julia|电子科|南开|成外|cloudflare|instapaper" yellow red bold
 ignore-article "https://www.v2ex.com/index.xml" "title =~ \"^\\[(问与答|天黑以后)\\]\""
