@@ -32,3 +32,5 @@ https://cf020031308.github.io/blog/atom.xml
 http://www.michael-noll.com/feed.xml
 https://www.soimort.org/feed.atom
 exec:~/.newsbeuter/feeds/my_discuz.sh
+https://weworkremotely.com/categories/remote-programming-jobs.rss
+exec:~/.newsbeuter/feeds/uestc.sh
