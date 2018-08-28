@@ -25,7 +25,7 @@ function login() {
 
 
 function index() {
-    http "http://${host}/forumdisplay.php?fid=41&filter=0&orderby=dateline&page=1"\
+    http "http://${host}/forumdisplay.php?fid=41&filter=0&orderby=dateline&ascdesc=DESC&page=1"\
         | xmllint --html --xpath '//table[@class="row"]//td[@class="f_title"]/a/@href' 2>&- -\
         | sed -e 's/ href="/\
 /g' -e 's/"//g'\
