@@ -38,6 +38,7 @@ def space(s, code='utf8'):
     return s
 
 
+# https://github.com/soimort/translate-shell
 status, zh = commands.getstatusoutput(
     'trans :zh -no-auto file://%s' % os.path.realpath(sys.argv[1]))
 assert status == 0, zh
