@@ -1,3 +1,5 @@
+![](https://projecteuler.net/profile/cf020031308.png)
+
 # Project Euler
 
 This is a collection of my solution to [https://projecteuler.net/ ](https://projecteuler.net/). Visit the site and try to solve the problems before viewing this directory.
