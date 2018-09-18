@@ -31,3 +31,8 @@ A collection of my personal knowledge, and tools to manage it.
     + [anki-import-note](./bin/anki-import-note)
 * [fortune](https://en.wikipedia.org/wiki/Fortune_%28Unix%29)
     + [fortune-index](./bin/fortune-index)
+
+## Third Party Tools
+
+- [html2text.py](https://github.com/aaronsw/html2text)
+- [translate-shell](https://github.com/soimort/translate-shell)
