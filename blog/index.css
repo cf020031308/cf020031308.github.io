@@ -2,13 +2,28 @@
     font-family: Helvetica, Arial, Sans-serif;
 }
 
-
-@media (max-width: 6000px) {
-    nav {
-        display: none
-    }
+body {
+    display: flex;
+    flex-flow: row wrap;
 }
 
+header {
+    order: 0;
+    flex: 0 1 100%;
+}
+
+nav {
+    order: 1;
+}
+
+main {
+    order: 1;
+}
+
+footer {
+    order: 2;
+    flex: 0 1 100%;
+}
 
 article {
     padding: 5px 10px 5px 10px;
