@@ -1,41 +1,49 @@
 double findMedianSortedArrays(int* nums1, int nums1Size, int* nums2, int nums2Size) {
-    int left1 = 0, right1 = nums1Size - 1;
-    int left2 = 0, right2 = nums2Size - 1;
-    int mid1, mid2;
-    
-    int odd = (nums1Size + nums2Size) % 2 == 1;
+    // Swap the two arrays to make 1 stands for the shorter one.
+    int size, *nums;
     if (nums1Size > nums2Size) {
-        left1 = (nums1Size - nums2Size) / 2;
-        right1 -= left1;
-        if (nums2Size == 0) return (nums1[left1] + nums1[right1]) / 2.0;
-        if (odd) right1 -= 1;
-    } else {
-        left2 = (nums2Size - nums1Size) / 2;
-        right2 -= left2;
-        if (nums1Size == 0) return (nums2[left2] + nums2[right2]) / 2.0;
-        if (odd) right2 -= 1;
+        size = nums1Size;
+        nums1Size = nums2Size;
+        nums2Size = size;
+        nums = nums1;
+        nums1 = nums2;
+        nums2 = nums;
     }
-    
-    while (left1 != right1 || left2 != right2) {
-        mid1 = (left1 + right1 + 1) / 2;
-        mid2 = (left2 + right2 + 1) / 2;
-        if (nums1[mid1] < nums2[mid2]) {
-            left1 = (left1 + right1) / 2;
-            right2 = mid2;
-        } else {
-            right1 = mid1;
-            left2 = (left2 + right2) / 2;
-        }
+
+    // Binary search for the point in array one
+    // and the corresponding point in array two
+    // which divide the two arrays into two parts
+    // with the same amount of elements
+    int left = 0, right = nums1Size;
+    int half = (nums1Size + nums2Size + 1) / 2;
+    int mid1, mid2;
+    while (left <= right) {
+        mid1 = (left + right) / 2;
+        mid2 = half - mid1;
+        if (mid1 < nums1Size && nums1[mid1] < nums2[mid2 - 1])
+            left = mid1 + 1;
+        else if (mid1 > 0 && nums1[mid1 - 1] > nums2[mid2])
+            right = mid1 - 1;
+        else
+            break;
     }
-    
-    if (nums1[left1] < nums2[left2]) {
-        if (odd) return nums2[left2];
-        if (left1 < nums1Size - 1 && nums1[left1 + 1] < nums2[left2])
-            return (nums1[left1] + nums1[left1 + 1]) / 2.0;
-    } else {
-        if (odd) return nums1[left1];
-        if (left2 < nums2Size - 1 && nums2[left2 + 1] < nums1[left1])
-            return (nums2[left2] + nums2[left2 + 1]) / 2.0;
-    }
-    return (nums1[left1] + nums2[left2]) / 2.0;
+
+    // Calculate the median
+    int left_max;
+    if (mid1 == 0)
+        left_max = nums2[mid2 - 1];
+    else if (mid2 == 0 || nums1[mid1 - 1] > nums2[mid2 - 1])
+        left_max = nums1[mid1 - 1];
+    else
+        left_max = nums2[mid2 - 1];
+    if ((nums1Size + nums2Size) % 2 == 1)
+        return left_max;
+    int right_min;
+    if (mid1 == nums1Size)
+        right_min = nums2[mid2];
+    else if (mid2 == nums2Size || nums1[mid1] < nums2[mid2])
+        right_min = nums1[mid1];
+    else
+        right_min = nums2[mid2];
+    return (left_max + right_min) / 2.0;
 }
