@@ -10,9 +10,10 @@ https://taskwarrior.org/feed.rss
 https://dev.mutt.org/hg/mutt/rss-log
 https://github.com/cf020031308.private.atom?token=AFBL-B3t8c2ZtV_Qnd9zZGzZ1uM_QSwDks64RdRJwA==
 exec:~/.newsbeuter/feeds/poloniex.sh
-https://www.v2ex.com/index.xml
+https://rsshub.app/v2ex/topics/hot
 https://www.zhihu.com/rss
 https://sspai.com/feed
+https://rsshub.app/sspai/matrix
 http://www.toodaylab.com/feed
 https://newsboat.org/news.atom
 http://imapfw.offlineimap.org/feed.xml
