@@ -35,3 +35,4 @@ https://www.soimort.org/feed.atom
 exec:~/.newsbeuter/feeds/my_discuz.sh
 https://weworkremotely.com/categories/remote-programming-jobs.rss
 exec:~/.newsbeuter/feeds/uestc.sh
+http://rsshub.app/toutiao/today
