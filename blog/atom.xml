@@ -25,11 +25,11 @@
 
     <entry>
         <title>【译】Redis Lua 脚本：修复了一些安全漏洞</title>
-        <link href="https://github.com/cf020031308/cf020031308.github.io/blob/master/translations/Redis-Lua-Scripting-Several-Security-Vulnerabilities-fixed-CN.md" />
+        <link href="https://github.com/cf020031308/cf020031308.github.io/blob/master/articles/Redis-Lua-Scripting-Several-Security-Vulnerabilities-fixed-CN.md" />
         <id> DF2AC9A3-04E3-4E1B-827F-9E2192EB3C47 </id>
         <published> 2018-06-20T06:00:19Z </published>
         <summary><![CDATA[原文 http://antirez.com/news/119]]></summary>
-        <content src="https://raw.githubusercontent.com/cf020031308/cf020031308.github.io/master/translations/Redis-Lua-Scripting-Several-Security-Vulnerabilities-fixed-CN.md"></content>
+        <content src="https://raw.githubusercontent.com/cf020031308/cf020031308.github.io/master/articles/Redis-Lua-Scripting-Several-Security-Vulnerabilities-fixed-CN.md"></content>
     </entry>
 
     <entry>

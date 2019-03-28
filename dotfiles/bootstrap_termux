@@ -1,0 +1,7 @@
+apt update && apt upgrade && apt install openssh git newsboat tmux jq vim lynx python python2 libxml-utils zsh termux-api 
+chsh # change login shell to zsh
+termux-setup-storage
+mkdir ~/workplace && cd ~/workplace
+git clone git@github.com:cf020031308/cf020031308.github.io.git && cd cf020031308.github.io && git clone git@github.com:cf020031308/cf020031308.github.io.wiki.git wiki
+mkdir -p ~/.shortcuts/tasks
+ln -s `which newsboat` ~/.shortcuts/

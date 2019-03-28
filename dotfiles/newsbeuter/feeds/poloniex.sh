@@ -1,4 +1,4 @@
-#!/bin/sh -
+#!/bin/bash -
 
 watch_list='{BTC_ETH, BTC_ZEC, BTC_XMR, USDT_BTC, USDT_ETH, USDT_ZEC, USDT_ETC, USDT_XMR}'
 api="https://poloniex.com/public?command=returnTicker"

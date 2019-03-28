@@ -1,3 +1,4 @@
+#!/bin/bash
 for dst in news{beuter,boat}
 do mv ~/.$dst ~/.$dst.bak
 ln -sf $PWD ~/.$dst

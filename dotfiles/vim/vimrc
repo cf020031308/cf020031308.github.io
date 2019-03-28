@@ -32,7 +32,7 @@ Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'fisadev/vim-isort'
 
 " go:
-" Plugin 'fatih/vim-go'
+Plugin 'fatih/vim-go'
 
 " markdown
 Plugin 'godlygeek/tabular'

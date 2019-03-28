@@ -1,4 +1,4 @@
-#!/bin/sh -
+#!/bin/bash -
 
 utctime=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 tpl=$(cat <<AWK
@@ -21,5 +21,5 @@ BEGIN{print "\
 END{prnit "</feed>"}
 AWK
 )
-curl "http://yz.uestc.edu.cn/shuoshizhaosheng/" 2>&- | xmllint 2>&- --html --xpath '//div[@id="mcontent"]//table[@class="box"][1]//li/a/@*' - | sed 's/ href="/\
+curl "https://yz.uestc.edu.cn/shuoshizhaosheng/" 2>&- | xmllint 2>&- --html --xpath '//div[@id="mcontent"]//table[@class="box"][1]//li/a/@*' - | sed 's/ href="/\
 /g' | sed -e '1d' -e 's/" title="/ /' -e 's/"$//' | awk "$tpl"

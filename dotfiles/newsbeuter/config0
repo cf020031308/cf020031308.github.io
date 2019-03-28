@@ -12,13 +12,11 @@ articlelist-format "%D    %t"
 
 bookmark-cmd "~/.newsbeuter/bookmark.sh"
 bookmark-autopilot yes
-save-path "~/workplace/roy.log/wiki"
+save-path "~/workplace/cf020031308.github.io/wiki"
 
-browser "lynx -accept_all_cookies -cookie_file=/tmp/nsb_cookie -cookie_save_file=/tmp/nsb_cookie %u"
-macro o set browser "open %u" ; open-in-browser ; set browser "lynx -accept_all_cookies -cookie_file=/tmp/nsb_cookie -cookie_save_file=/tmp/nsb_cookie %u"
-macro O set browser "open %u" ; open-in-browser-and-mark-read ; set browser "lynx -accept_all_cookies -cookie_file=/tmp/nsb_cookie -cookie_save_file=/tmp/nsb_cookie %u"
-
-# macro q set bookmark-cmd "~/.newsbeuter/send-unread-to-instapaper.sh" ; bookmark ; mark-all-feeds-read ; hard-quit
+browser "lynx -accept_all_cookies -cookie_file=$PREFIX/tmp/nsb_cookie -cookie_save_file=$PREFIX/tmp/nsb_cookie %u"
+macro o set browser "open %u" ; open-in-browser ; set browser "lynx -accept_all_cookies -cookie_file=$PREFIX/tmp/nsb_cookie -cookie_save_file=$PREFIX/tmp/nsb_cookie %u"
+macro O set browser "open %u" ; open-in-browser-and-mark-read ; set browser "lynx -accept_all_cookies -cookie_file=$PREFIX/tmp/nsb_cookie -cookie_save_file=$PREFIX/tmp/nsb_cookie %u"
 
 bind-key j down
 bind-key k up

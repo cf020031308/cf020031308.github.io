@@ -1,4 +1,4 @@
-#!/bin/sh -
+#!/bin/bash -
 
 host="https://news.ycombinator.com"
 utctime=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
