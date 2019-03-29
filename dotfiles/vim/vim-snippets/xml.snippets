@@ -1,9 +1,10 @@
 snippet atom
 	<entry>
 		<title>${1:Untitled}</title>
-		<link href="https://github.com/cf020031308/roy.log/blob/master/${2:}" />
+		<link href="https://github.com/cf020031308/cf020031308.github.io/blob/master/${2:}" />
 		<id> `system("uuidgen")` </id>
 		<published> `system("date -u +'%Y-%m-%dT%H:%M:%SZ'")` </published>
-		<summary><![CDATA[${3:}]]></summary>
-		<content src="https://raw.githubusercontent.com/cf020031308/roy.log/master/${4:}"></content>
+		<thumbnail src="${3:}"><thumbnail>
+		<summary><![CDATA[${4:}]]></summary>
+		<comment href="https://github.com/cf020031308/cf020031308.github.io/issues/${5:}" />
 	</entry>

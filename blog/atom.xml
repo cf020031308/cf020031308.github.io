@@ -6,6 +6,7 @@
     <icon> https://avatars3.githubusercontent.com/u/5262328?s=16&amp;v=4 </icon>
     <link rel="alternate" href="https://cf020031308.github.io/" />
     <link rel="related" href="https://github.io/cf020031308" />
+    <link rel="repo" href="https://github.io/cf020031308/cf020031308.github.io" />
     <link rel="self" href="atom.xml" />
     <link rel="enclosure" href="previous.xml" />
     <author>
@@ -29,7 +30,6 @@
         <id> DF2AC9A3-04E3-4E1B-827F-9E2192EB3C47 </id>
         <published> 2018-06-20T06:00:19Z </published>
         <summary><![CDATA[原文 http://antirez.com/news/119]]></summary>
-        <content src="https://raw.githubusercontent.com/cf020031308/cf020031308.github.io/master/articles/Redis-Lua-Scripting-Several-Security-Vulnerabilities-fixed-CN.md"></content>
     </entry>
 
     <entry>
@@ -46,7 +46,6 @@
         <id> BBB33AF5-CB0B-421B-AD7D-934501C990BD </id>
         <published> 2017-10-09T10:04:01Z </published>
         <summary><![CDATA[Blockchain = block + chain + concensus. Without concensus it is no difference with git something.]]></summary>
-        <content src="https://raw.githubusercontent.com/cf020031308/cf020031308.github.io/master/articles/git-chain.md"></content>
     </entry>
 
     <entry>
@@ -55,7 +54,6 @@
         <id> 8A7C792B-D5EF-4C70-984B-14A588BC8DFE </id>
         <published> 2017-10-09T10:06:45Z </published>
         <summary><![CDATA[Here are three ways to speed up the pipeline of redis when you doing massive insertions with redis-py, a library of python.]]></summary>
-        <content src="https://raw.githubusercontent.com/cf020031308/cf020031308.github.io/master/articles/speedup-redispy-pipeline.md"></content>
     </entry>
 
     <entry>
@@ -64,7 +62,6 @@
         <id> B1D75F81-CAC4-4C51-ABCE-0406C76E83FC </id>
         <published> 2017-10-17T10:03:00Z </published>
         <summary><![CDATA[Put as more things into containers and clouds as possible.]]></summary>
-        <content src="https://raw.githubusercontent.com/cf020031308/cf020031308.github.io/master/articles/workplace-refactory.md"></content>
     </entry>
 
 </feed>

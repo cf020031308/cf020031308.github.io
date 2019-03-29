@@ -14,11 +14,11 @@
     <h2> $subtitle </h2>
 </header>
 <nav>
-    <section>
+    <!--section>
         <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal" data-theme="dark" data-vanity="cf020031308">
             <a class="LI-simple-link" href='https://cn.linkedin.com/in/cf020031308?trk=profile-badge'>Roy</a>
         </div>
-    </section>
+    </section-->
 </nav>
 <main>
     <h3> Recent Articles </h3>
@@ -32,15 +32,27 @@
             minute: "2-digit",
         });
     }
+    var repo;
+    for (var i = 0; i < link.length; i++) {
+        if (link[i].rel == "repo") {
+            repo = link[i].href;
+            break;
+        }
+   }
     for (var i = 0; i < entry.length; i++) with(entry[i]) {
         <article id="$id">
             <h4><a target="_blank" href="$link.href"> $title </a></h4>
             <time datetime="$published" pubdate="pubdate"> $formatDate(published) </time>
-            <!--div><a href="/TODO"> Comment </a></div-->
-            if (entry[i].content && content.src) {
-                <blockquote cite="$content.src"> $summary </blockquote>
-            } else {
-                <blockquote> $summary </blockquote>
+            <div>
+                if (entry[i].thumbnail && thumbnail.src) {
+                    <img class="thumbnail" src="$thumbnail.src" alt="$thumbnail"></img>
+                }
+            </div>
+            <blockquote> $summary </blockquote>
+            if (entry[i].comment) {
+                <a target="_blank" href="$comment.href"> Comment </a>
+            } else if (repo) {
+                <a target="_blank" href="$repo/issues/new"> Comment </a>
             }
         </article>
     }
@@ -63,6 +75,6 @@
         }
     }
 </script>
-<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+<!--script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script-->
 </body>
 </html>
