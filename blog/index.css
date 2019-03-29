@@ -10,6 +10,7 @@ body {
 header {
     order: 0;
     flex: 0 1 100%;
+    border-bottom: 1px solid black;
 }
 
 nav {
@@ -28,8 +29,5 @@ footer {
 article {
     padding: 5px 10px 5px 10px;
     margin: 5px 10px 5px 10px;
-}
-
-article img {
-    height: 150px;
+    border-bottom: 1px dashed gray;
 }

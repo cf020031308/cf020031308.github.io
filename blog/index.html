@@ -8,20 +8,26 @@
     </template>
 </head>
 <body>
+    <center id="js_required">
+        <p> Welcome to my Blog </p>
+        <p> This page is only functional for browsers which support javascript. </p>
+        <p> But without it you can still <a href="/blog/atom.xml"> Subscribe the Atom feed</a>. </p>
+    </center>
 <template>
 <header>
-    <h1> $title </h1>
-    <h2> $subtitle </h2>
+    <h1> $subtitle </h1>
+    var repo;
+    for (var i = 0; i < link.length; i++) {
+        if (link[i].rel == "repo") {
+            repo = link[i].href;
+            break;
+        }
+    }
+    <p><a target="_blank" href="$repo/issues/new"> Comment </a></p>
 </header>
 <nav>
-    <!--section>
-        <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal" data-theme="dark" data-vanity="cf020031308">
-            <a class="LI-simple-link" href='https://cn.linkedin.com/in/cf020031308?trk=profile-badge'>Roy</a>
-        </div>
-    </section-->
 </nav>
 <main>
-    <h3> Recent Articles </h3>
     var formatDate = function(d) {
         return new Date(d).toLocaleString({}, {
             year: "numeric",
@@ -32,27 +38,13 @@
             minute: "2-digit",
         });
     }
-    var repo;
-    for (var i = 0; i < link.length; i++) {
-        if (link[i].rel == "repo") {
-            repo = link[i].href;
-            break;
-        }
-   }
     for (var i = 0; i < entry.length; i++) with(entry[i]) {
         <article id="$id">
             <h4><a target="_blank" href="$link.href"> $title </a></h4>
             <time datetime="$published" pubdate="pubdate"> $formatDate(published) </time>
-            <div>
-                if (entry[i].thumbnail && thumbnail.src) {
-                    <img class="thumbnail" src="$thumbnail.src" alt="$thumbnail"></img>
-                }
-            </div>
             <blockquote> $summary </blockquote>
             if (entry[i].comment) {
                 <a target="_blank" href="$comment.href"> Comment </a>
-            } else if (repo) {
-                <a target="_blank" href="$repo/issues/new"> Comment </a>
             }
         </article>
     }
@@ -74,7 +66,9 @@
             tplEl.outerHTML = Template(decode_entity(tplEl.innerHTML))(data);
         }
     }
+
+    var el = document.getElementById("js_required");
+    el.parentNode.removeChild(el);
 </script>
-<!--script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script-->
 </body>
 </html>
