@@ -16,14 +16,7 @@
 <template>
 <header>
     <h1> $subtitle </h1>
-    var repo;
-    for (var i = 0; i < link.length; i++) {
-        if (link[i].rel == "repo") {
-            repo = link[i].href;
-            break;
-        }
-    }
-    <p><a target="_blank" href="$repo/issues/new"> Comment </a></p>
+    <p><a target="_blank" href="/"> About me </a></p>
 </header>
 <nav>
 </nav>
@@ -40,7 +33,7 @@
     }
     for (var i = 0; i < entry.length; i++) with(entry[i]) {
         <article id="$id">
-            <h4><a target="_blank" href="$link.href"> $title </a></h4>
+            <h3><a target="_blank" href="$link.href"> $title </a></h3>
             <time datetime="$published" pubdate="pubdate"> $formatDate(published) </time>
             <blockquote> $summary </blockquote>
             if (entry[i].comment) {
