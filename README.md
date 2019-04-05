@@ -1,9 +1,13 @@
-# Welcome to my github page.
+# cf020031308/Roy
+
+Welcome to my page
 
 ## About me
 
 - [Github](https://github.com/cf020031308)
 - [LinkedIn](https://cn.linkedin.com/in/cf020031308)
+
+Please feel free to [leave me a message](https://github.com/cf020031308/cf020031308.github.io/issues/new).
 
 ## About this page
 
@@ -17,4 +21,4 @@ Here is the place into which I publish some of my leisure works such as:
 - [Other Trifles](https://github.com/cf020031308/cf020031308.github.io)
 
 This page is hosted at Github.  
-To see the source code you can visit [https://github.com/cf020031308/cf020031308.github.io](https://github.com/cf020031308/cf020031308.github.io) and I'd be glad if you like and star it.
+To see the source code you can visit [the repo](https://github.com/cf020031308/cf020031308.github.io) and I'd be glad if you like and star it.
