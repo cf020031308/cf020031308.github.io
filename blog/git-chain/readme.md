@@ -1,6 +1,6 @@
 # That's Why I Say Git is an App on Block Chain
 
-![git.png](./_img/git-chain.png)
+![git.png](git-chain.png)
 
 I find understanding blockchain technology from `git` a good way for progammers.
 

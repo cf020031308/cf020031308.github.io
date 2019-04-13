@@ -1,13 +1,11 @@
 #!/bin/sh -
 
 workplace="$HOME/workplace"
-bin="/usr/local/bin"
+bin="$PREFIX/usr/local/bin"
 
 function install_agentDoc() {
     ln -sf "${workplace}/agentDoc/agentDoc" "$2" && ln -sf "$2" "$1"
 }
 
-install_agentDoc "${bin}/rss" "${workplace}/roy.log/docs/.xml"
-install_agentDoc "${bin}/snippets" "${workplace}/roy.log/dotfiles/vim/vim-snippets/.snippets"
-install_agentDoc "${bin}/wi" "${workplace}/roy.log.wiki/.md"
-install_agentDoc "${bin}/ki" "${workplace}/roy.log/wiki/.md"
+install_agentDoc "${bin}/atom" "${workplace}/roy.log/blog/.xml"
+install_agentDoc "${bin}/wk" "${workplace}/roy.log/wiki/.md"
