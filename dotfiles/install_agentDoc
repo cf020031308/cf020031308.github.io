@@ -1,11 +1,14 @@
 #!/bin/sh -
 
 workplace="$HOME/workplace"
-bin="$PREFIX/usr/local/bin"
-
+if [ -n "$PREFIX" ]; then
+    bin="$PREFIX/bin"
+else
+    bin="/usr/local/bin"
+fi
 function install_agentDoc() {
     ln -sf "${workplace}/agentDoc/agentDoc" "$2" && ln -sf "$2" "$1"
 }
 
-install_agentDoc "${bin}/atom" "${workplace}/roy.log/blog/.xml"
-install_agentDoc "${bin}/wk" "${workplace}/roy.log/wiki/.md"
+install_agentDoc "${bin}/atom" "${workplace}/cf020031308.github.io/blog/.xml"
+install_agentDoc "${bin}/wk" "${workplace}/cf020031308.github.io/wiki/.md"
