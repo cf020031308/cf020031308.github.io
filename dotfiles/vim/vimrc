@@ -26,10 +26,9 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
-" TODO: pip3 install flake8, isort
+" TODO: pip3 install flake8
 Plugin 'vim-syntastic/syntastic'
 Plugin 'Vimjas/vim-python-pep8-indent'
-Plugin 'fisadev/vim-isort'
 
 " go:
 Plugin 'fatih/vim-go'
@@ -50,11 +49,6 @@ Plugin 'garbas/vim-snipmate'
 
 call vundle#end()
 
-" TODO: pip3 install powerline-status
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup
-
 " let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 1
 " let g:syntastic_loc_list_height = 2
@@ -74,8 +68,6 @@ let g:user_emmet_mode = 'n'  " n for normal and a for all
 " disable emmet then enable it only for html and css
 " let g:user_emmet_install_global = 0
 " autocmd FileType html,css EmmetInstall
-" Sorting with Isort may make the script wrong so sort mannually
-" autocmd BufWritePre *.py Isort
 
 " emacs key
 inoremap <c-k> <esc>c$
