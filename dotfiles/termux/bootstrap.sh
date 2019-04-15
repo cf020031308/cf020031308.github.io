@@ -1,7 +1,7 @@
 dotpath="$HOME/workpalce/cf020031308.github.io/dotfiles/termux"
 
 # install utils
-apt update && apt upgrade && apt install openssh git newsboat tmux jq vim lynx python python2 libxml-utils zsh termux-api curl
+apt update && apt upgrade && apt install openssh git newsboat tmux jq vim lynx python python2 libxml-utils zsh termux-api curl man ossp-uuid
 
 # change login shell to zsh
 chsh
