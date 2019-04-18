@@ -63,6 +63,11 @@ url, utf8, space = {
         True,
         '+',
     ),
+    'scholar': (
+        'https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q={query}&btnG=',
+        False,
+        '+'
+    ),
 }[sys.argv[1]]
 s = space.join(sys.argv[2:])
 if utf8:
