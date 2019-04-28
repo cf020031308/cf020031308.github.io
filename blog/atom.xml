@@ -14,24 +14,6 @@
     <rights> Copyright (c) 2018-2019. All rights reserved </rights>
 
     <entry>
-        <title> 我本蝼蚁，学会了像狗般思考 </title>
-        <link href="https://github.com/cf020031308/cf020031308.github.io/blob/master/blog/thoughts-after-PMP.md" />
-        <id> 9c787156-69b5-11e9-93fa-720001f80fb0 </id>
-        <published> 2019-04-28T13:00:34Z </published>
-        <summary><![CDATA[2018 年初 PMP 考试后（有偿）投给现代卓越的文章]]></summary>
-        <comment href="https://github.com/cf020031308/cf020031308.github.io/issues/8" />
-    </entry>
-
-    <entry>
-        <title> 寿司与神的故事 </title>
-        <link href="https://github.com/cf020031308/cf020031308.github.io/blob/master/blog/a-vi-and-emacs-story.md" />
-        <id> 90c5757c-69b3-11e9-84c4-720001f80fb0 </id>
-        <published> 2019-04-28T12:45:56Z </published>
-        <summary><![CDATA[2017 年 09 月 29 日，学用 Emacs 两周后于地铁有感而发。]]></summary>
-        <comment href="https://github.com/cf020031308/cf020031308.github.io/issues/7" />
-    </entry>
-
-    <entry>
         <title>移动端大纲式写作工具初探</title>
         <link href="https://github.com/cf020031308/cf020031308.github.io/tree/master/blog/mobile-outline" />
         <id> 5A30AAAE-630C-4C17-8A4F-81BBBF0D2A2E </id>
@@ -46,6 +28,15 @@
         <id> B335780E-7DD5-4927-B5D2-52856C69B643 </id>
         <published> 2019-01-22T14:31:49Z </published>
         <summary><![CDATA[考研期间的一点经验总结，侧重于时间与知识管理。获得了少数派 2018 年度征文三等奖。]]></summary>
+    </entry>
+
+    <entry>
+        <title> 我本蝼蚁，学会了像狗般思考 </title>
+        <link href="https://github.com/cf020031308/cf020031308.github.io/blob/master/blog/thoughts-after-PMP.md" />
+        <id> 9c787156-69b5-11e9-93fa-720001f80fb0 </id>
+        <published> 2018-09-13T13:00:34Z </published>
+        <summary><![CDATA[PMP 考试后（有偿）投给现代卓越的文章]]></summary>
+        <comment href="https://github.com/cf020031308/cf020031308.github.io/issues/8" />
     </entry>
 
     <entry>
@@ -86,6 +77,15 @@
         <id> B1D75F81-CAC4-4C51-ABCE-0406C76E83FC </id>
         <published> 2017-10-17T10:03:00Z </published>
         <summary><![CDATA[Put as more things into containers and clouds as possible.]]></summary>
+    </entry>
+
+    <entry>
+        <title> 寿司与神的故事 </title>
+        <link href="https://github.com/cf020031308/cf020031308.github.io/blob/master/blog/a-vi-and-emacs-story.md" />
+        <id> 90c5757c-69b3-11e9-84c4-720001f80fb0 </id>
+        <published> 2017-09-29T12:45:56Z </published>
+        <summary><![CDATA[学用 Emacs 两周后于地铁有感而发。]]></summary>
+        <comment href="https://github.com/cf020031308/cf020031308.github.io/issues/7" />
     </entry>
 
 </feed>
