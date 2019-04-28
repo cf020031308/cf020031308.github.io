@@ -1,13 +1,14 @@
 <html>
 <head>
     <link type="application/atom+xml" rel="alternate" title="cf020031308 Atom Feed" href="atom.xml">
-    <link rel="stylesheet" href="index.css">
+    <!--link rel="stylesheet" href="index.css"-->
+    <link rel="stylesheet" href="/assets/css/style.css">
     <template>
     <link rel="icon" type="image/x-icon" href="$icon" />
     <title > $title </title>
     </template>
 </head>
-<body>
+<body class="container-lg px-3 my-5 markdown-body">
     <center id="js_required">
         <p> Welcome to my Blog. I am Roy. </p>
         <p> This page is only functional for browsers which support javascript. </p>
@@ -19,11 +20,13 @@
     </center>
 <template>
 <header>
-    <h1> $subtitle </h1>
-    <p><a target="_blank" href="atom.xml"> Subscribe </a></p>
-    <p><a target="_blank" href="/"> About me </a></p>
+    <h1> $title </h1>
 </header>
 <nav>
+    <ul>
+        <li><a target="_blank" href="atom.xml"> Subscribe </a></li>
+        <li><a target="_blank" href="/"> About me </a></li>
+    </ul>
 </nav>
 <main>
     var formatDate = function(d) {
@@ -38,7 +41,7 @@
     }
     for (var i = 0; i < entry.length; i++) with(entry[i]) {
         <article id="$id">
-            <h3><a target="_blank" href="$link.href"> $title </a></h3>
+            <h2><a target="_blank" href="$link.href"> $title </a></h2>
             <time datetime="$published" pubdate="pubdate"> $formatDate(published) </time>
             <blockquote> $summary </blockquote>
             if (entry[i].comment) {

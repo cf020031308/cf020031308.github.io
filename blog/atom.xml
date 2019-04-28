@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-    <title> cf020031308 </title>
-    <subtitle> The Blog of Roy </subtitle>
+    <title> The Blog of Roy </title>
     <icon> https://avatars3.githubusercontent.com/u/5262328?s=16&amp;v=4 </icon>
     <link rel="alternate" href="https://cf020031308.github.io/" />
     <link rel="related" href="https://github.com/cf020031308" />
