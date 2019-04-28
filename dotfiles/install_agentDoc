@@ -10,5 +10,5 @@ function install_agentDoc() {
     ln -sf "${workplace}/agentDoc/agentDoc" "$2" && ln -sf "$2" "$1"
 }
 
-install_agentDoc "${bin}/atom" "${workplace}/cf020031308.github.io/blog/.xml"
+install_agentDoc "${bin}/blog" "${workplace}/cf020031308.github.io/blog/.md"
 install_agentDoc "${bin}/wk" "${workplace}/cf020031308.github.io/wiki/.md"
