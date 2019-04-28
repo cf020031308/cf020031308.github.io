@@ -40,22 +40,6 @@
     </entry>
 
     <entry>
-        <title>【译】Redis Lua 脚本：修复了一些安全漏洞</title>
-        <link href="https://github.com/cf020031308/cf020031308.github.io/blob/master/blog/Redis-Lua-Scripting-Several-Security-Vulnerabilities-fixed-CN.md" />
-        <id> DF2AC9A3-04E3-4E1B-827F-9E2192EB3C47 </id>
-        <published> 2018-06-20T06:00:19Z </published>
-        <summary><![CDATA[原文 http://antirez.com/news/119]]></summary>
-    </entry>
-
-    <entry>
-        <title> Boogie Board: 做一块单纯并极致的电子涂鸦板 </title>
-        <link href="https://sspai.com/post/43972" />
-        <id> 1330737A-C125-4379-ACEE-C131207F889B </id>
-        <published> 2018-04-05T02:18:18Z </published>
-        <summary><![CDATA[发在少数派上介绍 Boogie Board 的文章]]></summary>
-    </entry>
-
-    <entry>
         <title> That's Why I Say Git is an App on Block Chain </title>
         <link href="https://github.com/cf020031308/cf020031308.github.io/tree/master/blog/git-chain" />
         <id> BBB33AF5-CB0B-421B-AD7D-934501C990BD </id>
