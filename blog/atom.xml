@@ -55,6 +55,7 @@
         <id> BBB33AF5-CB0B-421B-AD7D-934501C990BD </id>
         <published> 2017-10-09T10:04:01Z </published>
         <summary><![CDATA[Blockchain = block + chain + concensus. Without concensus it is no difference with git something.]]></summary>
+        <comment href="https://github.com/cf020031308/cf020031308.github.io/issues/11" />
     </entry>
 
     <entry>
@@ -63,6 +64,7 @@
         <id> 8A7C792B-D5EF-4C70-984B-14A588BC8DFE </id>
         <published> 2017-10-09T10:06:45Z </published>
         <summary><![CDATA[Here are three ways to speed up the pipeline of redis when you doing massive insertions with redis-py, a library of python.]]></summary>
+        <comment href="https://github.com/cf020031308/cf020031308.github.io/issues/12" />
     </entry>
 
     <entry>
@@ -71,6 +73,7 @@
         <id> B1D75F81-CAC4-4C51-ABCE-0406C76E83FC </id>
         <published> 2017-10-17T10:03:00Z </published>
         <summary><![CDATA[Put as more things into containers and clouds as possible.]]></summary>
+        <comment href="https://github.com/cf020031308/cf020031308.github.io/issues/13" />
     </entry>
 
     <entry>
