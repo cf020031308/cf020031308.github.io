@@ -38,6 +38,15 @@
         <summary><![CDATA[PMP 考试后（有偿）投给现代卓越的文章]]></summary>
         <comment href="https://github.com/cf020031308/cf020031308.github.io/issues/8" />
     </entry>
+    
+    <entry>
+        <title> Redis Hyperloglog Conversion </title>
+        <link href="https://github.com/cf020031308/cf020031308.github.io/blob/master/blog/redis-hyperloglog-conversion.md" />
+        <id> bb16ef04-6a2b-11e9-8fcd-1040f39883e8 </id>
+        <published> 2018-07-05T03:02:54Z </published>
+        <summary><![CDATA[Convert Hyperloglog in Redis From Sparse Representation to Dense Representation With Lua Script]]></summary>
+        <comment href="https://github.com/cf020031308/cf020031308.github.io/issues/9" />
+    </entry>
 
     <entry>
         <title> That's Why I Say Git is an App on Block Chain </title>
