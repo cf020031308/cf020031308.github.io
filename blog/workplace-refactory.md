@@ -1,6 +1,6 @@
 # Workplace Refactory
 
-> [Comment Here](https://github.com/cf020031308/cf020031308.github.io/issues/13)
+> [Comment Here](/../../issues/13)
 
 ## differentiating the workplace of yours from the workplace of your workplace's
 

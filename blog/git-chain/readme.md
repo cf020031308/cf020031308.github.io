@@ -1,6 +1,6 @@
 # That's Why I Say Git is an App on Block Chain
 
-> [Comment Here](https://github.com/cf020031308/cf020031308.github.io/issues/11)
+> [Comment Here](/../../issues/11)
 
 ![git.png](git-chain.png)
 
