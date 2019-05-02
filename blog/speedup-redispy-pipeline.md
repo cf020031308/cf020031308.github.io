@@ -1,5 +1,7 @@
 # Speedup the Pipeline in Redis-py
 
+> [Comment Here](https://github.com/cf020031308/cf020031308.github.io/issues/12)
+
 Using `pipeline`s is a way to speedup the execution of `redis` commands when you use `redis-py` library in `python` script.
 
 **But what if the `pipeline` is not able to finish commands in time either?**

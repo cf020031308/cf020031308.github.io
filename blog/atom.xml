@@ -19,7 +19,6 @@
         <id> 5A30AAAE-630C-4C17-8A4F-81BBBF0D2A2E </id>
         <published> 2019-04-13T19:03:51Z </published>
         <summary><![CDATA[如何在手机上列大纲、写文章、发博客？]]></summary>
-        <comment href="https://github.com/cf020031308/cf020031308.github.io/issues/3" />
     </entry>
 
     <entry>
@@ -28,7 +27,6 @@
         <id> B335780E-7DD5-4927-B5D2-52856C69B643 </id>
         <published> 2019-01-22T14:31:49Z </published>
         <summary><![CDATA[考研期间的一点经验总结，侧重于时间与知识管理。获得了少数派 2018 年度征文三等奖。]]></summary>
-        <comment href="https://github.com/cf020031308/cf020031308.github.io/issues/10" />
     </entry>
 
     <entry>
@@ -37,7 +35,6 @@
         <id> 9c787156-69b5-11e9-93fa-720001f80fb0 </id>
         <published> 2018-09-13T13:00:34Z </published>
         <summary><![CDATA[PMP 考试后（有偿）投给现代卓越的文章]]></summary>
-        <comment href="https://github.com/cf020031308/cf020031308.github.io/issues/8" />
     </entry>
     
     <entry>
@@ -46,7 +43,6 @@
         <id> bb16ef04-6a2b-11e9-8fcd-1040f39883e8 </id>
         <published> 2018-07-05T03:02:54Z </published>
         <summary><![CDATA[Convert Hyperloglog in Redis From Sparse Representation to Dense Representation With Lua Script]]></summary>
-        <comment href="https://github.com/cf020031308/cf020031308.github.io/issues/9" />
     </entry>
 
     <entry>
@@ -55,7 +51,6 @@
         <id> BBB33AF5-CB0B-421B-AD7D-934501C990BD </id>
         <published> 2017-10-09T10:04:01Z </published>
         <summary><![CDATA[Blockchain = block + chain + concensus. Without concensus it is no difference with git something.]]></summary>
-        <comment href="https://github.com/cf020031308/cf020031308.github.io/issues/11" />
     </entry>
 
     <entry>
@@ -64,7 +59,6 @@
         <id> 8A7C792B-D5EF-4C70-984B-14A588BC8DFE </id>
         <published> 2017-10-09T10:06:45Z </published>
         <summary><![CDATA[Here are three ways to speed up the pipeline of redis when you doing massive insertions with redis-py, a library of python.]]></summary>
-        <comment href="https://github.com/cf020031308/cf020031308.github.io/issues/12" />
     </entry>
 
     <entry>
@@ -73,7 +67,6 @@
         <id> B1D75F81-CAC4-4C51-ABCE-0406C76E83FC </id>
         <published> 2017-10-17T10:03:00Z </published>
         <summary><![CDATA[Put as more things into containers and clouds as possible.]]></summary>
-        <comment href="https://github.com/cf020031308/cf020031308.github.io/issues/13" />
     </entry>
 
     <entry>
@@ -82,7 +75,6 @@
         <id> 90c5757c-69b3-11e9-84c4-720001f80fb0 </id>
         <published> 2017-09-29T12:45:56Z </published>
         <summary><![CDATA[学用 Emacs 两周后于地铁有感而发。]]></summary>
-        <comment href="https://github.com/cf020031308/cf020031308.github.io/issues/7" />
     </entry>
 
 </feed>

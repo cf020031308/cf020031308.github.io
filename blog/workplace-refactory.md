@@ -1,5 +1,7 @@
 # Workplace Refactory
 
+> [Comment Here](https://github.com/cf020031308/cf020031308.github.io/issues/13)
+
 ## differentiating the workplace of yours from the workplace of your workplace's
 
 After several conflicts among python packages, migrations from databases to databases, and messes of staled scripts and abandoned services thrown and appearing everywhere, I finnally realize that **my workplace is nothing more than an interface interacting directly with me myself. Anything other than that belongs to the workplace of my workplace, which ought to be pluginable, isolated, and in centralized managament.**
