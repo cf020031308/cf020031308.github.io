@@ -106,4 +106,4 @@
 
 如果您对此话题有其它看法，欢迎留言给我。
 
-## [点此评论](https://github.com/cf020031308/cf020031308.github.io/issues/3)
+## [评论](https://github.com/cf020031308/cf020031308.github.io/issues/3)

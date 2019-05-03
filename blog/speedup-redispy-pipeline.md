@@ -127,4 +127,4 @@ def pipeline(self, transaction=False):
     return pp
 ```
 
-## [Comment Here](https://github.com/cf020031308/cf020031308.github.io/issues/12)
+## [Comment](https://github.com/cf020031308/cf020031308.github.io/issues/12)

@@ -33,4 +33,4 @@ PMP 是 Project Management Professional 的简称，译为“项目管理专业�
 
 此处应该有个 To be continued…
 
-## [点此评论](https://github.com/cf020031308/cf020031308.github.io/issues/8)
+## [评论](https://github.com/cf020031308/cf020031308.github.io/issues/8)

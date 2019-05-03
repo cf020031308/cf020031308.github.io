@@ -73,4 +73,4 @@ You can visit [Insights/Traffic](https://github.com/cf020031308/cf020031308.gith
 
 It is indeed not friendly to the search engines to dynamically generate the blog content by rendering the Atom feed with JS. But to cope with it is not hard. After I publish something I always contribute it to some forums or communities where people are interested to the topic of my post. And they are SEOed.
 
-## [Comment Here](https://github.com/cf020031308/cf020031308.github.io/issues/5)
+## [Comment](https://github.com/cf020031308/cf020031308.github.io/issues/5)

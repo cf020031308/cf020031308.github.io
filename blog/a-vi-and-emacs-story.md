@@ -40,4 +40,4 @@
 
 从此“神之寿司”，闻名遐迩。
 
-## [点此评论](https://github.com/cf020031308/cf020031308.github.io/issues/7)
+## [评论](https://github.com/cf020031308/cf020031308.github.io/issues/7)

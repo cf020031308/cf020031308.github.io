@@ -24,4 +24,4 @@ After identifying and migrating the components of the workplace of my workplace,
 
 *TODO*: After uploading all the `Vagrantfile`s and `docker-compose.yaml`s to cloud storages like `OneDriver` (can be encrypted with `encFS`) one can got a consistent environment on different computers (and different operating systems).
 
-## [Comment Here](https://github.com/cf020031308/cf020031308.github.io/issues/13)
+## [Comment](https://github.com/cf020031308/cf020031308.github.io/issues/13)

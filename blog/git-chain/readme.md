@@ -10,4 +10,4 @@ I find understanding blockchain technology from `git` a good way for progammers.
 
 Of course, there implements no consensus michanism and decentralized accounting/committing rights in `git`.
 
-## [Comment Here](https://github.com/cf020031308/cf020031308.github.io/issues/11)
+## [Comment](https://github.com/cf020031308/cf020031308.github.io/issues/11)
