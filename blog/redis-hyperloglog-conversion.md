@@ -1,7 +1,5 @@
 # Redis Hyperloglog Conversion
 
-> [Comment Here](https://github.com/cf020031308/cf020031308.github.io/issues/9)
-
 In `redis` if several (or simply one) `hyperloglog` datas are merged into one, the result will be displayed in dense representation which costs 12k in memory, whereas the sparse representation costs only 200 Byte on average in my DB.
 
 Here is a `Lua` script to **convert hyperloglog data represented as dense into sparse representation**.
@@ -81,3 +79,5 @@ local function hll_dense2sparse(key)
     return 1
 end
 ```
+
+## [Comment Here](https://github.com/cf020031308/cf020031308.github.io/issues/9)

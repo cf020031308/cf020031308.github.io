@@ -1,7 +1,5 @@
 # Code Less, Talk More: The Design and Implementation of my RSS-first Blog on Github
 
-> [Comment Here](https://github.com/cf020031308/cf020031308.github.io/issues/5)
-
 Recently I have done the construction of [my blog](https://cf020031308.github.io/blog/) hosted on [Github](https://github.com). While it is specially designed to fit my own needs, I tried to write as less code as possible to make it a full-featured blog by practicing my comprehension to [the unix philosophy](https://en.wikipedia.org/wiki/Unix_philosophy).
 
 ## Three common ways to host a blog on Github
@@ -74,3 +72,5 @@ You can visit [Insights/Traffic](https://github.com/cf020031308/cf020031308.gith
 ### Wait. What about the SEO?
 
 It is indeed not friendly to the search engines to dynamically generate the blog content by rendering the Atom feed with JS. But to cope with it is not hard. After I publish something I always contribute it to some forums or communities where people are interested to the topic of my post. And they are SEOed.
+
+## [Comment Here](https://github.com/cf020031308/cf020031308.github.io/issues/5)

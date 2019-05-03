@@ -1,7 +1,5 @@
 # That's Why I Say Git is an App on Block Chain
 
-> [Comment Here](https://github.com/cf020031308/cf020031308.github.io/issues/11)
-
 ![git.png](git-chain.png)
 
 I find understanding blockchain technology from `git` a good way for progammers.
@@ -11,3 +9,5 @@ I find understanding blockchain technology from `git` a good way for progammers.
 3. `git` organizes every files of a commit in the form of Merkle tree, the same as the form transactions or states organized in a block.
 
 Of course, there implements no consensus michanism and decentralized accounting/committing rights in `git`.
+
+## [Comment Here](https://github.com/cf020031308/cf020031308.github.io/issues/11)
