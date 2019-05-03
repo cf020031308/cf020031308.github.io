@@ -1,6 +1,6 @@
 # 移动端大纲式写作工具初探
 
-> [点此评论](/../../issues/3)
+> [点此评论](https://github.com/cf020031308/cf020031308.github.io/issues/3)
 
 ## 背景
 

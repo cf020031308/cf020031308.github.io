@@ -15,7 +15,7 @@
 
     <entry>
         <title>Code Less, Talk More</title>
-        <link href="https://github.com/cf020031308/cf020031308.github.io/blob/master/blog/design-and-implementation-of-my-blog/readme.md" />
+        <link href="design-and-implementation-of-my-blog" />
         <id> 78383dbe-6d05-11e9-a420-6f319cbf8700 </id>
         <published> 2019-05-02T18:09:47Z </published>
         <summary><![CDATA[The Design and Implementation of my RSS-first Blog on Github]]></summary>
@@ -23,7 +23,7 @@
 
     <entry>
         <title>移动端大纲式写作工具初探</title>
-        <link href="https://github.com/cf020031308/cf020031308.github.io/blob/master/blog/mobile-outline/readme.md" />
+        <link href="mobile-outline" />
         <id> 5A30AAAE-630C-4C17-8A4F-81BBBF0D2A2E </id>
         <published> 2019-04-13T19:03:51Z </published>
         <summary><![CDATA[如何在手机上列大纲、写文章、发博客？]]></summary>
@@ -31,7 +31,7 @@
 
     <entry>
         <title>脱产求学后，我用手机做完个人管理 | 2018 与我的重构</title>
-        <link href="https://github.com/cf020031308/cf020031308.github.io/blob/master/blog/mobile-management/readme.md" />
+        <link href="mobile-management" />
         <id> B335780E-7DD5-4927-B5D2-52856C69B643 </id>
         <published> 2019-01-22T14:31:49Z </published>
         <summary><![CDATA[考研期间的一点经验总结，侧重于时间与知识管理。获得了少数派 2018 年度征文三等奖。]]></summary>
@@ -39,7 +39,7 @@
 
     <entry>
         <title> 我本蝼蚁，学会了像狗般思考 </title>
-        <link href="https://github.com/cf020031308/cf020031308.github.io/blob/master/blog/thoughts-after-PMP.md" />
+        <link href="thoughts-after-PMP" />
         <id> 9c787156-69b5-11e9-93fa-720001f80fb0 </id>
         <published> 2018-09-13T13:00:34Z </published>
         <summary><![CDATA[PMP 考试后（有偿）投给现代卓越的文章]]></summary>
@@ -47,7 +47,7 @@
     
     <entry>
         <title> Redis Hyperloglog Conversion </title>
-        <link href="https://github.com/cf020031308/cf020031308.github.io/blob/master/blog/redis-hyperloglog-conversion.md" />
+        <link href="redis-hyperloglog-conversion" />
         <id> bb16ef04-6a2b-11e9-8fcd-1040f39883e8 </id>
         <published> 2018-07-05T03:02:54Z </published>
         <summary><![CDATA[Convert Hyperloglog in Redis From Sparse Representation to Dense Representation With Lua Script]]></summary>
@@ -55,7 +55,7 @@
 
     <entry>
         <title> That's Why I Say Git is an App on Block Chain </title>
-        <link href="https://github.com/cf020031308/cf020031308.github.io/blob/master/blog/git-chain/readme.md" />
+        <link href="git-chain" />
         <id> BBB33AF5-CB0B-421B-AD7D-934501C990BD </id>
         <published> 2017-10-09T10:04:01Z </published>
         <summary><![CDATA[Blockchain = block + chain + concensus. Without concensus it is no difference with git something.]]></summary>
@@ -63,7 +63,7 @@
 
     <entry>
         <title> Speed Up the Pipeline in Redis-py </title>
-        <link href="https://github.com/cf020031308/cf020031308.github.io/blob/master/blog/speedup-redispy-pipeline.md" />
+        <link href="speedup-redispy-pipeline" />
         <id> 8A7C792B-D5EF-4C70-984B-14A588BC8DFE </id>
         <published> 2017-10-09T10:06:45Z </published>
         <summary><![CDATA[Here are three ways to speed up the pipeline of redis when you doing massive insertions with redis-py, a library of python.]]></summary>
@@ -71,7 +71,7 @@
 
     <entry>
         <title> Workplace Refactory </title>
-        <link href="https://github.com/cf020031308/cf020031308.github.io/blob/master/blog/workplace-refactory.md" />
+        <link href="workplace-refactory" />
         <id> B1D75F81-CAC4-4C51-ABCE-0406C76E83FC </id>
         <published> 2017-10-17T10:03:00Z </published>
         <summary><![CDATA[Put as more things into containers and clouds as possible.]]></summary>
@@ -79,7 +79,7 @@
 
     <entry>
         <title> 寿司与神的故事 </title>
-        <link href="https://github.com/cf020031308/cf020031308.github.io/blob/master/blog/a-vi-and-emacs-story.md" />
+        <link href="a-vi-and-emacs-story" />
         <id> 90c5757c-69b3-11e9-84c4-720001f80fb0 </id>
         <published> 2017-09-29T12:45:56Z </published>
         <summary><![CDATA[学用 Emacs 两周后于地铁有感而发。]]></summary>

@@ -1,6 +1,6 @@
 # Code Less, Talk More: The Design and Implementation of my RSS-first Blog on Github
 
-> [Comment Here](/../../issues/5)
+> [Comment Here](https://github.com/cf020031308/cf020031308.github.io/issues/5)
 
 Recently I have done the construction of [my blog](https://cf020031308.github.io/blog/) hosted on [Github](https://github.com). While it is specially designed to fit my own needs, I tried to write as less code as possible to make it a full-featured blog by practicing my comprehension to [the unix philosophy](https://en.wikipedia.org/wiki/Unix_philosophy).
 
@@ -30,7 +30,7 @@ It is said that programmers are always enthusiastic to reinvent a new wheel, but
 But my idea is that since Github has already provided lots of useful features, you don't really have to reinvent yet another vehicle, but to find your own missing wheels. So let's have a look at what Github has already provided.
 
 1. [Markdown](https://guides.github.com/features/mastering-markdown/). Github loves Markdown. You can almost write any documents of yours in markdown on any place at Github and they'd be prettily rendered. Luckily, I love Markdown, too.
-2. [Github Pages](https://pages.github.com). With Github Pages you can serve your static pages on Github. Here it is a small tip which I will use later: when there's no `index.html` found in the repo, `readme.md` would be rendered and used as the index page.
+2. [Github Pages](https://pages.github.com). With Github Pages you can serve your static pages on Github. Here it is a small tip which I will use later: when page such as `foo` is visited but there's no file `foo` found in the repo, `foo.md` would be rendered and used as the page. Specially, `readme.md` would be used when the missing `index.html` is visited.
 3. [Github Issues](https://help.github.com/en/articles/about-issues) & [Github Projects](https://help.github.com/en/articles/about-project-boards). You can track your tasks with Github Issues and arrange them in kanban through Github Projects. And Github Issues is also the best way for developers to communicate at Github.
 4. [Github Wiki](https://help.github.com/en/articles/about-wikis). Every repo can have a wiki, which is in fact a special git repo. All the document files (such as markdown) will be rendered and displayed on the Wiki page. The good thing is that without being mentioned, no one will watch it, and no one will even notice it.
 5. Traffic. In the Insights, there's a section called 'Traffic' where you can see PV, UV and the hottest pages of the repo.

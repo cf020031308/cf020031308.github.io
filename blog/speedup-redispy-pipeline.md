@@ -1,6 +1,6 @@
 # Speedup the Pipeline in Redis-py
 
-> [Comment Here](/../../issues/12)
+> [Comment Here](https://github.com/cf020031308/cf020031308.github.io/issues/12)
 
 Using `pipeline`s is a way to speedup the execution of `redis` commands when you use `redis-py` library in `python` script.
 
