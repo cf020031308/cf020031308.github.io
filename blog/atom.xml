@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="https://cf020031308.github.io/blog/">
 
     <title> The Blog of Roy </title>
     <icon> https://avatars3.githubusercontent.com/u/5262328?s=16&amp;v=4 </icon>
