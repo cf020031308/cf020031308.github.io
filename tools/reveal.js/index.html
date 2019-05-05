@@ -33,7 +33,8 @@
 		</div>
         <script>
             var fp = location.search.substr(1) || "readme.md";
-            document.getElementById("markdown-section").setAttribute("data-markdown", fp);
+            var md = document.getElementById("markdown-section");
+            md.setAttribute("data-markdown", fp);
         </script>
 
 		<script src="js/reveal.js"></script>
@@ -55,6 +56,9 @@
                 base.setAttribute("href", fp.split("/").slice(0, -1).join("/") + "/");
                 document.head.appendChild(base);
             }
+            var ref = document.createElement("section");
+            ref.innerHTML = '<h2><a href="' + fp.split("/").slice(-1).join("/") + '"> View the Source File </a></h2>';
+            md.parentNode.appendChild(ref);
 		</script>
 	</body>
 </html>
