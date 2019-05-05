@@ -26,13 +26,14 @@
 		<div class="reveal">
 			<div class="slides">
                 <section id="markdown-section"
-                         data-separator="^(\r?\n){3}"
-                         data-separator-vertical="^(\r?\n){2}">
+                         data-separator="^\r?\n#|^(\r?\n){3}|\r?\n---\r?\n"
+                         data-separator-vertical="^(\r?\n){2}|\r?\n___\r?\n">
                 </section>
 			</div>
 		</div>
         <script>
-            document.getElementById("markdown-section").setAttribute("data-markdown", location.search.substr(1) || "readme.md");
+            var fp = location.search.substr(1) || "readme.md";
+            document.getElementById("markdown-section").setAttribute("data-markdown", fp);
         </script>
 
 		<script src="js/reveal.js"></script>
@@ -49,6 +50,11 @@
 					{ src: 'plugin/highlight/highlight.js', async: true }
 				]
 			});
+            if (fp.indexOf("/") > -1) {
+                var base = document.createElement("base");
+                base.setAttribute("href", fp.split("/").slice(0, -1).join("/") + "/");
+                document.head.appendChild(base);
+            }
 		</script>
 	</body>
 </html>
