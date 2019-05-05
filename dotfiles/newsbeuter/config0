@@ -4,7 +4,7 @@ max-items 0
 download-retries 5
 download-timeout 90
 external-url-viewer "urlview"
-keep-articles-days 90
+keep-articles-days 365
 prepopulate-query-feeds yes
 refresh-on-startup yes
 reload-threads 5

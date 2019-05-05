@@ -32,9 +32,8 @@ https://www.economist.com/feeds/print-sections/79/finance-and-economics.xml
 https://cf020031308.github.io/blog/atom.xml
 http://www.michael-noll.com/feed.xml
 https://www.soimort.org/feed.atom
-exec:~/.newsbeuter/feeds/my_discuz.sh
-https://weworkremotely.com/categories/remote-programming-jobs.rss
-exec:~/.newsbeuter/feeds/uestc.sh
+exec:~/.newsbeuter/feeds/uestc_yz.sh
+exec:~/.newsbeuter/feeds/uestc_news.sh
 http://rsshub.app/toutiao/today
 https://www.scs.cmu.edu/feed/rss.xml
 https://www.ml.cmu.edu/cmsint/mldcmu.rss
