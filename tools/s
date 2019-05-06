@@ -68,6 +68,11 @@ url, utf8, space = {
         False,
         '+'
     ),
+    'sspai': (
+        'https://sspai.com/search/article?q={query}',
+        True,
+        ' '
+    ),
 }[sys.argv[1]]
 s = space.join(sys.argv[2:])
 if utf8:
