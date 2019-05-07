@@ -21,6 +21,8 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+
+        <style> .reveal .slides { text-align: left } </style>
 	</head>
 	<body>
 		<div class="reveal">
@@ -35,29 +37,30 @@
             var fp = location.search.substr(1) || "readme.md";
             var md = document.getElementById("markdown-section");
             md.setAttribute("data-markdown", fp);
-        </script>
 
-		<script src="js/reveal.js"></script>
-
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
+            var configs = {
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
 					{ src: 'plugin/highlight/highlight.js', async: true }
-				]
-			});
+				],
+                markdown: {
+                    gfm: true,
+                }
+			};
             if (fp.indexOf("/") > -1) {
-                var base = document.createElement("base");
-                base.setAttribute("href", fp.split("/").slice(0, -1).join("/") + "/");
-                document.head.appendChild(base);
+                configs.markdown.baseUrl = fp.split("/").slice(0, -1).join("/") + "/";
             }
+        </script>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			Reveal.initialize(configs);
             var ref = document.createElement("section");
-            ref.innerHTML = '<h2><a href="' + fp.split("/").slice(-1).join("/") + '"> View the Source File </a></h2>';
+            ref.setAttribute("data-markdown", "");
+            ref.innerHTML = '## [View the Source File](' + fp.split("/").slice(-1).join("/") + ')';
             md.parentNode.appendChild(ref);
 		</script>
 	</body>
