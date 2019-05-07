@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title> Presented by Roy </title>
+
+		<link rel="stylesheet" href="https://cdn.bootcss.com/reveal.js/3.8.0/css/reset.min.css">
+		<link rel="stylesheet" href="https://cdn.bootcss.com/reveal.js/3.8.0/css/reveal.min.css">
+		<link rel="stylesheet" href="https://cdn.bootcss.com/reveal.js/3.8.0/css/theme/black.min.css">
+		<link rel="stylesheet" href="https://cdn.bootcss.com/reveal.js/3.8.0/lib/css/monokai.min.css">
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'https://cdn.bootcss.com/reveal.js/3.8.0/css/print/pdf.min.css' : 'https://cdn.bootcss.com/reveal.js/3.8.0/css/print/paper.min.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+        <style> .reveal .slides { text-align: left } </style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+                <section id="markdown-section"
+                         data-markdown=""
+                         data-separator="^\r?\n#|^(\r?\n){3}|\r?\n---\r?\n"
+                         data-separator-vertical="^(\r?\n){2}|\r?\n___\r?\n">
+                    <textarea data-template>
+# About this
+
+This is a tool to convert online markdown file into slides if you place the URL at the search part like this:
+
+[https://cf020031308.github.io/tools/reveal.html?/blog/readme.md](?/blog/readme.md)
+
+To see more please visit [reveal.js](https://github.com/hakimel/reveal.js).
+                    </textarea>
+                </section>
+			</div>
+		</div>
+		<script src="https://cdn.bootcss.com/reveal.js/3.8.0/js/reveal.min.js"></script>
+        <script>
+            var configs = {
+				dependencies: [
+					{ src: 'https://cdn.bootcss.com/reveal.js/3.8.0/plugin/markdown/marked.js' },
+					{ src: 'https://cdn.bootcss.com/reveal.js/3.8.0/plugin/markdown/markdown.min.js' },
+					{ src: 'https://cdn.bootcss.com/reveal.js/3.8.0/plugin/notes/notes.min.js', async: true },
+					{ src: 'https://cdn.bootcss.com/reveal.js/3.8.0/plugin/highlight/highlight.min.js', async: true }
+				],
+                markdown: {
+                    gfm: true,
+                }
+			};
+
+            var fp = location.search.substr(1);
+            if (fp) {
+                if (fp.indexOf("//") == -1) {
+                    if (fp[0] == "/") {
+                        fp = location.href.split("/").slice(0, 3).join("/") + fp;
+                    } else {
+                        fp = location.href.split("?")[0].split("/").slice(0, -1).join("/") + "/" + fp;
+                    }
+                }
+
+                var md = document.getElementById("markdown-section");
+                md.setAttribute("data-markdown", fp);
+
+                var ref = document.createElement("section");
+                ref.setAttribute("data-markdown", "");
+                ref.innerHTML = '## [View the Source File](' + fp + ')';
+                md.parentNode.appendChild(ref);
+
+                configs.markdown.baseUrl = fp.split("/").slice(0, -1).join("/") + "/";
+            }
+
+			Reveal.initialize(configs);
+		</script>
+	</body>
+</html>
