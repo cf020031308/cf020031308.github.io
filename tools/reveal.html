@@ -28,13 +28,28 @@
                          data-separator="^\r?\n#|^(\r?\n){3}|\r?\n---\r?\n"
                          data-separator-vertical="^(\r?\n){2}|\r?\n___\r?\n">
                     <textarea data-template>
-# About this
+# About
 
-This is a tool to convert online markdown file into slides if you place the URL at the search part like this:
+This is a tool based on [reveal.js](https://github.com/hakimel/reveal.js) to convert online markdown files into slides if you place the URL (whether absolute or relative)  at the search part like this:
 
-[https://cf020031308.github.io/tools/reveal.html?/blog/readme.md](?/blog/readme.md)
+[https://cf020031308.github.io/tools/reveal.html?/notes/english/20190502.md](?/notes/english/20190502.md)
 
-To see more please visit [reveal.js](https://github.com/hakimel/reveal.js).
+To see more please scroll up or press down key .
+
+
+The markdown file is retrieved and parsed, and then is splitted into slides by "`---`" or three consecutive newlines and into sub-slides by "`___`" or two.
+
+To see more please scroll left or press right key .
+
+
+
+## Trouble Shooting
+
+* To pass the CORS policy You need to download [the source code of this page](https://github.com/cf020031308/cf020031308.github.io/raw/master/tools/reveal.html) to your local path to open.
+
+
+
+## [Comment](https://github.com/cf020031308/cf020031308.github.io/issues/15)
                     </textarea>
                 </section>
 			</div>

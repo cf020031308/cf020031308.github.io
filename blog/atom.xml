@@ -14,6 +14,14 @@
     <rights> Copyright (c) 2018-2019. All rights reserved </rights>
 
     <entry>
+        <title> A Tool to Render Online Markdown Files to Slides </title>
+        <link href="/tools/reveal.html" />
+        <id> 4277e19e-7141-11e9-b8ce-720001f80fb0 </id>
+        <published> 2019-05-08T03:27:51Z </published>
+        <summary><![CDATA[Recently I tried the reveal.js and then developped a page to render online markdown files into slides.]]></summary>
+    </entry>
+
+    <entry>
         <title>Code Less, Talk More</title>
         <link href="design-and-implementation-of-my-blog" />
         <id> 78383dbe-6d05-11e9-a420-6f319cbf8700 </id>
