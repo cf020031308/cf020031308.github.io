@@ -843,9 +843,19 @@
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "right_option"
+                                    "key_code": "right_option",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
                                 },
                                 "to": [
+                                    {
+                                        "key_code": "right_option"
+                                    }
+                                ],
+                                "to_if_alone": [
                                     {
                                         "shell_command": "open -a 'Google Chrome'"
                                     }
@@ -855,15 +865,83 @@
                         ]
                     },
                     {
-                        "description": "Shift_R to WeChat",
+                        "description": "Shift_R to WeChat/QQ",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "right_shift"
+                                    "key_code": "right_shift",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'WeChat'"
+                                        "key_code": "right_shift"
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "shell_command": "open -b 'com.tencent.qq'"
+                                    }
+                                ],
+                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "^com\\.tencent\\.xinWeChat$"
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "from": {
+                                    "key_code": "right_shift",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_shift"
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "shell_command": "open -b 'com.tencent.xinWeChat'"
+                                    }
+                                ],
+                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "^com\\.tencent\\.qq$"
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "from": {
+                                    "key_code": "right_shift",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_shift"
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "shell_command": "open -b 'com.tencent.xinWeChat'"
                                     }
                                 ],
                                 "type": "basic"
@@ -875,14 +953,64 @@
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "right_command"
+                                    "key_code": "right_command",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'iTerm'"
+                                        "key_code": "right_command"
                                     }
                                 ],
-                                "type": "basic"
+                                "to_if_alone": [
+                                    {
+                                        "shell_command": "open -b 'com.googlecode.iterm2'"
+                                    }
+                                ],
+                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_unless",
+                                        "bundle_identifiers": [
+                                            "^com\\.googlecode\\.iterm2$"
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "from": {
+                                    "key_code": "right_command",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_command"
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "grave_accent_and_tilde",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "^com\\.googlecode\\.iterm2$"
+                                        ]
+                                    }
+                                ]
                             }
                         ]
                     },
