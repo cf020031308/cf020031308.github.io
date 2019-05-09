@@ -1,1 +1,50 @@
+" use smooth scrolling
+set smoothscroll
+
+" Display the tab index in the tab’s title
+set showtabindices
+
+" Automatically show a list of command completions when the command bar is opened
+set completeonopen
+
+" use only the specified search engines
+let completionengines = ["google", "baidu", "zhihu", "doubanbook", "doubanmovie", "github", "stackoverflow", "taobao", "sspai", "scholar"]
+
+" set the default search engine
+let defaultengine = "google"
+
+" disable cVim on the sites matching one of the patterns
+let blacklists = []
+
+" the pattern looked for when navigating a page’s back/next button
+let previousmatchpattern = "((?!last)(prev(ious)?|上一页|newer|back|«|less|<|‹| )+)"
 let nextmatchpattern = "((?!first)(next|下一页|older|more|>|›|»|forward| )+)"
+
+" custom search engines
+let searchengine baidu = "https://www.baidu.com/s?ie=UTF-8&wd=%s"
+let searchalias bd = "baidu"
+
+let searchengine zhihu = "https://www.zhihu.com/search?type=content&sort=upvote&q=%s"
+let searchalias zh = "zhihu"
+
+let searchengine doubanbook = "http://book.douban.com/subject_search?search_text=%s&cat=1001"
+let searchalias bk = "doubanbook"
+
+let searchengine doubanmovie = "http://movie.douban.com/subject_search?search_text=%s&cat=1002"
+let searchalias mv = "doubanmovie"
+
+let searchengine cn = "http://translate.google.cn/#auto/zh-CN/%s"
+let searchengine en = "http://translate.google.cn/#auto/en/%s"
+
+let searchengine github = "https://github.com/search?o=desc&q=%s&s=stars&type=Repositories&utf8=%E2%9C%93"
+let searchalias gh = "github"
+let searchalias git = "github"
+
+let searchengine stackoverflow = "http://stackoverflow.com/search?q=%s"
+let searchalias stack = "stackoverflow"
+
+let searchengine taobao = "http://s.taobao.com/search?oe=utf-8&f=8&q=%s"
+
+let searchengine sspai = "https://sspai.com/search/article?q=%s"
+
+let searchengine scholar = "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=%s&btnG="
