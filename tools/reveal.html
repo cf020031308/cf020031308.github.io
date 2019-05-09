@@ -70,7 +70,8 @@ To see more please scroll left or press right/down key .
                 navigationMode: "linear"
 			};
 
-            var fp = location.search.substr(1);
+            // Requests from wechat will be followed by some more queries.
+            var fp = location.search.substr(1).split("&")[0];
             if (fp) {
                 if (fp.indexOf("//") == -1) {
                     if (fp[0] == "/") {
