@@ -923,7 +923,7 @@
                         ]
                     },
                     {
-                        "description": "Shift_R to WeChat/QQ",
+                        "description": "Shift_R to WeChat/QQ/AirDroid",
                         "manipulators": [
                             {
                                 "from": {
@@ -970,7 +970,7 @@
                                 ],
                                 "to_if_alone": [
                                     {
-                                        "shell_command": "open -b 'com.tencent.xinWeChat'"
+                                        "shell_command": "open -b 'com.sandstudio.airdroid'"
                                     }
                                 ],
                                 "type": "basic",
@@ -979,6 +979,35 @@
                                         "type": "frontmost_application_if",
                                         "bundle_identifiers": [
                                             "^com\\.tencent\\.qq$"
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "from": {
+                                    "key_code": "right_shift",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_shift"
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "shell_command": "open -b 'com.tencent.xinWeChat'"
+                                    }
+                                ],
+                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "^com\\.sandstudio\\.airdroid$"
                                         ]
                                     }
                                 ]
