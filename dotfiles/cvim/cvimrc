@@ -1,12 +1,6 @@
 " use smooth scrolling
 set smoothscroll
 
-" Display the tab index in the tab’s title
-set showtabindices
-
-" Automatically show a list of command completions when the command bar is opened
-set completeonopen
-
 " use only the specified search engines
 let completionengines = ["google", "baidu", "zhihu", "doubanbook", "doubanmovie", "github", "stackoverflow", "taobao", "sspai", "scholar"]
 
@@ -14,7 +8,7 @@ let completionengines = ["google", "baidu", "zhihu", "doubanbook", "doubanmovie"
 let defaultengine = "google"
 
 " disable cVim on the sites matching one of the patterns
-let blacklists = []
+let blacklists = ["https://devdocs.io/*"]
 
 " the pattern looked for when navigating a page’s back/next button
 let previousmatchpattern = "((?!last)(prev(ious)?|上一页|newer|back|«|less|<|‹| )+)"
