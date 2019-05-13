@@ -86,7 +86,15 @@ To see more please scroll left or press right/down key .
 
                 var ref = document.createElement("section");
                 ref.setAttribute("data-markdown", "");
-                ref.innerHTML = '## [View the Source File](' + fp + ')';
+                ref.innerHTML = "## [View the Source File](" + fp + ")";
+                var exts = [".md", ".markdown"];
+                for (var i in exts) {
+                    var ext = exts[i];
+                    if (fp.endsWith(ext)) {
+                        ref.innerHTML += "\n## [View in markdown](" + fp.substr(0, fp.length - ext.length) + ")";
+                        break;
+                    }
+                }
                 md.parentNode.appendChild(ref);
 
                 configs.markdown.baseUrl = fp.split("/").slice(0, -1).join("/") + "/";
