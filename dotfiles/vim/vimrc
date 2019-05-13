@@ -3,8 +3,7 @@ au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
 " Don't write backup file if vim is being called by "chpass"
 au BufWrite /private/etc/pw.* set nowritebackup nobackup
 
-syntax enable
-filetype plugin indent on
+filetype off
 
 set nu
 set hlsearch
@@ -39,7 +38,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'ferrine/md-img-paste.vim'
 
 " html
-" Plugin 'kchmck/vim-coffee-script'
+Plugin 'leafgarland/typescript-vim'
 Plugin 'mattn/emmet-vim'
 
 " utils
@@ -48,6 +47,8 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 
 call vundle#end()
+syntax enable
+filetype plugin indent on
 
 " let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 1
