@@ -60,7 +60,7 @@ let g:syntastic_lua_checkers = ["luacheck"]
 let g:syntastic_lua_luacheck_args = "--no-unused-args"
 
 " call mdip#MarkdownClipboardImage()
-let g:mdip_imgdir = "_img"
+let g:mdip_imgdir = "."
 let g:vim_markdown_math = 1
 
 

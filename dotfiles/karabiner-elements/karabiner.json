@@ -857,7 +857,7 @@
                                 ],
                                 "to_if_alone": [
                                     {
-                                        "shell_command": "open -b 'QReader.MarginStudyMac'"
+                                        "shell_command": "open -b 'io.inputneuronpolar'"
                                     }
                                 ],
                                 "type": "basic",
@@ -894,7 +894,7 @@
                                     {
                                         "type": "frontmost_application_if",
                                         "bundle_identifiers": [
-                                            "^QReader\\.MarginStudyMac$"
+                                            "^io\\.inputneuronpolar$"
                                         ]
                                     }
                                 ]
@@ -923,7 +923,7 @@
                         ]
                     },
                     {
-                        "description": "Shift_R to WeChat/QQ/AirDroid",
+                        "description": "Shift_R to WeChat/QQ",
                         "manipulators": [
                             {
                                 "from": {
@@ -970,35 +970,6 @@
                                 ],
                                 "to_if_alone": [
                                     {
-                                        "shell_command": "open -b 'com.sandstudio.airdroid'"
-                                    }
-                                ],
-                                "type": "basic",
-                                "conditions": [
-                                    {
-                                        "type": "frontmost_application_if",
-                                        "bundle_identifiers": [
-                                            "^com\\.tencent\\.qq$"
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "from": {
-                                    "key_code": "right_shift",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_shift"
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
                                         "shell_command": "open -b 'com.tencent.xinWeChat'"
                                     }
                                 ],
@@ -1007,7 +978,7 @@
                                     {
                                         "type": "frontmost_application_if",
                                         "bundle_identifiers": [
-                                            "^com\\.sandstudio\\.airdroid$"
+                                            "^com\\.tencent\\.qq$"
                                         ]
                                     }
                                 ]
