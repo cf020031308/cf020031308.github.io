@@ -14,6 +14,14 @@
     <rights> Copyright (c) 2018-2019. All rights reserved </rights>
 
     <entry>
+        <title> A Survey on Toolchains of Paper Management </title>
+        <link href="https://github.com/cf020031308/cf020031308.github.io/issues/19" />
+        <id> 588cdb40-7d1e-11e9-802f-600308a29e32 </id>
+        <published> 2019-05-23T05:48:09Z </published>
+        <summary><![CDATA[Any suggestions?]]></summary>
+    </entry>
+
+    <entry>
         <title> A Tool to Render Online Markdown Files to Slides </title>
         <link href="/tools/reveal.html" />
         <id> 4277e19e-7141-11e9-b8ce-720001f80fb0 </id>

@@ -1,0 +1,12 @@
+[tui]
+editmode = vi
+
+[cspapers]
+dir = ~/.config/papis/cs
+
+[settings]
+editor = vim
+default-library = cspapers
+search-engine = https://scholar.google.com/scholar?hl=en
+add-name = {doc[author]}-{doc[title]}
+add-edit = True
