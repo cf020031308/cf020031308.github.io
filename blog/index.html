@@ -9,6 +9,9 @@
     <template>
     <link rel="icon" type="image/x-icon" href="$icon" />
     <title > $title </title>
+    if (baseURL !== '') {
+      <base href="$baseURL" />
+    }
     </template>
 </head>
 <body class="container-lg px-3 my-5 markdown-body">
@@ -27,7 +30,7 @@
 </header>
 <nav>
     <ul>
-        <li><a target="_blank" href="atom.xml"> Subscribe </a></li>
+        <li><a target="_blank" href="$rssURL"> Subscribe </a></li>
         <li><a target="_blank" href="/"> About me </a></li>
     </ul>
 </nav>
@@ -46,7 +49,9 @@
         <article id="$id">
             <h2><a target="_blank" href="$link.href"> $title </a></h2>
             <time datetime="$published" pubdate="pubdate"> $formatDate(published) </time>
+            if (entry[i].summary) {
             <blockquote> $summary </blockquote>
+            }
         </article>
     }
 </main>
@@ -57,10 +62,12 @@
 
 <script src="index.js"></script>
 <script>
-    var rssEl = document.head.querySelector('link[type="application/atom+xml"]');
-    var req = http("get", rssEl.href);
+    var rssURL = location.search.substr(1).split('&')[0] || document.head.querySelector('link[type="application/atom+xml"]').href;
+    var req = http("get", rssURL);
     if (req.readyState == 4 && req.status < 500 && req.responseXML) {
         var data = xml2obj(req.responseXML.querySelector("feed"));
+        data.rssURL = rssURL;
+        data.baseURL = data['xml:base'] || '';
         var tplEls = document.getElementsByTagName("template");
         while (tplEls.length) {
             var tplEl = tplEls[0];
