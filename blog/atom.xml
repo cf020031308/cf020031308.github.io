@@ -23,7 +23,7 @@
 
     <entry>
         <title> A Tool to Render Online Markdown Files to Slides </title>
-        <link href="/tools/reveal.html" />
+        <link href="/ppt" />
         <id> 4277e19e-7141-11e9-b8ce-720001f80fb0 </id>
         <published> 2019-05-08T03:27:51Z </published>
         <summary><![CDATA[Recently I tried the reveal.js and then developped a page to render online markdown files into slides.]]></summary>
