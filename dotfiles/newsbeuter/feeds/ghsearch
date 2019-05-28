@@ -1,0 +1,19 @@
+#!/bin/bash -
+
+echo "<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns='http://www.w3.org/2005/Atom'>
+  <title>Github Search: $1</title>
+  <id>$1</id>
+  <updated>$(date -u +'%Y-%m-%dT%H:%M:%SZ')</updated>"
+curl "https://api.github.com/search/repositories?q=$1&sort=$2&order=desc" | jq -r '.items[] as $e | "
+  <entry>
+    <title>\($e.name)</title>
+    <id>\($e.id)</id>
+    <published>\($e.created_at)</published>
+    <updated>\($e.updated_at)</updated>
+    <link href=\"\($e.html_url)\">\($e.html_url)</link>
+    <author><name>\($e.owner.login)</name></author>
+    <summary>\($e.description)</summary>
+  </entry>
+"'
+echo "</feed>"

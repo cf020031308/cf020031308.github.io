@@ -9,6 +9,8 @@ https://z.cash/feeds/all-en.rss.xml
 https://taskwarrior.org/feed.rss
 https://dev.mutt.org/hg/mutt/rss-log
 https://github.com/cf020031308.private.atom?token=AFBL-B3t8c2ZtV_Qnd9zZGzZ1uM_QSwDks64RdRJwA==
+"exec:~/.newsbeuter/feeds/ghsearch 'terminal+stars:>1000'"
+"exec:~/.newsbeuter/feeds/ghsearch 'command+line+stars:>1000'"
 exec:~/.newsbeuter/feeds/poloniex.sh
 https://rsshub.app/v2ex/topics/hot
 https://www.zhihu.com/rss
