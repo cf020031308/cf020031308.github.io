@@ -9,6 +9,8 @@ https://z.cash/feeds/all-en.rss.xml
 https://taskwarrior.org/feed.rss
 https://dev.mutt.org/hg/mutt/rss-log
 https://github.com/cf020031308.private.atom?token=AFBL-B3t8c2ZtV_Qnd9zZGzZ1uM_QSwDks64RdRJwA==
+"exec:~/.newsbeuter/feeds/ghsearch 'middleware+stars:>1000'"
+"exec:~/.newsbeuter/feeds/ghsearch 'productivity+stars:>1000'"
 "exec:~/.newsbeuter/feeds/ghsearch 'terminal+stars:>1000'"
 "exec:~/.newsbeuter/feeds/ghsearch 'command+line+stars:>1000'"
 exec:~/.newsbeuter/feeds/poloniex.sh
@@ -24,7 +26,7 @@ http://mrxwlb.com/category/mrxwlb-text/feed/
 https://blog.github.com/all.atom
 http://ifeve.com/feed/
 https://jvns.ca/atom.xml
-exec:~/.newsbeuter/feeds/hackernews.sh
+https://rsshub.app/hackernews/best
 https://blog.evernote.com/feed/
 https://www.yinxiang.com/blog/feed/
 http://feeds.bbci.co.uk/news/world/rss.xml
