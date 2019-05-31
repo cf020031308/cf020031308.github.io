@@ -1,0 +1,2 @@
+#!/bin/bash -
+curl https://api.github.com/users/cf020031308/starred | jq -r '.[] as $e | "\($e.html_url)\n    \($e.description)"'
