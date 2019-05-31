@@ -14,6 +14,14 @@
     <rights> Copyright (c) 2018-2019. All rights reserved </rights>
 
     <entry>
+        <title> I Don't Want to Teach my Garbage DSL, either </title>
+        <link href="i-dont-want-to-teach-my-garbage-dsl-either" />
+        <id> 23e92388-8379-11e9-9acd-600308a29e32 </id>
+        <published> 2019-05-31T07:53:12Z </published>
+        <summary><![CDATA[Don't try to implement any new Query Language. Just use SQL.]]></summary>
+    </entry>
+
+    <entry>
         <title> The Reason I Created agentdoc and Why You Dont Need it </title>
         <link href="the-reason-i-created-agentdoc-and-why-you-dont-need-it" />
         <id> a3e0eb3c-829f-11e9-8087-600308a29e32 </id>
