@@ -1,0 +1,7 @@
+#!/bin/bash -
+
+# Download data from <https://www.dida365.com/#settings/backup>
+# Usage: $0 path/to/DidaCSVFile startdate beforedate
+# Example: $0 Dida-backup-2019-06-02.csv 2019-05-01 2019-06-01
+
+sed '1,6d;7s/ //g' "$1" | textql -header -sql 'select datetime(substr(CompletedTime, 1, 19), "localtime") as t, Title, Content where ListName != "琐事" and t >= "'"$2"'" and t < "'"$3"'" order by CompletedTime' | uniq

@@ -1,0 +1,6 @@
+#!/bin/bash -
+
+# Usage: $0 startdate beforedate
+# Example: $0 2019-05-01 2019-06-01
+
+task entry.after:$1T00:00:00 emtry.before:$2T00:00:00 status:completed export | jq -r '.[] | {"end", project, desc: .description, anns: [.annotations[].description]|join("\n\t")} | "\(.end) [\(.project)] \(.desc)\n\t\(.anns)"'
