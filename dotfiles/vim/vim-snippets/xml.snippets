@@ -2,7 +2,7 @@ snippet atom
 	<entry>
 		<title>${1:Untitled}</title>
 		<link href="${2:}" />
-		<id> `system("uuid")` </id>
-		<published> `system("date -u +'%Y-%m-%dT%H:%M:%SZ'")` </published>
-		<summary><![CDATA[${3:}]]></summary>
+		<id>`system("uuid")`</id>
+		<published>`system("date -u +'%Y-%m-%dT%H:%M:%SZ'")`</published>
+		<summary type="html"><![CDATA[${3:}]]></summary>
 	</entry>
