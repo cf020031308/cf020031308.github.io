@@ -1,0 +1,6 @@
+#!/bin/bash -
+
+ln -sf $PWD ~/.mail
+ln -sf $PWD/muttrc ~/.muttrc
+ln -sf $PWD/offlineimaprc ~/.offlineimaprc
+ln -sf $PWD/msmtprc ~/.msmtprc
