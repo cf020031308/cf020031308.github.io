@@ -1,0 +1,7 @@
+#!/bin/bash -
+
+timew stop
+newsboat -x reload &
+wk =
+offlineimap && mutt; offlineimap
+newsboat -x print-unread && send-unread-feeds-to-instapaper
