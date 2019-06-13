@@ -7,6 +7,5 @@ dir = ~/.config/papis/cs
 [settings]
 editor = vim
 default-library = cspapers
-search-engine = https://scholar.google.com/scholar?hl=en
-add-name = {doc[author]:.20}-{doc[title]}
+add-name = {doc[author]:.30}-{doc[title]}
 add-edit = True
