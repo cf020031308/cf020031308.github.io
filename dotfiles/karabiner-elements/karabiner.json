@@ -857,7 +857,7 @@
                                 ],
                                 "to_if_alone": [
                                     {
-                                        "shell_command": "open -b 'io.inputneuronpolar'"
+                                        "shell_command": "open -b 'com.apple.Preview'"
                                     }
                                 ],
                                 "type": "basic",
@@ -894,7 +894,7 @@
                                     {
                                         "type": "frontmost_application_if",
                                         "bundle_identifiers": [
-                                            "^io\\.inputneuronpolar$"
+                                            "^com\\.apple.Preview$"
                                         ]
                                     }
                                 ]
