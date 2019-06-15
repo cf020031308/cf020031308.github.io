@@ -17,7 +17,7 @@ Subject: Feeds@$(date +'%Y%m%d')
 Content-Type: text/html; charset="utf-8"
 
 <html><body><div class="main">
-$(sqlite3 $fp "SELECT printf('"'<h2> %s | <a href="%s">%s</a></h2>%s</pre>'"', rss_feed.title, rss_item.url, rss_item.title, substr(rss_item.content, 0, 500)) FROM rss_feed JOIN rss_item ON rss_item.feedurl = rss_feed.rssurl WHERE $1 order by rss_feed.title")
+$(sqlite3 $fp "SELECT printf('"'<h3> %s | <a href="%s">%s</a></h3>'"', rss_feed.title, rss_item.url, rss_item.title) FROM rss_feed JOIN rss_item ON rss_item.feedurl = rss_feed.rssurl WHERE $1 order by rss_feed.title")
 </div></body></html>
 EOF
 }
@@ -28,8 +28,7 @@ function markread() {
 
 while true; do
     # Maximum depth of sqlite's expression tree is 1000
-    # With LIMIT=200 the mail sending would be banned by 163
-    ids=$(sqlite3 -newline ' or id = ' $fp 'SELECT id FROM rss_item WHERE unread = "1" LIMIT 100')
+    ids=$(sqlite3 -newline ' or id = ' $fp 'SELECT id FROM rss_item WHERE unread = "1" LIMIT 200')
     ids=${ids% or id = }
     if [ -z "$ids" ]; then
         exit 0
