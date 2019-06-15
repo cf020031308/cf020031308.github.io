@@ -1,0 +1,1 @@
+docker run --rm -d -v $PWD/data:/var/lib/postgresql/data postgres

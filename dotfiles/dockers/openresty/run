@@ -1,0 +1,7 @@
+docker run --rm\
+    -v $PWD/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf:ro\
+    -v $PWD/lua:/usr/local/openresty/nginx/lua:ro\
+    -v $PWD/www:/usr/local/openresty/nginx/www:ro\
+    -p 0.0.0.0:80:80\
+    -p 8080:8080\
+    openresty/openresty:trusty
