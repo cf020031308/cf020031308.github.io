@@ -4,3 +4,6 @@ ln -sf $PWD ~/.mail
 ln -sf $PWD/muttrc ~/.muttrc
 ln -sf $PWD/offlineimaprc ~/.offlineimaprc
 ln -sf $PWD/msmtprc ~/.msmtprc
+
+
+brew install offlineimap msmtp mutt lynx

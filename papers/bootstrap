@@ -6,3 +6,10 @@ pip3 install papis-zotero
 
 mv ~/.config/papis ~/.config/papis.bak
 ln -s $PWD ~/.config/papis
+
+## Install BaiduPCS-Go for `papis migrate-pdf`
+panVersion=$panVersion
+wget https://github.com/iikira/BaiduPCS-Go/releases/download/$panVersion/BaiduPCS-Go-$panVersion-darwin-osx-amd64.zipunzip BaiduPCS-Go-$panVersion-darwin-osx-amd64.zip
+mv BaiduPCS-Go-$panVersion-darwin-osx-amd64/BaiduPCS-Go /usr/local/bin/
+rm -rf BaiduPCS-Go-$panVersion-darwin-osx-amd64.zip BaiduPCS-Go-$panVersion-darwin-osx-amd64
+BaiduPCS-Go login

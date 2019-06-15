@@ -1,0 +1,15 @@
+#!/bin/sh -
+
+brew install autojump curl wget fasd fortune fzf gawk git hub tree textql icdiff
+brew cask install fliqlo iina thunder wechat
+
+# Install agentDoc
+workplace="$HOME/Workplace"
+if [ -n "$PREFIX" ]; then
+    bin="$PREFIX/bin"
+else
+    bin="/usr/local/bin"
+fi
+
+agent="${workplace}/cf020031308.github.io/wiki/.md"
+ln -sf "${workplace}/agentDoc/agentDoc" "$agent" && ln -sf "$agent" "${bin}/wk"

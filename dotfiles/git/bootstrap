@@ -1,0 +1,4 @@
+#!/bin/bash -
+
+brew install icdiff
+ln -sf $PWD/gitconfig ~/.gitconfig
