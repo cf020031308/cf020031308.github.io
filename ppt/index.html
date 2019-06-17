@@ -72,7 +72,7 @@ To see more please scroll left or press right/down key .
 
             // Requests from wechat will be followed by some more queries.
             var fp = location.search.substr(1).split("&")[0];
-            if (fp) {
+            if (fp && fp.indexOf('=') === -1) {
                 if (fp.indexOf("//") == -1) {
                     if (fp[0] == "/") {
                         fp = location.href.split("/").slice(0, 3).join("/") + fp;

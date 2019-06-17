@@ -62,7 +62,9 @@
 
 <script src="index.js"></script>
 <script>
-    var rssURL = location.search.substr(1).split('&')[0] || document.head.querySelector('link[type="application/atom+xml"]').href;
+    var rssURL = location.search.substr(1).split('&')[0];
+    if (rssURL === '' || rssURL.indexOf('=') > -1)
+        rssURL = document.head.querySelector('link[type="application/atom+xml"]').href;
     var req = http("get", rssURL);
     if (req.readyState == 4 && req.status < 500 && req.responseXML) {
         var data = xml2obj(req.responseXML.querySelector("feed"));
