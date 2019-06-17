@@ -67,6 +67,9 @@ for el in lst:
 
 for k, v in dct.items():
     break
+
+while 1:
+    pass
 ```
 
 
@@ -133,7 +136,6 @@ class A:
 def f(x):
     print(x)
 
-
 def deco(func):
     return lambda x: func(x + 1)
 
@@ -147,7 +149,7 @@ def h(x):
 
 #### I/O
 
-1. From User: raw_input
+1. From User: input
 2. From Files: open, read, write, close
 3. From Internet: ~urllib~, requests
 
@@ -161,16 +163,12 @@ def h(x):
 
 1. Easy to get
 2. Powerful
-3. ~Lots of Plugins~
-4. ~Design It Yourself~
+3. ~Design It Yourself~
+4. ~Lots of Plugins~
 
 
 
 ### Learn Vim the Hard Way
-
-1. Learn it once in a while like you didn't.
-2. Use it before you master it.
-3. Know what you don't so you can search for it.
 
 
 #### 1. Learn it once in a while like you didn't.
@@ -180,7 +178,7 @@ def h(x):
 
 * Modes: i, ESC
   + :w, :q, :q!
-* Navigate: ~hjkl~, c-f, c-b
+* Navigate: ~hjkl, c-f, c-b~
 * Undo & Redo: u, c-r
 * Cut & Paste: dd, p
 
@@ -196,9 +194,11 @@ def h(x):
   + Ff, Tt
   + ^, `$`
   + A, I
+  + %
+  + #, *
 
 
-* Move text like an expert
+* Edit like an expert
   + cdy: change/delete/yank
     - cw, dw, yw
     - dj, 3dd, d15G
@@ -207,12 +207,12 @@ def h(x):
   + `<<, >>` tab & untab
 
 
-* Use Macro like an expert
+* Reply like an expert
   + ;, .
-  + qa, q, @, 8@
+  + qa, q, @a, 8@a
 
 
-* Even an expert is scared of sed
+* Even an expert is afraid of sed
   + `:s/x/y/`
   + man sed & curl cheat.sh/sed
   + `:%s text rpl gc`
@@ -234,4 +234,4 @@ dict	dictionary	{'a': 7.0, 23: True}
 
 
 
-## & A
+## Q & A
