@@ -235,3 +235,7 @@ dict	dictionary	{'a': 7.0, 23: True}
 
 
 ## Q & A
+
+
+
+## [Comments](https://github.com/cf020031308/cf020031308.github.io/issues/30)
