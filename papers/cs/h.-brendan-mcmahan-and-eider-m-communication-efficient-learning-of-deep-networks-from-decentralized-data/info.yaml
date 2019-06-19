@@ -1,0 +1,52 @@
+abstract: 'Modern mobile devices have access to a wealth of data suitable for learning
+
+  models, which in turn can greatly improve the user experience on the device.
+
+  For example, language models can improve speech recognition and text entry, and
+
+  image models can automatically select good photos. However, this rich data is
+
+  often privacy sensitive, large in quantity, or both, which may preclude logging
+
+  to the data center and training there using conventional approaches. We
+
+  advocate an alternative that leaves the training data distributed on the mobile
+
+  devices, and learns a shared model by aggregating locally-computed updates. We
+
+  term this decentralized approach Federated Learning.
+
+  We present a practical method for the federated learning of deep networks
+
+  based on iterative model averaging, and conduct an extensive empirical
+
+  evaluation, considering five different model architectures and four datasets.
+
+  These experiments demonstrate the approach is robust to the unbalanced and
+
+  non-IID data distributions that are a defining characteristic of this setting.
+
+  Communication costs are the principal constraint, and we show a reduction in
+
+  required communication rounds by 10-100x as compared to synchronized stochastic
+
+  gradient descent.'
+archiveprefix: arXiv
+author: H. Brendan McMahan and Eider Moore and Daniel Ramage and Seth Hampson and
+  Blaise Agüera y Arcas
+eprint: 1602.05629v3
+file: 1602.05629v3.pdf
+files:
+- /Users/Roy/Documents/papers/communication-efficient-learning-of-deep-networks-from-decentralized-data.pdf
+month: Feb
+note: 'Proceedings of the 20 th International Conference on Artificial
+
+  Intelligence and Statistics (AISTATS) 2017. JMLR: W&CP volume 54'
+primaryclass: cs.LG
+ref: 1602.05629v3
+title: 'Communication-Efficient Learning of Deep Networks from Decentralized
+
+  Data'
+type: article
+url: http://arxiv.org/abs/1602.05629v3
+year: '2016'

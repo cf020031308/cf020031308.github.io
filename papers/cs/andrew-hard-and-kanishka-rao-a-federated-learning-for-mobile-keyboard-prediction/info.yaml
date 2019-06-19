@@ -1,0 +1,37 @@
+abstract: 'We train a recurrent neural network language model using a distributed,
+
+  on-device learning framework called federated learning for the purpose of
+
+  next-word prediction in a virtual keyboard for smartphones. Server-based
+
+  training using stochastic gradient descent is compared with training on client
+
+  devices using the Federated Averaging algorithm. The federated algorithm, which
+
+  enables training on a higher-quality dataset for this use case, is shown to
+
+  achieve better prediction recall. This work demonstrates the feasibility and
+
+  benefit of training language models on client devices without exporting
+
+  sensitive user data to servers. The federated learning environment gives users
+
+  greater control over the use of their data and simplifies the task of
+
+  incorporating privacy by default with distributed training and aggregation
+
+  across a population of client devices.'
+archiveprefix: arXiv
+author: Andrew Hard and Kanishka Rao and Rajiv Mathews and Swaroop Ramaswamy and Françoise
+  Beaufays and Sean Augenstein and Hubert Eichner and Chloé Kiddon and Daniel Ramage
+eprint: 1811.03604v2
+file: 1811.03604v2.pdf
+files:
+- /Users/Roy/Documents/papers/federated-learning-for-mobile-keyboard-prediction.pdf
+month: Nov
+primaryclass: cs.CL
+ref: 1811.03604v2
+title: Federated Learning for Mobile Keyboard Prediction
+type: article
+url: http://arxiv.org/abs/1811.03604v2
+year: '2018'
