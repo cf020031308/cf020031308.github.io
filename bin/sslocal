@@ -1,0 +1,10 @@
+#!/bin/bash -
+
+# Installation: brew install shadowsocks-libev v2ray-plugin
+
+fp=~/Nutstore/ss.json
+ss-local\
+    -b 127.0.0.1\
+    -l 9999\
+    -c "$fp"\
+    --plugin v2ray-plugin
