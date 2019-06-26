@@ -1,0 +1,35 @@
+abbrev_journal_title: Int. J. Model. Simul. Sci. Comput.
+author: Bui, Tinh Quoc and Tran, Anh Viet and Shah, Abid Ali
+author_list:
+- given_name: Tinh Quoc
+  surname: Bui
+- given_name: Anh Viet
+  surname: Tran
+- given_name: Abid Ali
+  surname: Shah
+citations:
+- doi: 10.1016/j.jmatprotec.2007.03.019
+- doi: 10.1016/S0924-0136(00)00588-4
+- doi: 10.1016/j.jmatprotec.2007.02.004
+- doi: 10.1109/22.643839
+- doi: 10.1023/A:1023283917997
+- doi: 10.3923/jas.2008.3038.3043
+- doi: 10.1016/j.matdes.2008.10.018
+- doi: 10.1016/j.matdes.2009.09.019
+- doi: 10.1016/j.jmatprotec.2008.04.055
+- doi: 10.1109/72.329697
+doc_url: http://www.worldscientific.com/doi/pdf/10.1142/S1793962313500268
+doi: 10.1142/S1793962313500268
+files:
+- /Users/Roy/Documents/papers/improved-knowledge-based-neural-network-kbnn-model-for-predicting-spring-back-angles-in-metal-sheet-bending.pdf
+full_journal_title: International Journal of Modeling, Simulation, and Scientific
+  Computing
+issue: '02'
+journal: International Journal of Modeling, Simulation, and Scientific Computing
+month: '06'
+ref: 10.1142/S1793962313500268
+title: Improved knowledge-based neural network (KBNN) model for predicting spring-back
+  angles in metal sheet bending
+type: article
+volume: '05'
+year: '2014'
