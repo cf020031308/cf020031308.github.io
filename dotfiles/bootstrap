@@ -1,7 +1,8 @@
 #!/bin/sh -
 
-brew install autojump curl wget fasd fortune fzf gawk git hub tree textql icdiff
-brew cask install fliqlo iina thunder wechat
+brew install autojump curl wget fasd fortune fzf gawk git hub tree textql icdiff vnstat shadowsocks-libev v2ray-plugin kubernetes-cli
+
+brew cask install fliqlo iina thunder wechat minikube
 
 # Install agentDoc
 workplace="$HOME/Workplace"

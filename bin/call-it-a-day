@@ -1,7 +1,5 @@
 #!/bin/bash -
 
 timew stop
-newsboat -x reload &
-wk =
-offlineimap && mutt; offlineimap
-newsboat -x print-unread && send-unread-feeds-to-instapaper
+newsboat -x reload print-unread && send-unread-feeds-to-instapaper
+/System/Library/CoreServices/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine

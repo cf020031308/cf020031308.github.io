@@ -1,5 +1,5 @@
 always-display-description true
-auto-reload yes
+auto-reload no
 max-items 0
 download-retries 5
 download-timeout 90
