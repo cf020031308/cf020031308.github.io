@@ -43,4 +43,4 @@ let searchengine sspai = "https://sspai.com/search/article?q=%s"
 
 let searchengine scholar = "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=%s&btnG="
 
-let searchengine scholar = "https://hub.docker.com/search?q=%s&type=image"
+let searchengine docker = "https://hub.docker.com/search?q=%s&type=image"
