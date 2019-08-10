@@ -14,3 +14,5 @@ fi
 
 agent="${workplace}/cf020031308.github.io/wiki/.md"
 ln -sf "${workplace}/agentDoc/agentDoc" "$agent" && ln -sf "$agent" "${bin}/wk"
+
+docker pull tensorflow/tensorflow:lastest-py3-jupyter

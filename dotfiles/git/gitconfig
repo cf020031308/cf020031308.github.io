@@ -4,6 +4,7 @@
 	email = cf020031308@163.com
 [core]
 	editor = vim
+    autocrlf = false
 [icdiff]
     # brew install icdiff
     # git icdiff
