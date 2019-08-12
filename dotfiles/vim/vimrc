@@ -35,7 +35,6 @@ Plugin 'fatih/vim-go'
 " markdown
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'ferrine/md-img-paste.vim'
 
 " html
 Plugin 'leafgarland/typescript-vim'
@@ -59,8 +58,6 @@ let g:syntastic_quiet_messages = {"regex": ['F812', 'module level import not at 
 let g:syntastic_lua_checkers = ["luacheck"]
 let g:syntastic_lua_luacheck_args = "--no-unused-args"
 
-" call mdip#MarkdownClipboardImage()
-let g:mdip_imgdir = "."
 let g:vim_markdown_math = 1
 
 
