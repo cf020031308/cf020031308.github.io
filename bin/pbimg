@@ -1,0 +1,23 @@
+#!/bin/bash -
+
+# Save image from clipboard into a PNG file
+# Usage: pbimg [OUTPUT PATH]
+
+if [ -z "$1" ]; then
+    dir="$PWD"
+    fn="$(uuid)"
+elif [ -d "$1" ]; then
+    dir="$(cd $1; pwd)"
+    fn="$(uuid)"
+else
+    dir="$(cd $(dirname $1); pwd)"
+    fn="$(basename $1)"
+fi
+
+fp="$dir/${fn%.png}.png"
+osascript \
+    -e "set png to the clipboard as «class PNGf»" \
+    -e "set fp to POSIX path of (POSIX file \"$fp\")"\
+    -e "set fh to open for access fp with write permission" \
+    -e "write png to fh" \
+    -e "close access fh" && echo "$fp"
