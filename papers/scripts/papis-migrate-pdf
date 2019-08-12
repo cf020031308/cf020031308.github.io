@@ -8,11 +8,11 @@
 # cd $1 || exit 0
 # dst=$(pwd)
 
-dst="/Users/Roy/Documents/papers"
+dst="/Users/Roy/Documents/papers/${PAPIS_LIB}"
 pdfs=$(papis -l ${PAPIS_LIB} export --json --all 2>&- | jq -r '.[] | .files | .[] | select(test("\\.pdf$"))' | sed '/^\//d' | sort -u)
 dir="$(papis -l ${PAPIS_LIB} config dir)"
 dir="${dir/\~/$HOME}"
 for pdf in $pdfs; do
     find "$dir" -type f -name "$pdf" -exec sh -c "mv {} $dst && sed -i '' 's $pdf $dst/$pdf ' "'"$(dirname {})/info.yaml"' \;
-    BaiduPCS-Go upload "$dst/$pdf" "/文档/papers"
+    BaiduPCS-Go upload "$dst/$pdf" "/文档/papers/${PAPIS_LIB}"
 done

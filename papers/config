@@ -1,11 +1,18 @@
 [tui]
 editmode = vi
 
-[cspapers]
+[cs]
 dir = ~/.config/papis/cs
+
+[forecast]
+dir = ~/.config/papis/forecast
+
+[federated]
+dir = ~/.config/papis/federated
+
 
 [settings]
 editor = vim
-default-library = cspapers
+default-library = cs
 add-name = {doc[author]:.30}-{doc[title]}
 add-edit = True
