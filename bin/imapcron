@@ -1,3 +1,0 @@
-#!/bin/bash -
-
-while true; do offlineimap -k ui=Quiet; sleep 1800; done &

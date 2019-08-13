@@ -18,6 +18,7 @@ Here is the place into which I publish some of my leisure works such as:
 - [Drafts & Cheetsheets](https://github.com/cf020031308/cf020031308.github.io/wiki)
 - [Dotfiles](https://github.com/cf020031308/cf020031308.github.io/tree/master/dotfiles)
 - [Other Trifles](https://github.com/cf020031308/cf020031308.github.io)
+    - **[pbimg](https://github.com/cf020031308/cf020031308.github.io/blob/master/bin/pbimg)**. Save image from MacOS clipboard as a PNG file.
 
 This page is hosted at Github.  
 To see the source code you can visit the repo below and I'd be glad if you like and star it:
