@@ -8,7 +8,8 @@ USAGE
     exit 1;
 fi
 
-dst=$(fortune -f 2>&1 | sed -n '1p' | awk 'END{print $2}')/$1
+dst="$(fortune -f 2>&1 | sed 1q)"
+dst="/${dst#*/}/$1"
 
-# Merge txt files into one and index it
-find ${@:2} -type f -exec sh -c 'cat {} && echo "___"' \; | sed '$d;s/^___$/%/;s/<c[0-9]>//g;s/<\/c[0-9]>//g' > $dst && strfile -s $dst && fortune -f
+# Append txt files into one and index it
+find ${@:2} -type f -name '*.md' -exec sh -c 'echo "___" && cat {}' \; | sed 's/^___$/%/' >> $dst && strfile -s $dst && fortune -f
