@@ -1,6 +1,6 @@
 #!/bin/sh -
 
-brew install autojump curl wget fasd fortune fzf gawk git hub tree textql icdiff vnstat shadowsocks-libev v2ray-plugin kubernetes-cli pandoc pandoc-citeproc librsvg
+brew install autojump curl wget fasd fortune fzf gawk git hub tree textql icdiff vnstat shadowsocks-libev v2ray-plugin kubernetes-cli pandoc pandoc-citeproc librsvg coreutils
 
 brew cask install fliqlo iina thunder wechat minikube basictex
 
