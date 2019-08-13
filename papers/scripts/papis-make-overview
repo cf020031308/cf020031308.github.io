@@ -1,0 +1,72 @@
+#!/bin/bash -
+# papis-short-help: Make Overview from overview.md files within the library
+
+
+if [ -z "$1" ]; then
+    echo "Missing Argument: papis make-overview [DESTINATION FOLDER]"
+    exit 1
+fi
+cd $1 || exit 0
+dst=$(pwd)
+
+Fin="overview.md"
+Fout="readme.md"
+Ftmp="tmp.md"
+Fyml="info.yaml"
+Dref="refs"
+
+# Copy overview.md from the lib root folder as a content HEADER
+dir="$(papis -l ${PAPIS_LIB} config dir)"
+dir="${dir/\~/$HOME}"
+if [ -e "$dir/$Fin" ]; then
+    # TODO: wk is a replica of agentDoc, replace it with mdcp later
+    wk "$dir/$Fin" "$dst/$Fout"
+fi
+
+# Append overview.md from the lib sub folders to the content HEADER
+# sub overviews should be organized like this:
+# # 中文标题
+#
+# * 问题/应用：
+#   - case 1
+# * 方法：
+#   - method 1
+#
+# ## 摘要
+#
+# ...
+#
+# #other content
+echo "
+## 引用内容" >> "$dst/$Fout"
+for src in $(papis -l ${PAPIS_LIB} list); do
+    if [ -e "$src/$Fin" ]; then
+        wk "$src/$Fin" "$dst/$Ftmp"
+        cat <<REF | sed 's/^#/###/'>> "$dst/$Fout"
+
+$(sed 1q "$dst/$Ftmp")
+$(cat "$src/$Fyml" | yq -r '"
+* 标题：\(.title)
+* 作者：\(.author)
+* 发布年：\(.year)
+"' "$src/$Fyml")
+$(sed -n '2,/^## 摘要/p' "$dst/$Ftmp" | sed '$d')
+$(yq -r '"
+## Abstract
+
+\(.abstract)
+"' "$src/$Fyml")
+
+$(sed -n '/^## 摘要/,$p' "$dst/$Ftmp")
+REF
+        rm "$dst/$Ftmp"
+    fi
+done
+
+# Gather pdfs into a folder
+src="/Users/Roy/Documents/papers/${PAPIS_LIB}"
+pdfs=$(papis -l ${PAPIS_LIB} export --json --all 2>&- | jq -r '.[] | .files | .[] | select(test("\\.pdf$"))' | sort -u)
+mkdir -p "$dst/$Dref"
+for pdf in $pdfs; do
+    cp "$pdf" "$dst/$Dref"
+done

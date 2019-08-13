@@ -2,7 +2,7 @@
 
 pip3 install papis
 pip3 install papis-scihub
-pip3 install papis-zotero
+pip3 install yq
 
 mv ~/.config/papis ~/.config/papis.bak
 ln -s $PWD ~/.config/papis
