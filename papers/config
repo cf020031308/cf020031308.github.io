@@ -5,14 +5,14 @@ editmode = vi
 dir = ~/.config/papis/cs
 
 [forecast]
-dir = ~/.config/papis/forecast
+dir = ~/Workplace/uestc/forecast/papers
 
 [federated]
-dir = ~/.config/papis/federated
+dir = ~/Workplace/uestc/federated/papers
 
 
 [settings]
 editor = vim
-default-library = cs
+default-library = forecast
 add-name = {doc[author]:.30}-{doc[title]}
 add-edit = True
