@@ -37,6 +37,16 @@ https://cf020031308.github.io/blog/atom.xml
 http://www.michael-noll.com/feed.xml
 https://www.soimort.org/feed.atom
 exec:~/.newsbeuter/feeds/uestc_yz.sh
+"exec:~/.newsbeuter/feeds/uestc_gr.sh 119"
+"exec:~/.newsbeuter/feeds/uestc_gr.sh 120"
+"exec:~/.newsbeuter/feeds/uestc_gr.sh 121"
+"exec:~/.newsbeuter/feeds/uestc_gr.sh 122"
+"exec:~/.newsbeuter/feeds/uestc_gr.sh 123"
+"exec:~/.newsbeuter/feeds/uestc_gr.sh 124"
+"exec:~/.newsbeuter/feeds/uestc_gr.sh 129"
+"exec:~/.newsbeuter/feeds/uestc_gr.sh 130"
+"exec:~/.newsbeuter/feeds/uestc_gr.sh 133"
+"exec:~/.newsbeuter/feeds/uestc_gr.sh 146"
 https://rsshub.app/uestc/jwc/important
 https://rsshub.app/uestc/jwc/teacher
 https://rsshub.app/uestc/jwc/student
