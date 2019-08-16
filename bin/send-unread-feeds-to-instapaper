@@ -17,7 +17,8 @@ Subject: Feeds@$(date +'%Y%m%d')
 Content-Type: text/html; charset="utf-8"
 
 <html><body><div class="main">
-$(sqlite3 $fp "SELECT printf('"'<h3> %s | <a href="%s">%s</a></h3>'"', rss_feed.title, rss_item.url, rss_item.title) FROM rss_feed JOIN rss_item ON rss_item.feedurl = rss_feed.rssurl WHERE $1 order by rss_feed.title")
+$(sqlite3 $fp "SELECT printf('"'<h3> %s | <a href="%s">%s</a></h3>'"', rss_feed.title, rss_item.url, rss_item.title) FROM rss_feed JOIN rss_item ON rss_item.feedurl = rss_feed.rssurl WHERE ($1) AND substr(rss_item.feedurl, 1, 5) != 'exec:' order by rss_feed.title")
+$(sqlite3 $fp "SELECT printf('"'<h3> %s | <a href="%s">%s</a></h3><br /><div>%s</div>'"', rss_feed.title, rss_item.url, rss_item.title, rss_item.content) FROM rss_feed JOIN rss_item ON rss_item.feedurl = rss_feed.rssurl WHERE ($1) AND substr(rss_item.feedurl, 1, 5) = 'exec:' order by rss_feed.title")
 </div></body></html>
 EOF
 }
