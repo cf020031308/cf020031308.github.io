@@ -4,7 +4,9 @@ import numpy
 import sklearn.datasets
 import matplotlib.pyplot as plt
 
-from utils import dist
+
+def dist(x, y, p=2):
+    return ((x - y) ** p).sum(axis=1) ** (1.0 / p)
 
 
 def kmeans(data, k, target_diff=1):
