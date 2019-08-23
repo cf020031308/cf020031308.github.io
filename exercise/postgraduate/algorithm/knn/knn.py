@@ -1,3 +1,4 @@
+from collections import Counter
 import random
 
 import numpy
@@ -17,9 +18,9 @@ class KNN:
         self.k = k
 
     def __call__(self, x):
-        counter = numpy.zeros(1 + self.label.max())
-        counter[self.label[dist(self.data, x).argsort()[:self.k]]] += 1
-        return counter.argmax()
+        return Counter(
+            self.label[dist(self.data, x).argsort()[:self.k]]
+        ).most_common(1)[0][0]
 
 
 def main():

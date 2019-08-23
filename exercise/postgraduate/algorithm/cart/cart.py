@@ -109,7 +109,7 @@ def main():
     )
     data //= 4
     cart = CART(data, label)
-    print(cart.graphviz())
+    # print(cart.graphviz())
     cart.shrink()
     print(cart.graphviz())
 
