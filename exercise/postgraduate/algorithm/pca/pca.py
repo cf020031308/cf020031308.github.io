@@ -8,13 +8,12 @@ def PCA(data, dim=2):
     values, vectors = numpy.linalg.eig(X.T @ X)
     W = vectors[values.argsort()[-dim:][::-1]]
     Z = X @ W.T
-    return Z, Z @ W
+    return Z, Z @ W + offset
 
 
 def main():
     X = numpy.random.rand(60, 2)
-    X -= X.mean(axis=0)
-    z, Z = PCA(X, 1)
+    _, Z = PCA(X, 1)
 
     plt.scatter(*X.T, color='black')
     plt.scatter(*Z.T, color='red')
