@@ -9,7 +9,7 @@ sshd
 dotpath="$HOME/workpalce/cf020031308.github.io/dotfiles/termux"
 
 # install utils
-pkg install git newsboat tmux jq vim python termux-api curl man ossp-uuid wget tar
+pkg install git newsboat tmux jq vim python termux-api curl man ossp-uuid wget tar sqlite
 pip3 install yq
 
 # make shared data available
@@ -21,6 +21,9 @@ ln -s `which vim` $HOME/bin/termux-file-editor
 # initialize workplace
 mkdir ~/workplace && cd ~/workplace
 git clone git@github.com:cf020031308/cf020031308.github.io.git && cd cf020031308.github.io && git clone git@github.com:cf020031308/cf020031308.github.io.wiki.git wiki
+# Fix shabang
+termux-fix-shebang dotfiles/newsbeuter/feeds/*
+termux-fix-shebang bin/*
 echo 'export PATH=$PATH:~/workplace/cf020031308.github.io/bin' >> ~/.bashrc
 
 # shortcuts for termux:widget
