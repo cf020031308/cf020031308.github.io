@@ -1,0 +1,3 @@
+#!/bin/bash
+
+termux-vibrate -d 10 && newsboat -x reload print-unread && bash ~/workplace/cf020031308.github.io/bin/send-unread-feeds-to-instapaper && termux-vibrate -d 10

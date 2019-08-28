@@ -27,9 +27,7 @@ termux-fix-shebang bin/*
 echo 'export PATH=$PATH:~/workplace/cf020031308.github.io/bin' >> ~/.bashrc
 
 # shortcuts for termux:widget
-mkdir -p ~/.shortcuts/tasks
-ln -s $dotpath/feeds2instapaper.sh ~/.shortcuts/tasks/newsboat
-ln -s $dotpath/clipboard2instapaper.sh ~/.shortcuts/tasks/instapaper
+ln -s $dotpath/shortcuts ~/.shortcuts
 
 # tmux.conf
 echo "unbind C-b
@@ -40,6 +38,5 @@ set-option -g mode-keys vi" > ~/.tmux.conf
 ln -s ~/workplace/cf020031308.github.io/dotfiles/git/gitconfig ~/.gitconfig
 
 # tasker
-mkdir -p ~/.termux/tasker
-ln -s $dotpath/feeds2instapaper.sh ~/.termux/tasker
-ln -s $dotpath/clipboard2instapaper.sh ~/.termux/tasker
+# mkdir -p ~/.termux/tasker
+# ln -s ~/.shortcuts/pb2instapaper ~/.termux/tasker
