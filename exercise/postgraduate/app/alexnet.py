@@ -1,31 +1,16 @@
-import time
-import datetime
-
 import numpy
 import tensorflow as tf
 
-
-def collect(lst):
-    def deco(func):
-        def wrapper(*args, **kwargs):
-            v = func(*args, **kwargs)
-            lst.append(v)
-            return v
-        return wrapper
-    return deco
+from utils import collect, print_activations, timeit, init_session
 
 
-def print_activations(t):
-    print(t.op.name, t.get_shape().as_list())
-
-
-def inference(images):
+def inference(tensor):
     params = []
     w = collect(params)(lambda *shape: tf.Variable(
         tf.truncated_normal(shape, dtype=tf.float32, stddev=0.1),
         name='weights'))
-    b = collect(params)(lambda *shape: tf.Variable(
-        tf.constant(0.0, shape=shape, dtype=tf.float32),
+    b = collect(params)(lambda *shape, **kw: tf.Variable(
+        tf.constant(kw.get('init', 0.0), shape=shape, dtype=tf.float32),
         trainable=True,
         name='biases'))
 
@@ -36,7 +21,6 @@ def inference(images):
         [(3, 3), 256, (1, 1), False, False],
         [(3, 3), 256, (1, 1), False, True],
     ]
-    tensor = images
     for i, conv_conf in enumerate(conv_confs, 1):
         with tf.name_scope('conv%d' % i) as scope:
             size, count, strides, lrn, pool = conv_conf
@@ -44,7 +28,7 @@ def inference(images):
                 tf.nn.bias_add(
                     tf.nn.conv2d(
                         tensor,
-                        w(*size, tensor.get_shape().as_list()[-1], count),
+                        w(*size, tensor.get_shape()[-1].value, count),
                         (1, *strides, 1),
                         padding='SAME'),
                     b(count)),
@@ -70,39 +54,13 @@ def inference(images):
     for i, outsize in enumerate([4096, 4096, 1000], i + 1):
         with tf.name_scope('full%d' % i) as scope:
             tensor = tf.nn.relu(
-                tf.matmul(tensor, w(insize, outsize)) + b(outsize),
+                tf.matmul(tensor, w(insize, outsize)) + b(outsize, init=0.1),
                 name=scope)
             insize = outsize
+            if outsize == 1000:
+                tensor = tf.nn.softmax(tensor)
 
-    with tf.name_scope('softmax') as scope:
-        outsize = 1000
-        yhat = tf.nn.softmax(
-            tf.matmul(tensor, w(insize, outsize)) + b(outsize))
-
-    return yhat, params
-
-
-def timeit(session, target, info, num_batches=100):
-    durations = []
-
-    for i in range(-10, num_batches):
-        start_time = time.time()
-        _ = session.run(target)
-        duration = time.time() - start_time
-        if i < 0:
-            continue
-        if not i % 10:
-            print('%s: step %d, duration = %.3f'
-                  % (datetime.datetime.now(), i, duration))
-        durations.append(duration)
-
-    durations = numpy.array(durations)
-    print('%s: %s across %d steps, %.3f ± %.3f sec / batch' % (
-        datetime.datetime.now(),
-        info,
-        num_batches,
-        durations.mean(),
-        durations.std()))
+    return tensor, params
 
 
 def benchmark(batch_size=16):
@@ -111,15 +69,14 @@ def benchmark(batch_size=16):
             (batch_size, 224, 224, 3),
             dtype=tf.float32,
             stddev=1e-1))
-        alexnet, params = inference(images)
-        init = tf.global_variables_initializer()
-        session = tf.Session()
-        session.run(init)
+        cnn, params = inference(images)
+        session = init_session()
 
-        timeit(session, alexnet, 'Forward')
+        num_batches = 50
+        timeit(session, cnn, 'Forward', num_batches=num_batches)
 
-        grad = tf.gradients(tf.nn.l2_loss(alexnet), params)
-        timeit(session, grad, 'Forward-backward')
+        grad = tf.gradients(tf.nn.l2_loss(cnn), params)
+        timeit(session, grad, 'Forward-backward', num_batches=num_batches)
 
 
 if __name__ == '__main__':
