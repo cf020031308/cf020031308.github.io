@@ -61,7 +61,7 @@ def inference(tensor, keepin):
             ksize=(1, 2, 2, 1),
             strides=(1, 2, 2, 1),
             padding='SAME',
-            name='pool%d')
+            name='pool%d' % i)
 
     insize = numpy.array(tensor.get_shape().as_list()[1:]).prod()
     tensor = tf.reshape(tensor, (-1, insize))
