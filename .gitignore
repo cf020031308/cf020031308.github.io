@@ -1,1 +1,5 @@
 wiki
+.DS_Store
+.swp
+.pyc
+__pycache__
