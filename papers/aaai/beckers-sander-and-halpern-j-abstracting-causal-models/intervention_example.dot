@@ -1,0 +1,28 @@
+strict digraph {
+    layout=dot;
+    subgraph 1 {
+        subgraph cluster_room {
+            label="房间";
+            labeljust=l;
+            measure [label="温度计温度\n（正常为 40℃）"];
+            screen [label="温度计读数", fillcolor=grey, style=filled];
+            feeling [label="人体体温", fillcolor=grey, style=filled];
+            measure -> screen;
+        }
+        temperature [label="环境温度"];
+        temperature -> {measure, feeling};
+    }
+    subgraph 2 {
+        subgraph cluster_room {
+            label="房间";
+            labeljust=l;
+            measure2 [label="温度计温度\n（冷敷至 26℃）"];
+            screen2 [label="温度计读数", fillcolor=grey, style=filled];
+            feeling2 [label="人体体温", fillcolor=grey, style=filled];
+            measure2 -> screen2;
+        }
+        temperature2 [label="环境温度"];
+        temperature2 -> measure2 [style=invis];
+        temperature2 -> feeling2;
+    }
+}

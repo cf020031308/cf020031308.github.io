@@ -1,0 +1,24 @@
+strict digraph {
+    layout=circo;
+    O [style=invis];
+    O -> {
+        v1 [label=V];
+        v2 [label=V];
+        v3 [label=V];
+        v4 [label=V];
+        v5 [label=V];
+    } [style=invis];
+    u1 [label=U];
+    u2 [label=U];
+    u3 [label=U];
+    u4 [label=U];
+    u5 [label=U];
+    u6 [label=U];
+    u7 [label=U];
+    u8 [label=U];
+    v1 -> u1 [dir=back];
+    v2 -> u2 [dir=back];
+    v3 -> u3 [dir=back];
+    v4 -> u4 [dir=back];
+    v5 -> u5 [dir=back];
+}
