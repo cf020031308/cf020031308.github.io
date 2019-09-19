@@ -4,6 +4,12 @@ editmode = vi
 [cs]
 dir = ~/.config/papis/cs
 
+[aaai]
+dir = ~/.config/papis/aaai
+
+[aaai_workshop_2016]
+dir = ~/.config/papis/aaai_workshop_2016
+
 [forecast]
 dir = ~/Workplace/uestc/forecast/papers
 
@@ -16,6 +22,6 @@ dir = ~/.config/papis/neural_network
 
 [settings]
 editor = vim
-default-library = nn
+default-library = aaai
 add-name = {doc[author]:.30}-{doc[title]}
 add-edit = True

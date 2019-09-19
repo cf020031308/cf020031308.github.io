@@ -1,0 +1,24 @@
+abstract: 'We study the automatic reply of email business messages in Brazilian Portuguese. We present a novel corpus containing messages from a real application, and baseline categorization experiments using Naive Bayes and Support Vector Machines. We then discuss the effect of lemmatization and the role of part-of-speech tagging filtering on precision and recall. Support Vector Machines classification coupled with non-lemmatized selection of verbs and nouns, adjectives and adverbs was the best approach, with 87.3% maximum accuracy. Straightforward lemmatization in Portuguese led to the lowest classification results in the group, with 85.3% and 81.7% precision in SVM and Naive Bayes respectively. Thus, while lemmatization reduced precision and recall, part-of- speech filtering improved overall results.'
+author: 'Rogerio Bonatti and
+
+  Arthur G. de Paula and
+
+  Victor S. Lamarca and
+
+  F{\''{a}}bio Gagliardi Cozman'
+bibsource: dblp computer science bibliography, https://dblp.org\
+biburl: https://dblp.org/rec/bib/conf/aaai/BonattiPLC16
+booktitle: 'Knowledge Extraction from Text, Papers from the 2016 {AAAI} Workshop,
+
+  Phoenix, Arizona, USA, February 12, 2016.'
+crossref: DBLP:conf/aaai/2016text
+files:
+- /Users/Roy/Documents/papers/aaai/effect-of-part-of-speech-and-lemmatization-filtering-in-email-classification-for-automatic-reply.pdf
+ref: DBLP:conf/aaai/BonattiPLC16
+timestamp: Wed, 05 Apr 2017 12:53:50 +0200
+title: 'Effect of Part-of-Speech and Lemmatization Filtering in Email Classification
+
+  for Automatic Reply'
+type: inproceedings
+url: http://www.aaai.org/ocs/index.php/WS/AAAIW16/paper/view/12678
+year: '2016'

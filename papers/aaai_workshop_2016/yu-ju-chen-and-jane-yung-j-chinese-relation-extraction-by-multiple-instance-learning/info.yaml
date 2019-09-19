@@ -1,0 +1,18 @@
+abstract: 'Relation extraction, which learns semantic relations of concept pairs from text, is an approach for mining commonsense knowledge. This paper investigates an approach for relation extraction, which helps expand a commonsense knowledge base with little labor work. We proposed a framework that learns new pairs from Chinese corpora by adopting concept pairs in Chinese commonsense knowledge base as seeds. Multiple instance learning is utilized as the learning algorithm for predicting relation for unseen pairs. The performance of our system could be improved by learning multiple iterations. The results in each iteration are manually evaluated and processed to next iteration as seeds. Our experiments extracted new pairs for relations “AtLocation”, “CapableOf”, and “HasProperty”. This study showed that new pairs could be extracted from text without huge humans work.'
+author: 'Yu{-}Ju Chen and
+
+  Jane Yung{-}jen Hsu'
+bibsource: dblp computer science bibliography, https://dblp.org\
+biburl: https://dblp.org/rec/bib/conf/aaai/ChenH16
+booktitle: 'Knowledge Extraction from Text, Papers from the 2016 {AAAI} Workshop,
+
+  Phoenix, Arizona, USA, February 12, 2016.'
+crossref: DBLP:conf/aaai/2016text
+files:
+- /Users/Roy/Documents/papers/aaai/chinese-relation-extraction-by-multiple-instance-learning.pdf
+ref: DBLP:conf/aaai/ChenH16
+timestamp: Wed, 05 Apr 2017 12:53:50 +0200
+title: Chinese Relation Extraction by Multiple Instance Learning
+type: inproceedings
+url: http://www.aaai.org/ocs/index.php/WS/AAAIW16/paper/view/12604
+year: '2016'

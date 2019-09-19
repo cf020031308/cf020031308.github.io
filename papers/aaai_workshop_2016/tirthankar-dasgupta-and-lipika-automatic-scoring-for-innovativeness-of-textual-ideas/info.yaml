@@ -1,0 +1,18 @@
+abstract: 'Automatic evaluation of text for its innovative quality has been necessitated by the growing trend to organize open innovation contests by different organizations. Such online/offline contests are known to fuel major business benefits to many industries. However, open contests result in a huge number of documents of which only a few may contain potentially interesting and relevant ideas. Usually these entries are manually reviewed and scored by multiple experts. But manual evaluation process not only require a lot of time and effort but are also prone to erroneous judgments due to inter-annotator disagreements. To counter this issue, in this paper, we have proposed a new approach towards detecting novelty or innovativeness of textual ideas from a given collection of ideas. The proposed approach uses information theoretic measures and term relevance to domain to compute document level innovativeness score. We have evaluated the performance of the proposed approach with a real world collection of innovative ideas which were manually scored by experts. We have compared the performance of our proposed model with some of the commonly used baseline approaches that rely on distributional semantics and geometric distances. The result shows that the proposed method outperform the existing baseline models.'
+author: 'Tirthankar Dasgupta and
+
+  Lipika Dey'
+bibsource: dblp computer science bibliography, https://dblp.org\
+biburl: https://dblp.org/rec/bib/conf/aaai/DasguptaD16
+booktitle: 'Knowledge Extraction from Text, Papers from the 2016 {AAAI} Workshop,
+
+  Phoenix, Arizona, USA, February 12, 2016.'
+crossref: DBLP:conf/aaai/2016text
+files:
+- /Users/Roy/Documents/papers/aaai/automatic-scoring-for-innovativeness-of-textual-ideas.pdf
+ref: DBLP:conf/aaai/DasguptaD16
+timestamp: Wed, 05 Apr 2017 12:53:50 +0200
+title: Automatic Scoring for Innovativeness of Textual Ideas
+type: inproceedings
+url: http://www.aaai.org/ocs/index.php/WS/AAAIW16/paper/view/12663
+year: '2016'

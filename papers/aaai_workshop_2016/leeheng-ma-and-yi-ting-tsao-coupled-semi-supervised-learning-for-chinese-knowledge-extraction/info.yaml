@@ -1,0 +1,22 @@
+abstract: 'Robust intelligent systems may leverage knowledge about the world to cope with a variety of contexts. While automatic knowledge extraction algorithms have been successfully used to build knowledge bases in English, little progress has been made in extracting non-alphabetic languages, e.g. Chinese. This paper identifies the key challenge in instance and pattern extraction for Chinese and presents the Coupled Chinese Pattern Learner that utilizes part-of-speech tagging and language-dependent grammar rules for generalized matching in the Chinese never-ending language learner framework for large-scale knowledge extraction from online documents. Experiments showed that the proposed system is scalable and achieves a precision of 79.9% in learning categories after a small number of iterations.'
+author: 'Leeheng Ma and
+
+  Yi{-}Ting Tsao and
+
+  Yen{-}Ling Kuo and
+
+  Jane Yung{-}jen Hsu'
+bibsource: dblp computer science bibliography, https://dblp.org\
+biburl: https://dblp.org/rec/bib/conf/aaai/MaTKH16
+booktitle: 'Knowledge Extraction from Text, Papers from the 2016 {AAAI} Workshop,
+
+  Phoenix, Arizona, USA, February 12, 2016.'
+crossref: DBLP:conf/aaai/2016text
+files:
+- /Users/Roy/Documents/papers/aaai/coupled-semi-supervised-learning-for-chinese-knowledge-extraction.pdf
+ref: DBLP:conf/aaai/MaTKH16
+timestamp: Wed, 05 Apr 2017 12:53:50 +0200
+title: Coupled Semi-Supervised Learning for Chinese Knowledge Extraction
+type: inproceedings
+url: http://www.aaai.org/ocs/index.php/WS/AAAIW16/paper/view/12640
+year: '2016'

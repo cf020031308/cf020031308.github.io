@@ -1,0 +1,18 @@
+abstract: 'Reasoning with commonsense knowledge plays an important role in various NLU tasks. Often the commonsense knowledge is needed to be extracted separately. In this paper we present our work of automatically extracting a certain type of commonsense knowledge. The knowledge resembles the kind that humans have about the events and the entities that participate in those events. One example of such knowledge is that “IF A bullying B causes T rescued Z THEN (possibly) Z = B ”. We call this knowledge an event-based conditional commonsense. Our approach involves semantic parsing of natural language sentences by using the Knowledge Parser (K-Parser) and extracting the knowledge, if found. We extracted about 19000 instances of such knowledge from the Open American National Corpus.'
+author: 'Arpit Sharma and
+
+  Chitta Baral'
+bibsource: dblp computer science bibliography, https://dblp.org\
+biburl: https://dblp.org/rec/bib/conf/aaai/SharmaB16
+booktitle: 'Knowledge Extraction from Text, Papers from the 2016 {AAAI} Workshop,
+
+  Phoenix, Arizona, USA, February 12, 2016.'
+crossref: DBLP:conf/aaai/2016text
+files:
+- /Users/Roy/Documents/papers/aaai/automatic-extraction-of-events-based-conditional-commonsense-knowledge.pdf
+ref: DBLP:conf/aaai/SharmaB16
+timestamp: Wed, 05 Apr 2017 12:53:50 +0200
+title: Automatic Extraction of Events-Based Conditional Commonsense Knowledge
+type: inproceedings
+url: http://www.aaai.org/ocs/index.php/WS/AAAIW16/paper/view/12597
+year: '2016'
