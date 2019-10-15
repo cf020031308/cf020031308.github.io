@@ -1,0 +1,46 @@
+abstract: 'While perception tasks such as visual object recognition and text
+
+  understanding play an important role in human intelligence, the subsequent
+
+  tasks that involve inference, reasoning and planning require an even higher
+
+  level of intelligence. The past few years have seen major advances in many
+
+  perception tasks using deep learning models. For higher-level inference,
+
+  however, probabilistic graphical models with their Bayesian nature are still
+
+  more powerful and flexible. To achieve integrated intelligence that involves
+
+  both perception and inference, it is naturally desirable to tightly integrate
+
+  deep learning and Bayesian models within a principled probabilistic framework,
+
+  which we call Bayesian deep learning. In this unified framework, the perception
+
+  of text or images using deep learning can boost the performance of higher-level
+
+  inference and in return, the feedback from the inference process is able to
+
+  enhance the perception of text or images. This survey provides a general
+
+  introduction to Bayesian deep learning and reviews its recent applications on
+
+  recommender systems, topic models, and control. In this survey, we also discuss
+
+  the relationship and differences between Bayesian deep learning and other
+
+  related topics like Bayesian treatment of neural networks.'
+archiveprefix: arXiv
+author: Hao Wang and Dit-Yan Yeung
+eprint: 1604.01662v2
+file: 1604.01662v2.pdf
+files:
+- /Users/Roy/Documents/papers/cs/towards-bayesian-deep-learning-a-survey.pdf
+month: Apr
+primaryclass: stat.ML
+ref: 1604.01662v2
+title: 'Towards Bayesian Deep Learning: A Survey'
+type: article
+url: http://arxiv.org/abs/1604.01662v2
+year: '2016'

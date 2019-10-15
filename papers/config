@@ -16,12 +16,9 @@ dir = ~/Workplace/uestc/forecast/papers
 [federated]
 dir = ~/Workplace/uestc/federated/papers
 
-[nn]
-dir = ~/.config/papis/neural_network
-
 
 [settings]
 editor = vim
-default-library = aaai
+default-library = cs
 add-name = {doc[author]:.30}-{doc[title]}
 add-edit = True
