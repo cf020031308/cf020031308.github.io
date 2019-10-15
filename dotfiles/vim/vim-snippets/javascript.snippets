@@ -48,3 +48,17 @@ snippet xml2obj
 	    }
 	    return obj;
 	};
+snippet redux-reducer
+	const actions = {};
+	const handlers = Object.fromEntries(Object.entries({
+	  update(state, id, data) {
+	    return {};
+	  },
+	}).map(([action, handler]) => {
+	  const type = Symbol(action);
+	  actions[action] = (...args) => ({type, args});
+	  return [type, handler];
+	}));
+	const reducer = (state, {type, args = []}) => {
+	  return {...state, ...(handlers[type] && handlers[type](state, ...args) || {})};
+	};
