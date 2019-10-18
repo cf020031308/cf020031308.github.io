@@ -95,7 +95,11 @@ To see more please scroll left or press right/down key .
                 for (var i in exts) {
                     var ext = exts[i];
                     if (fp.endsWith(ext)) {
-                        ref.innerHTML += "\n## [View in markdown](" + fp.substr(0, fp.length - ext.length) + ")";
+                        var mdp = fp.substr(0, fp.length - ext.length);
+                        if (location.href.match(/\.github\.io/) && mdp.toLowerCase().endsWith('/readme')) {
+                          mdp = mdp.substr(0, mdp.length - 6);
+                        }
+                        ref.innerHTML += "\n## [View in HTML](" + mdp + ")";
                         break;
                     }
                 }
