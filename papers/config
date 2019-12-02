@@ -7,9 +7,6 @@ dir = ~/.config/papis/cs
 [aaai]
 dir = ~/.config/papis/aaai
 
-[aaai_workshop_2016]
-dir = ~/.config/papis/aaai_workshop_2016
-
 [forecast]
 dir = ~/Workplace/uestc/forecast/papers
 
@@ -20,5 +17,5 @@ dir = ~/Workplace/uestc/federated/papers
 [settings]
 editor = vim
 default-library = cs
-add-name = {doc[author]:.30}-{doc[title]}
+add-name = {doc[year]}-{doc[title]}
 add-edit = True
