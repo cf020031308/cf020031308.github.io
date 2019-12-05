@@ -1,0 +1,25 @@
+abstract: 'In this paper, we present an open-source emotion tracker and its innovative applications. Our tracker, EmoGram, tracks emotion changes for a sequence of textual units. It is versatile in terms of the textual unit (tweets, sentences in discourse, etc.) and also what constitutes the time sequence (timestamps of tweets, discourse nature of text, etc.). We demonstrate the utility of our system through our applications: a sequence of commentaries in cricket matches, a sequence of dialogues in a play, and a sequence of tweets related to the Maggi controversy in India in 2015. That one system can be used for these applications is the merit of EmoGram.'
+author: 'Aditya Joshi and
+
+  Vaibhav Tripathi and
+
+  Ravindra Soni and
+
+  Pushpak Bhattacharyya and
+
+  Mark James Carman'
+bibsource: dblp computer science bibliography, https://dblp.org\
+biburl: https://dblp.org/rec/bib/conf/aaai/JoshiTSBC16
+booktitle: 'Knowledge Extraction from Text, Papers from the 2016 {AAAI} Workshop,
+
+  Phoenix, Arizona, USA, February 12, 2016.'
+crossref: DBLP:conf/aaai/2016text
+files: []
+ref: DBLP:conf/aaai/JoshiTSBC16
+timestamp: Wed, 05 Apr 2017 12:53:50 +0200
+title: 'EmoGram: An Open-Source Time Sequence-Based Emotion Tracker and Its
+
+  Innovative Applications'
+type: inproceedings
+url: http://www.aaai.org/ocs/index.php/WS/AAAIW16/paper/view/12629
+year: '2016'

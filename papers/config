@@ -1,11 +1,8 @@
 [tui]
 editmode = vi
 
-[cs]
-dir = ~/.config/papis/cs
-
-[aaai]
-dir = ~/.config/papis/aaai
+[ai]
+dir = ~/.config/papis/ai
 
 [forecast]
 dir = ~/Workplace/uestc/forecast/papers
@@ -16,6 +13,6 @@ dir = ~/Workplace/uestc/federated/papers
 
 [settings]
 editor = vim
-default-library = cs
+default-library = ai
 add-name = {doc[year]}-{doc[title]}
 add-edit = True
