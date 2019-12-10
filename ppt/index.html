@@ -17,10 +17,12 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'https://cdn.bootcss.com/reveal.js/3.8.0/css/print/pdf.min.css' : 'https://cdn.bootcss.com/reveal.js/3.8.0/css/print/paper.min.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+        <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.2/dist/mermaid.min.js"></script>
+        <script src="https://cdn.bootcss.com/echarts/4.4.0-rc.1/echarts-en.min.js"></script>
 
         <style>
             .reveal .slides { text-align: left }
-            .reveal .slides .cols { display: flex }
+            .reveal .slides .cols { display: flex; justify-content: space-around; align-items: center }
             .reveal .slides h2 { text-align: center }
             .reveal .slides h3 { text-align: center }
         </style>
@@ -29,37 +31,14 @@
 		<div class="reveal">
 			<div class="slides">
                 <section id="markdown-section"
-                         data-markdown=""
+                         data-markdown="readme.md"
                          data-separator="^\r?\n(?=#)|^(\r?\n){3}|\r?\n---\r?\n"
                          data-separator-vertical="^(\r?\n){2}|\r?\n___\r?\n">
-                    <textarea data-template>
-# About
-
-This is a tool based on [reveal.js](https://github.com/hakimel/reveal.js) to convert online markdown files into slides if you place the URL (whether absolute or relative)  at the search part like this:
-
-[https://cf020031308.github.io/ppt?/notes/english/20190502.md](?/notes/english/20190502.md)
-
-To see more please scroll up or press right/down key .
-
-
-The markdown file is retrieved and parsed, and then is splitted into slides by "`---`" or three consecutive newlines and into sub-slides by "`___`" or two.
-
-To see more please scroll left or press right/down key .
-
-
-
-## Troubleshooting
-
-* To pass the CORS policy You need to download [the source code of this page](https://github.com/cf020031308/cf020031308.github.io/raw/master/ppt/index.html) to your local path to open.
-
-
-
-## [Comment](https://github.com/cf020031308/cf020031308.github.io/issues/15)
-                    </textarea>
                 </section>
 			</div>
 		</div>
 		<script src="https://cdn.bootcss.com/reveal.js/3.8.0/js/reveal.min.js"></script>
+		<script src="index.js"></script>
         <script>
             var configs = {
 				dependencies: [
@@ -67,7 +46,7 @@ To see more please scroll left or press right/down key .
 					{ src: 'https://cdn.bootcss.com/reveal.js/3.8.0/plugin/markdown/marked.js' },
 					{ src: 'https://cdn.bootcss.com/reveal.js/3.8.0/plugin/markdown/markdown.min.js' },
 					{ src: 'https://cdn.bootcss.com/reveal.js/3.8.0/plugin/notes/notes.min.js', async: true },
-					{ src: 'https://cdn.bootcss.com/reveal.js/3.8.0/plugin/highlight/highlight.min.js', async: true }
+					{ src: 'https://cdn.bootcss.com/reveal.js/3.8.0/plugin/highlight/highlight.min.js' }
 				],
                 markdown: {
                     gfm: true,
@@ -81,6 +60,42 @@ To see more please scroll left or press right/down key .
                     mathjax: 'https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js',
                 },
 			};
+
+            var DIYLangs = {
+                mermaid: function(el) {
+                    mermaid.init({}, el);
+                },
+                echarts: function(el) {
+                    var str = decode_entity(el.innerHTML);
+                    var width = Math.max(450, Math.min(1200, el.style.width || el.clientWidth));
+                    var height = Math.max(300, Math.min(width / 1.618, el.style.height || el.clientHeight));
+                    echarts.init(
+                        el, 'dark', { width: width, height: height }
+                    ).setOption(echartsOpt(str));
+                },
+            };
+            var DIYLangHandler = function(e) {
+                for (var lang in DIYLangs) {
+                    if (e.type === 'ready') {
+                        [].slice.call(
+                            document.querySelectorAll('code.language-' + lang)
+                        ).forEach(function(el) {
+                            var pre = el.parentNode;
+                            pre.innerHTML = el.innerHTML;
+                            pre.classList.add(lang);
+                        });
+                    }
+                    var handle = DIYLangs[lang];
+                    [].slice.call(
+                        e.currentSlide.querySelectorAll('pre.' + lang)
+                    ).forEach(function(el) {
+                        el.classList.remove(lang);
+                        handle(el);
+                    });
+                }
+            };
+            Reveal.addEventListener('slidechanged', DIYLangHandler);
+            Reveal.addEventListener('ready', DIYLangHandler);
 
             // Requests from wechat will be followed by some more queries.
             var fp = location.search.substr(1).split("&")[0];
@@ -116,6 +131,7 @@ To see more please scroll left or press right/down key .
                 configs.markdown.baseUrl = fp.split("/").slice(0, -1).join("/") + "/";
             }
 
+            mermaid.initialize({theme: 'dark', startOnLoad: false});
 			Reveal.initialize(configs);
 		</script>
 	</body>
