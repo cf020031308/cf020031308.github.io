@@ -1,0 +1,33 @@
+abstract: 'We propose an algorithm for finding heavy hitters in terms of cardinality (the number of distinct items in a set) in massive traffic data using a small amount of memory. Examples of such cardinality heavy-hitters are hosts that send large numbers of flows, or hosts that communicate with large numbers of other hosts. Finding these hosts is crucial to the provision of good communication quality because they significantly affect the communications of other hosts via either malicious activities such as worm scans, spam distribution, or botnet control or normal activities such as being a member of a flash crowd or performing peer-to-peer (P2P) communication. To precisely determine the cardinality of a host we need tables of previously seen items for each host (e. g., flow tables for every host) and this may infeasible for a high-speed environment with a massive amount of traffic. In this paper, we use a cardinality estimation algorithm that does not require these tables but needs only a little information called the cardinality summary. This is made possible by relaxing the goal from exact counting to estimation of cardinality. In addition, we propose an algorithm that does not need to maintain the cardinality summary for each host, but only for partitioned addresses of a host. As a result, the required number of tables can be significantly decreased. We evaluated our algorithm using actual backbone traffic data to find the heavy-hitters in the number of flows and estimate the number of these flows. We found that while the accuracy degraded when estimating for hosts with few flows, the algorithm could accurately find the top-100 hosts in terms of the number of flows using a limited-sized memory. In addition, we found that the number of tables required to achieve a pre-defined accuracy increased logarithmically with respect to the total number of hosts, which indicates that our method is applicable for large traffic data for a very large number of hosts. We also introduce an application of our algorithm to anomaly detection. With actual traffic data, our method could successfully detect a sudden network scan.'
+author: 'Keisuke Ishibashi and
+
+  Tatsuya Mori and
+
+  Ryoichi Kawahara and
+
+  Yutaka Hirokawa and
+
+  Atsushi Kobayashi and
+
+  Kimihiro Yamamoto and
+
+  Hitoaki Sakamoto and
+
+  Shoichiro Asano'
+bibsource: dblp computer science bibliography, https://dblp.org\
+biburl: https://dblp.org/rec/bib/journals/ieicet/IshibashiMKHKYSA08
+doi: 10.1093/ietcom/e91-b.5.1331
+files:
+- finding-cardinality-heavy-hitters-in-massive-traffic-data-and-its-application-to-anomaly-detection.pdf
+journal: '{IEICE} Transactions'
+number: '5'
+pages: 1331--1339
+ref: DBLP:journals/ieicet/IshibashiMKHKYSA08
+timestamp: Sun, 28 May 2017 13:21:04 +0200
+title: 'Finding Cardinality Heavy-Hitters in Massive Traffic Data and Its
+
+  Application to Anomaly Detection'
+type: article
+url: https://doi.org/10.1093/ietcom/e91-b.5.1331
+volume: 91-B
+year: '2008'

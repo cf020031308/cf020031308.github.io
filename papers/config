@@ -1,6 +1,9 @@
 [tui]
 editmode = vi
 
+[cs]
+dir = ~/.config/papis/cs
+
 [ai]
 dir = ~/.config/papis/ai
 
