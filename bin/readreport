@@ -1,0 +1,8 @@
+#!/bin/bash -
+
+# Download data from <https://www.instapaper.com/user>
+# Usage: $0 path/to/InstapaperCSVFile startdate beforedate
+# Example: $0 instapaper-exports.csv 2019-05-01 2019-06-01
+
+fn="/tmp/instapaper_archived_$2_$3.html"
+sed '/Feeds@2019/d' "$1" | textql -header -sql 'SELECT printf("<li><a href=%s >%s</a></li>", URL, Title) WHERE Folder = "Archive" AND date(Timestamp, "unixepoch") >= "'"$2"'" AND date(Timestamp, "unixepoch") < "'"$3"'" ORDER BY Timestamp' > "$fn" && open "$fn"
