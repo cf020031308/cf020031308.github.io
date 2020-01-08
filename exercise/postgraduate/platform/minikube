@@ -1,3 +1,0 @@
-brew install kubernetes-cli
-brew install cask minikube
-minikube start --docker-env HTTP_PROXY=http://192.168.99.1:8888 --docker-env HTTPS_PROXY=http://192.168.99.1:8888
