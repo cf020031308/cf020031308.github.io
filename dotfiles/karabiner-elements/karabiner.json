@@ -18,7 +18,18 @@
                         "description": "Mouse Keys Mode v4 (rev 1)",
                         "manipulators": [
                             {
-                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "name": "mouse_keys_mode_v4",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "mouse_keys_mode_v4_scroll",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "j",
                                     "modifiers": {
@@ -34,21 +45,16 @@
                                         }
                                     }
                                 ],
-                                "conditions": [
-                                    {
-                                        "type": "variable_if",
-                                        "name": "mouse_keys_mode_v4",
-                                        "value": 1
-                                    },
-                                    {
-                                        "type": "variable_if",
-                                        "name": "mouse_keys_mode_v4_scroll",
-                                        "value": 1
-                                    }
-                                ]
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "name": "mouse_keys_mode_v4",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "j",
                                     "modifiers": {
@@ -64,17 +70,15 @@
                                         }
                                     }
                                 ],
-                                "conditions": [
-                                    {
-                                        "type": "variable_if",
-                                        "name": "mouse_keys_mode_v4",
-                                        "value": 1
-                                    }
-                                ]
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "from": {
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    },
                                     "simultaneous": [
                                         {
                                             "key_code": "d"
@@ -100,12 +104,10 @@
                                                 }
                                             }
                                         ]
-                                    },
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
                                     }
+                                },
+                                "parameters": {
+                                    "basic.simultaneous_threshold_milliseconds": 500
                                 },
                                 "to": [
                                     {
@@ -120,12 +122,21 @@
                                         }
                                     }
                                 ],
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
-                                }
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "name": "mouse_keys_mode_v4",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "mouse_keys_mode_v4_scroll",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "k",
                                     "modifiers": {
@@ -141,21 +152,16 @@
                                         }
                                     }
                                 ],
-                                "conditions": [
-                                    {
-                                        "type": "variable_if",
-                                        "name": "mouse_keys_mode_v4",
-                                        "value": 1
-                                    },
-                                    {
-                                        "type": "variable_if",
-                                        "name": "mouse_keys_mode_v4_scroll",
-                                        "value": 1
-                                    }
-                                ]
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "name": "mouse_keys_mode_v4",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "k",
                                     "modifiers": {
@@ -171,17 +177,15 @@
                                         }
                                     }
                                 ],
-                                "conditions": [
-                                    {
-                                        "type": "variable_if",
-                                        "name": "mouse_keys_mode_v4",
-                                        "value": 1
-                                    }
-                                ]
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "from": {
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    },
                                     "simultaneous": [
                                         {
                                             "key_code": "d"
@@ -207,12 +211,10 @@
                                                 }
                                             }
                                         ]
-                                    },
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
                                     }
+                                },
+                                "parameters": {
+                                    "basic.simultaneous_threshold_milliseconds": 500
                                 },
                                 "to": [
                                     {
@@ -227,12 +229,21 @@
                                         }
                                     }
                                 ],
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
-                                }
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "name": "mouse_keys_mode_v4",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "mouse_keys_mode_v4_scroll",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": {
@@ -248,21 +259,16 @@
                                         }
                                     }
                                 ],
-                                "conditions": [
-                                    {
-                                        "type": "variable_if",
-                                        "name": "mouse_keys_mode_v4",
-                                        "value": 1
-                                    },
-                                    {
-                                        "type": "variable_if",
-                                        "name": "mouse_keys_mode_v4_scroll",
-                                        "value": 1
-                                    }
-                                ]
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "name": "mouse_keys_mode_v4",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": {
@@ -278,17 +284,15 @@
                                         }
                                     }
                                 ],
-                                "conditions": [
-                                    {
-                                        "type": "variable_if",
-                                        "name": "mouse_keys_mode_v4",
-                                        "value": 1
-                                    }
-                                ]
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "from": {
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    },
                                     "simultaneous": [
                                         {
                                             "key_code": "d"
@@ -314,12 +318,10 @@
                                                 }
                                             }
                                         ]
-                                    },
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
                                     }
+                                },
+                                "parameters": {
+                                    "basic.simultaneous_threshold_milliseconds": 500
                                 },
                                 "to": [
                                     {
@@ -334,12 +336,21 @@
                                         }
                                     }
                                 ],
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
-                                }
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "name": "mouse_keys_mode_v4",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "mouse_keys_mode_v4_scroll",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "l",
                                     "modifiers": {
@@ -355,21 +366,16 @@
                                         }
                                     }
                                 ],
-                                "conditions": [
-                                    {
-                                        "type": "variable_if",
-                                        "name": "mouse_keys_mode_v4",
-                                        "value": 1
-                                    },
-                                    {
-                                        "type": "variable_if",
-                                        "name": "mouse_keys_mode_v4_scroll",
-                                        "value": 1
-                                    }
-                                ]
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "name": "mouse_keys_mode_v4",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "l",
                                     "modifiers": {
@@ -385,17 +391,15 @@
                                         }
                                     }
                                 ],
-                                "conditions": [
-                                    {
-                                        "type": "variable_if",
-                                        "name": "mouse_keys_mode_v4",
-                                        "value": 1
-                                    }
-                                ]
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "from": {
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    },
                                     "simultaneous": [
                                         {
                                             "key_code": "d"
@@ -421,12 +425,10 @@
                                                 }
                                             }
                                         ]
-                                    },
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
                                     }
+                                },
+                                "parameters": {
+                                    "basic.simultaneous_threshold_milliseconds": 500
                                 },
                                 "to": [
                                     {
@@ -441,12 +443,16 @@
                                         }
                                     }
                                 ],
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
-                                }
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "name": "mouse_keys_mode_v4",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "v",
                                     "modifiers": {
@@ -460,17 +466,15 @@
                                         "pointing_button": "button1"
                                     }
                                 ],
-                                "conditions": [
-                                    {
-                                        "type": "variable_if",
-                                        "name": "mouse_keys_mode_v4",
-                                        "value": 1
-                                    }
-                                ]
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "from": {
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    },
                                     "simultaneous": [
                                         {
                                             "key_code": "d"
@@ -496,12 +500,10 @@
                                                 }
                                             }
                                         ]
-                                    },
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
                                     }
+                                },
+                                "parameters": {
+                                    "basic.simultaneous_threshold_milliseconds": 500
                                 },
                                 "to": [
                                     {
@@ -514,12 +516,16 @@
                                         "pointing_button": "button1"
                                     }
                                 ],
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
-                                }
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "name": "mouse_keys_mode_v4",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "b",
                                     "modifiers": {
@@ -533,17 +539,15 @@
                                         "pointing_button": "button3"
                                     }
                                 ],
-                                "conditions": [
-                                    {
-                                        "type": "variable_if",
-                                        "name": "mouse_keys_mode_v4",
-                                        "value": 1
-                                    }
-                                ]
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "from": {
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    },
                                     "simultaneous": [
                                         {
                                             "key_code": "d"
@@ -569,12 +573,10 @@
                                                 }
                                             }
                                         ]
-                                    },
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
                                     }
+                                },
+                                "parameters": {
+                                    "basic.simultaneous_threshold_milliseconds": 500
                                 },
                                 "to": [
                                     {
@@ -587,12 +589,16 @@
                                         "pointing_button": "button3"
                                     }
                                 ],
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
-                                }
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "name": "mouse_keys_mode_v4",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "n",
                                     "modifiers": {
@@ -606,17 +612,15 @@
                                         "pointing_button": "button2"
                                     }
                                 ],
-                                "conditions": [
-                                    {
-                                        "type": "variable_if",
-                                        "name": "mouse_keys_mode_v4",
-                                        "value": 1
-                                    }
-                                ]
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "from": {
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    },
                                     "simultaneous": [
                                         {
                                             "key_code": "d"
@@ -642,12 +646,10 @@
                                                 }
                                             }
                                         ]
-                                    },
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
                                     }
+                                },
+                                "parameters": {
+                                    "basic.simultaneous_threshold_milliseconds": 500
                                 },
                                 "to": [
                                     {
@@ -660,12 +662,16 @@
                                         "pointing_button": "button2"
                                     }
                                 ],
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
-                                }
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "name": "mouse_keys_mode_v4",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "s",
                                     "modifiers": {
@@ -682,13 +688,6 @@
                                         }
                                     }
                                 ],
-                                "conditions": [
-                                    {
-                                        "type": "variable_if",
-                                        "name": "mouse_keys_mode_v4",
-                                        "value": 1
-                                    }
-                                ],
                                 "to_after_key_up": [
                                     {
                                         "set_variable": {
@@ -696,11 +695,16 @@
                                             "value": 0
                                         }
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "from": {
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    },
                                     "simultaneous": [
                                         {
                                             "key_code": "d"
@@ -726,12 +730,10 @@
                                                 }
                                             }
                                         ]
-                                    },
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
                                     }
+                                },
+                                "parameters": {
+                                    "basic.simultaneous_threshold_milliseconds": 500
                                 },
                                 "to": [
                                     {
@@ -747,9 +749,6 @@
                                         }
                                     }
                                 ],
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
-                                },
                                 "to_after_key_up": [
                                     {
                                         "set_variable": {
@@ -757,10 +756,17 @@
                                             "value": 0
                                         }
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "name": "mouse_keys_mode_v4",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "f",
                                     "modifiers": {
@@ -776,17 +782,15 @@
                                         }
                                     }
                                 ],
-                                "conditions": [
-                                    {
-                                        "type": "variable_if",
-                                        "name": "mouse_keys_mode_v4",
-                                        "value": 1
-                                    }
-                                ]
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "from": {
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    },
                                     "simultaneous": [
                                         {
                                             "key_code": "d"
@@ -812,12 +816,10 @@
                                                 }
                                             }
                                         ]
-                                    },
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
                                     }
+                                },
+                                "parameters": {
+                                    "basic.simultaneous_threshold_milliseconds": 500
                                 },
                                 "to": [
                                     {
@@ -832,9 +834,7 @@
                                         }
                                     }
                                 ],
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
-                                }
+                                "type": "basic"
                             }
                         ]
                     },
@@ -842,8 +842,16 @@
                         "description": "Option_R to Browser",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.google\\.Chrome$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
                                 "from": {
-                                    "key_code": "right_option",
+                                    "key_code": "right_command",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -852,7 +860,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "right_option"
+                                        "key_code": "right_command"
                                     }
                                 ],
                                 "to_if_alone": [
@@ -860,19 +868,19 @@
                                         "shell_command": "open -b 'com.apple.Preview'"
                                     }
                                 ],
-                                "type": "basic",
-                                "conditions": [
-                                    {
-                                        "type": "frontmost_application_if",
-                                        "bundle_identifiers": [
-                                            "^com\\.google\\.Chrome$"
-                                        ]
-                                    }
-                                ]
+                                "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple.Preview$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
                                 "from": {
-                                    "key_code": "right_option",
+                                    "key_code": "right_command",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -881,7 +889,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "right_option"
+                                        "key_code": "right_command"
                                     }
                                 ],
                                 "to_if_alone": [
@@ -889,19 +897,11 @@
                                         "shell_command": "open -b 'com.google.Chrome'"
                                     }
                                 ],
-                                "type": "basic",
-                                "conditions": [
-                                    {
-                                        "type": "frontmost_application_if",
-                                        "bundle_identifiers": [
-                                            "^com\\.apple.Preview$"
-                                        ]
-                                    }
-                                ]
+                                "type": "basic"
                             },
                             {
                                 "from": {
-                                    "key_code": "right_option",
+                                    "key_code": "right_command",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -910,7 +910,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "right_option"
+                                        "key_code": "right_command"
                                     }
                                 ],
                                 "to_if_alone": [
@@ -926,6 +926,14 @@
                         "description": "Shift_R to WeChat/QQ",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.tencent\\.xinWeChat$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "right_shift",
                                     "modifiers": {
@@ -944,17 +952,17 @@
                                         "shell_command": "open -b 'com.tencent.qq'"
                                     }
                                 ],
-                                "type": "basic",
-                                "conditions": [
-                                    {
-                                        "type": "frontmost_application_if",
-                                        "bundle_identifiers": [
-                                            "^com\\.tencent\\.xinWeChat$"
-                                        ]
-                                    }
-                                ]
+                                "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.tencent\\.qq$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "right_shift",
                                     "modifiers": {
@@ -973,15 +981,7 @@
                                         "shell_command": "open -b 'com.tencent.xinWeChat'"
                                     }
                                 ],
-                                "type": "basic",
-                                "conditions": [
-                                    {
-                                        "type": "frontmost_application_if",
-                                        "bundle_identifiers": [
-                                            "^com\\.tencent\\.qq$"
-                                        ]
-                                    }
-                                ]
+                                "type": "basic"
                             },
                             {
                                 "from": {
@@ -1032,8 +1032,16 @@
                         "description": "Command_R to iTerm",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.googlecode\\.iterm2$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
                                 "from": {
-                                    "key_code": "right_command",
+                                    "key_code": "right_option",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -1042,7 +1050,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "right_command"
+                                        "key_code": "right_option"
                                     }
                                 ],
                                 "to_if_alone": [
@@ -1053,19 +1061,11 @@
                                         ]
                                     }
                                 ],
-                                "type": "basic",
-                                "conditions": [
-                                    {
-                                        "type": "frontmost_application_if",
-                                        "bundle_identifiers": [
-                                            "^com\\.googlecode\\.iterm2$"
-                                        ]
-                                    }
-                                ]
+                                "type": "basic"
                             },
                             {
                                 "from": {
-                                    "key_code": "right_command",
+                                    "key_code": "right_option",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -1074,7 +1074,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "right_command"
+                                        "key_code": "right_option"
                                     }
                                 ],
                                 "to_if_alone": [
@@ -2189,6 +2189,78 @@
                             }
                         }
                     ]
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 601,
+                        "vendor_id": 1452
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [
+                        {
+                            "from": {
+                                "key_code": "left_command"
+                            },
+                            "to": {
+                                "key_code": "left_option"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "left_option"
+                            },
+                            "to": {
+                                "key_code": "left_command"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "right_command"
+                            },
+                            "to": {
+                                "key_code": "right_option"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "right_option"
+                            },
+                            "to": {
+                                "key_code": "right_command"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 50475,
+                        "vendor_id": 1133
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": []
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": false,
+                        "is_pointing_device": true,
+                        "product_id": 50475,
+                        "vendor_id": 1133
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": []
                 }
             ],
             "fn_function_keys": [
@@ -2291,24 +2363,7 @@
             ],
             "name": "Default profile",
             "selected": true,
-            "simple_modifications": [
-                {
-                    "from": {
-                        "key_code": "left_command"
-                    },
-                    "to": {
-                        "key_code": "left_option"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "left_option"
-                    },
-                    "to": {
-                        "key_code": "left_command"
-                    }
-                }
-            ],
+            "simple_modifications": [],
             "virtual_hid_keyboard": {
                 "country_code": 0
             }

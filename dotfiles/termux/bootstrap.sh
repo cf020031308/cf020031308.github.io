@@ -9,7 +9,7 @@ sshd
 dotpath="$HOME/workpalce/cf020031308.github.io/dotfiles/termux"
 
 # install utils
-pkg install git newsboat tmux jq vim python termux-api curl man ossp-uuid wget tar sqlite
+pkg install git newsboat tmux jq vim python termux-api curl man ossp-uuid wget tar sqlite libxml2-utils
 pip3 install yq
 
 # make shared data available

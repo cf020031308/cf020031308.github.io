@@ -8,7 +8,7 @@ let completionengines = ["google", "baidu", "zhihu", "doubanbook", "doubanmovie"
 let defaultengine = "google"
 
 " disable cVim on the sites matching one of the patterns
-let blacklists = ["https://devdocs.io/*"]
+let blacklists = ["https://devdocs.io/*", "https://cf020031308.github.io/ppt/*"]
 
 " the pattern looked for when navigating a page’s back/next button
 let previousmatchpattern = "((?!last)(prev(ious)?|上一页|newer|back|«|less|<|‹| )+)"
@@ -39,7 +39,7 @@ let searchalias stack = "stackoverflow"
 
 let searchengine taobao = "http://s.taobao.com/search?oe=utf-8&f=8&q=%s"
 
-let searchengine sspai = "https://sspai.com/search/article?q=%s"
+let searchengine sspai = "https://sspai.com/search/post/%s"
 
 let searchengine scholar = "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=%s&btnG="
 
