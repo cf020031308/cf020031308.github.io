@@ -18,7 +18,7 @@ bibsource: dblp computer science bibliography, https://dblp.org\
 biburl: https://dblp.org/rec/bib/journals/ieicet/IshibashiMKHKYSA08
 doi: 10.1093/ietcom/e91-b.5.1331
 files:
-- finding-cardinality-heavy-hitters-in-massive-traffic-data-and-its-application-to-anomaly-detection.pdf
+- /Users/Roy/Documents/papers/cs/finding-cardinality-heavy-hitters-in-massive-traffic-data-and-its-application-to-anomaly-detection.pdf
 journal: '{IEICE} Transactions'
 number: '5'
 pages: 1331--1339
