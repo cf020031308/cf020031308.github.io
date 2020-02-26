@@ -1,0 +1,43 @@
+abbrev_journal_title: Aslib Journal of Info Mgmt
+author: Huang, Jia-Yen
+author_list:
+- given_name: Jia-Yen
+  surname: Huang
+citations:
+- doi: 10.1145/1134271.1134277
+- doi: 10.1177/0894439307305628
+- doi: 10.1080/1369118X.2011.587882
+- doi: 10.1111/jcc4.12102
+- doi: 10.13088/jiis.2013.19.3.141
+- doi: 10.1016/j.electstud.2015.11.017
+- doi: 10.1177/1461444813480466
+- doi: 10.1371/journal.pone.0079449
+- doi: 10.1080/19331681.2012.705080
+- doi: 10.1177/0894439313493979
+- doi: 10.1109/PASSAT/SocialCom.2011.98
+- doi: 10.1300/J050v15n02_02
+- doi: 10.1177/0894439310386557
+- doi: 10.1007/978-3-540-69304-8_47
+doc_url: http://www.emeraldinsight.com/doi/full/10.1108/AJIM-02-2017-0035
+doi: 10.1108/AJIM-02-2017-0035
+files:
+- /Users/Roy/Documents/papers/2017-web-mining-for-the-mayoral-election-prediction-in-taiwan.pdf
+first_page: '688'
+full_journal_title: Aslib Journal of Information Management
+issue: '6'
+journal: Aslib Journal of Information Management
+last_page: '701'
+month: '11'
+pages: 688--701
+ref: 10.1108/AJIM-02-2017-0035
+title: Web mining for the mayoral election prediction in Taiwan
+type: article
+url: http://www.emeraldinsight.com/doi/full-xml/10.1108/AJIM-02-2017-0035
+volume: '69'
+year: '2017'
+abstract: 'Purpose – The prediction of pre-election polls is an issue of concern for both politicians and voters. The Taiwan nine-in-one election held in 2014 ended with jaw-dropping results; apparently, traditional polls did not work well. As a remedy to this problem, the purpose of this paper is to utilize the comments posted on social media to analyze civilians’ views on the two candidates for mayor of Taichung City, Chih-chiang Hu, and Chia-Lung Lin.
+Design/methodology/approach – After conducting word segmentation and part-of-speech tagging for the collected reviews, this study constructs the opinion phrase extraction rules for identifying the opinion words associated with the attribute words. Next, this study classifies the attribute words into six municipal governance-related topics and calculates the opinion scores for each candidate. Finally, this study uses correspondence analysis to transform opinion information on the candidates into a graphical display to facilitate the interpretation of voters’ views.
+Findings – The results show that the topics of candidates’ backgrounds and transport infrastructure were the two most critical factors for the election prediction. Based on the predication, Lin outscores Hu by 17.74 percent which is close to the real election results.
+Research limitations/implications – This study proposes new rules for the extraction of Chinese opinion words associated with attribute words.
+Practical implications – This study applies Chinese semantic analysis to assist in predicting election results and investigating the topics of concern to voters.
+Originality/value – The proposed opinion phrase extraction rules for Chinese social media, as well as the election forecast process, can provide valuable references for political parties and candidates to plan better nomination and election strategies.'

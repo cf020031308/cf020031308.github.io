@@ -1,0 +1,7 @@
+abstract: 'Using python to scrape historical data from online sources and a neural network to analyze this data, a model was created to predict the outcome of the 2018 midterm elections for the House of Representatives on a district by district basis. The information used for this model primarily consists of census data from each district as well as the historical results of elections and publicly available finance data. Two models were created, both predicting a Democratic victory, but with different margins depending on whether the results from the previous congressional elections were included. When this data was included, the Democrats held a 17 seat advantage and when it was not, a 3 seat advantage.'
+author: Sean Swayze
+files:
+- /Users/Roy/Documents/papers/2018-using-neural-networks-to-predict-the-2018-midterm-election.pdf
+publisher: medium.com
+title: 'Using Neural Networks to Predict the 2018 Midterm Election'
+year: '2018'

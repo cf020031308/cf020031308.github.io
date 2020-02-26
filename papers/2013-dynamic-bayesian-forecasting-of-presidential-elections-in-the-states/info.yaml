@@ -1,0 +1,75 @@
+abbrev_journal_title: Journal of the American Statistical Association
+author: Linzer, Drew A.
+author_list:
+- given_name: Drew A.
+  surname: Linzer
+citations:
+- doi: 10.1017/S1049096508081249
+- doi: 10.1017/S0007123406000081
+- doi: 10.1017/S1049096501000026
+- doi: 10.1086/268620
+- doi: 10.1080/10618600.1998.10474787
+- doi: 10.1016/S0169-2070(98)00059-4
+- doi: 10.2307/2111483
+- doi: 10.1177/1532673X9602400402
+- doi: 10.1017/S1049096501000051
+- doi: 10.1017/S1049096508081006
+- doi: 10.1017/S1049096508081158
+- doi: 10.1177/1532673X9202000302
+- doi: 10.1177/1532673X9001800301
+- doi: 10.1198/000313008X267820
+- doi: 10.1017/CBO9780511755934
+- doi: 10.1086/297709
+- doi: 10.1017/S1049096508081237
+- doi: 10.1111/j.1540-5907.2008.00357.x
+- doi: 10.2307/2132225
+- doi: 10.1017/S0007123400006682
+- doi: 10.1214/ss/1177011136
+- doi: 10.1111/1540-5907.00041
+- doi: 10.2307/2111439
+- doi: 10.2307/2111729
+- doi: 10.1016/S0169-2070(98)00060-0
+- doi: 10.1080/10361140500302472
+- doi: 10.1287/opre.51.1.32.12794
+- doi: 10.1017/S0007123400002544
+- doi: 10.1093/pan/mpq002
+- doi: 10.1023/A:1008929526011
+- doi: 10.1086/374574
+- doi: 10.1111/0022-3816.00063
+- doi: 10.1093/poq/nfp010
+- doi: 10.1111/j.1741-5705.2009.03713.x
+- doi: 10.1016/j.ijforecast.2008.02.007
+- doi: 10.1080/10584609.1996.9963108
+- doi: 10.1177/1532673X08330670
+- doi: 10.1093/poq/nfi062
+- doi: 10.2307/2647509
+- doi: 10.1017/S0007123400000107
+- doi: 10.1086/268862
+- doi: 10.18637/jss.v012.i03
+- doi: 10.1086/322850
+- doi: 10.1093/poq/nfi061
+- doi: 10.1093/poq/nfp078
+- doi: 10.1515/9781400830480
+- doi: 10.7208/chicago/9780226891293.001.0001
+- doi: 10.1177/1532673X9602400406
+- doi: 10.1177/1532673X01029005001
+- doi: 10.1111/1468-2508.00159
+- doi: 10.1093/ijpor/edl001
+- doi: 10.1017/CBO9780511818691
+doc_url: http://www.tandfonline.com/doi/pdf/10.1080/01621459.2012.737735
+doi: 10.1080/01621459.2012.737735
+files:
+- /Users/Roy/Documents/papers/2013-dynamic-bayesian-forecasting-of-presidential-elections-in-the-states.pdf
+first_page: '124'
+full_journal_title: Journal of the American Statistical Association
+issue: '501'
+journal: Journal of the American Statistical Association
+last_page: '134'
+month: '03'
+pages: 124--134
+ref: 10.1080/01621459.2012.737735
+title: Dynamic Bayesian Forecasting of Presidential Elections in the States
+type: article
+volume: '108'
+year: '2013'
+abstract: 'I present a dynamic Bayesian forecasting model that enables early and accurate prediction of U.S. presidential election outcomes at the state level. The method systematically combines information from historical forecasting models in real time with results from the large number of state-level opinion surveys that are released publicly during the campaign. The result is a set of forecasts that are initially as good as the historical model, and then gradually increase in accuracy as Election Day nears. I employ a hierarchical specification to overcome the limitation that not every state is polled on every day, allowing the model to borrow strength both across states and, through the use of random-walk priors, across time. The model also filters away day-to-day variation in the polls due to sampling error and national campaign effects, which enables daily tracking of voter preferences toward the presidential candidates at the state and national levels. Simulation techniques are used to estimate the candidates’ probability of winning each state and, consequently, a majority of votes in the Electoral College. I apply the model to preelection polls from the 2008 presidential campaign and demonstrate that the victory of Barack Obama was never realistically in doubt.'

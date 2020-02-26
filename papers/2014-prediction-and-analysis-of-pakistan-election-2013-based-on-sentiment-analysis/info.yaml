@@ -1,0 +1,12 @@
+author: Razzaq, Muhammad Asif and Qamar, Ali Mustafa and Bilal, Hafiz Syed Muhammad
+booktitle: Proceedings of the 2014 IEEE/ACM International Conference on Advances in
+  Social Networks Analysis and Mining
+files:
+- /Users/Roy/Documents/papers/2014-prediction-and-analysis-of-pakistan-election-2013-based-on-sentiment-analysis.pdf
+organization: IEEE Press
+pages: 700--703
+ref: razzaq2014prediction
+title: Prediction and analysis of Pakistan election 2013 based on sentiment analysis
+type: inproceedings
+year: '2014'
+abstract: 'The significance of social media has already been proven in provoking transformation of public opinion for de- veloped countries in improving democratic process of elections. On the contrary, developing countries lacking basic necessities of life possess monopolistic electoral system in which candidates are elected based on tribes, family backgrounds, or landlord influences. They extort voters to cast votes against their promises for the provision of basic needs. Similarly voters also poll votes for personal interests being unaware of party manifesto or national interest. These issues can be addressed by social media, result- ing as ongoing process of improvement for presently adopted electoral procedures. People of Pakistan utilized social media to garner support and campaign for political parties in General Elections 2013. Political leaders, parties, and people of Pakistan disseminated party’s agenda and advocacy of party’s ideology on Twitter without much campaigning cost. To study effectiveness of social media inferred from individual’s political behavior, large scale analysis, sentiment detection & tweet classification was done in order to classify, predict and forecast election results. The experimental results depicts that social media content can be used as an effective indicator for capturing political behaviors of different parties Positive, negative and neutral behavior of the party followers as well as party’s campaign impact can be predicted from the analysis. The analytical findings proved to be having considerable correspondence with actual results as published by Election Commission of Pakistan.'

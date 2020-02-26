@@ -1,0 +1,29 @@
+abbrev_journal_title: IEEE Intell. Syst.
+author: Kagan, Vadim and Stevens, Andrew and Subrahmanian, V.S.
+author_list:
+- given_name: Vadim
+  surname: Kagan
+- given_name: Andrew
+  surname: Stevens
+- given_name: V.S.
+  surname: Subrahmanian
+citations: []
+doc_url: http://xplorestaging.ieee.org/ielx7/9670/7030166/07030167.pdf?arnumber=7030167
+doi: 10.1109/MIS.2015.16
+files:
+- /Users/Roy/Documents/papers/2015-using-twitter-sentiment-to-forecast-the-2013-pakistani-election-and-the-2014-indian-election.pdf
+first_page: '2'
+full_journal_title: IEEE Intelligent Systems
+issue: '1'
+journal: IEEE Intelligent Systems
+last_page: '5'
+month: '1'
+pages: 2--5
+ref: 10.1109/MIS.2015.16
+title: Using Twitter Sentiment to Forecast the 2013 Pakistani Election and the 2014
+  Indian Election
+type: article
+volume: '30'
+year: '2015'
+abstract: 'On 8 May 2013, one week before the Pakistani election, the third author, in his keynote address at the Sentiment Analysis Symposium, forecast the winner of the Pakistani election. The chart in Figure 1 shows varying sentiment on the candidates for prime minister of Pakistan in that election. The next day, the BBC’s Owen Bennett Jones, reporting from Islamabad, wrote an article titled “Pakistan Elections: Five Reasons Why the Vote is Unpredictable,”1 in which he claimed that the election was too close to call. It was not, and despite his being in Pakistan, the outcome of the election was exactly as we predicted.
+We wondered if these forecasts could be made well ahead of time. To check, we used the India Election Tweet Database (IET-DB), a dataset that we built of over 23 million tweets from over 16 million Twitter users, and a network consisting of over 40 million edges. Since January 2014, we were able to make daily forecasts on the outcome of the Indian election (that is, who would be prime minister). The fi rst forecast was made publicly in the third author’s talk at the Sentiment Analysis Symposium on 6 March 2014, more than two months before the conclusion of the Indian election. Using a sophisticated mix of social network analysis and methods to automatically learn diffusion models from the Twitter data, we could accurately project the winner of the election—and, because it was real time, we were able to update the projections frequently. We were even able to predict the most infl uential individuals on specifi c topics on social media, allowing potential candidates in the future to use this knowledge to better shape their campaign strategy. The goal of this article is to explain how we did it'

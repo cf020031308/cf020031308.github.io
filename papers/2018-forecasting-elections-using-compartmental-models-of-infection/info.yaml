@@ -1,0 +1,53 @@
+abstract: 'To forecast political elections, popular pollsters and forecasters gather
+
+  polls and combine information from them with fundamental data such as
+
+  historical trends, the national economy, and incumbency. This process is
+
+  complicated, and it includes many subjective choices (e.g., when identifying
+
+  likely voters, estimating turnout, and quantifying other sources of
+
+  uncertainty), leading to forecasts that differ between sources even when they
+
+  use the same underlying polling data. With the goal of shedding light on
+
+  election forecasts (using the United States as an example), we develop a theory
+
+  for forecasting elections from the perspective of dynamical systems. Through a
+
+  simple approach that borrows ideas from epidemiology, we show how to combine a
+
+  compartmental model of disease spreading with public polling data to forecast
+
+  gubernatorial, senatorial, and presidential elections at the state level. Our
+
+  results for the 2012 and 2016 U.S. races are largely in agreement with those of
+
+  popular forecasters, and we use our new model to explore how subjective choices
+
+  about uncertainty impact results. Our goals are to open new avenues for
+
+  improving how elections are forecast, to increase understanding of the results
+
+  that are reported by popular news sources, and to illustrate the value of
+
+  data-driven forecasting using dynamical systems. We conclude with our forecast
+
+  of the senatorial and gubernatorial races in the 2018 U.S. midterm elections of
+
+  6 November, which we posted online as a preprint on 5 November.'
+archiveprefix: arXiv
+author: Alexandria Volkening and Daniel F. Linder and Mason A. Porter and Grzegorz
+  A. Rempala
+eprint: 1811.01831v2
+file: 1811.01831v2.pdf
+files:
+- /Users/Roy/Documents/papers/2018-forecasting-elections-using-compartmental-models-of-infection.pdf
+month: Nov
+primaryclass: physics.soc-ph
+ref: 1811.01831v2
+title: Forecasting elections using compartmental models of infection
+type: article
+url: http://arxiv.org/abs/1811.01831v2
+year: '2018'

@@ -1,0 +1,16 @@
+abstract: 'Experiments forecasting Canadian elections with Twitter are presented. A methodology for creating a representative Twitter sample is described and validated against census data. This sample and election polls are input into a VARX forecast model. The model covariance error monitors the forecast accuracy, measuring forecast confidence before the election occurs. The model is tested on several Canadian elections.'
+address: Cham
+author: White, Kenton
+booktitle: Advances in Artificial Intelligence
+editor: 'Khoury, Richard
+
+  and Drummond, Christopher'
+files:
+- /Users/Roy/Documents/papers/2016-forecasting-canadian-elections-using-twitter.pdf
+isbn: 978-3-319-34111-8
+pages: 186--191
+publisher: Springer International Publishing
+ref: 10.1007/978-3-319-34111-8_24
+title: Forecasting Canadian Elections Using Twitter
+type: inproceedings
+year: '2016'

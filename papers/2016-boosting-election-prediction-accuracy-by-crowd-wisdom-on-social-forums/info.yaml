@@ -1,0 +1,21 @@
+abstract: 'Recent years, with the rapid development of the online social services, people are able to publish and share their opinions, activities, and feelings of their everyday lives as well as public issues on the Internet. By the increasingly large amount of data among online social services, researchers explore approaches to understand how human beings demonstrate their political tendency from the data. In this paper, we focus on boosting election prediction accuracy by leveraging the power of crowd wisdom among social media. In addition to previous proposed approaches, we conduct Chinese sentiment analysis and use peerto-peer rating records among the social network to establish a better prediction model. To verify our proposal, we validate our methodology by the 2014 Taiwanese local elections. We use the data collected from the largest forum in Taiwan during the last three months election campaign. From the results, our proposal outperforms previous approaches in predicting the ﬁnal vote winners of the elections as well as the ﬁnal vote shares.'
+author: Wang, Ming-Hung and Lei, Chin-Laung
+author_list:
+- given_name: Ming-Hung
+  surname: Wang
+- given_name: Chin-Laung
+  surname: Lei
+booktitle: 2016 13th IEEE Annual Consumer Communications & Networking Conference (CCNC)
+citations: []
+doc_url: http://xplorestaging.ieee.org/ielx7/7435634/7440162/7444805.pdf?arnumber=7444805
+doi: 10.1109/CCNC.2016.7444805
+files:
+- /Users/Roy/Documents/papers/2016-boosting-election-prediction-accuracy-by-crowd-wisdom-on-social-forums.pdf
+first_page: '348'
+last_page: '353'
+month: '1'
+pages: 348--353
+ref: 10.1109/CCNC.2016.7444805
+title: Boosting election prediction accuracy by crowd wisdom on social forums
+type: inproceedings
+year: '2016'

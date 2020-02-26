@@ -1,0 +1,32 @@
+author: 'Peter Henderson and
+
+  Riashat Islam and
+
+  Philip Bachman and
+
+  Joelle Pineau and
+
+  Doina Precup and
+
+  David Meger'
+bibsource: dblp computer science bibliography, https://dblp.org\
+biburl: https://dblp.org/rec/bib/conf/aaai/0002IBPPM18
+booktitle: 'Proceedings of the Thirty-Second {AAAI} Conference on Artificial Intelligence,
+
+  (AAAI-18), the 30th innovative Applications of Artificial Intelligence
+
+  (IAAI-18), and the 8th {AAAI} Symposium on Educational Advances in
+
+  Artificial Intelligence (EAAI-18), New Orleans, Louisiana, USA, February
+
+  2-7, 2018'
+crossref: DBLP:conf/aaai/2018
+files:
+- /Users/Roy/Documents/papers/2018-deep-reinforcement-learning-that-matters.pdf
+pages: 3207--3214
+ref: DBLP:conf/aaai/0002IBPPM18
+timestamp: Tue, 23 Oct 2018 06:42:15 +0200
+title: Deep Reinforcement Learning That Matters
+type: inproceedings
+url: https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/16669
+year: '2018'

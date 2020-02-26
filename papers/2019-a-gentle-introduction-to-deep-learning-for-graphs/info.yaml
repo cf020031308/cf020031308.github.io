@@ -1,0 +1,41 @@
+abstract: 'The adaptive processing of graph data is a long-standing research topic
+  which
+
+  has been lately consolidated as a theme of major interest in the deep learning
+
+  community. The snap increase in the amount and breadth of related research has
+
+  come at the price of little systematization of knowledge and attention to
+
+  earlier literature. This work is designed as a tutorial introduction to the
+
+  field of deep learning for graphs. It favours a consistent and progressive
+
+  introduction of the main concepts and architectural aspects over an exposition
+
+  of the most recent literature, for which the reader is referred to available
+
+  surveys. The paper takes a top-down view to the problem, introducing a
+
+  generalized formulation of graph representation learning based on a local and
+
+  iterative approach to structured information processing. It introduces the
+
+  basic building blocks that can be combined to design novel and effective neural
+
+  models for graphs. The methodological exposition is complemented by a
+
+  discussion of interesting research challenges and applications in the field.'
+archiveprefix: arXiv
+author: Davide Bacciu and Federico Errica and Alessio Micheli and Marco Podda
+eprint: 1912.12693v1
+file: 1912.12693v1.pdf
+files:
+- /Users/Roy/Documents/papers/2019-a-gentle-introduction-to-deep-learning-for-graphs.pdf
+month: Dec
+primaryclass: cs.LG
+ref: 1912.12693v1
+title: A Gentle Introduction to Deep Learning for Graphs
+type: article
+url: http://arxiv.org/abs/1912.12693v1
+year: '2019'

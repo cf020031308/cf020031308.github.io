@@ -1,0 +1,32 @@
+abstract: 'We introduce NoisyNet, a deep reinforcement learning agent with parametric
+
+  noise added to its weights, and show that the induced stochasticity of the
+
+  agent''s policy can be used to aid efficient exploration. The parameters of the
+
+  noise are learned with gradient descent along with the remaining network
+
+  weights. NoisyNet is straightforward to implement and adds little computational
+
+  overhead. We find that replacing the conventional exploration heuristics for
+
+  A3C, DQN and dueling agents (entropy reward and $\epsilon$-greedy respectively)
+
+  with NoisyNet yields substantially higher scores for a wide range of Atari
+
+  games, in some cases advancing the agent from sub to super-human performance.'
+archiveprefix: arXiv
+author: Meire Fortunato and Mohammad Gheshlaghi Azar and Bilal Piot and Jacob Menick
+  and Ian Osband and Alex Graves and Vlad Mnih and Remi Munos and Demis Hassabis and
+  Olivier Pietquin and Charles Blundell and Shane Legg
+eprint: 1706.10295v3
+file: 1706.10295v3.pdf
+files:
+- /Users/Roy/Documents/papers/2017-noisy-networks-for-exploration.pdf
+month: Jun
+primaryclass: cs.LG
+ref: 1706.10295v3
+title: Noisy Networks for Exploration
+type: article
+url: http://arxiv.org/abs/1706.10295v3
+year: '2017'

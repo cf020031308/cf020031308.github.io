@@ -1,0 +1,15 @@
+abstract: 'We propose the Neural Logic Machine (NLM), a neural-symbolic architecture for both inductive learning and logic reasoning. NLMs exploit the power of both neural networks---as function approximators, and logic programming---as a symbolic processor for objects with properties, relations, logic connectives, and quantifiers. After being trained on small-scale tasks (such as sorting short arrays), NLMs can recover lifted rules, and generalize to large-scale tasks (such as sorting longer arrays). In our experiments, NLMs achieve perfect generalization in a number of tasks, from relational reasoning tasks on the family tree and general graphs, to decision making tasks including sorting arrays, finding shortest paths, and playing the blocks world. Most of these tasks are hard to accomplish for neural networks or inductive logic programming alone.'
+archiveprefix: arXiv
+author: Honghua Dong and Jiayuan Mao and Tian Lin and Chong Wang and Lihong Li and
+  Denny Zhou
+eprint: 1904.11694v1
+file: 1904.11694v1.pdf
+files:
+- /Users/Roy/documents/papers/2019-neural-logic-machines.pdf
+month: Apr
+primaryclass: cs.AI
+ref: 1904.11694v1
+title: Neural Logic Machines
+type: article
+url: http://arxiv.org/abs/1904.11694v1
+year: '2019'

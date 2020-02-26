@@ -1,0 +1,8 @@
+abstract: 'PyHoshen is a framework for Bayesian MCMC election-polling written in pymc3. pymc3 is designed as an “Inference button” - just write the statistical model in high-level python and push the “Inference buttom” and it translates the code into a Bayesian MCMC model. Computing the model might take some time, but pymc3 uses C++ and the GPU to provide extra computational speed. Similarly, pyHoshen attempts to be the “Inference button” for election-polling - just feed in the polls and set up the election parameters, and it translates the polls into the statistical model for pymc3.'
+author: Yitzhak Sapir
+files:
+- /Users/Roy/Documents/papers/2019-forecasting-the-israeli-elections-using-pymc3.pdf
+publisher: pyhoshen.org
+title: 'Forecasting the Israeli Elections using pymc3'
+year: '2019'
+url: 'https://pyhoshen.org/2019/04/07/Forecasting-the-Israeli-Elections-using-pymc3.html'

@@ -1,0 +1,11 @@
+[tui]
+editmode = vi
+
+[cs]
+dir = ~/Workplace/cf020031308.github.io/papers
+
+[settings]
+editor = vim
+default-library = cs
+add-name = {doc[year]}-{doc[title]}
+add-edit = True

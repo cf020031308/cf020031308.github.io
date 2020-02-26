@@ -1,0 +1,70 @@
+abstract: 'Artificial intelligence (AI) has undergone a renaissance recently, making
+
+  major progress in key domains such as vision, language, control, and
+
+  decision-making. This has been due, in part, to cheap data and cheap compute
+
+  resources, which have fit the natural strengths of deep learning. However, many
+
+  defining characteristics of human intelligence, which developed under much
+
+  different pressures, remain out of reach for current approaches. In particular,
+
+  generalizing beyond one''s experiences--a hallmark of human intelligence from
+
+  infancy--remains a formidable challenge for modern AI.
+
+  The following is part position paper, part review, and part unification. We
+
+  argue that combinatorial generalization must be a top priority for AI to
+
+  achieve human-like abilities, and that structured representations and
+
+  computations are key to realizing this objective. Just as biology uses nature
+
+  and nurture cooperatively, we reject the false choice between
+
+  "hand-engineering" and "end-to-end" learning, and instead advocate for an
+
+  approach which benefits from their complementary strengths. We explore how
+
+  using relational inductive biases within deep learning architectures can
+
+  facilitate learning about entities, relations, and rules for composing them. We
+
+  present a new building block for the AI toolkit with a strong relational
+
+  inductive bias--the graph network--which generalizes and extends various
+
+  approaches for neural networks that operate on graphs, and provides a
+
+  straightforward interface for manipulating structured knowledge and producing
+
+  structured behaviors. We discuss how graph networks can support relational
+
+  reasoning and combinatorial generalization, laying the foundation for more
+
+  sophisticated, interpretable, and flexible patterns of reasoning. As a
+
+  companion to this paper, we have released an open-source software library for
+
+  building graph networks, with demonstrations of how to use them in practice.'
+archiveprefix: arXiv
+author: Peter W. Battaglia and Jessica B. Hamrick and Victor Bapst and Alvaro Sanchez-Gonzalez
+  and Vinicius Zambaldi and Mateusz Malinowski and Andrea Tacchetti and David Raposo
+  and Adam Santoro and Ryan Faulkner and Caglar Gulcehre and Francis Song and Andrew
+  Ballard and Justin Gilmer and George Dahl and Ashish Vaswani and Kelsey Allen and
+  Charles Nash and Victoria Langston and Chris Dyer and Nicolas Heess and Daan Wierstra
+  and Pushmeet Kohli and Matt Botvinick and Oriol Vinyals and Yujia Li and Razvan
+  Pascanu
+eprint: 1806.01261v3
+file: 1806.01261v3.pdf
+files:
+- /Users/Roy/documents/papers/2018-a-relational-inductive-biases-deep-learning-and-graph-networks.pdf
+month: Jun
+primaryclass: cs.LG
+ref: 1806.01261v3
+title: Relational inductive biases, deep learning, and graph networks
+type: article
+url: http://arxiv.org/abs/1806.01261v3
+year: '2018'

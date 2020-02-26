@@ -1,0 +1,31 @@
+abstract: This article presents a general class of associative reinforcement learning
+  algorithms for connectionist networks containing stochastic units. These algorithms,
+  called REINFORCE algorithms, are shown to make weight adjustments in a direction
+  that lies along the gradient of expected reinforcement in both immediate-reinforcement
+  tasks and certain limited forms of delayed-reinforcement tasks, and they do this
+  without explicitly computing gradient estimates or even storing information from
+  which such estimates could be computed. Specific examples of such algorithms are
+  presented, some of which bear a close relationship to certain existing algorithms
+  while others are novel but potentially interesting in their own right. Also given
+  are results that show how such algorithms can be naturally integrated with backpropagation.
+  We close with a brief discussion of a number of additional issues surrounding the
+  use of such algorithms, including what is known about their limiting behaviors as
+  well as further considerations that might be used to help develop similar but potentially
+  more powerful reinforcement learning algorithms.
+author: Williams, Ronald J.
+day: '01'
+doi: 10.1007/BF00992696
+files:
+- /Users/Roy/Documents/papers/1992-simple-statistical-gradient-following-algorithms-for-connectionist-reinforcement-learning.pdf
+issn: 1573-0565
+journal: Machine Learning
+month: May
+number: '3'
+pages: 229--256
+ref: Williams1992
+title: Simple statistical gradient-following algorithms for connectionist reinforcement
+  learning
+type: article
+url: https://doi.org/10.1007/BF00992696
+volume: '8'
+year: '1992'

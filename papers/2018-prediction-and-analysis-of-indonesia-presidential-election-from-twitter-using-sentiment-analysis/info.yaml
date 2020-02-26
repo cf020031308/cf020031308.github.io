@@ -1,0 +1,30 @@
+abbrev_journal_title: J Big Data
+author: Budiharto, Widodo and Meiliana, Meiliana
+author_list:
+- given_name: Widodo
+  surname: Budiharto
+- given_name: Meiliana
+  surname: Meiliana
+citations:
+- doi: 10.1109/ASONAM.2012.206
+- doi: 10.1007/978-1-84628-754-1
+- doi: 10.1145/3078714.3078736
+- doi: 10.1109/ICDMW.2015.113
+- doi: 10.1016/j.electstud.2015.11.017
+- doi: 10.1145/945645.945658
+doc_url: http://link.springer.com/content/pdf/10.1186/s40537-018-0164-1.pdf
+doi: 10.1186/s40537-018-0164-1
+files:
+- /Users/Roy/Documents/papers/2018-prediction-and-analysis-of-indonesia-presidential-election-from-twitter-using-sentiment-analysis.pdf
+full_journal_title: Journal of Big Data
+issue: '1'
+journal: Journal of Big Data
+month: '12'
+ref: 10.1186/s40537-018-0164-1
+title: Prediction and analysis of Indonesia Presidential election from Twitter using
+  sentiment analysis
+type: article
+url: http://link.springer.com/article/10.1186/s40537-018-0164-1/fulltext.html
+volume: '5'
+year: '2018'
+abstract: 'Big data encompasses social networking websites including Twitter as popular micro-blogging social media platform for a political campaign. The explosive Twitter data as a respond of the political campaign can be used to predict the Presidential election as has been conducted to predict the political election in several countries such as US, UK, Spain, and French. The authors use tweets from President Candidates of Indonesia (Jokowi and Prabowo), and tweets from relevant hashtags for sentiment analysis gathered from March to July 2018 to predict Indonesian Presidential election result. The authors make an algorithm and method to count important data, top words and train the model and predict the polarity of the sentiment. The experimental result is produced by using R language and show that Jokowi leads the current election prediction. This prediction result is corresponding to four survey institutes in Indonesia that proved our method had produced reliable prediction results.'

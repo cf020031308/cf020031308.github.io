@@ -1,0 +1,19 @@
+author: 'Mirza Ramicic and
+
+  Andrea Bonarini'
+bibsource: dblp computer science bibliography, https://dblp.org\
+biburl: https://dblp.org/rec/conf/icmlc2/RamicicB17.bib
+booktitle: 'Proceedings of the 9th International Conference on Machine Learning
+
+  and Computing, {ICMLC} 2017, Singapore, February 24 - 26, 2017'
+crossref: DBLP:conf/icmlc2/2017
+doi: 10.1145/3055635.3056621
+files:
+- /Users/Roy/Documents/papers/2017-attention-based-experience-replay-in-deep-q-learning.pdf
+pages: 476--481
+ref: DBLP:conf/icmlc2/RamicicB17
+timestamp: Tue, 06 Nov 2018 16:59:07 +0100
+title: Attention-Based Experience Replay in Deep Q-Learning
+type: inproceedings
+url: https://doi.org/10.1145/3055635.3056621
+year: '2017'

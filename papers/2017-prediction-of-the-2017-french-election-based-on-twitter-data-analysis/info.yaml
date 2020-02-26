@@ -1,0 +1,32 @@
+author: Wang, Lei and Gan, John Q.
+author_list:
+- given_name: Lei
+  surname: Wang
+- given_name: John Q.
+  surname: Gan
+booktitle: 2017 9th Computer Science and Electronic Engineering (CEEC)
+citations: []
+doc_url: http://xplorestaging.ieee.org/ielx7/8093670/8101585/08101605.pdf?arnumber=8101605
+doi: 10.1109/CEEC.2017.8101605
+files:
+- /Users/Roy/Documents/papers/2017-prediction-of-the-2017-french-election-based-on-twitter-data-analysis.pdf
+first_page: '89'
+last_page: '93'
+month: '9'
+pages: 89--93
+ref: 10.1109/CEEC.2017.8101605
+title: Prediction of the 2017 French election based on Twitter data analysis
+type: inproceedings
+year: '2017'
+abstract: "Twitter is a social network that lets users post their
+opinions about current affairs, share their social events, and
+interact with others. Twitter has now become one of the largest
+sources of news, with over 200 million active users monthly. This
+paper proposes a method to predict election results based on
+Twitter data analysis. The method extracts and analyses
+sentimental information from microblogs to predict the popularity
+of candidates. The proposed method was used for predicting the
+result of the 2017 French presidential election. It has been shown
+that the proposed method significantly outperformed the
+Tumasjan's method, a well-recognized method for election
+prediction based on Twitter data. "

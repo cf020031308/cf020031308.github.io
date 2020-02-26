@@ -1,0 +1,50 @@
+abstract: 'We transform reinforcement learning (RL) into a form of supervised learning
+
+  (SL) by turning traditional RL on its head, calling this Upside Down RL (UDRL).
+
+  Standard RL predicts rewards, while UDRL instead uses rewards as task-defining
+
+  inputs, together with representations of time horizons and other computable
+
+  functions of historic and desired future data. UDRL learns to interpret these
+
+  input observations as commands, mapping them to actions (or action
+
+  probabilities) through SL on past (possibly accidental) experience. UDRL
+
+  generalizes to achieve high rewards or other goals, through input commands such
+
+  as: get lots of reward within at most so much time! A separate paper [61] on
+
+  first experiments with UDRL shows that even a pilot version of UDRL can
+
+  outperform traditional baseline algorithms on certain challenging RL problems.
+
+  We also introduce a related simple but general approach for teaching a robot to
+
+  imitate humans. First videotape humans imitating the robot''s current behaviors,
+
+  then let the robot learn through SL to map the videos (as input commands) to
+
+  these behaviors, then let it generalize and imitate videos of humans executing
+
+  previously unknown behavior. This Imitate-Imitator concept may actually explain
+
+  why biological evolution has resulted in parents who imitate the babbling of
+
+  their babies.'
+archiveprefix: arXiv
+author: Juergen Schmidhuber
+eprint: 1912.02875v1
+file: 1912.02875v1.pdf
+files:
+- /Users/Roy/Documents/papers/2019-reinforcement-learning-upside-down-don-t-predict-rewards-just-map-them-to-actions.pdf
+month: Dec
+primaryclass: cs.AI
+ref: 1912.02875v1
+title: 'Reinforcement Learning Upside Down: Don''t Predict Rewards -- Just Map
+
+  Them to Actions'
+type: article
+url: http://arxiv.org/abs/1912.02875v1
+year: '2019'

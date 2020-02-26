@@ -1,0 +1,58 @@
+abstract: 'The prevalence of online media has attracted researchers from various domains
+
+  to explore human behavior and make interesting predictions. In this research,
+
+  we leverage heterogeneous social media data collected from various online
+
+  platforms to predict Taiwan''s 2016 presidential election. In contrast to most
+
+  existing research, we take a "signal" view of heterogeneous information and
+
+  adopt the Kalman filter to fuse multiple signals into daily vote predictions
+
+  for the candidates. We also consider events that influenced the election in a
+
+  quantitative manner based on the so-called event study model that originated in
+
+  the field of financial research. We obtained the following interesting
+
+  findings. First, public opinions in online media dominate traditional polls in
+
+  Taiwan election prediction in terms of both predictive power and timeliness.
+
+  But offline polls can still function on alleviating the sample bias of online
+
+  opinions. Second, although online signals converge as election day approaches,
+
+  the simple Facebook "Like" is consistently the strongest indicator of the
+
+  election result. Third, most influential events have a strong connection to
+
+  cross-strait relations, and the Chou Tzu-yu flag incident followed by the
+
+  apology video one day before the election increased the vote share of Tsai
+
+  Ing-Wen by 3.66%. This research justifies the predictive power of online media
+
+  in politics and the advantages of information fusion. The combined use of the
+
+  Kalman filter and the event study method contributes to the data-driven
+
+  political analytics paradigm for both prediction and attribution purposes.'
+archiveprefix: arXiv
+author: Zheng Xie and Guannan Liu and Junjie Wu and Yong Tan
+doi: 10.1140/epjds/s13688-018-0163-7
+eprint: 1803.08010v2
+file: 1803.08010v2.pdf
+files:
+- /Users/Roy/Documents/papers/2018-social-media-would-not-lie-prediction-of-the-2016-taiwan-election-via-online-heterogeneous-data.pdf
+month: Mar
+note: EPJ Data Science,2018,7:32
+primaryclass: cs.SI
+ref: 1803.08010v2
+title: 'Social Media Would Not Lie: Prediction of the 2016 Taiwan Election via
+
+  Online Heterogeneous Data'
+type: article
+url: http://arxiv.org/abs/1803.08010v2
+year: '2018'
