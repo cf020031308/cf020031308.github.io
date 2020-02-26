@@ -1,9 +1,12 @@
 #!/bin/bash -
 
-ln -sf $PWD ~/.mail
-ln -sf $PWD/muttrc ~/.muttrc
-ln -sf $PWD/offlineimaprc ~/.offlineimaprc
-ln -sf $PWD/msmtprc ~/.msmtprc
+PUBLIC="$PWD"
+PRIVATE="$HOME/Nutstore/mail"
+
+ln -sf $PUBLIC ~/.mail
+ln -sf $PRIVATE/muttrc ~/.muttrc
+ln -sf $PRIVATE/offlineimaprc ~/.offlineimaprc
+ln -sf $PRIVATE/msmtprc ~/.msmtprc
 
 
 brew install offlineimap msmtp mutt lynx
