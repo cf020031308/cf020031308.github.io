@@ -1,0 +1,39 @@
+[general]
+accounts = cf020031308, uestc
+pythonfile = ~/.mail/offlineimap.py
+
+[Account cf020031308]
+localrepository = cf020031308-Local
+remoterepository = cf020031308-Remote
+
+[Repository cf020031308-Local]
+type = Maildir
+localfolders = ~/Mail/cf020031308
+sync_deletes = yes
+nametrans = local2remote
+
+[Repository cf020031308-Remote]
+type = IMAP
+remotehost = imap.163.com
+remoteusereval = get_account("cf020031308")[0]
+remotepasseval = get_account("cf020031308")[1]
+sync_deletes = yes
+sslcacertfile = /etc/ssl/cert.pem
+nametrans = remote2local
+
+[Account uestc]
+localrepository = uestc-Local
+remoterepository = uestc-Remote
+
+[Repository uestc-Local]
+type = Maildir
+localfolders = ~/Mail/uestc
+sync_deletes = yes
+
+[Repository uestc-Remote]
+type = IMAP
+remotehost = edu.icoremail.net
+remoteusereval = get_account("uestc")[0]
+remotepasseval = get_account("uestc")[1]
+sync_deletes = yes
+sslcacertfile = /etc/ssl/cert.pem

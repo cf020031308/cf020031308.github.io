@@ -4,8 +4,8 @@ PUBLIC="$PWD"
 PRIVATE="$HOME/Nutstore/mail"
 
 ln -sf $PUBLIC ~/.mail
-ln -sf $PRIVATE/muttrc ~/.muttrc
-ln -sf $PRIVATE/offlineimaprc ~/.offlineimaprc
+ln -sf $PUBLIC/muttrc ~/.muttrc
+ln -sf $PUBLIC/offlineimaprc ~/.offlineimaprc
 ln -sf $PRIVATE/msmtprc ~/.msmtprc
 
 

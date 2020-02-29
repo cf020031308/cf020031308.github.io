@@ -17,9 +17,12 @@ g_local2remote = {v: k for k, v in g_remote2local.items()}
 g_ignored = {'deleted'}
 
 
-def get_passwd(name):
-    with open('%s/.accounts/%s' % (os.environ['HOME'], name)) as file:
-        return file.read().strip()
+def get_account(name):
+    with open('%s/.accounts/mail' % os.environ['HOME']) as file:
+        lines = (line for line in file.read().strip().splitlines() if line)
+    for user, passwd in zip(lines, lines):
+        if name in user:
+            return user, passwd
 
 
 def local2remote(folder):

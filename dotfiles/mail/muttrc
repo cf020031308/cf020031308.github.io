@@ -1,0 +1,55 @@
+set folder = ~/Mail
+set spoolfile = +uestc/INBOX
+mailboxes +uestc/INBOX \
++cf020031308/INBOX \
++uestc/Drafts \
++uestc/Junk\ E-mail \
++uestc/Sent\ Items \
++uestc/Trash \
++uestc/Virus\ Items \
++cf020031308/Archive \
++cf020031308/spams \
++cf020031308/deleted \
++cf020031308/sent \
++cf020031308/ads \
++cf020031308/subs \
++cf020031308/\&dcVr0mWHTvZZOQ- \
++cf020031308/drafts \
++cf020031308/push
+
+set mbox_type = Maildir
+set sort = threads
+set pager_stop
+set tilde
+set nomarkers
+set delete
+
+source ~/Nutstore/mail/from
+set sendmail = "/usr/local/bin/msmtp -a uestc"
+unset record
+
+set mailcap_path = ~/.mail/mailcap
+auto_view text/html
+
+set alias_file = ~/Nutstore/mail/alias
+source ~/Nutstore/mail/alias
+
+# Copy from /usr/local/Cellar/mutt/1.13.0/share/doc/mutt/samples/gpg.rc
+set pgp_default_key="201B9A6321856771"
+set pgp_sign_as="201B9A6321856771"
+set pgp_decode_command="gpg --status-fd=2 %?p?--passphrase-fd 0? --no-verbose --quiet --batch --output - %f"
+set pgp_verify_command="gpg --status-fd=2 --no-verbose --quiet --batch --output - --verify %s %f"
+set pgp_decrypt_command="gpg --status-fd=2 %?p?--passphrase-fd 0? --no-verbose --quiet --batch --output - %f"
+set pgp_sign_command="gpg --no-verbose --batch --quiet --output - %?p?--passphrase-fd 0? --armor --detach-sign --textmode %?a?-u %a? %f"
+set pgp_clearsign_command="gpg --no-verbose --batch --quiet --output - %?p?--passphrase-fd 0? --armor --textmode --clearsign %?a?-u %a? %f"
+set pgp_encrypt_only_command="pgpewrap gpg --batch --quiet --no-verbose --output - --encrypt --textmode --armor --always-trust -- -r %r -- %f"
+set pgp_encrypt_sign_command="pgpewrap gpg %?p?--passphrase-fd 0? --batch --quiet --no-verbose --textmode --output - --encrypt --sign %?a?-u %a? --armor --always-trust -- -r %r -- %f"
+set pgp_import_command="gpg --no-verbose --import %f"
+set pgp_export_command="gpg --no-verbose --export --armor %r"
+set pgp_verify_key_command="gpg --verbose --batch --fingerprint --check-sigs %r"
+set pgp_list_pubring_command="gpg --no-verbose --batch --quiet --with-colons --with-fingerprint --with-fingerprint --list-keys %r"
+set pgp_list_secring_command="gpg --no-verbose --batch --quiet --with-colons --with-fingerprint --with-fingerprint --list-secret-keys %r"
+set pgp_getkeys_command="gpg --no-verbose --batch --quiet --recv-keys %r"
+set pgp_good_sign="^gpgv?: Good signature from "
+# set pgp_good_sign="^\\[GNUPG:\\] GOODSIG"
+set pgp_check_gpg_decrypt_status_fd
