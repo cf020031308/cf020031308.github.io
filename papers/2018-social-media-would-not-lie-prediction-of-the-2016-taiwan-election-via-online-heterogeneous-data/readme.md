@@ -128,4 +128,3 @@ $J^c$是检测事件的总数，a是回归常数。如果事件$J^c$对公众舆
 * [卡尔曼滤波器](https://blog.csdn.net/phker/article/details/48468591)
 * [卡尔曼滤波器](https://blog.csdn.net/lybaihu/article/details/54943545)
 * [相关数据下载](https://figshare.com/articles/Social_media_would_not_lie_prediction_of_2016_taiwan_election_rar/6014159)
-
