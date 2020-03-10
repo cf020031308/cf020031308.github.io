@@ -8,7 +8,7 @@
 # cd $1 || exit 0
 # dst=$(pwd)
 
-dst="/Users/Roy/Documents/papers/${PAPIS_LIB}"
+dst="/Users/Roy/Documents/papers"
 pdfs=$(papis -l ${PAPIS_LIB} export --json --all 2>&- | jq -r '.[] | .files | .[] | select(test("\\.pdf$"))' | sed '/^\//d' | sort -u)
 dir="$(papis -l ${PAPIS_LIB} config dir)"
 dir="${dir/\~/$HOME}"

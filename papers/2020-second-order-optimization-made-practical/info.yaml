@@ -1,0 +1,48 @@
+abstract: 'Optimization in machine learning, both theoretical and applied, is presently
+
+  dominated by first-order gradient methods such as stochastic gradient descent.
+
+  Second-order optimization methods that involve second-order derivatives and/or
+
+  second-order statistics of the data have become far less prevalent despite
+
+  strong theoretical properties, due to their prohibitive computation, memory and
+
+  communication costs.
+
+  In an attempt to bridge this gap between theoretical and practical
+
+  optimization, we present a proof-of-concept distributed system implementation
+
+  of a second-order preconditioned method (specifically, a variant of full-matrix
+
+  Adagrad), that along with a few yet critical algorithmic and numerical
+
+  improvements, provides significant practical gains in convergence on
+
+  state-of-the-art deep models and gives rise to actual wall-time improvements in
+
+  practice compared to conventional first-order methods. Our design effectively
+
+  utilizes the prevalent heterogeneous hardware architecture for training deep
+
+  models which consists of a multicore CPU coupled with multiple accelerator
+
+  units. We demonstrate superior performance on very large learning problems in
+
+  machine translation where our distributed implementation runs considerably
+
+  faster than existing gradient-based methods.'
+archiveprefix: arXiv
+author: Rohan Anil and Vineet Gupta and Tomer Koren and Kevin Regan and Yoram Singer
+eprint: 2002.09018v1
+file: 2002.09018v1.pdf
+files:
+- /Users/Roy/Documents/papers/2020-second-order-optimization-made-practical.pdf
+month: Feb
+primaryclass: cs.LG
+ref: 2002.09018v1
+title: Second Order Optimization Made Practical
+type: article
+url: http://arxiv.org/abs/2002.09018v1
+year: '2020'
