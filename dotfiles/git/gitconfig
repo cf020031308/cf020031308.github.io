@@ -15,3 +15,6 @@
     # goto web of repo on gitlab: git browse upstream
     # goto web of repo on github: hub browse upstream
     browse = !sh -c 'git remote get-url origin | sed -e "/^git@/s,:,/," -e "s,^git@,https://," -e "s/.git$//" -e "s,.wiki$,/wiki," | xargs -I{hub} open "{hub}"$(test "$1" && test -d "$1" && echo "/tree/master/$1")$(test "$1" && test -f "$1" && echo "/blob/master/$1") ' -
+    change-of-last-month = !sh -c 'git log --format=\"%s (%h)\" --reverse --grep \"^\\(docs\\|feat\\|fix\\|perf\\|refactor\\|test\\)\" --since=`date -v-1m +\"%Y-%m-01\"` --before=`date +\"%Y-%m-01\"` | sort -t\"(\" -k1,1 -s'
+[commit]
+    template = /Users/Roy/Workplace/cf020031308.github.io/dotfiles/git/commit.tpl
