@@ -6,7 +6,7 @@ g_remote2local = {
     '&XfJSIJZk-': 'deleted',
     '&XfJT0ZAB-': 'sent',
     '&Xn9USpCuTvY-': 'ads',
-    '&i6KWBZCuTvY-': 'subs',
+    '&i6KWBZCuTvY-': 'subs2',
     '&kc2JgQ-': 'important',
     '&g0l6P3ux-': 'drafts',
     '&Y6hef5CuTvY-': 'push',
