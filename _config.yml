@@ -1,0 +1,9 @@
+# Configurations for Jekyll
+
+markdown: GFM
+exclude:
+  - bin
+  - dotfiles
+  - exercise
+plugins:
+  - jekyll-sitemap
