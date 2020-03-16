@@ -14,11 +14,15 @@
     ></script>
 </head>
 <body>
+
 <div class="container-lg px-3 my-5 markdown-body">
     <div id="nav"></div>
-    {{ content }}
+    <div id="main"> {{ content }} </div>
+    <div id="ref"></div>
 </div>
+
 <script>
+    // Generate Navigator wrt the current location
     var crumbs = window.location.pathname.split('/').filter(function(x) {return x;});
     var href = window.location.origin;
     for (var i = 0; i < crumbs.length; i += 2) {
@@ -37,7 +41,53 @@
     }
     document.getElementById('nav').innerHTML = '<p><strong>' + crumbs.join('') + '</strong></p>';
 </script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" crossorigin="anonymous"></script>
-<script>anchors.add();</script>
+<script>
+    anchors.add();
+    // Generate TOC from content
+    var title = document.querySelector('div#main h1');
+    if (title && anchors.elements.length >= 2) {
+        var toc = document.createElement('ul');
+        toc.setAttribute('id', 'table-of-contents');
+        var ul = toc, li;
+        var curLv = 1, minLv = 9;
+        for (var i = 0; i < anchors.elements.length; i++) {
+            var h = anchors.elements[i];
+            if (h.tagName.substr(0, 1).toLowerCase() !== 'h') continue;
+            var lv = h.tagName.substr(1) - 0;
+            if (minLv > lv) minLv = lv;
+            for (; curLv < lv; curLv++) {
+                li = ul.lastChild;
+                if (!li) {
+                    li = document.createElement('li');
+                    ul.appendChild(li);
+                }
+                ul = document.createElement('ul');
+                li.appendChild(ul);
+            }
+            for (; curLv > lv; curLv--) {
+                ul = ul.parentNode.parentNode;
+            }
+            var a = document.createElement('a');
+            a.textContent = h.textContent;
+            var anchor = h.querySelector('a.anchorjs-link');
+            a.setAttribute('href', anchor.hash);
+            anchor.hash = '#table-of-contents';
+            li = document.createElement('li');
+            li.appendChild(a);
+            ul.appendChild(li);
+        }
+        if (minLv < 7) for (var lv = 1; lv < minLv; lv++) {
+            li = toc.lastChild;
+            ul = li.lastChild;
+            toc.removeChild(li);
+            for (var i = 0; i < ul.children.length; i++) {
+                toc.appendChild(ul.firstChild);
+            }
+        }
+        title.parentNode.insertBefore(toc, title.nextSibling);
+    }
+</script>
 </body>
 </html>
