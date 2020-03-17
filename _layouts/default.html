@@ -16,7 +16,10 @@
 <body>
 
 <div class="container-lg px-3 my-5 markdown-body">
-    <div id="nav"></div>
+    <form action="#" onsubmit="return searchGo()">
+        <label id="nav"></label>
+        <input id="searchbar" class="border-0 bg-white" type="search" list="searchData" autocomplete="off" style="outline: none; width: 66%; -webkit-appearance: none" onfocus="searchFocus()" onblur="searchBlur()" disabled />
+    </form>
     <div id="main"> {{ content }} </div>
     <div id="ref"></div>
 </div>
@@ -24,12 +27,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" crossorigin="anonymous"></script>
 <script>
     // Generate References from content
+    var loc = window.location;
     var refs = document.querySelectorAll('div#main a');
     if (refs.length > 0) {
         var len = document.querySelector('div#main').textContent.length;
         var aLen = 0;
         var ol = document.createElement('ol'), li, a, div, quote;
-        var loc = window.location;
         for (var i = 0; i < refs.length; i++) {
             a = refs[i];
             if (a.href === a.textContent) len -= a.textContent.length;
@@ -65,7 +68,7 @@
     // Generate TOC from content
     anchors.add();
     var title = document.querySelector('div#main h1');
-    if (title && anchors.elements.length >= 2) {
+    if (title && anchors.elements.length >= 3) {
         if (!title.id) title.setAttribute('id', 'table-of-contents');
         var toc = document.createElement('ul');
         toc.setAttribute('class', 'border-left');
@@ -99,23 +102,77 @@
     }
 
     // Generate Navigator wrt the current location
-    var crumbs = window.location.pathname.split('/').filter(function(x) {return x;});
-    var href = window.location.origin;
-    for (var i = 0; i < crumbs.length; i += 2) {
-        crumbs[i] = {text: crumbs[i], href: (href += '/' + crumbs[i])};
-        crumbs.splice(i, 0, '/');
+    var href = loc.origin;
+    var crumbs2html = function(crumbs) {
+        var html = '';
+        for (var i = 0; i < crumbs.length; i++) html += (
+            crumbs[i].href ?
+            '<a href="{href}">{text}</a>'.replace(
+                /{(.*?)}/g, function(_, k) {return crumbs[i][k]}) :
+            crumbs[i]
+        );
+        return html;
     }
-    crumbs.splice(-1, 1);
-    crumbs.splice(0, 0,
+    var nav = document.getElementById('nav'), nav1, nav2;
+    nav.appendChild(nav1 = document.createElement('strong'));
+    nav1.innerHTML = crumbs2html([
         {text: "Roy", href: "https://github.com/cf020031308"},
         "'s ",
-        {text: "site", href: window.location.origin},
-    );
-    for (var i = 0; i < crumbs.length; i++) {
-        if (crumbs[i].href) crumbs[i] = '<a href="{href}">{text}</a>'.replace(
-            /{(.*?)}/g, function(_, k) {return crumbs[i][k]});
+        {text: "site", href: href},
+        '/',
+    ]);
+    var crumbs = loc.pathname.split('/').filter(function(x) {return x;});
+    for (var i = 0; i < crumbs.length; i++) crumbs[i] = {
+        text: crumbs[i], href: (href += '/' + crumbs[i])};
+    for (var i = crumbs.length - 1; i > 0; i--) crumbs.splice(i, 0, '/');
+    var pos = crumbs.length ? crumbs.pop().text : '';
+    nav.appendChild(nav2 = document.createElement('strong'));
+    nav2.innerHTML = crumbs2html(crumbs);
+
+    // Create searchbar according to sitemap.xml
+    var searchbar = document.getElementById('searchbar');
+    searchbar.placeholder = pos;
+    var uris = [];
+    var req = new XMLHttpRequest();
+    req.open('get', '/sitemap.xml', true);
+    req.onload = function() {
+        var searchData = document.createElement('datalist');
+        searchData.setAttribute('id', 'searchData');
+        var locs = req.responseXML.querySelectorAll('loc');
+        for (var i = 0; i < locs.length; i++) uris.push(
+            decodeURI(locs[i].textContent).split('/').slice(3).join('/'));
+        uris.sort();
+        var opt;
+        for (var i = 0; i < uris.length; i++) {
+            searchData.appendChild(opt = document.createElement('option'));
+            opt.setAttribute('value', uris[i]);
+        }
+        searchbar.parentNode.insertBefore(searchData, searchbar);
+        searchbar.disabled = false;
     }
-    document.getElementById('nav').innerHTML = '<p><strong>' + crumbs.join('') + '</strong></p>';
+    function searchGo() {
+        if (searchbar.value) {
+            if ((!uris.includes) || uris.includes(searchbar.value)) {
+                window.stop();
+                loc.href = loc.origin + '/' + searchbar.value;
+            } else window.open(
+                'https://github.com/cf020031308/cf020031308.github.io/search?q='
+                + searchbar.value,
+                '_blank'
+            );
+        }
+        return false;
+    }
+    function searchFocus() {
+        searchbar.placeholder = nav2.textContent + pos;
+        if (nav2.parentNode) nav.removeChild(nav2);
+    }
+    function searchBlur() {
+        searchbar.value = '';
+        searchbar.placeholder = pos;
+        if (!nav2.parentNode) nav.appendChild(nav2);
+    }
+    req.send();
 </script>
 
 </body>
