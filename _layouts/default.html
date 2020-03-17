@@ -16,51 +16,55 @@
 <body>
 
 <div class="container-lg px-3 my-5 markdown-body">
-    <form action="#" onsubmit="return searchGo()">
+    <form action="#" onsubmit="return searchSelect() || searchQuery()" style="display: flex; align-items: center">
         <label id="nav"></label>
-        <input id="searchbar" class="border-0 bg-white" type="search" list="searchData" autocomplete="off" style="outline: none; width: 66%; -webkit-appearance: none" onfocus="searchFocus()" onblur="searchBlur()" disabled />
+        <input id="searchbar" class="border-0 bg-white" type="search" list="searchData" autocomplete="off" style="flex-grow: 1; outline: none" onfocus="searchFocus()" onblur="searchBlur()" onchange="searchSelect()" disabled />
     </form>
     <div id="main"> {{ content }} </div>
     <div id="ref"></div>
+    <div id="wiki"></div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" crossorigin="anonymous"></script>
 <script>
     // Generate References from content
+    var isIndex = false;
     var loc = window.location;
-    var refs = document.querySelectorAll('div#main a');
-    if (refs.length > 0) {
-        var len = document.querySelector('div#main').textContent.length;
+    var as = document.querySelectorAll('div#main a');
+    var content = document.querySelector('div#main').textContent;
+    if (as.length > 0) {
+        var len = content.length;
         var aLen = 0;
-        var ol = document.createElement('ol'), li, a, div, quote;
-        for (var i = 0; i < refs.length; i++) {
-            a = refs[i];
+        var ol = document.createElement('ol'), li, a, quote;
+        for (var i = 0; i < as.length; i++) {
+            a = as[i];
             if (a.href === a.textContent) len -= a.textContent.length;
             else aLen += a.textContent.length;
             if (loc.hostname === a.hostname && loc.pathname === a.pathname) continue;
-            var ref = {
+            var r = {
                 id: a.id,
                 href: a.href,
                 title: a.title || a.textContent,
                 text: (loc.hostname === a.hostname ? '' : a.hostname) + a.pathname,
             };
-            if (!ref.id) a.setAttribute('id', ref.id = 'ref-' + i);
-            if (ref.title === ref.href) ref.title = '';
-            if (ref.text.length > 50) {
-                var ps = ref.text.split('/').filter(function(x) {return x;});
-                if (ps.length > 2) ref.text = (
+            if (!r.id) a.setAttribute('id', r.id = 'ref-' + i);
+            if (r.title === r.href) r.title = '';
+            if (r.text.length > 50) {
+                var ps = r.text.split('/').filter(function(x) {return x;});
+                if (ps.length > 2) r.text = (
                     (loc.hostname === a.hostname ? '/' : '')
                     + ps[0] + '/.../' + ps[ps.length - 1]);
             }
             ol.appendChild(li = document.createElement('li'));
             li.innerHTML = (
                 '<a href="#{id}">^</a> {title} <a href="{href}">{text}</a>'
-                .replace(/{(.*?)}/g, function(_, k) {return ref[k]}));
+                .replace(/{(.*?)}/g, function(_, k) {return r[k]}));
         }
-        if (aLen < len * 0.15) {
-            div = document.getElementById('ref');
-            div.innerHTML = '<h2 id="references"> References </h2>';
-            div.appendChild(quote = document.createElement('blockquote'));
+        isIndex = aLen > len * 0.15;
+        if (!isIndex) {
+            var ref = document.getElementById('ref');
+            ref.innerHTML = '<h2 id="references"> References </h2>';
+            ref.appendChild(quote = document.createElement('blockquote'));
             quote.appendChild(ol);
         }
     }
@@ -118,48 +122,97 @@
     nav1.innerHTML = crumbs2html([
         {text: "Roy", href: "https://github.com/cf020031308"},
         "'s ",
-        {text: "site", href: href},
+        {text: "home", href: href},
         '/',
     ]);
     var crumbs = loc.pathname.split('/').filter(function(x) {return x;});
     for (var i = 0; i < crumbs.length; i++) crumbs[i] = {
         text: crumbs[i], href: (href += '/' + crumbs[i])};
     for (var i = crumbs.length - 1; i > 0; i--) crumbs.splice(i, 0, '/');
-    var pos = crumbs.length ? crumbs.pop().text : '';
+    var pos = crumbs.length ? crumbs.pop().text : 'touch me!';
     nav.appendChild(nav2 = document.createElement('strong'));
     nav2.innerHTML = crumbs2html(crumbs);
+
+    // Recommend related wiki after sitemap.xml is loaded
+    var uris = [];
+    var recommendWiki = function() {
+        var inv = {}, words = [];
+        var stopWords = ['html', 'github'];
+        var scores = new Array(uris.length);
+        var re = /\b\w{2,}\b/gi;
+        for (var i = 0; i < uris.length; i++) {
+            var uri = uris[i];
+            scores[i] = {value: 0, uri: uri};
+            if ('/' + uri === loc.pathname) continue;
+            if (!uri.startsWith('wiki/')) continue;
+            uri.substr(5).replace(re, function(m) {
+                m = m.toLowerCase();
+                if (!inv[m]) {
+                    inv[m] = [];
+                    words.push(m);
+                }
+                inv[m].push(i);
+            });
+        }
+        content.replace(
+            new RegExp('\\b(' + words.join('|') + ')\\b', 'gi'),
+            function(m) {
+                m = m.toLowerCase()
+                if (stopWords.includes(m)) return;
+                for (var i = 0; i < inv[m].length; i++) {
+                    scores[inv[m][i]].value += m.length;
+                }
+            }
+        );
+        scores.sort(function(x, y) { return y.value - x.value; });
+        if (scores[0].value) {
+            var ol, li, wiki = document.getElementById('wiki');
+            wiki.innerHTML = '<h2 id="related-wiki"> Related Wiki </h2>';
+            wiki.appendChild(ol = document.createElement('ol'));
+            for (var i = 0; i < 4; i++) {
+                if (scores[i].value === 0) break;
+                ol.appendChild(li = document.createElement('li'));
+                li.appendChild(a = document.createElement('a'));
+                var uri = scores[i].uri;
+                a.setAttribute('href', '/' + uri);
+                a.textContent = uri.substr(
+                    5, uri.length - (uri.endsWith('.html') ? 10 : 5));
+            }
+        }
+    }
 
     // Create searchbar according to sitemap.xml
     var searchbar = document.getElementById('searchbar');
     searchbar.placeholder = pos;
-    var uris = [];
     var req = new XMLHttpRequest();
     req.open('get', '/sitemap.xml', true);
     req.onload = function() {
-        var searchData = document.createElement('datalist');
+        var opt, searchData = document.createElement('datalist');
         searchData.setAttribute('id', 'searchData');
         var locs = req.responseXML.querySelectorAll('loc');
         for (var i = 0; i < locs.length; i++) uris.push(
             decodeURI(locs[i].textContent).split('/').slice(3).join('/'));
         uris.sort();
-        var opt;
         for (var i = 0; i < uris.length; i++) {
             searchData.appendChild(opt = document.createElement('option'));
             opt.setAttribute('value', uris[i]);
         }
         searchbar.parentNode.insertBefore(searchData, searchbar);
         searchbar.disabled = false;
+        if (uris.length && !isIndex) recommendWiki();
     }
-    function searchGo() {
-        if (searchbar.value) {
-            if ((!uris.includes) || uris.includes(searchbar.value)) {
-                window.stop();
-                loc.href = loc.origin + '/' + searchbar.value;
-            } else window.open(
-                'https://github.com/cf020031308/cf020031308.github.io/search?q='
-                + searchbar.value,
-                '_blank'
-            );
+    function searchQuery() {
+        if (searchbar.value) window.open(
+            'https://github.com/cf020031308/cf020031308.github.io/search?q='
+            + searchbar.value,
+            '_blank'
+        );
+        return false;
+    }
+    function searchSelect() {
+        if (searchbar.value && ((!uris.includes) || uris.includes(searchbar.value))) {
+            window.stop();
+            loc.href = loc.origin + '/' + searchbar.value;
         }
         return false;
     }
