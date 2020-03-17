@@ -21,7 +21,83 @@
     <div id="ref"></div>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" crossorigin="anonymous"></script>
 <script>
+    // Generate References from content
+    var refs = document.querySelectorAll('div#main a');
+    if (refs.length > 0) {
+        var len = document.querySelector('div#main').textContent.length;
+        var aLen = 0;
+        var ol = document.createElement('ol'), li, a, div, quote;
+        var loc = window.location;
+        for (var i = 0; i < refs.length; i++) {
+            a = refs[i];
+            if (a.href === a.textContent) len -= a.textContent.length;
+            else aLen += a.textContent.length;
+            if (loc.hostname === a.hostname && loc.pathname === a.pathname) continue;
+            var ref = {
+                id: a.id,
+                href: a.href,
+                title: a.title || a.textContent,
+                text: (loc.hostname === a.hostname ? '' : a.hostname) + a.pathname,
+            };
+            if (!ref.id) a.setAttribute('id', ref.id = 'ref-' + i);
+            if (ref.title === ref.href) ref.title = '';
+            if (ref.text.length > 50) {
+                var ps = ref.text.split('/').filter(function(x) {return x;});
+                if (ps.length > 2) ref.text = (
+                    (loc.hostname === a.hostname ? '/' : '')
+                    + ps[0] + '/.../' + ps[ps.length - 1]);
+            }
+            ol.appendChild(li = document.createElement('li'));
+            li.innerHTML = (
+                '<a href="#{id}">^</a> {title} <a href="{href}">{text}</a>'
+                .replace(/{(.*?)}/g, function(_, k) {return ref[k]}));
+        }
+        if (aLen < len * 0.15) {
+            div = document.getElementById('ref');
+            div.innerHTML = '<h2 id="references"> References </h2>';
+            div.appendChild(quote = document.createElement('blockquote'));
+            quote.appendChild(ol);
+        }
+    }
+
+    // Generate TOC from content
+    anchors.add();
+    var title = document.querySelector('div#main h1');
+    if (title && anchors.elements.length >= 2) {
+        if (!title.id) title.setAttribute('id', 'table-of-contents');
+        var toc = document.createElement('ul');
+        toc.setAttribute('class', 'border-left');
+        var ul = toc, li, a;
+        var curLv = 1, minLv = 9;
+        for (var i = 0; i < anchors.elements.length; i++) {
+            var h = anchors.elements[i];
+            if (h.tagName.substr(0, 1).toLowerCase() !== 'h') continue;
+            var lv = h.tagName.substr(1) - 0;
+            if (minLv > lv) minLv = lv;
+            for (; curLv < lv; curLv++) {
+                li = ul.lastChild;
+                if (!li) ul.appendChild(li = document.createElement('li'));
+                li.appendChild(ul = document.createElement('ul'));
+            }
+            for (; curLv > lv; curLv--) ul = ul.parentNode.parentNode;
+            ul.appendChild(li = document.createElement('li'));
+            li.appendChild(a = document.createElement('a'));
+            a.textContent = h.textContent;
+            var anchor = h.querySelector('a.anchorjs-link');
+            a.setAttribute('href', anchor.hash);
+            anchor.hash = '#' + title.id;
+        }
+        if (minLv < 7) for (var lv = 1; lv < minLv; lv++) {
+            li = toc.lastChild;
+            ul = li.lastChild;
+            toc.removeChild(li);
+            while(ul.children.length) toc.appendChild(ul.firstChild);
+        }
+        title.parentNode.insertBefore(toc, title.nextSibling);
+    }
+
     // Generate Navigator wrt the current location
     var crumbs = window.location.pathname.split('/').filter(function(x) {return x;});
     var href = window.location.origin;
@@ -42,52 +118,5 @@
     document.getElementById('nav').innerHTML = '<p><strong>' + crumbs.join('') + '</strong></p>';
 </script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" crossorigin="anonymous"></script>
-<script>
-    anchors.add();
-    // Generate TOC from content
-    var title = document.querySelector('div#main h1');
-    if (title && anchors.elements.length >= 2) {
-        var toc = document.createElement('ul');
-        toc.setAttribute('id', 'table-of-contents');
-        var ul = toc, li;
-        var curLv = 1, minLv = 9;
-        for (var i = 0; i < anchors.elements.length; i++) {
-            var h = anchors.elements[i];
-            if (h.tagName.substr(0, 1).toLowerCase() !== 'h') continue;
-            var lv = h.tagName.substr(1) - 0;
-            if (minLv > lv) minLv = lv;
-            for (; curLv < lv; curLv++) {
-                li = ul.lastChild;
-                if (!li) {
-                    li = document.createElement('li');
-                    ul.appendChild(li);
-                }
-                ul = document.createElement('ul');
-                li.appendChild(ul);
-            }
-            for (; curLv > lv; curLv--) {
-                ul = ul.parentNode.parentNode;
-            }
-            var a = document.createElement('a');
-            a.textContent = h.textContent;
-            var anchor = h.querySelector('a.anchorjs-link');
-            a.setAttribute('href', anchor.hash);
-            anchor.hash = '#table-of-contents';
-            li = document.createElement('li');
-            li.appendChild(a);
-            ul.appendChild(li);
-        }
-        if (minLv < 7) for (var lv = 1; lv < minLv; lv++) {
-            li = toc.lastChild;
-            ul = li.lastChild;
-            toc.removeChild(li);
-            for (var i = 0; i < ul.children.length; i++) {
-                toc.appendChild(ul.firstChild);
-            }
-        }
-        title.parentNode.insertBefore(toc, title.nextSibling);
-    }
-</script>
 </body>
 </html>
