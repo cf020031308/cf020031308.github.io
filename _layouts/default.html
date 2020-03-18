@@ -34,30 +34,21 @@
     if (as.length > 0) {
         var len = content.length;
         var aLen = 0;
-        var ol = document.createElement('ol'), li, a, quote;
+        var ol = document.createElement('ol'), li, quote;
+        var rs = {}, rlinks = [];
         for (var i = 0; i < as.length; i++) {
-            a = as[i];
+            var a = as[i];
             if (a.href === a.textContent) len -= a.textContent.length;
             else aLen += a.textContent.length;
             if (loc.hostname === a.hostname && loc.pathname === a.pathname) continue;
-            var r = {
-                id: a.id,
-                href: a.href,
-                title: a.title || a.textContent,
-                text: (loc.hostname === a.hostname ? '' : a.hostname) + a.pathname,
-            };
-            if (!r.id) a.setAttribute('id', r.id = 'ref-' + i);
-            if (r.title === r.href) r.title = '';
-            if (r.text.length > 50) {
-                var ps = r.text.split('/').filter(function(x) {return x;});
-                if (ps.length > 2) r.text = (
-                    (loc.hostname === a.hostname ? '/' : '')
-                    + ps[0] + '/.../' + ps[ps.length - 1]);
+            var cite = a.href === a.textContent ? (a.title || '') : a.textContent;
+            var href = (loc.hostname === a.hostname ? '' : a.hostname) + a.pathname;
+            if (!rs[href]) {
+                rs[href] = {};
+                rlinks.push(href);
             }
-            ol.appendChild(li = document.createElement('li'));
-            li.innerHTML = (
-                '<a href="#{id}">^</a> {title} <a href="{href}">{text}</a>'
-                .replace(/{(.*?)}/g, function(_, k) {return r[k]}));
+            if (!rs[href][cite]) rs[href][cite] = [];
+            rs[href][cite].push(a.id = (a.id || ('ref-' + i)));
         }
         // No need to give references if the whole page is an index
         isIndex = aLen > len * 0.15;
@@ -66,6 +57,21 @@
             ref.innerHTML = '<h2 id="references"> References </h2>';
             ref.appendChild(quote = document.createElement('blockquote'));
             quote.appendChild(ol);
+            rlinks.sort();
+            for (var i = 0; i < rlinks.length; i++) {
+                ol.appendChild(li = document.createElement('li'));
+                var abbr = href = rlinks[i];
+                if (abbr.length > 50) {
+                    var ps = abbr.split('/').filter(function(x) {return x;});
+                    if (ps.length > 2) abbr = (
+                        (abbr.substr(0, 1) === '/' ? '/' : '')
+                        + ps[0] + '/.../' + ps[ps.length - 1]);
+                }
+                li.innerHTML = '<a href="' + href + '">' + abbr + '</a>';
+                for (var cite in rs[href]) li.innerHTML += (
+                    ' \'' + cite + ' <a href="#'
+                    + rs[href][cite].join('">^</a> <a href="#') + '">^</a>\'');
+            }
         }
     }
 
@@ -73,9 +79,9 @@
     anchors.add();
     var title = document.querySelector('div#main h1');
     if (title && anchors.elements.length >= 3) {
-        if (!title.id) title.setAttribute('id', 'table-of-contents');
+        if (!title.id) title.id = 'table-of-contents';
         var toc = document.createElement('ul');
-        toc.setAttribute('class', 'border-left');
+        toc.classList.add('border-left');
         var ul = toc, li, a;
         var curLv = 1, minLv = 9;
         for (var i = 0; i < anchors.elements.length; i++) {
@@ -93,7 +99,7 @@
             li.appendChild(a = document.createElement('a'));
             a.textContent = h.textContent;
             var anchor = h.querySelector('a.anchorjs-link');
-            a.setAttribute('href', anchor.hash);
+            a.href = anchor.hash;
             // Link back to top
             anchor.hash = '#' + title.id;
         }
@@ -219,7 +225,7 @@
                 ol.appendChild(li = document.createElement('li'));
                 li.appendChild(a = document.createElement('a'));
                 var uri = scores[i].uri;
-                a.setAttribute('href', '/' + uri);
+                a.href = '/' + uri;
                 a.textContent = uri.substr(
                     5, uri.length - (uri.endsWith('.html') ? 10 : 5));
             }
@@ -231,14 +237,14 @@
     req.open('get', '/sitemap.xml', true);
     req.onload = function() {
         var opt, searchData = document.createElement('datalist');
-        searchData.setAttribute('id', 'searchData');
+        searchData.id = 'searchData';
         var locs = req.responseXML.querySelectorAll('loc');
         for (var i = 0; i < locs.length; i++) uris.push(
             decodeURI(locs[i].textContent).split('/').slice(3).join('/'));
         uris.sort();
         for (var i = 0; i < uris.length; i++) {
             searchData.appendChild(opt = document.createElement('option'));
-            opt.setAttribute('value', uris[i]);
+            opt.value = uris[i];
         }
         searchbar.parentNode.insertBefore(searchData, searchbar);
         searchbar.placeholder = searchbar.placeholder || 'touch me!';
