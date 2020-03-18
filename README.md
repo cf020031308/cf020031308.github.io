@@ -1,26 +1,25 @@
-Welcome to my page. I am Roy.
-
-## About me
-
-- [Github](https://github.com/cf020031308)
-- [LinkedIn](https://cn.linkedin.com/in/cf020031308)
-
-You can [visit my kanban](https://github.com/cf020031308/cf020031308.github.io/projects/1?fullscreen=true) to check what I am currently doing.
-
-Please feel free to [leave me a message](https://github.com/cf020031308/cf020031308.github.io/issues/new).
-
-## About this page
-
 Here is the place into which I publish some of my leisure works such as:
 
-- [Blog](https://cf020031308.github.io/blog/)
-- [Translations](https://github.com/xitu/gold-miner/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3Acf020031308)
+- [My Blog][blog]
+- [Knowledge Base](https://github.com/cf020031308/cf020031308.github.io/tree/master/wiki)
+- [Notes of Academic Reading](https://github.com/cf020031308/cf020031308.github.io/tree/master/papers)
+- [Configurations](https://github.com/cf020031308/cf020031308.github.io/tree/master/dotfiles)
 - [Drafts & Cheetsheets](https://github.com/cf020031308/cf020031308.github.io/wiki)
-- [Dotfiles](https://github.com/cf020031308/cf020031308.github.io/tree/master/dotfiles)
-- [Other Trifles](https://github.com/cf020031308/cf020031308.github.io)
+- [Some Previous Translations](https://github.com/xitu/gold-miner/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3Acf020031308)
+- [What I am going to achieve][milestones]
+- [What I am currently doing][kanban]
+- [Handy Tools](https://github.com/cf020031308/cf020031308.github.io/blob/master/bin)
     - **[pbimg](https://github.com/cf020031308/cf020031308.github.io/blob/master/bin/pbimg)**. Save image from MacOS clipboard as a PNG file.
 
 This page is hosted at Github.  
-To see the source code you can visit the repo below and I'd be glad if you like and star it:
+To see the source code you can visit the [repo][repo] and I'd be glad if you like and star it:
 
-* [https://github.com/cf020031308/cf020031308.github.io](https://github.com/cf020031308/cf020031308.github.io)
+Feel free to [leave me a message][new issue].
+
+
+[milestones]: <https://github.com/cf020031308/cf020031308.github.io/milestones> "Milestones"
+[kanban]: <https://github.com/cf020031308/cf020031308.github.io/projects/1?fullscreen=true> "Kanban"
+[repo]: <https://github.com/cf020031308/cf020031308.github.io> "the Repository"
+[blog]: <https://cf020031308.github.io/blog/> "My blog"
+[wiki]: <https://cf020031308.github.io/wiki/> "My wiki"
+[new issue]: <https://github.com/cf020031308/cf020031308.github.io/issues/new> "Create new issue"
