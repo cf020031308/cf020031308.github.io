@@ -16,8 +16,7 @@
 <body>
 
 <div class="container-lg px-3 my-5 markdown-body">
-    <form action="#" onsubmit="return searchSelect() || searchQuery()" style="display: flex; align-items: center">
-        <label id="nav"></label>
+    <form id="nav" action="#" onsubmit="return searchSelect() || searchQuery()">
         <input id="searchbar" class="border-0 bg-white" type="search" list="searchData" autocomplete="off" style="flex-grow: 1; outline: none" onfocus="searchFocus()" onblur="searchBlur()" onchange="searchSelect()" disabled />
     </form>
     <div id="main"> {{ content }} </div>
@@ -118,20 +117,28 @@
         return html;
     }
     var nav = document.getElementById('nav'), nav1, nav2;
-    nav.appendChild(nav1 = document.createElement('strong'));
+    var searchbar = document.getElementById('searchbar');
+    if (!title) {
+        nav.appendChild(nav = document.createElement('h1'));
+        nav.appendChild(searchbar);
+    }
+    nav.style = "display: flex; align-items: center";
+    nav.insertBefore(nav1 = document.createElement('strong'), searchbar);
     nav1.innerHTML = crumbs2html([
         {text: "Roy", href: "https://github.com/cf020031308"},
         "'s ",
         {text: "home", href: href},
         '/',
     ]);
+    nav1.style = "flex-shrink: 0";
     var crumbs = loc.pathname.split('/').filter(function(x) {return x;});
     for (var i = 0; i < crumbs.length; i++) crumbs[i] = {
         text: crumbs[i], href: (href += '/' + crumbs[i])};
     for (var i = crumbs.length - 1; i > 0; i--) crumbs.splice(i, 0, '/');
     var pos = crumbs.length ? crumbs.pop().text : 'touch me!';
-    nav.appendChild(nav2 = document.createElement('strong'));
+    nav.insertBefore(nav2 = document.createElement('strong'), searchbar);
     nav2.innerHTML = crumbs2html(crumbs);
+    nav2.style = "flex-shrink: 0";
 
     // Recommend related wiki after sitemap.xml is loaded
     var uris = [];
@@ -182,7 +189,6 @@
     }
 
     // Create searchbar according to sitemap.xml
-    var searchbar = document.getElementById('searchbar');
     searchbar.placeholder = pos;
     var req = new XMLHttpRequest();
     req.open('get', '/sitemap.xml', true);
