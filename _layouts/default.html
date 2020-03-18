@@ -111,11 +111,12 @@
     var uris = [];
     var searchbar = document.getElementById('searchbar');
     var onSelect = function() {
-        if (searchbar.value && ((!uris.includes) || uris.includes(searchbar.value))) {
+        var val = searchbar.value;
+        if (val && ((!uris.includes) || uris.includes(val) || uris.includes(val + '/'))) {
             window.stop();
-            loc.href = loc.origin + '/' + searchbar.value;
+            loc.href = loc.origin + '/' + val;
+            return true;
         }
-        return false;
     }
     searchbar.onchange = onSelect;
     searchbar.style.flexGrow = 1;
