@@ -16,8 +16,8 @@
 <body>
 
 <div class="container-lg px-3 my-5 markdown-body">
-    <form id="nav" action="#" onsubmit="return searchSelect() || searchQuery()">
-        <input id="searchbar" class="border-0 bg-white" type="search" list="searchData" autocomplete="off" style="flex-grow: 1; outline: none" onfocus="searchFocus()" onblur="searchBlur()" onchange="searchSelect()" disabled />
+    <form id="nav" action="#">
+        <input id="searchbar" class="border-0 bg-white" type="search" list="searchData" autocomplete="off" style="outline: none" disabled />
     </form>
     <div id="main"> {{ content }} </div>
     <div id="ref"></div>
@@ -26,7 +26,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" crossorigin="anonymous"></script>
 <script>
-    // Generate References from content
+    // References: generated from content
     var isIndex = false;
     var loc = window.location;
     var as = document.querySelectorAll('div#main a');
@@ -59,6 +59,7 @@
                 '<a href="#{id}">^</a> {title} <a href="{href}">{text}</a>'
                 .replace(/{(.*?)}/g, function(_, k) {return r[k]}));
         }
+        // No need to give references if the whole page is an index
         isIndex = aLen > len * 0.15;
         if (!isIndex) {
             var ref = document.getElementById('ref');
@@ -68,7 +69,7 @@
         }
     }
 
-    // Generate TOC from content
+    // TOC: generated from content (if there are there or more headers)
     anchors.add();
     var title = document.querySelector('div#main h1');
     if (title && anchors.elements.length >= 3) {
@@ -93,6 +94,7 @@
             a.textContent = h.textContent;
             var anchor = h.querySelector('a.anchorjs-link');
             a.setAttribute('href', anchor.hash);
+            // Link back to top
             anchor.hash = '#' + title.id;
         }
         if (minLv < 7) for (var lv = 1; lv < minLv; lv++) {
@@ -104,7 +106,37 @@
         title.parentNode.insertBefore(toc, title.nextSibling);
     }
 
-    // Generate Navigator wrt the current location
+    // Navigator & SearchBar: generated wrt sitemap.xml and the current location
+    // Populate data from sitemap.xml in uris later
+    var uris = [];
+    var searchbar = document.getElementById('searchbar');
+    var onSelect = function() {
+        if (searchbar.value && ((!uris.includes) || uris.includes(searchbar.value))) {
+            window.stop();
+            loc.href = loc.origin + '/' + searchbar.value;
+        }
+        return false;
+    }
+    searchbar.onchange = onSelect;
+    searchbar.style.flexGrow = 1;
+
+    var nav = document.getElementById('nav'), nav1, nav2;
+    nav.onsubmit = function() {
+        if (searchbar.value && !onSelect()) window.open(
+            'https://github.com/cf020031308/cf020031308.github.io/search?q='
+            + searchbar.value,
+            '_blank'
+        );
+        return false;
+    }
+    // If there is no title, enlarge the navigator
+    if (!title) {
+        nav.appendChild(nav = document.createElement('h1'));
+        nav.appendChild(searchbar);
+    }
+    nav.style.display = "flex";
+    nav.style.alignItems = "center";
+
     var href = loc.origin;
     var crumbs2html = function(crumbs) {
         var html = '';
@@ -116,13 +148,7 @@
         );
         return html;
     }
-    var nav = document.getElementById('nav'), nav1, nav2;
-    var searchbar = document.getElementById('searchbar');
-    if (!title) {
-        nav.appendChild(nav = document.createElement('h1'));
-        nav.appendChild(searchbar);
-    }
-    nav.style = "display: flex; align-items: center";
+
     nav.insertBefore(nav1 = document.createElement('strong'), searchbar);
     nav1.innerHTML = crumbs2html([
         {text: "Roy", href: "https://github.com/cf020031308"},
@@ -130,18 +156,29 @@
         {text: "home", href: href},
         '/',
     ]);
-    nav1.style = "flex-shrink: 0";
+    nav1.style.flexShrink = 0;
+
+    nav.insertBefore(nav2 = document.createElement('strong'), searchbar);
+    var pos = '';
     var crumbs = loc.pathname.split('/').filter(function(x) {return x;});
     for (var i = 0; i < crumbs.length; i++) crumbs[i] = {
         text: crumbs[i], href: (href += '/' + crumbs[i])};
     for (var i = crumbs.length - 1; i > 0; i--) crumbs.splice(i, 0, '/');
-    var pos = crumbs.length ? crumbs.pop().text : 'touch me!';
-    nav.insertBefore(nav2 = document.createElement('strong'), searchbar);
+    if (crumbs.length) searchbar.placeholder = pos = crumbs.pop().text;
     nav2.innerHTML = crumbs2html(crumbs);
-    nav2.style = "flex-shrink: 0";
+    nav2.style.flexShrink = 0;
+
+    searchbar.onfocus = function() {
+        searchbar.placeholder = nav2.textContent + pos;
+        if (nav2.parentNode) nav.removeChild(nav2);
+    }
+    searchbar.onblur = function() {
+        searchbar.value = '';
+        searchbar.placeholder = pos;
+        if (!nav2.parentNode) nav.insertBefore(nav2, searchbar);
+    }
 
     // Recommend related wiki after sitemap.xml is loaded
-    var uris = [];
     var recommendWiki = function() {
         var inv = {}, words = [];
         var stopWords = ['html', 'github'];
@@ -188,8 +225,7 @@
         }
     }
 
-    // Create searchbar according to sitemap.xml
-    searchbar.placeholder = pos;
+    // load sitemap.xml
     var req = new XMLHttpRequest();
     req.open('get', '/sitemap.xml', true);
     req.onload = function() {
@@ -204,32 +240,9 @@
             opt.setAttribute('value', uris[i]);
         }
         searchbar.parentNode.insertBefore(searchData, searchbar);
+        searchbar.placeholder = searchbar.placeholder || 'touch me!';
         searchbar.disabled = false;
         if (uris.length && !isIndex) recommendWiki();
-    }
-    function searchQuery() {
-        if (searchbar.value) window.open(
-            'https://github.com/cf020031308/cf020031308.github.io/search?q='
-            + searchbar.value,
-            '_blank'
-        );
-        return false;
-    }
-    function searchSelect() {
-        if (searchbar.value && ((!uris.includes) || uris.includes(searchbar.value))) {
-            window.stop();
-            loc.href = loc.origin + '/' + searchbar.value;
-        }
-        return false;
-    }
-    function searchFocus() {
-        searchbar.placeholder = nav2.textContent + pos;
-        if (nav2.parentNode) nav.removeChild(nav2);
-    }
-    function searchBlur() {
-        searchbar.value = '';
-        searchbar.placeholder = pos;
-        if (!nav2.parentNode) nav.appendChild(nav2);
     }
     req.send();
 </script>
