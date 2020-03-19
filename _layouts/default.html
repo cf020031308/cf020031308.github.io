@@ -16,12 +16,18 @@
 <body>
 
 <div class="container-lg px-3 my-5 markdown-body">
-    <form id="nav" action="#">
-        <input id="searchbar" class="border-0 bg-white" type="search" list="searchData" autocomplete="off" style="outline: none" disabled />
-    </form>
-    <div id="doc"> {{ content }} </div>
-    <div id="ref"></div>
-    <div id="wiki"></div>
+    <header>
+        <form id="nav" action="#" class="d-flex flex-items-center">
+            <div id="home" class="text-bold flex-shrink-0"></div>
+            <div id="folder" class="text-bold flex-shrink-0"></div>
+            <input id="searchbar" class="flex-item-equal border-0 bg-white" type="search" list="searchData" autocomplete="off" style="outline: none" disabled />
+        </form>
+    </header>
+    <main>
+        <div id="doc"> {{ content }} </div>
+        <div id="ref"></div>
+        <div id="wiki"></div>
+    </main>
     <footer class="footer pt-1 mt-4 d-flex flex-justify-center" id="footer">
         <a class="mx-1" href="https://github.com/cf020031308/cf020031308.github.io/issues?q=is%3Aissue+label%3Aarticle+is%3Aclosed+-label%3Aabort" alt="comment" title="comment of posts">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M15 1H6c-.55 0-1 .45-1 1v2H1c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h1v3l3-3h4c.55 0 1-.45 1-1V9h1l3 3V9h1c.55 0 1-.45 1-1V2c0-.55-.45-1-1-1zM9 11H4.5L3 12.5V11H1V5h4v3c0 .55.45 1 1 1h3v2zm6-3h-2v1.5L11.5 8H6V2h9v6z"/></svg>
@@ -163,9 +169,8 @@
         }
     }
     searchbar.onchange = onSelect;
-    searchbar.style.flexGrow = 1;
 
-    var nav = document.getElementById('nav'), nav1, nav2;
+    var nav = document.getElementById('nav');
     // If the input value does not match any uri, query it with Github
     nav.onsubmit = function() {
         if (searchbar.value && !onSelect()) window.open(
@@ -175,11 +180,10 @@
 
     // If there is no title, enlarge the navigator
     if (!title) {
-        nav.appendChild(nav = document.createElement('h1'));
-        nav.appendChild(searchbar);
+        title = document.createElement('h1');
+        nav.parentNode.insertBefore(title, nav);
+        title.appendChild(nav);
     }
-    nav.style.display = "flex";
-    nav.style.alignItems = "center";
 
     var href = loc.origin;
     var crumbs2html = function(crumbs) {
@@ -194,17 +198,16 @@
     }
 
     // First part of the nav: "Roy's home/"
-    nav.insertBefore(nav1 = document.createElement('strong'), searchbar);
+    var nav1 = document.getElementById('home');
     nav1.innerHTML = crumbs2html([
         {text: "Roy", href: "https://github.com/cf020031308"},
         "'s ",
         {text: "home", href: href},
         '/',
     ]);
-    nav1.style.flexShrink = 0;
 
     // Second part of the nav: the current location
-    nav.insertBefore(nav2 = document.createElement('strong'), searchbar);
+    var nav2 = document.getElementById('folder');
     var pos = '';
     var crumbs = loc.pathname.split('/').filter(function(x) {return x;});
     for (var i = 0; i < crumbs.length; i++) crumbs[i] = {
@@ -212,16 +215,15 @@
     for (var i = crumbs.length - 1; i > 0; i--) crumbs.splice(i, 0, '/');
     if (crumbs.length) searchbar.placeholder = pos = crumbs.pop().text;
     nav2.innerHTML = crumbs2html(crumbs);
-    nav2.style.flexShrink = 0;
 
     searchbar.onfocus = function() {
         searchbar.placeholder = nav2.textContent + pos;
-        if (nav2.parentNode) nav.removeChild(nav2);
+        nav2.classList.add('d-none');
     }
     searchbar.onblur = function() {
         searchbar.value = '';
         searchbar.placeholder = pos;
-        if (!nav2.parentNode) nav.insertBefore(nav2, searchbar);
+        nav2.classList.remove('d-none');
     }
 
     // Recommend related wiki after sitemap.xml is loaded
