@@ -72,7 +72,7 @@
             aLen += a.textContent.length;
             if (loc.hostname === a.hostname && loc.pathname === a.pathname) continue;
             var cite = a.href === a.textContent ? (a.title || '') : a.textContent;
-            var href = (loc.hostname === a.hostname ? '' : a.hostname) + a.pathname;
+            var href = (loc.hostname === a.hostname ? '' : a.origin) + a.pathname;
             if (!rs[href]) {
                 rs[href] = {};
                 rlinks.push(href);
@@ -93,6 +93,8 @@
             for (var i = 0; i < rlinks.length; i++) {
                 ol.appendChild(li = document.createElement('li'));
                 var abbr = href = rlinks[i];
+                var schemeEnd = abbr.indexOf('://');
+                if (schemeEnd > -1) abbr = abbr.substr(schemeEnd + 3);
                 if (abbr.length > 50) {
                     var ps = abbr.split('/').filter(function(x) {return x;});
                     if (ps.length > 2) abbr = (
