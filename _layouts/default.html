@@ -32,14 +32,12 @@
     var as = document.querySelectorAll('div#main a');
     var content = document.querySelector('div#main').textContent;
     if (as.length > 0) {
-        var len = content.length;
         var aLen = 0;
         var ol = document.createElement('ol'), li, quote;
         var rs = {}, rlinks = [];
         for (var i = 0; i < as.length; i++) {
             var a = as[i];
-            if (a.href === a.textContent) len -= a.textContent.length;
-            else aLen += a.textContent.length;
+            aLen += a.textContent.length;
             if (loc.hostname === a.hostname && loc.pathname === a.pathname) continue;
             var cite = a.href === a.textContent ? (a.title || '') : a.textContent;
             var href = (loc.hostname === a.hostname ? '' : a.hostname) + a.pathname;
@@ -51,7 +49,7 @@
             rs[href][cite].push(a.id = (a.id || ('ref-' + i)));
         }
         // No need to give references if the whole page is an index
-        isIndex = aLen > len * 0.15;
+        isIndex = aLen > content.length * 0.3;
         if (!isIndex) {
             var ref = document.getElementById('ref');
             ref.innerHTML = '<h2 id="references"> References </h2>';
@@ -188,7 +186,7 @@
     // Recommend related wiki after sitemap.xml is loaded
     var recommendWiki = function() {
         var inv = {}, words = [];
-        var stopWords = ['html', 'github'];
+        var stopWords = ['html'];
         var scores = new Array(uris.length);
         var re = /\b\w{2,}\b/gi;
         for (var i = 0; i < uris.length; i++) {
@@ -205,7 +203,7 @@
                 inv[m].push(i);
             });
         }
-        content.replace(
+        content.replace(/(?:(https?|ftp|file):)?\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]/gi, '').replace(
             new RegExp('\\b(' + words.join('|') + ')\\b', 'gi'),
             function(m) {
                 m = m.toLowerCase()
@@ -218,7 +216,7 @@
         scores.sort(function(x, y) { return y.value - x.value; });
         if (scores[0].value) {
             var ol, li, wiki = document.getElementById('wiki');
-            wiki.innerHTML = '<h2 id="related-wiki"> Related Wiki </h2>';
+            wiki.innerHTML = '<h2 id="related-wiki"> See also </h2>';
             wiki.appendChild(ol = document.createElement('ol'));
             for (var i = 0; i < 4; i++) {
                 if (scores[i].value === 0) break;
