@@ -19,7 +19,7 @@
     <form id="nav" action="#">
         <input id="searchbar" class="border-0 bg-white" type="search" list="searchData" autocomplete="off" style="outline: none" disabled />
     </form>
-    <div id="main"> {{ content }} </div>
+    <div id="doc"> {{ content }} </div>
     <div id="ref"></div>
     <div id="wiki"></div>
 </div>
@@ -27,10 +27,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" crossorigin="anonymous"></script>
 <script>
     // References: generated from content
+    var repo = 'https://github.com/cf020031308/cf020031308.github.io';
     var isIndex = false;
     var loc = window.location;
-    var as = document.querySelectorAll('div#main a');
-    var content = document.querySelector('div#main').textContent;
+    var doc = document.getElementById('doc');
+    var as = doc.querySelectorAll('a');
+    var content = doc.textContent;
     if (as.length > 0) {
         var aLen = 0;
         var ol = document.createElement('ol'), li, quote;
@@ -75,7 +77,7 @@
 
     // TOC: generated from content (if there are there or more headers)
     anchors.add();
-    var title = document.querySelector('div#main h1');
+    var title = doc.querySelector('h1');
     if (title && anchors.elements.length >= 3) {
         if (!title.id) title.id = 'table-of-contents';
         var toc = document.createElement('ul');
@@ -112,11 +114,11 @@
 
     // Navigator & SearchBar: generated wrt sitemap.xml and the current location
     // Populate data from sitemap.xml in uris later
-    var uris = [];
+    var rels = [];
     var searchbar = document.getElementById('searchbar');
     var onSelect = function() {
         var val = searchbar.value;
-        if (val && ((!uris.includes) || uris.includes(val) || uris.includes(val + '/'))) {
+        if (val && ((!rels.includes) || rels.includes(val) || rels.includes(val + '/'))) {
             window.stop();
             loc.href = loc.origin + '/' + val;
             return true;
@@ -128,10 +130,7 @@
     var nav = document.getElementById('nav'), nav1, nav2;
     nav.onsubmit = function() {
         if (searchbar.value && !onSelect()) window.open(
-            'https://github.com/cf020031308/cf020031308.github.io/search?q='
-            + searchbar.value,
-            '_blank'
-        );
+            repo + '/search?q=' + searchbar.value, '_blank');
         return false;
     }
     // If there is no title, enlarge the navigator
@@ -186,15 +185,17 @@
     // Recommend related wiki after sitemap.xml is loaded
     var recommendWiki = function() {
         var inv = {}, words = [];
-        var stopWords = ['html'];
-        var scores = new Array(uris.length);
+        var stopWords = [];
+        var scores = new Array(rels.length);
         var re = /\b\w{2,}\b/gi;
-        for (var i = 0; i < uris.length; i++) {
-            var uri = uris[i];
-            scores[i] = {value: 0, uri: uri};
-            if ('/' + uri === loc.pathname) continue;
-            if (!uri.startsWith('wiki/')) continue;
-            uri.substr(5).replace(re, function(m) {
+        for (var i = 0; i < rels.length; i++) {
+            var uri = '/' + rels[i];
+            if (uri === loc.pathname) continue;
+            if (!uri.startsWith('/wiki/')) continue;
+            var fname = uri.split('/').filter(function(x) { return x; }).slice(-1).pop();
+            if (fname.indexOf('.') !== -1) fname = fname.split('.').slice(0, -1).join('.');
+            scores[i] = {value: 0, uri: uri, fname: fname};
+            fname.replace(re, function(m) {
                 m = m.toLowerCase();
                 if (!inv[m]) {
                     inv[m] = [];
@@ -213,19 +214,41 @@
                 }
             }
         );
-        scores.sort(function(x, y) { return y.value - x.value; });
-        if (scores[0].value) {
-            var ol, li, wiki = document.getElementById('wiki');
-            wiki.innerHTML = '<h2 id="related-wiki"> See also </h2>';
-            wiki.appendChild(ol = document.createElement('ol'));
-            for (var i = 0; i < 4; i++) {
-                if (scores[i].value === 0) break;
-                ol.appendChild(li = document.createElement('li'));
-                li.appendChild(a = document.createElement('a'));
-                var uri = scores[i].uri;
-                a.href = '/' + uri;
-                a.textContent = uri.substr(
-                    5, uri.length - (uri.endsWith('.html') ? 10 : 5));
+        scores = scores.filter(function(x) { return x && (x.value > 0); });
+        if (scores.length) {
+            // Add wiki links into content
+            re = '';
+            for (var i = 0; i < scores.length; i++) re += scores[i].fname.replace(/[-_]/g, '.') + '|';
+            re = new RegExp('\\b(' + re.substr(0, re.length - 1) + ')\\b', 'gi');
+            var replacer = function(m) {
+                var s = scores.find(function(s) {
+                    return m.toLowerCase().replace(/\W/g, '-') === s.fname.toLowerCase(); });
+                if (s) {
+                    s.used = true;
+                    return '<a href="' + s.uri + '" target="_blank">' + m + '</a>';
+                }
+                return m;
+            }
+            var html = '', pos = 0;
+            doc.innerHTML.replace(/<(pre|a)[ >].*?<\/\1>|<.*?>/gi, function(m, _, p) {
+                if (pos != p) html += doc.innerHTML.substring(pos, p).replace(re, replacer);
+                pos = p + m.length;
+                html += m;
+            })
+            doc.innerHTML = html + doc.innerHTML.substring(html.length).replace(re, replacer);
+            scores = scores.filter(function(x) { return !x.used; });
+            if (scores.length) {
+                // Append at most 4 related wiki pages
+                scores.sort(function(x, y) { return y.value - x.value; });
+                var ol, li, wiki = document.getElementById('wiki');
+                wiki.innerHTML = '<h2 id="related-wiki"> See also </h2>';
+                wiki.appendChild(ol = document.createElement('ol'));
+                for (var i = 0; i < Math.min(4, scores.length); i++) {
+                    ol.appendChild(li = document.createElement('li'));
+                    li.appendChild(a = document.createElement('a'));
+                    a.href = scores[i].uri;
+                    a.textContent = scores[i].fname;
+                }
             }
         }
     }
@@ -234,20 +257,21 @@
     var req = new XMLHttpRequest();
     req.open('get', '/sitemap.xml', true);
     req.onload = function() {
+        if (!req.responseXML) return;
         var opt, searchData = document.createElement('datalist');
         searchData.id = 'searchData';
         var locs = req.responseXML.querySelectorAll('loc');
-        for (var i = 0; i < locs.length; i++) uris.push(
+        for (var i = 0; i < locs.length; i++) rels.push(
             decodeURI(locs[i].textContent).split('/').slice(3).join('/'));
-        uris.sort();
-        for (var i = 0; i < uris.length; i++) {
+        rels.sort();
+        for (var i = 0; i < rels.length; i++) {
             searchData.appendChild(opt = document.createElement('option'));
-            opt.value = uris[i];
+            opt.value = rels[i];
         }
         searchbar.parentNode.insertBefore(searchData, searchbar);
         searchbar.placeholder = searchbar.placeholder || 'touch me!';
         searchbar.disabled = false;
-        if (uris.length && !isIndex) recommendWiki();
+        if (rels.length && !isIndex) recommendWiki();
     }
     req.send();
 </script>
