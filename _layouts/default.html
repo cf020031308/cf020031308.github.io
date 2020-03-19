@@ -22,15 +22,46 @@
     <div id="doc"> {{ content }} </div>
     <div id="ref"></div>
     <div id="wiki"></div>
+    <footer class="footer pt-1 mt-4 d-flex flex-justify-center" id="footer">
+        <a class="mx-1" href="https://github.com/cf020031308/cf020031308.github.io/issues?q=is%3Aissue+label%3Aarticle+is%3Aclosed+-label%3Aabort" alt="comment" title="comment of posts">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M15 1H6c-.55 0-1 .45-1 1v2H1c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h1v3l3-3h4c.55 0 1-.45 1-1V9h1l3 3V9h1c.55 0 1-.45 1-1V2c0-.55-.45-1-1-1zM9 11H4.5L3 12.5V11H1V5h4v3c0 .55.45 1 1 1h3v2zm6-3h-2v1.5L11.5 8H6V2h9v6z"/></svg>
+        </>
+        <a class="mx-1" href="/blog/atom.xml" alt="rss" title="subscribe my blog">
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="16" viewBox="0 0 10 16"><path fill-rule="evenodd" d="M2 13H0v-2c1.11 0 2 .89 2 2zM0 3v1a9 9 0 019 9h1C10 7.48 5.52 3 0 3zm0 4v1c2.75 0 5 2.25 5 5h1c0-3.31-2.69-6-6-6z"/></svg>
+        </a>
+        <a class="mx-1" href="https://github.com/cf020031308/cf020031308.github.io/graphs/traffic" alt="traffic" title="stats of site">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M11.5 8L8.8 5.4 6.6 8.5 5.5 1.6 2.38 8H0v2h3.6l.9-1.8.9 5.4L9 8.5l1.6 1.5H14V8h-2.5z"/></svg>
+        </a>
+        <a class="mx-1" id="mdlink" href="" alt="markdown" title="view in markdown">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M14.85 3H1.15C.52 3 0 3.52 0 4.15v7.69C0 12.48.52 13 1.15 13h13.69c.64 0 1.15-.52 1.15-1.15v-7.7C16 3.52 15.48 3 14.85 3zM9 11H7V8L5.5 9.92 4 8v3H2V5h2l1.5 2L7 5h2v6zm2.99.5L9.5 8H11V5h2v3h1.5l-2.51 3.5z"/></svg>
+        </a>
+        <a class="mx-1" id="ghlink" href="https://github.com/cf020031308/cf020031308.github.io" alt="github" title="view on Github">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        </a>
+    </footer>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" crossorigin="anonymous"></script>
 <script>
-    var repo = 'https://github.com/cf020031308/cf020031308.github.io';
-    var isIndex = false;
     var loc = window.location;
     var doc = document.getElementById('doc');
 
+    // Link to the plaintext file and the file in the repo
+    var ghlink = document.getElementById('ghlink');
+    var repo = ghlink.href
+    var mdlink = document.getElementById('mdlink');
+    if (loc.pathname.endsWith('/')) {
+        mdlink.href = loc.pathname + 'readme.md';
+    } else if (loc.pathname.endsWith('/index.html')) {
+        mdlink.href = loc.pathname.split('/').slice(0, -1).join('/') + 'readme.md';
+    } else if (loc.pathname.endsWith('.html')) {
+        mdlink.href = loc.pathname.substr(0, loc.pathname.length - 4) + 'md';
+    } else {
+        mdlink.href = loc.pathname + '.md';
+    }
+    ghlink.href += '/blob/master' + mdlink.pathname;
+
+    var isIndex = false;
     // References: generated from content
     var as = doc.querySelectorAll('a');
     if (as.length > 0) {
