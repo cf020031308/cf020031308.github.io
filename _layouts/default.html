@@ -26,17 +26,16 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" crossorigin="anonymous"></script>
 <script>
-    // References: generated from content
     var repo = 'https://github.com/cf020031308/cf020031308.github.io';
     var isIndex = false;
     var loc = window.location;
     var doc = document.getElementById('doc');
+
+    // References: generated from content
     var as = doc.querySelectorAll('a');
-    var content = doc.textContent;
     if (as.length > 0) {
-        var aLen = 0;
-        var ol = document.createElement('ol'), li, quote;
-        var rs = {}, rlinks = [];
+        // Prepare links info
+        var aLen = 0, rs = {}, rlinks = [];
         for (var i = 0; i < as.length; i++) {
             var a = as[i];
             aLen += a.textContent.length;
@@ -50,10 +49,12 @@
             if (!rs[href][cite]) rs[href][cite] = [];
             rs[href][cite].push(a.id = (a.id || ('ref-' + i)));
         }
+
         // No need to give references if the whole page is an index
-        isIndex = aLen > content.length * 0.3;
+        isIndex = aLen > doc.textContent.length * 0.3;
         if (!isIndex) {
             var ref = document.getElementById('ref');
+            var ol = document.createElement('ol'), li, quote;
             ref.innerHTML = '<h2 id="references"> References </h2>';
             ref.appendChild(quote = document.createElement('blockquote'));
             quote.appendChild(ol);
@@ -100,9 +101,11 @@
             a.textContent = h.textContent;
             var anchor = h.querySelector('a.anchorjs-link');
             a.href = anchor.hash;
-            // Link back to top
+            // Link back to title
             anchor.hash = '#' + title.id;
         }
+
+        // Unindent TOC
         if (minLv < 7) for (var lv = 1; lv < minLv; lv++) {
             li = toc.lastChild;
             ul = li.lastChild;
@@ -113,12 +116,14 @@
     }
 
     // Navigator & SearchBar: generated wrt sitemap.xml and the current location
-    // Populate data from sitemap.xml in uris later
+    // rels will be Populated with uris from sitemap.xml later
     var rels = [];
+
     var searchbar = document.getElementById('searchbar');
+    // If the input value matches any uri, go to it
     var onSelect = function() {
         var val = searchbar.value;
-        if (val && ((!rels.includes) || rels.includes(val) || rels.includes(val + '/'))) {
+        if (val && ((!rels.includes) || rels.includes(val) || rels.includes(val + '/') || rels.includes(val + '.html'))) {
             window.stop();
             loc.href = loc.origin + '/' + val;
             return true;
@@ -128,11 +133,13 @@
     searchbar.style.flexGrow = 1;
 
     var nav = document.getElementById('nav'), nav1, nav2;
+    // If the input value does not match any uri, query it with Github
     nav.onsubmit = function() {
         if (searchbar.value && !onSelect()) window.open(
             repo + '/search?q=' + searchbar.value, '_blank');
         return false;
     }
+
     // If there is no title, enlarge the navigator
     if (!title) {
         nav.appendChild(nav = document.createElement('h1'));
@@ -153,6 +160,7 @@
         return html;
     }
 
+    // First part of the nav: "Roy's home/"
     nav.insertBefore(nav1 = document.createElement('strong'), searchbar);
     nav1.innerHTML = crumbs2html([
         {text: "Roy", href: "https://github.com/cf020031308"},
@@ -162,6 +170,7 @@
     ]);
     nav1.style.flexShrink = 0;
 
+    // Second part of the nav: the current location
     nav.insertBefore(nav2 = document.createElement('strong'), searchbar);
     var pos = '';
     var crumbs = loc.pathname.split('/').filter(function(x) {return x;});
@@ -184,10 +193,9 @@
 
     // Recommend related wiki after sitemap.xml is loaded
     var recommendWiki = function() {
-        var inv = {}, words = [];
-        var stopWords = [];
+        // Build inverted index
+        var inv = {}, kwds = [], stopWords = [];
         var scores = new Array(rels.length);
-        var re = /\b\w{2,}\b/gi;
         for (var i = 0; i < rels.length; i++) {
             var uri = '/' + rels[i];
             if (uri === loc.pathname) continue;
@@ -195,17 +203,19 @@
             var fname = uri.split('/').filter(function(x) { return x; }).slice(-1).pop();
             if (fname.indexOf('.') !== -1) fname = fname.split('.').slice(0, -1).join('.');
             scores[i] = {value: 0, uri: uri, fname: fname};
-            fname.replace(re, function(m) {
+            fname.replace(/\b\w{2,}\b/gi, function(m) {
                 m = m.toLowerCase();
                 if (!inv[m]) {
                     inv[m] = [];
-                    words.push(m);
+                    kwds.push(m);
                 }
                 inv[m].push(i);
             });
         }
-        content.replace(/(?:(https?|ftp|file):)?\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]/gi, '').replace(
-            new RegExp('\\b(' + words.join('|') + ')\\b', 'gi'),
+
+        // Score the keywords based on overlap with doc stripped off urls
+        doc.textContent.replace(/(?:(https?|ftp|file):)?\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]/gi, '').replace(
+            new RegExp('\\b(' + kwds.join('|') + ')\\b', 'gi'),
             function(m) {
                 m = m.toLowerCase()
                 if (stopWords.includes(m)) return;
@@ -215,9 +225,10 @@
             }
         );
         scores = scores.filter(function(x) { return x && (x.value > 0); });
+
         if (scores.length) {
-            // Add wiki links into content
-            re = '';
+            // Add wiki links into doc (ignoring A and PRE tag)
+            var re = '';
             for (var i = 0; i < scores.length; i++) re += scores[i].fname.replace(/[-_]/g, '.') + '|';
             re = new RegExp('\\b(' + re.substr(0, re.length - 1) + ')\\b', 'gi');
             var replacer = function(m) {
@@ -236,9 +247,10 @@
                 html += m;
             })
             doc.innerHTML = html + doc.innerHTML.substring(html.length).replace(re, replacer);
+
+            // Append at most 4 related but not linked wiki pages
             scores = scores.filter(function(x) { return !x.used; });
             if (scores.length) {
-                // Append at most 4 related wiki pages
                 scores.sort(function(x, y) { return y.value - x.value; });
                 var ol, li, wiki = document.getElementById('wiki');
                 wiki.innerHTML = '<h2 id="related-wiki"> See also </h2>';
@@ -253,7 +265,7 @@
         }
     }
 
-    // load sitemap.xml
+    // Load sitemap.xml
     var req = new XMLHttpRequest();
     req.open('get', '/sitemap.xml', true);
     req.onload = function() {
