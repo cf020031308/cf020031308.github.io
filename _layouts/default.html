@@ -70,7 +70,6 @@
 <script>
     var loc = window.location;
     var doc = document.getElementById('doc');
-    var title = doc.querySelector('h1');
 
     // Dark theme
     function toggleTheme() { document.body.classList.toggle('theme-dark'); }
@@ -139,46 +138,6 @@
         }
     }
 
-    // TOC: generated from content (if there are there or more headers)
-    var generateTOC = function() {
-        anchors.add();
-        if (title && anchors.elements.length < 4) return;
-        if (!title.id) title.id = 'table-of-contents';
-        var toc = document.createElement('ul');
-        var ul = toc, li, a;
-        var curLv = 1, minLv = 9;
-        for (var i = 0; i < anchors.elements.length; i++) {
-            var h = anchors.elements[i];
-            if (h.tagName.substr(0, 1).toLowerCase() !== 'h') continue;
-            var lv = h.tagName.substr(1) - 0;
-            if (minLv > lv) minLv = lv;
-            for (; curLv < lv; curLv++) {
-                li = ul.lastChild;
-                if (!li) ul.appendChild(li = document.createElement('li'));
-                li.appendChild(ul = document.createElement('ul'));
-            }
-            for (; curLv > lv; curLv--) ul = ul.parentNode.parentNode;
-            ul.appendChild(li = document.createElement('li'));
-            li.appendChild(a = document.createElement('a'));
-            a.textContent = h.textContent;
-            var anchor = h.querySelector('a.anchorjs-link');
-            a.href = anchor.hash;
-            // Link back to title
-            anchor.hash = '#' + title.id;
-        }
-
-        // Unindent TOC
-        if (minLv < 7) for (var lv = 1; lv < minLv; lv++) {
-            li = toc.lastChild;
-            ul = li.lastChild;
-            toc.removeChild(li);
-            while(ul.children.length) toc.appendChild(ul.firstChild);
-        }
-        title.parentNode.insertBefore(
-            quote = document.createElement('blockquote'), title.nextSibling);
-        quote.appendChild(toc);
-    }
-
     // Navigator & SearchBar: generated wrt sitemap.xml and the current location
     // rels will be Populated with uris from sitemap.xml later
     var rels = [];
@@ -204,13 +163,14 @@
     }
 
     // If there is no title, enlarge the navigator
+    var title = doc.querySelector('h1');
     if (!title) {
         title = document.createElement('h1');
         nav.parentNode.insertBefore(title, nav);
         title.appendChild(nav);
     }
-    title.parentNode.insertBefore(
-        document.getElementById('toolbar'), title.nextSibling);
+    var toolbar = document.getElementById('toolbar');
+    title.parentNode.insertBefore(toolbar, title.nextSibling);
 
     var href = loc.origin;
     var crumbs2html = function(crumbs) {
@@ -325,6 +285,47 @@
                 }
             }
         }
+    }
+
+    // TOC: generated from content (if there are there or more headers)
+    var generateTOC = function() {
+        anchors.add();
+        if (title && anchors.elements.length < 4) return;
+        if (!title.id) title.id = 'table-of-contents';
+        var toc = document.createElement('ul');
+        var ul = toc, li, a;
+        var curLv = 1, minLv = 9;
+        for (var i = 0; i < anchors.elements.length; i++) {
+            var h = anchors.elements[i];
+            if (h.tagName.substr(0, 1).toLowerCase() !== 'h') continue;
+            var lv = h.tagName.substr(1) - 0;
+            if (minLv > lv) minLv = lv;
+            for (; curLv < lv; curLv++) {
+                li = ul.lastChild;
+                if (!li) ul.appendChild(li = document.createElement('li'));
+                li.appendChild(ul = document.createElement('ul'));
+            }
+            for (; curLv > lv; curLv--) ul = ul.parentNode.parentNode;
+            ul.appendChild(li = document.createElement('li'));
+            li.appendChild(a = document.createElement('a'));
+            a.textContent = h.textContent;
+            var anchor = h.querySelector('a.anchorjs-link');
+            a.href = anchor.hash;
+            // Link back to title
+            anchor.hash = '#' + title.id;
+        }
+
+        // Unindent TOC
+        if (minLv < 7) for (var lv = 1; lv < minLv; lv++) {
+            li = toc.lastChild;
+            ul = li.lastChild;
+            toc.removeChild(li);
+            while(ul.children.length) toc.appendChild(ul.firstChild);
+        }
+        toolbar.parentNode.insertBefore(
+            quote = document.createElement('blockquote'), toolbar.nextSibling);
+        quote.appendChild(toc);
+        return quote;
     }
 
     // Load sitemap.xml
