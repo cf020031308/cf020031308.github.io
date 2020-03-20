@@ -15,15 +15,17 @@
     <style>
         input { outline: none; background-color: #fff; }
         .icon {
-            color: #111; fill: currentColor;
+            color: #24292e; fill: currentColor;
             margin-left: 4px; margin-right: 4px;
             height: 16px;
         }
+        a.wiki { color: black; text-decoration: underline dotted black; }
         .upside-down { transform: rotate(180deg); }
         .theme-dark { color: #cbcbcb; background-color: #24292e; }
         .theme-dark a{ color: #29c5fa; }
+        .theme-dark a.wiki {color: #cbcbcb; text-decoration: underline dotted #cbcbcb; }
         .theme-dark img{ filter: grayscale(30%); }
-        .theme-dark .icon{ color: #fff; }
+        .theme-dark .icon{ color: #cbcbcb; }
         .theme-dark input{ color: #cbcbcb; background-color: #24292e; }
     </style>
 </head>
@@ -68,6 +70,7 @@
 <script>
     var loc = window.location;
     var doc = document.getElementById('doc');
+    var title = doc.querySelector('h1');
 
     // Dark theme
     function toggleTheme() { document.body.classList.toggle('theme-dark'); }
@@ -137,9 +140,9 @@
     }
 
     // TOC: generated from content (if there are there or more headers)
-    anchors.add();
-    var title = doc.querySelector('h1');
-    if (title && anchors.elements.length >= 3) {
+    var generateTOC = function() {
+        anchors.add();
+        if (title && anchors.elements.length < 4) return;
         if (!title.id) title.id = 'table-of-contents';
         var toc = document.createElement('ul');
         var ul = toc, li, a;
@@ -295,7 +298,7 @@
                     return m.toLowerCase().replace(/\W/g, '-') === s.fname.toLowerCase(); });
                 if (s) {
                     s.used = true;
-                    return '<a href="' + s.uri + '" target="_blank">' + m + '</a>';
+                    return '<a class="wiki" href="' + s.uri + '" target="_blank">' + m + '</a>';
                 }
                 return m;
             }
@@ -328,21 +331,23 @@
     var req = new XMLHttpRequest();
     req.open('get', '/sitemap.xml', true);
     req.onload = function() {
-        if (!req.responseXML) return;
-        var opt, searchData = document.createElement('datalist');
-        searchData.id = 'searchData';
-        var locs = req.responseXML.querySelectorAll('loc');
-        for (var i = 0; i < locs.length; i++) rels.push(
-            decodeURI(locs[i].textContent).split('/').slice(3).join('/'));
-        rels.sort();
-        for (var i = 0; i < rels.length; i++) {
-            searchData.appendChild(opt = document.createElement('option'));
-            opt.value = rels[i];
+        if (req.responseXML) {
+            var opt, searchData = document.createElement('datalist');
+            searchData.id = 'searchData';
+            var locs = req.responseXML.querySelectorAll('loc');
+            for (var i = 0; i < locs.length; i++) rels.push(
+                decodeURI(locs[i].textContent).split('/').slice(3).join('/'));
+            rels.sort();
+            for (var i = 0; i < rels.length; i++) {
+                searchData.appendChild(opt = document.createElement('option'));
+                opt.value = rels[i];
+            }
+            searchbar.parentNode.insertBefore(searchData, searchbar);
+            searchbar.placeholder = searchbar.placeholder || 'touch me!';
+            searchbar.disabled = false;
+            if (rels.length && !isIndex) recommendWiki();
         }
-        searchbar.parentNode.insertBefore(searchData, searchbar);
-        searchbar.placeholder = searchbar.placeholder || 'touch me!';
-        searchbar.disabled = false;
-        if (rels.length && !isIndex) recommendWiki();
+        generateTOC();
     }
     req.send();
 </script>
