@@ -1,6 +1,7 @@
 # Configurations for Jekyll
 
 markdown: GFM
+highlighter: pygments
 exclude:
   - bin
   - dotfiles

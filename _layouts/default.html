@@ -13,7 +13,7 @@
         onload='renderMathInElement(document.body, { delimiters: [{ left: "$$", right: "$$", display: true }, { left: "$", right: "$", display: false }] })'
     ></script>
     <style>
-        input { width: 0; outline: none; background-color: transparent; }
+        input { color: inherit; width: 0; outline: none; background-color: transparent; }
         .icon {
             color: #24292e; fill: currentColor;
             margin-left: 4px; margin-right: 4px;
@@ -21,13 +21,27 @@
         }
         a.wiki { color: black; text-decoration: underline dotted black; }
         .upside-down { transform: rotate(180deg); }
-        .theme-dark { color: #cbcbcb; background-color: #24292e; }
-        .theme-dark a { color: #29c5fa; }
-        .theme-dark a.wiki {color: #cbcbcb; text-decoration: underline dotted #cbcbcb; }
-        .theme-dark img { filter: grayscale(30%); }
-        .theme-dark .icon { color: #cbcbcb; }
-        .theme-dark input { color: #cbcbcb; }
-        .theme-dark pre { border-radius: 0 !important; background-color: #272822 !important; }
+        .dark { color: #cbcbcb; background-color: #24292e; }
+        .dark a { color: #29c5fa; }
+        .dark a.wiki {color: #cbcbcb; text-decoration: underline dotted #cbcbcb; }
+        .dark img { filter: grayscale(30%); }
+        .dark .icon { color: #cbcbcb; }
+        .dark tr { background-color: transparent !important; }
+        .dark pre { border-radius: 0 !important; background-color: #272822 !important; }
+        .dark .highlight table td { padding: 5px; }
+        .dark .highlight table pre { margin: 0; }
+        .dark .highlight, .dark .highlight .w, .dark .highlight .o, .dark .highlight .ow, .dark .highlight .p, .dark .highlight .pi { color: #f8f8f2; }
+        .dark .highlight .err { color: #272822; background-color: #f92672 !important; }
+        .dark .highlight .c, .dark .highlight .ch, .dark .highlight .cd, .dark .highlight .cm, .dark .highlight .cpf, .dark .highlight .c1, .dark .highlight .cs { color: #75715e; }
+        .dark .highlight .cp, .dark .highlight .nt, .dark .highlight .nn, .dark .highlight .nc, .dark .highlight .no { color: #f4bf75; }
+        .dark .highlight .gi, .dark .highlight .s, .dark .highlight .sa, .dark .highlight .sb, .dark .highlight .sc, .dark .highlight .dl, .dark .highlight .sd, .dark .highlight .s2, .dark .highlight .sh, .dark .highlight .sx, .dark .highlight .s1, .dark .highlight .m, .dark .highlight .mb, .dark .highlight .mf, .dark .highlight .mh, .dark .highlight .mi, .dark .highlight .il, .dark .highlight .mo, .dark .highlight .mx, .dark .highlight .ss { color: #a6e22e; }
+        .dark .highlight .gd { color: #f92672; }
+        .dark .highlight .gh { color: #66d9ef; font-weight: bold; }
+        .dark .highlight .k, .dark .highlight .kn, .dark .highlight .kp, .dark .highlight .kr, .dark .highlight .kv { color: #ae81ff; }
+        .dark .highlight .kc, .dark .highlight .kt, .dark .highlight .kd { color: #fd971f; }
+        .dark .highlight .sr { color: #a1efe4; }
+        .dark .highlight .si, .dark .highlight .se { color: #cc6633; }
+        .dark .highlight .na { color: #66d9ef; }
     </style>
 </head>
 <body>
@@ -73,7 +87,7 @@
     var doc = document.getElementById('doc');
 
     // Dark theme
-    function toggleTheme() { document.body.classList.toggle('theme-dark'); }
+    function toggleTheme() { document.body.classList.toggle('dark'); }
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) toggleTheme();
 
     // If there is no title, enlarge the header
@@ -161,7 +175,6 @@
         }
     }
     searchbar.onchange = onSelect;
-
     var nav = document.getElementById('nav');
     // If the input value does not match any uri, query it with Github
     nav.onsubmit = function() {
@@ -200,7 +213,7 @@
     for (var i = crumbs.length - 1; i > 0; i--) crumbs.splice(i, 0, '/');
     if (crumbs.length) searchbar.placeholder = pos = crumbs.pop().text;
     nav2.innerHTML = crumbs2html(crumbs);
-
+    // Toggle nav2 when searching
     searchbar.onfocus = function() {
         searchbar.placeholder = nav2.textContent + pos;
         nav2.classList.add('d-none');
