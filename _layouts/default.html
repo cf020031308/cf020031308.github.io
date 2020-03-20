@@ -27,7 +27,7 @@
         .theme-dark img { filter: grayscale(30%); }
         .theme-dark .icon { color: #cbcbcb; }
         .theme-dark input { color: #cbcbcb; }
-        .theme-dark pre { border-radius: 0; background-color: #272822 !important; }
+        .theme-dark pre { border-radius: 0 !important; background-color: #272822 !important; }
     </style>
 </head>
 <body>
@@ -291,6 +291,7 @@
     // TOC: generated from content (if there are there or more headers)
     var generateTOC = function() {
         anchors.add();
+        var title = doc.querySelector('h1');
         if (title && anchors.elements.length < 4) return;
         if (!title.id) title.id = 'table-of-contents';
         var toc = document.createElement('ul');
@@ -323,6 +324,7 @@
             toc.removeChild(li);
             while(ul.children.length) toc.appendChild(ul.firstChild);
         }
+        var toolbar = document.getElementById('toolbar');
         toolbar.parentNode.insertBefore(
             quote = document.createElement('blockquote'), toolbar.nextSibling);
         quote.appendChild(toc);
