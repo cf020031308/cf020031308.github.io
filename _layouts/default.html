@@ -13,7 +13,7 @@
         onload='renderMathInElement(document.body, { delimiters: [{ left: "$$", right: "$$", display: true }, { left: "$", right: "$", display: false }] })'
     ></script>
     <style>
-        input { outline: none; background-color: #fff; }
+        input { outline: none; background-color: transparent; }
         .icon {
             color: #24292e; fill: currentColor;
             margin-left: 4px; margin-right: 4px;
@@ -22,11 +22,12 @@
         a.wiki { color: black; text-decoration: underline dotted black; }
         .upside-down { transform: rotate(180deg); }
         .theme-dark { color: #cbcbcb; background-color: #24292e; }
-        .theme-dark a{ color: #29c5fa; }
+        .theme-dark a { color: #29c5fa; }
         .theme-dark a.wiki {color: #cbcbcb; text-decoration: underline dotted #cbcbcb; }
-        .theme-dark img{ filter: grayscale(30%); }
-        .theme-dark .icon{ color: #cbcbcb; }
-        .theme-dark input{ color: #cbcbcb; background-color: #24292e; }
+        .theme-dark img { filter: grayscale(30%); }
+        .theme-dark .icon { color: #cbcbcb; }
+        .theme-dark input { color: #cbcbcb; }
+        .theme-dark pre { border-radius: 0; background-color: #272822 !important; }
     </style>
 </head>
 <body>
