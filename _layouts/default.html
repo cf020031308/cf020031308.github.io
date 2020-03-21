@@ -185,7 +185,12 @@
             option = {
                 title: { left: 'center' },
                 legend: { show: false },
-                series: { type: 'pie', radius: [0, '50%'], data: series },
+                series: {
+                    type: 'pie',
+                    radius: [0, '50%'],
+                    label: { formatter: '{b}: ({d}%)' },
+                    data: series
+                },
             };
             for (var k = 0; k < series.length; k++)
 				series[k].value = series[k].data[0];
