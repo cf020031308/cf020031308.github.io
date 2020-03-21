@@ -28,7 +28,7 @@
         .dark img { filter: grayscale(30%); }
         .dark .icon { color: #cbcbcb; }
         .dark tr { background-color: transparent !important; }
-        .dark tr.even { background-color: #293137 !important; }
+        .dark tr:nth-child(2n) { background-color: #293137 !important; }
         .dark pre { border-radius: 0 !important; background-color: #272822 !important; }
         .dark .highlight table td { padding: 5px; }
         .dark .highlight table pre { margin: 0; }
@@ -252,7 +252,7 @@
 	function toggleChart() {
         if (chartOptions.length) {
             showChart = !showChart;
-            var charts = document.querySelectorAll('chart');
+            var charts = document.getElementsByClassName('chart');
             var tables = document.getElementsByClassName('chart-data');
             if (showChart) {
                 for (var i = 0; i < charts.length; i++)
