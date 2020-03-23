@@ -269,17 +269,10 @@
             showChart = !showChart;
             var charts = document.getElementsByClassName('chart');
             var tables = document.getElementsByClassName('chart-data');
-            if (showChart) {
-                for (var i = 0; i < charts.length; i++)
-                    charts[i].classList.remove('d-none');
-                for (var i = 0; i < tables.length; i++)
-                    tables[i].classList.add('d-none');
-            } else {
-                for (var i = 0; i < charts.length; i++)
-                    charts[i].classList.add('d-none');
-                for (var i = 0; i < tables.length; i++)
-                    tables[i].classList.remove('d-none');
-            }
+            for (var i = 0; i < tables.length; i++)
+                tables[i].classList[showChart ? 'add' : 'remove']('d-none');
+            for (var i = 0; i < charts.length; i++)
+                charts[i].classList[showChart ? 'remove' : 'add']('d-none');
             loadChart();
         }
         return showChart;
@@ -408,7 +401,7 @@
     // Second part of the nav: the current location
     var nav2 = document.getElementById('folder');
     var pos = '';
-    var crumbs = loc.pathname.split('/').filter(function(x) {return x;});
+    var crumbs = decodeURI(loc.pathname).split('/').filter(function(x) {return x;});
     for (var i = 0; i < crumbs.length; i++) crumbs[i] = {
         text: crumbs[i], href: (href += '/' + crumbs[i])};
     for (var i = crumbs.length - 1; i > 0; i--) crumbs.splice(i, 0, '/');
@@ -487,7 +480,7 @@
             if (scores.length) {
                 scores.sort(function(x, y) { return y.value - x.value; });
                 var ol, li, wiki = document.getElementById('wiki');
-                wiki.innerHTML = '<h2 id="related-wiki"> See also </h2>';
+                wiki.innerHTML = '<h2 id="related-wiki"> See Also </h2>';
                 wiki.appendChild(ol = document.createElement('ol'));
                 for (var i = 0; i < Math.min(4, scores.length); i++) {
                     ol.appendChild(li = document.createElement('li'));
