@@ -127,7 +127,7 @@
             series.push({name: serieName, type: serieType, stack: stack, data: []});
         }
 
-        var xNames = [];
+        var xNames = [], yValues = [];
         var xNameAllNum = true, yAllNum = true;
         var allNumByX = [], allNumByY = [];
         for (var j = 0; j < trs.length; j++) {
@@ -142,6 +142,7 @@
                     allNumByX[j] = allNumByY[k] = false;
                     yAllNum = false;
                 } else if (allNumByY[k] === undefined) allNumByY[k] = true;
+                yValues.push(y);
                 series[k].data.push(y);
             }
         }
@@ -195,6 +196,14 @@
 				series[k].value = series[k].data[0];
         } else {
             // Barline
+            var outlier = function(x, arr) {
+                var cpArr = [];
+                for (var i = 0; i < arr.length; i++) cpArr.push(arr[i] - 0);
+                cpArr.sort();
+                var q1 = cpArr[parseInt(cpArr.length * 0.25)];
+                var q3 = cpArr[parseInt(cpArr.length * 0.75 + 0.5)];
+                return x < 2.5 * q1 - 1.5 * q3 || x > 2.5 * q3 - 1.5 * q1;
+            }
             option = {
                 tooltip: { trigger: 'axis' },
                 xAxis: {
@@ -202,8 +211,13 @@
                     name: xAxisName,
                     boundaryGap: false,
                     data: xNames,
+                    scale: xNameAllNum && outlier(0, xNames),
                 },
-                yAxis: { name: yAxisName, splitLine: { show: false } },
+                yAxis: {
+                    name: yAxisName,
+                    splitLine: { show: false },
+                    scale: outlier(0, yValues),
+                },
                 series: series,
             };
             for (var k = 0; k < series.length; k++) {
@@ -239,7 +253,7 @@
         isDark = true;
     } else {
         var h = new Date().getHours();
-        isDark = (h >= 10 || h < 6);
+        isDark = (h >= 20 || h < 6);
     }
 	var showChart = true;
     function loadChart() {
