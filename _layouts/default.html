@@ -76,6 +76,9 @@
         <a href="https://github.com/cf020031308/cf020031308.github.io/graphs/traffic" alt="traffic" title="stats of site">
             <svg class="icon" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M11.5 8L8.8 5.4 6.6 8.5 5.5 1.6 2.38 8H0v2h3.6l.9-1.8.9 5.4L9 8.5l1.6 1.5H14V8h-2.5z"/></svg>
         </a>
+        <a id="sdlink" href="" alt="slides" title="view in slides">
+            <svg class="icon" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M15.2 2.09L10 5.72V3c0-.55-.45-1-1-1H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h8c.55 0 1-.45 1-1V9.28l5.2 3.63c.33.23.8 0 .8-.41v-10c0-.41-.47-.64-.8-.41z"/></svg>
+        </>
         <a id="mdlink" href="" alt="markdown" title="view in markdown">
             <svg class="icon" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M14.85 3H1.15C.52 3 0 3.52 0 4.15v7.69C0 12.48.52 13 1.15 13h13.69c.64 0 1.15-.52 1.15-1.15v-7.7C16 3.52 15.48 3 14.85 3zM9 11H7V8L5.5 9.92 4 8v3H2V5h2l1.5 2L7 5h2v6zm2.99.5L9.5 8H11V5h2v3h1.5l-2.51 3.5z"/></svg>
         </a>
@@ -308,6 +311,7 @@
     var ghlink = document.getElementById('ghlink');
     var repo = ghlink.href
     var mdlink = document.getElementById('mdlink');
+    var sdlink = document.getElementById('sdlink');
     if (loc.pathname.endsWith('/')) {
         mdlink.href = loc.pathname + 'readme.md';
     } else if (loc.pathname.endsWith('/index.html')) {
@@ -318,6 +322,7 @@
         mdlink.href = loc.pathname + '.md';
     }
     ghlink.href += '/blob/master' + mdlink.pathname;
+    sdlink.href = '/ppt?' + mdlink.pathname;
 
     var isIndex = false;
     // References: generated from content
