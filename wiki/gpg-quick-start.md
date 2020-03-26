@@ -7,7 +7,7 @@
 Windows 系统可选择：
 
 1. 在 WSL 下使用 gpg
-2. 使用 [Gpg4win](https://www.gpg4win.org/index.html)，参考 <https://blog.51cto.com/z00w00/2070169>
+2. 使用 [Gpg4win](https://www.gpg4win.org/index.html)
 
 ### 生成自己密钥并发布公钥
 
@@ -62,4 +62,4 @@ set pgp_default_key = "201B9A6321856771"
 
 其中 source 所引用的文件是 mutt 自带的 gpg 配置，引用过来后在下面配置默认 key 为自己的就可以。
 
-其它邮箱客户端请按关键词自行搜索，如百度“thunderbird gpg4win”、“hotmail gpg4win”
+其它邮箱客户端请按关键词自行搜索，如百度“thunderbird gpg4win”、“hotmail gpg4win”。
