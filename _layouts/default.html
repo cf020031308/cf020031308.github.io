@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% seo %}
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css" />
     <script
@@ -13,6 +12,7 @@
         onload='renderMathInElement(document.body, { delimiters: [{ left: "$$", right: "$$", display: true }, { left: "$", right: "$", display: false }] })'
     ></script>
     <script src="https://cdn.bootcss.com/echarts/4.4.0-rc.1/echarts-en.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
         input { color: inherit; width: 0; outline: none; background-color: transparent; }
         .icon {
@@ -90,8 +90,38 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" crossorigin="anonymous"></script>
 <script>
+    function HTTP(method, url, callback) {
+        var req = window.XMLHttpRequest? (new XMLHttpRequest()): (new ActiveXObject("Microsoft.XMLHTTP"));
+        if (callback) req.onload = callback;
+        req.open(method, url, !!callback);
+        req.send();
+        return req;
+    };
     var loc = window.location;
+
+    // Link to the plaintext file and the file in the repo
+    var ghlink = document.getElementById('ghlink');
+    var repo = ghlink.href
+    var mdlink = document.getElementById('mdlink');
+    var sdlink = document.getElementById('sdlink');
+    if (loc.pathname.endsWith('/')) {
+        mdlink.href = loc.pathname + 'readme.md';
+    } else if (loc.pathname.endsWith('/index.html')) {
+        mdlink.href = loc.pathname.split('/').slice(0, -1).join('/') + '/readme.md';
+    } else if (loc.pathname.endsWith('.html')) {
+        mdlink.href = loc.pathname.substr(0, loc.pathname.length - 4) + 'md';
+    } else {
+        mdlink.href = loc.pathname + '.md';
+    }
+    ghlink.href += '/blob/master' + mdlink.pathname;
+    sdlink.href = '/ppt?' + mdlink.pathname;
+
     var doc = document.getElementById('doc');
+    if (doc.textContent.trim() === '{' + '{ content }' + '}') {
+        var req = HTTP('get', mdlink.pathname);
+        doc.innerHTML = req.status < 400 ? marked(req.responseText) : (
+            '<h1>' + req.status + ' ' + req.statusText + '</h1>');
+    }
     var content = doc.textContent;
 
     // Chart: parse tables, append charts
@@ -307,23 +337,6 @@
         title.appendChild(document.getElementById('header'));
         doc.insertBefore(title, doc.firstChild);
     }
-
-    // Link to the plaintext file and the file in the repo
-    var ghlink = document.getElementById('ghlink');
-    var repo = ghlink.href
-    var mdlink = document.getElementById('mdlink');
-    var sdlink = document.getElementById('sdlink');
-    if (loc.pathname.endsWith('/')) {
-        mdlink.href = loc.pathname + 'readme.md';
-    } else if (loc.pathname.endsWith('/index.html')) {
-        mdlink.href = loc.pathname.split('/').slice(0, -1).join('/') + 'readme.md';
-    } else if (loc.pathname.endsWith('.html')) {
-        mdlink.href = loc.pathname.substr(0, loc.pathname.length - 4) + 'md';
-    } else {
-        mdlink.href = loc.pathname + '.md';
-    }
-    ghlink.href += '/blob/master' + mdlink.pathname;
-    sdlink.href = '/ppt?' + mdlink.pathname;
 
     var isIndex = false;
     // References: generated from content
@@ -560,13 +573,11 @@
     }
 
     // Load sitemap.xml
-    var req = new XMLHttpRequest();
-    req.open('get', '/sitemap.xml', true);
-    req.onload = function() {
-        if (req.responseXML) {
+    HTTP('get', '/sitemap.xml', function() {
+        if (this.responseXML) {
             var opt, searchData = document.createElement('datalist');
             searchData.id = 'searchData';
-            var locs = req.responseXML.querySelectorAll('loc');
+            var locs = this.responseXML.querySelectorAll('loc');
             for (var i = 0; i < locs.length; i++) rels.push(
                 decodeURI(locs[i].textContent).split('/').slice(3).join('/'));
             rels.sort();
@@ -580,8 +591,7 @@
             if (rels.length && !isIndex) recommendWiki();
         }
         generateTOC();
-    }
-    req.send();
+    });
 </script>
 
 </body>
