@@ -92,6 +92,7 @@
 <script>
     var loc = window.location;
     var doc = document.getElementById('doc');
+    var content = doc.textContent;
 
     // Chart: parse tables, append charts
     var tables = doc.querySelectorAll('table'), chartOptions = [];
@@ -346,7 +347,7 @@
         }
 
         // No need to give references if the whole page is an index
-        isIndex = aLen > doc.textContent.length * 0.3;
+        isIndex = aLen > content.length * 0.3;
         if (!isIndex) {
             var ref = document.getElementById('ref');
             var ol = document.createElement('ol'), li, quote;
@@ -419,28 +420,30 @@
 
     // Second part of the nav: the current location
     var nav2 = document.getElementById('folder');
-    var pos = '';
+    var basename = '';
     var crumbs = decodeURI(loc.pathname).split('/').filter(function(x) {return x;});
     for (var i = 0; i < crumbs.length; i++) crumbs[i] = {
         text: crumbs[i], href: (href += '/' + crumbs[i])};
     for (var i = crumbs.length - 1; i > 0; i--) crumbs.splice(i, 0, '/');
-    if (crumbs.length) searchbar.placeholder = pos = crumbs.pop().text;
+    if (crumbs.length) searchbar.placeholder = basename = crumbs.pop().text;
     nav2.innerHTML = crumbs2html(crumbs);
     // Toggle nav2 when searching
     searchbar.onfocus = function() {
-        searchbar.placeholder = nav2.textContent + pos;
+        searchbar.placeholder = nav2.textContent + basename;
         nav2.classList.add('d-none');
     }
     searchbar.onblur = function() {
         searchbar.value = '';
-        searchbar.placeholder = pos;
+        searchbar.placeholder = basename;
         nav2.classList.remove('d-none');
     }
 
     // Recommend related wiki after sitemap.xml is loaded
     var recommendWiki = function() {
         // Build inverted index
-        var inv = {}, kwds = [], stopWords = [];
+        var inv = {}, kwds = [], stopWords = [
+            'and', 'but', 'how', 'why', 'when', 'what', 'where', 'test', 'behind', 'readme',
+        ];
         var scores = new Array(rels.length);
         for (var i = 0; i < rels.length; i++) {
             var uri = '/' + rels[i];
@@ -460,7 +463,10 @@
         }
 
         // Score the keywords based on overlap with doc stripped off urls
-        doc.textContent.replace(/(?:(https?|ftp|file):)?\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]/gi, '').replace(
+        (
+            basename.replace(/(\.\w*?)?$/, ' ').repeat(3)
+            + content.replace(/(?:(https?|ftp|file):)?\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]/gi, '')
+        ).replace(
             new RegExp('\\b(' + kwds.join('|') + ')\\b', 'gi'),
             function(m) {
                 m = m.toLowerCase()
@@ -497,7 +503,7 @@
             // Append at most 4 related but not linked wiki pages
             scores = scores.filter(function(x) { return !x.used; });
             if (scores.length) {
-                scores.sort(function(x, y) { return y.value - x.value; });
+                scores.sort(function(x, y) { return y.value / y.fname.length - x.value / x.fname.length; });
                 var ol, li, wiki = document.getElementById('wiki');
                 wiki.innerHTML = '<h2 id="related-wiki"> See Also </h2>';
                 wiki.appendChild(ol = document.createElement('ol'));
