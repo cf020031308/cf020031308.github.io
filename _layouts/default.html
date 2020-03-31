@@ -352,7 +352,10 @@
         for (var i = 0; i < as.length; i++) {
             var a = as[i];
             aLen += a.textContent.length;
-            if (loc.hostname === a.hostname && loc.pathname === a.pathname) continue;
+            if (loc.hostname === a.hostname) {
+                a.pathname = a.pathname.replace(/\.md$/, '.html');
+                if (loc.pathname === a.pathname) continue;
+            }
             var cite = (a.title && (a.title !== a.href)) ?
                 a.title : (a.textContent !== a.href ? a.textContent : '');
             var href = (loc.hostname === a.hostname ? '' : a.origin) + a.pathname + a.search;
