@@ -117,11 +117,16 @@
     sdlink.href = '/ppt?' + mdlink.pathname;
 
     var doc = document.getElementById('doc');
+    var is404 = false;
     if (doc.textContent.trim() === '{' + '{ content }' + '}') {
         var req = HTTP('get', mdlink.pathname);
-        doc.innerHTML = req.status < 400 ? marked(req.responseText) : (
-            '<h1>' + req.status + ' ' + req.statusText + '</h1>');
+        if (req.status < 400) doc.innerHTML = marked(req.responseText);
+        else {
+            doc.innerHTML = '<h1>' + req.status + ' ' + req.statusText + '</h1>';
+            is404 = true;
+        }
     }
+    if (doc.textContent.trim() === '') is404 = true;
     var content = doc.textContent;
 
     // Chart: parse tables, append charts
@@ -461,8 +466,8 @@
         for (var i = 0; i < rels.length; i++) {
             var uri = '/' + rels[i];
             if (uri === loc.pathname) continue;
-            if (!uri.startsWith('/wiki/')) continue;
             var fname = uri.split('/').filter(function(x) { return x; }).slice(-1).pop();
+            if (!fname) continue;
             if (fname.indexOf('.') !== -1) fname = fname.split('.').slice(0, -1).join('.');
             scores[i] = {value: 0, uri: uri, fname: fname};
             fname.replace(/\b\w{2,}\b/gi, function(m) {
@@ -492,7 +497,7 @@
         scores = scores.filter(function(x) { return x && (x.value > 0); });
 
         if (scores.length) {
-            // Add wiki links into doc (ignoring A and PRE tag)
+            // Add links into doc (ignoring A and PRE tag)
             var re = '';
             for (var i = 0; i < scores.length; i++) re += scores[i].fname.replace(/[-_]/g, '.') + '|';
             re = new RegExp('\\b(' + re.substr(0, re.length - 1) + ')\\b', 'gi');
@@ -513,18 +518,25 @@
             })
             doc.innerHTML = html + doc.innerHTML.substring(html.length).replace(re, replacer);
 
-            // Append at most 4 related but not linked wiki pages
+            // Append related but not linked pages
             scores = scores.filter(function(x) { return !x.used; });
-            if (scores.length) {
-                scores.sort(function(x, y) { return y.value / y.fname.length - x.value / x.fname.length; });
+            var count = scores.length;
+            // If not 404, append at most 4 wiki pages only
+            if (!is404) {
+                scores = scores.filter(function(x) { return x.uri.startsWith('/wiki/'); });
+                count = Math.min(4, scores.length);
+            }
+            if (count) {
+                scores.sort(function(x, y) {
+                    return y.value / y.fname.length - x.value / x.fname.length; });
                 var ol, li, wiki = document.getElementById('wiki');
-                wiki.innerHTML = '<h2 id="related-wiki"> See Also </h2>';
+                wiki.innerHTML = '<h2 id="see-also"> See Also </h2>';
                 wiki.appendChild(ol = document.createElement('ol'));
-                for (var i = 0; i < Math.min(4, scores.length); i++) {
+                for (var i = 0; i < count; i++) {
                     ol.appendChild(li = document.createElement('li'));
                     li.appendChild(a = document.createElement('a'));
                     a.href = scores[i].uri;
-                    a.textContent = scores[i].fname;
+                    a.textContent = scores[i][is404 ? 'uri' : 'fname'];
                 }
             }
         }
