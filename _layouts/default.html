@@ -331,10 +331,6 @@
         return showChart;
 	}
     if (isDark) document.body.classList.toggle('dark');
-    if (showChart) {
-        showChart = false;
-        toggleChart();
-    }
 
     var isIndex = false;
     // References: generated from content
@@ -606,6 +602,10 @@
             if (rels.length && !isIndex) recommendWiki();
         }
         generateTOC();
+        if (showChart) {
+            showChart = false;
+            toggleChart();
+        }
     });
 </script>
 
