@@ -459,7 +459,8 @@
     var recommendWiki = function() {
         // Build inverted index
         var inv = {}, kwds = [], stopWords = [
-            'and', 'but', 'how', 'why', 'when', 'what', 'where', 'test', 'behind', 'readme',
+            'and', 'but', 'not', 'how', 'why', 'when', 'what', 'where', 'test',
+            'behind', 'readme',
         ];
         var scores = new Array(rels.length);
         for (var i = 0; i < rels.length; i++) {
