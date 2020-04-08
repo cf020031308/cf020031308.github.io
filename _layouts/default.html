@@ -13,6 +13,9 @@
     ></script>
     <script src="https://cdn.bootcss.com/echarts/4.4.0-rc.1/echarts-en.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/viz.js@2.1.2/viz.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/viz.js@2.1.2/lite.render.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.2/dist/mermaid.min.js"></script>
     <style>
         input { color: inherit; width: 0; outline: none; background-color: transparent; }
         .icon {
@@ -606,6 +609,38 @@
         if (showChart) {
             showChart = false;
             toggleChart();
+        }
+        var dots = doc.querySelectorAll('pre code.language-dot');
+        if (dots.length === 0)
+            dots = doc.querySelectorAll('div.language-dot pre.highlight code');
+        if (dots.length) {
+            var viz = new Viz();
+            Promise.all(Array.prototype.map.call(dots, function(code) {
+                return viz.renderSVGElement(code.textContent).then(
+                    function(svg) { return svg; });
+            })).then(function(svgs) {
+                svgs.forEach(function(svg, i) {
+                    svg.classList.add('centered');
+                    var pre = dots[i].parentNode;
+                    pre.insertBefore(svg, dots[i]);
+                    pre.style = 'background-color: #fff !important';
+                    dots[i].classList.add('d-none');
+                });
+            });
+        }
+        var mmds = doc.querySelectorAll('pre code.language-mermaid');
+        if (mmds.length) {
+            for (var i = 0; i < mmds.length; i++) {
+                mmds[i].parentNode.style = 'background-color: #fff !important';
+                var code = mmds[i].textContent;
+                mmds[i].innerHTML = code.substr(code[0] === '>');
+            }
+            mermaid.initialize({theme: 'neutral', startOnLoad: true});
+            mermaid.init({}, 'pre code.language-mermaid');
+            Array.prototype.forEach.call(
+                doc.querySelectorAll('pre code.language-mermaid svg'),
+                function(svg) { svg.classList.add('centered'); }
+            );
         }
     });
 </script>
