@@ -55,7 +55,10 @@
 <div class="container-lg px-3 my-5 markdown-body">
     <header id="header" class="d-flex">
         <form id="nav" action="#" class="d-flex flex-items-center flex-item-equal">
-            <div id="home" class="text-bold flex-shrink-0"></div>
+            <div id="home" class="text-bold flex-shrink-0">
+                <a href="https://github.com/cf020031308">Roy</a>'s
+                <a href="/">home</a>
+            </div>/
             <div id="folder" class="text-bold flex-shrink-0"></div>
             <input id="searchbar" class="flex-item-equal border-0" type="search" list="searchData" autocomplete="off" disabled />
         </form>
@@ -411,27 +414,6 @@
         return false;
     }
 
-    var href = loc.origin;
-    var crumbs2html = function(crumbs) {
-        var html = '';
-        for (var i = 0; i < crumbs.length; i++) html += (
-            crumbs[i].href ?
-            '<a href="{href}">{text}</a>'.replace(
-                /{(.*?)}/g, function(_, k) {return crumbs[i][k]}) :
-            crumbs[i]
-        );
-        return html;
-    }
-
-    // First part of the nav: "Roy's home/"
-    var nav1 = document.getElementById('home');
-    nav1.innerHTML = crumbs2html([
-        {text: "Roy", href: "https://github.com/cf020031308"},
-        "'s ",
-        {text: "home", href: href},
-        '/',
-    ]);
-
     // If there is no title, enlarge the header
     if (!doc.querySelector('h1')) {
         var title = document.createElement('h1');
@@ -441,21 +423,24 @@
 
     // Second part of the nav: the current location
     var nav2 = document.getElementById('folder');
-    var basename = '';
+    var href = '', basename = '';
     var crumbs = decodeURI(loc.pathname).split('/').filter(function(x) {return x;});
-    for (var i = 0; i < crumbs.length; i++) crumbs[i] = {
-        text: crumbs[i], href: (href += '/' + crumbs[i])};
-    for (var i = crumbs.length - 1; i > 0; i--) crumbs.splice(i, 0, '/');
-    if (crumbs.length) searchbar.placeholder = basename = crumbs.pop().text;
-    nav2.innerHTML = crumbs2html(crumbs);
+    if (crumbs.length) searchbar.placeholder = basename = crumbs.pop();
+    for (var i = 0; i < crumbs.length; i++) crumbs[i] = (
+        '<a href="' + (href += '/' + crumbs[i]) + '">' + crumbs[i] + '</a>');
+    for (var i = crumbs.length - (basename ? 0 : 1); i > 0; i--) crumbs.splice(i, 0, '/');
+    nav2.innerHTML = crumbs.join('');
     // Toggle nav2 when searching
+    var nav1 = document.getElementById('home');
     searchbar.onfocus = function() {
         searchbar.placeholder = nav2.textContent + basename;
+        nav1.classList.add('hide-sm');
         nav2.classList.add('d-none');
     }
     searchbar.onblur = function() {
         searchbar.value = '';
         searchbar.placeholder = basename;
+        nav1.classList.remove('hide-sm');
         nav2.classList.remove('d-none');
     }
 
