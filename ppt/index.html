@@ -19,6 +19,8 @@
 		</script>
         <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.2/dist/mermaid.min.js"></script>
         <script src="https://cdn.bootcss.com/echarts/4.4.0-rc.1/echarts-en.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/viz.js@2.1.2/viz.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/viz.js@2.1.2/lite.render.js"></script>
 
         <style>
             .reveal .slides { text-align: left }
@@ -64,6 +66,12 @@
             var DIYLangs = {
                 mermaid: function(el) {
                     mermaid.init({}, el);
+                },
+                dot: function(el) {
+                    (new Viz()).renderSVGElement(el.textContent).then(function(svg) {
+                        while (el.firstChild) el.removeChild(el.firstChild);
+                        el.appendChild(svg);
+                    });
                 },
                 echarts: function(el) {
                     var str = decode_entity(el.innerHTML);
