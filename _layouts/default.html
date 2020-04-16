@@ -24,11 +24,11 @@
             margin-left: 4px; margin-right: 4px;
             height: 16px;
         }
-        a.wiki { color: black; text-decoration: underline dotted black; }
+        a.related { color: black; text-decoration: underline dotted black; }
         .upside-down { transform: rotate(180deg); }
         .dark { color: #cbcbcb; background-color: #24292e; }
         .dark a { color: #29c5fa; }
-        .dark a.wiki {color: #cbcbcb; text-decoration: underline dotted #cbcbcb; }
+        .dark a.related {color: #cbcbcb; text-decoration: underline dotted #cbcbcb; }
         .dark img { filter: grayscale(30%); }
         .dark .icon { color: #cbcbcb; }
         .dark tr { background-color: transparent !important; }
@@ -74,7 +74,7 @@
     <main>
         <div id="doc"> {{ content }} </div>
         <div id="ref"></div>
-        <div id="wiki"></div>
+        <div id="related"></div>
     </main>
     <footer class="footer pt-1 mt-4 d-flex flex-justify-center" id="footer">
         <a href="https://github.com/cf020031308/cf020031308.github.io/issues?q=is%3Aissue+label%3Aarticle+is%3Aclosed+-label%3Aabort" alt="comment" title="comment of posts">
@@ -423,11 +423,11 @@
 
     // Second part of the nav: the current location
     var nav2 = document.getElementById('folder');
-    var href = '', basename = '';
+    var dirname = '/', basename = '';
     var crumbs = decodeURI(loc.pathname).split('/').filter(function(x) {return x;});
     if (crumbs.length) searchbar.placeholder = basename = crumbs.pop();
     for (var i = 0; i < crumbs.length; i++) crumbs[i] = (
-        '<a href="' + (href += '/' + crumbs[i]) + '">' + crumbs[i] + '</a>');
+        '<a href="' + (dirname += crumbs[i] + '/') + '">' + crumbs[i] + '</a>');
     for (var i = crumbs.length - (basename ? 0 : 1); i > 0; i--) crumbs.splice(i, 0, '/');
     nav2.innerHTML = crumbs.join('');
     // Toggle nav2 when searching
@@ -445,12 +445,10 @@
     }
 
     // Recommend related wiki after sitemap.xml is loaded
-    var recommendWiki = function() {
+    var recommendRelated = function() {
         // Build inverted index
-        var inv = {}, kwds = [], stopWords = [
-            'and', 'but', 'not', 'how', 'why', 'when', 'what', 'where', 'test',
-            'behind', 'readme',
-        ];
+        var inv = {}, kwds = [];
+        var stopWords = /^and|but|not|how|why|when|what|where|this|that|test|behind|readme|\d+$/i;
         var scores = new Array(rels.length);
         for (var i = 0; i < rels.length; i++) {
             var uri = '/' + rels[i];
@@ -459,7 +457,7 @@
             if (!fname) continue;
             if (fname.indexOf('.') !== -1) fname = fname.split('.').slice(0, -1).join('.');
             scores[i] = {value: 0, uri: uri, fname: fname};
-            fname.replace(/\b\w{2,}\b/gi, function(m) {
+            fname.replace(/\b\w{3,}\b/gi, function(m) {
                 m = m.toLowerCase();
                 if (!inv[m]) {
                     inv[m] = [];
@@ -477,7 +475,7 @@
             new RegExp('\\b(' + kwds.join('|') + ')\\b', 'gi'),
             function(m) {
                 m = m.toLowerCase()
-                if (stopWords.includes(m)) return;
+                if (m.match(stopWords)) return;
                 for (var i = 0; i < inv[m].length; i++) {
                     scores[inv[m][i]].value += m.length;
                 }
@@ -495,7 +493,7 @@
                     return m.toLowerCase().replace(/\W/g, '-') === s.fname.toLowerCase(); });
                 if (s) {
                     s.used = true;
-                    return '<a class="wiki" href="' + s.uri + '" target="_blank">' + m + '</a>';
+                    return '<a class="related" href="' + s.uri + '" target="_blank">' + m + '</a>';
                 }
                 return m;
             }
@@ -510,22 +508,23 @@
             // Append related but not linked pages
             scores = scores.filter(function(x) { return !x.used; });
             var count = scores.length;
-            // If not 404, append at most 4 wiki pages only
+            // If not 404, append at most 4 pages only from wiki or the same folder
             if (!is404) {
-                scores = scores.filter(function(x) { return x.uri.startsWith('/wiki/'); });
+                scores = scores.filter(function(x) {
+                    return x.uri.startsWith('/wiki/') || (dirname !== '/' && x.uri.startsWith(dirname)); });
                 count = Math.min(4, scores.length);
             }
             if (count) {
                 scores.sort(function(x, y) {
                     return y.value / y.fname.length - x.value / x.fname.length; });
-                var ol, li, wiki = document.getElementById('wiki');
-                wiki.innerHTML = '<h2 id="see-also"> See Also </h2>';
-                wiki.appendChild(ol = document.createElement('ol'));
+                var ol, li, related = document.getElementById('related');
+                related.innerHTML = '<h2 id="see-also"> See Also </h2>';
+                related.appendChild(ol = document.createElement('ol'));
                 for (var i = 0; i < count; i++) {
                     ol.appendChild(li = document.createElement('li'));
                     li.appendChild(a = document.createElement('a'));
                     a.href = scores[i].uri;
-                    a.textContent = scores[i][is404 ? 'uri' : 'fname'];
+                    a.textContent = scores[i].uri;
                 }
             }
         }
@@ -589,7 +588,7 @@
             searchbar.parentNode.insertBefore(searchData, searchbar);
             searchbar.placeholder = searchbar.placeholder || 'touch me!';
             searchbar.disabled = false;
-            if (rels.length && !isIndex) recommendWiki();
+            if (rels.length && !isIndex) recommendRelated();
         }
         generateTOC();
         if (showChart) {
