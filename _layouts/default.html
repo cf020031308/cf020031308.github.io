@@ -134,7 +134,7 @@
         if (req.status < 400) doc.innerHTML = marked(req.responseText);
         else doc.innerHTML = '';
     }
-    var content = doc.textContent;
+    var content = doc.textContent.trim();
     if (!(loc.pathname.endsWith('/') || content)) {
         var tip404 = document.getElementById('tip404');
         tip404.classList.remove('d-none');
@@ -347,7 +347,7 @@
 
     var isIndex = false;
     // References: generated from content
-    var as = doc.querySelectorAll('a');
+    var as = Array.prototype.filter.call(doc.querySelectorAll('a'), function(a) { return a.id !== 'slink'; });
     if (as.length > 0) {
         // Prepare links info
         var aLen = 0, rs = {}, rlinks = [];
@@ -444,86 +444,94 @@
 
     // Recommend related wiki after sitemap.xml is loaded
     var recommendRelated = function() {
-        // Build inverted index
-        var inv = {}, kwds = [];
-        var stopWords = /^and|but|not|how|why|when|what|where|this|that|test|behind|readme|\d+$/i;
-        var scores = new Array(rels.length);
-        for (var i = 0; i < rels.length; i++) {
-            var uri = '/' + rels[i];
-            if (uri === loc.pathname) continue;
-            var fname = uri.split('/').filter(function(x) { return x; }).slice(-1).pop();
-            if (!fname) continue;
-            if (fname.indexOf('.') !== -1) fname = fname.split('.').slice(0, -1).join('.');
-            scores[i] = {value: 0, uri: uri, fname: fname};
-            fname.replace(/\b\w{3,}\b/gi, function(m) {
-                m = m.toLowerCase();
-                if (!inv[m]) {
-                    inv[m] = [];
-                    kwds.push(m);
-                }
-                inv[m].push(i);
-            });
+        var scores = [];
+        if (loc.pathname.endsWith('/') && !content) {
+            scores = rels.filter(
+                function(rel) { return ('/' + rel).startsWith(loc.pathname); }
+            ).map(
+                function(rel) { return {uri: '/' + rel}; }
+            );
         }
+        if (!scores.length) {
+            // Build inverted index
+            var inv = {}, kwds = [];
+            var stopWords = /^and|but|not|how|why|when|what|where|this|that|test|behind|readme|\d+$/i;
+            scores = new Array(rels.length);
+            for (var i = 0; i < rels.length; i++) {
+                var uri = '/' + rels[i];
+                if (uri === loc.pathname) continue;
+                var fname = uri.split('/').filter(function(x) { return x; }).slice(-1).pop();
+                if (!fname) continue;
+                if (fname.indexOf('.') !== -1) fname = fname.split('.').slice(0, -1).join('.');
+                scores[i] = {value: 0, uri: uri, fname: fname};
+                fname.replace(/\b\w{3,}\b/gi, function(m) {
+                    m = m.toLowerCase();
+                    if (!inv[m]) {
+                        inv[m] = [];
+                        kwds.push(m);
+                    }
+                    inv[m].push(i);
+                });
+            }
 
-        // Score the keywords based on overlap with doc stripped off urls
-        (
-            basename.replace(/(\.\w*?)?$/, ' ').repeat(3)
-            + content.replace(/(?:(https?|ftp|file):)?\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]/gi, '')
-        ).replace(
-            new RegExp('\\b(' + kwds.join('|') + ')\\b', 'gi'),
-            function(m) {
-                m = m.toLowerCase()
-                if (m.match(stopWords)) return;
-                for (var i = 0; i < inv[m].length; i++) {
-                    scores[inv[m][i]].value += m.length;
+            // Score the keywords based on overlap with doc stripped off urls
+            (
+                basename.replace(/(\.\w*?)?$/, ' ').repeat(3)
+                + content.replace(/(?:(https?|ftp|file):)?\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]/gi, '')
+            ).replace(
+                new RegExp('\\b(' + kwds.join('|') + ')\\b', 'gi'),
+                function(m) {
+                    m = m.toLowerCase()
+                    if (m.match(stopWords)) return;
+                    for (var i = 0; i < inv[m].length; i++) {
+                        scores[inv[m][i]].value += m.length;
+                    }
+                }
+            );
+            scores = scores.filter(function(x) { return x && (x.value > 0); });
+
+            if (scores.length) {
+                // Add links into doc (ignoring A and PRE tag)
+                var re = '';
+                for (var i = 0; i < scores.length; i++) re += scores[i].fname.replace(/[-_]/g, '.') + '|';
+                re = new RegExp('\\b(' + re.substr(0, re.length - 1) + ')\\b', 'gi');
+                var replacer = function(m) {
+                    var s = scores.find(function(s) {
+                        return m.toLowerCase().replace(/\W/g, '-') === s.fname.toLowerCase(); });
+                    if (s) {
+                        s.used = true;
+                        return '<a class="related" href="' + s.uri + '" target="_blank">' + m + '</a>';
+                    }
+                    return m;
+                }
+                var html = '', pos = 0;
+                doc.innerHTML.replace(/<(pre|a)[ >].*?<\/\1>|<.*?>/gi, function(m, _, p) {
+                    if (pos != p) html += doc.innerHTML.substring(pos, p).replace(re, replacer);
+                    pos = p + m.length;
+                    html += m;
+                })
+                doc.innerHTML = html + doc.innerHTML.substring(html.length).replace(re, replacer);
+
+                scores = scores.filter(function(x) { return !x.used; });
+                scores.sort(function(x, y) { return y.value / y.fname.length - x.value / x.fname.length; });
+                // If not 404, append at most 4 pages only from wiki or the same folder
+                if (content) {
+                    scores = scores.filter(function(x) {
+                        return x.uri.startsWith('/wiki/') || (dirname !== '/' && x.uri.startsWith(dirname)); }
+                    ).slice(0, 4);
                 }
             }
-        );
-        scores = scores.filter(function(x) { return x && (x.value > 0); });
-
+        }
         if (scores.length) {
-            // Add links into doc (ignoring A and PRE tag)
-            var re = '';
-            for (var i = 0; i < scores.length; i++) re += scores[i].fname.replace(/[-_]/g, '.') + '|';
-            re = new RegExp('\\b(' + re.substr(0, re.length - 1) + ')\\b', 'gi');
-            var replacer = function(m) {
-                var s = scores.find(function(s) {
-                    return m.toLowerCase().replace(/\W/g, '-') === s.fname.toLowerCase(); });
-                if (s) {
-                    s.used = true;
-                    return '<a class="related" href="' + s.uri + '" target="_blank">' + m + '</a>';
-                }
-                return m;
-            }
-            var html = '', pos = 0;
-            doc.innerHTML.replace(/<(pre|a)[ >].*?<\/\1>|<.*?>/gi, function(m, _, p) {
-                if (pos != p) html += doc.innerHTML.substring(pos, p).replace(re, replacer);
-                pos = p + m.length;
-                html += m;
-            })
-            doc.innerHTML = html + doc.innerHTML.substring(html.length).replace(re, replacer);
-
             // Append related but not linked pages
-            scores = scores.filter(function(x) { return !x.used; });
-            var count = scores.length;
-            // If not 404, append at most 4 pages only from wiki or the same folder
-            if (!content) {
-                scores = scores.filter(function(x) {
-                    return x.uri.startsWith('/wiki/') || (dirname !== '/' && x.uri.startsWith(dirname)); });
-                count = Math.min(4, scores.length);
-            }
-            if (count) {
-                scores.sort(function(x, y) {
-                    return y.value / y.fname.length - x.value / x.fname.length; });
-                var ol, li, related = document.getElementById('related');
-                related.innerHTML = '<h2 id="see-also"> See Also </h2>';
-                related.appendChild(ol = document.createElement('ol'));
-                for (var i = 0; i < count; i++) {
-                    ol.appendChild(li = document.createElement('li'));
-                    li.appendChild(a = document.createElement('a'));
-                    a.href = scores[i].uri;
-                    a.textContent = scores[i].uri;
-                }
+            var ol, li, related = document.getElementById('related');
+            related.innerHTML = '<h2 id="see-also"> See Also </h2>';
+            related.appendChild(ol = document.createElement('ol'));
+            for (var i = 0; i < scores.length; i++) {
+                ol.appendChild(li = document.createElement('li'));
+                li.appendChild(a = document.createElement('a'));
+                a.href = scores[i].uri;
+                a.textContent = scores[i].uri;
             }
         }
     }
