@@ -73,6 +73,11 @@
     </header>
     <main>
         <div id="doc"> {{ content }} </div>
+        <div id="tip404" class="d-none">
+            <h1> Page Not Found </h1>
+            <p> Try to <a id="slink" href="/search" target="_blank">search through the entire repo</a>.
+            </p>
+        </div>
         <div id="ref"></div>
         <div id="related"></div>
     </main>
@@ -124,17 +129,18 @@
     sdlink.href = '/ppt?' + mdlink.pathname;
 
     var doc = document.getElementById('doc');
-    var is404 = false;
     if (doc.textContent.trim() === '{' + '{ content }' + '}') {
         var req = HTTP('get', mdlink.pathname);
         if (req.status < 400) doc.innerHTML = marked(req.responseText);
-        else {
-            doc.innerHTML = '<h1>' + req.status + ' ' + req.statusText + '</h1>';
-            is404 = true;
-        }
+        else doc.innerHTML = '';
     }
-    if (doc.textContent.trim() === '') is404 = true;
     var content = doc.textContent;
+    if (!(loc.pathname.endsWith('/') || content)) {
+        var tip404 = document.getElementById('tip404');
+        tip404.classList.remove('d-none');
+        document.getElementById('slink').href = repo + '/search?q=' + (decodeURI(loc.pathname).split('/').pop() || '');
+        doc.appendChild(tip404);
+    }
 
     // Chart: parse tables, append charts
     var tables = doc.querySelectorAll('table'), chartOptions = [];
@@ -401,7 +407,7 @@
         var val = searchbar.value;
         if (val && ((!rels.includes) || rels.includes(val) || rels.includes(val + '/') || rels.includes(val + '.html'))) {
             window.stop();
-            loc.href = loc.origin + '/' + val;
+            loc.href = '/' + val;
             return true;
         }
     }
@@ -409,8 +415,7 @@
     var nav = document.getElementById('nav');
     // If the input value does not match any uri, query it with Github
     nav.onsubmit = function() {
-        if (searchbar.value && !onSelect()) window.open(
-            repo + '/search?q=' + searchbar.value, '_blank');
+        if (searchbar.value && !onSelect()) loc.href = '/' + searchbar.value;
         return false;
     }
 
@@ -502,7 +507,7 @@
             scores = scores.filter(function(x) { return !x.used; });
             var count = scores.length;
             // If not 404, append at most 4 pages only from wiki or the same folder
-            if (!is404) {
+            if (!content) {
                 scores = scores.filter(function(x) {
                     return x.uri.startsWith('/wiki/') || (dirname !== '/' && x.uri.startsWith(dirname)); });
                 count = Math.min(4, scores.length);
