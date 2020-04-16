@@ -414,13 +414,6 @@
         return false;
     }
 
-    // If there is no title, enlarge the header
-    if (!doc.querySelector('h1')) {
-        var title = document.createElement('h1');
-        title.appendChild(document.getElementById('header'));
-        doc.insertBefore(title, doc.firstChild);
-    }
-
     // Second part of the nav: the current location
     var nav2 = document.getElementById('folder');
     var dirname = '/', basename = '';
@@ -534,7 +527,12 @@
     var generateTOC = function() {
         anchors.add();
         var title = doc.querySelector('h1');
-        if (title && anchors.elements.length < 4) return;
+        if (!title) {
+            title = document.createElement('h1');
+            title.appendChild(document.getElementById('header'));
+            doc.insertBefore(title, doc.firstChild);
+        }
+        if (anchors.elements.length < 4) return;
         if (!title.id) title.id = 'table-of-contents';
         var toc = document.createElement('ul');
         var ul = toc, li, a;
