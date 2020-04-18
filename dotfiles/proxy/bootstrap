@@ -1,0 +1,4 @@
+#!/bin/bash -
+
+brew install openresty/brew/openresty
+git clone git@github.com:alexazhou/VeryNginx.git

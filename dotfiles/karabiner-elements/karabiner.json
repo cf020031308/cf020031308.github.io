@@ -923,6 +923,57 @@
                         ]
                     },
                     {
+                        "description": "Button 4/5 to Change Tabs in Chrome",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.google\\.Chrome$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "pointing_button": "button4"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.google\\.Chrome$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "pointing_button": "button5"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Shift_R to WeChat/QQ",
                         "manipulators": [
                             {
@@ -1881,7 +1932,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": " slash"
+                                        "key_code": "slash"
                                     }
                                 ],
                                 "type": "basic"
@@ -1895,7 +1946,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": " slash",
+                                    "key_code": "slash",
                                     "modifiers": {
                                         "optional": [
                                             "any"

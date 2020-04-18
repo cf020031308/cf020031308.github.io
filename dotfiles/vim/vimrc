@@ -63,6 +63,9 @@ let g:syntastic_lua_checkers = ["luacheck"]
 let g:syntastic_lua_luacheck_args = "--no-unused-args"
 
 let g:vim_markdown_math = 1
+let g:vim_markdown_folding_style_pythonic = 1
+let g:vim_markdown_override_foldtext = 0
+let g:vim_markdown_toc_autofit = 1
 
 " let g:tex_flavor = 'latex'
 " let g:vimtex_view_method = 'zathura'
