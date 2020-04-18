@@ -2,10 +2,10 @@
 
 
 一阶梯度优化
-$$W = W - \eta \triangledown f(W)$$
+$$W_{t+1} = W_t - \eta \triangledown f(W_t)$$
 
 二阶梯度优化
-$$W = W - \eta \triangledown ^2 f(W)^{-1} \triangledown f(W)$$
+$$W_{t+1} = W_t - \eta \triangledown^2 f(W_t)^{-1} \triangledown f(W_t)$$
 
 通常不用二阶微分而用二阶统计，如 AdaGrad
 $$W_{t+1} = W_t - \frac{\eta}{\sqrt{\sum \limits_{i=0}^t \triangledown f(W_t)^2}} \triangledown f(W_t)$$
@@ -14,10 +14,9 @@ $$W_{t+1} = W_t - \frac{\eta}{\sqrt{\sum \limits_{i=0}^t \triangledown f(W_t)^2}
 
 ## Shampoo (2018)
 
-$$L_t = \sum\limits_{s=1}^{t} G_s G_s^T$$
-$$R_t = \sum\limits_{s=1}^{t} G_s^T G_s = L_t^T$$
-$$W_{t+1} = W_t - \eta L_t^{-1/4} G_t R_t^{-1/4}$$
-G 为梯度
+$$L_t = L_{t-1} + \triangledown f(W_t) \triangledown f(W_t)^T, L_0 = 0$$
+$$R_t = R_{t-1} + \triangledown f(W_t)^T \triangledown f(W_t), R_0 = 0$$
+$$W_{t+1} = W_t - \eta L_t^{-1/4} \triangledown f(W_t)_t R_t^{-1/4}$$
 
 ## Challenges and Limitations
 
@@ -63,7 +62,8 @@ Q 是正交矩阵，$\Sigma$ 是对角矩阵
 
 ## 整体效果
 
-![Shampoo on Transformer](results-of-shampoo.png)
+
+![Shampoo on Transformer](shampoo-on-transformer.png)
 
 
 ![Shanpoo on Transformer-Big](shanpoo-on-transformer-big.png)
