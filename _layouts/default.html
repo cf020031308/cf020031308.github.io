@@ -17,6 +17,7 @@
     <script src="https://cdn.jsdelivr.net/npm/viz.js@2.1.2/viz.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/viz.js@2.1.2/lite.render.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.2/dist/mermaid.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@3.13.1/dist/js-yaml.min.js"></script>
     <style>
         input { color: inherit; width: 0; outline: none; background-color: transparent; }
         .icon {
@@ -387,7 +388,7 @@
                     var ps = abbr.split('/').filter(function(x) {return x;});
                     if (ps.length > 2) abbr = (
                         (abbr.substr(0, 1) === '/' ? '/' : '')
-                        + ps[0] + '/.../' + ps[ps.length - 1]);
+                        + ps[0] + '/../' + ps[ps.length - 1]);
                 }
                 li.innerHTML = '<a href="' + href + '">' + abbr + '</a>';
                 for (var cite in rs[href]) li.innerHTML += (
@@ -639,6 +640,23 @@
             );
         }
     });
+
+    // Load Citation
+    if (window.location.pathname.startsWith('/papers/')) {
+        HTTP('get', 'info.yaml', function() {
+            if (this.status !== 200) return;
+            var info = jsyaml.load(this.responseText);
+            var origin = document.createElement('p');
+            origin.innerHTML = [['年份', 'year'], ['题目', 'title'], ['作者', 'author'], ['地址', 'url']].map(function(kv) {
+                var v = info[kv[1]];
+                if (!v) return '';
+                if (v.match(/^https?:\/\//i)) v = '<a href="' + v + '" target="_blank">' + v + '</a>';
+                return kv[0] + '：' + v;
+            }).join('<br />');
+            var title = document.querySelector('#doc h1');
+            title.parentNode.insertBefore(origin, title.nextSibling);
+        });
+    }
 </script>
 
 </body>
