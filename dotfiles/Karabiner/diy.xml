@@ -40,29 +40,29 @@
     </deviceproductdef>
 
     <item>
-        <name>Command_R to iTerm</name>
+        <name>Option_R to iTerm</name>
         <appendix>switch to iTerm</appendix>
-        <identifier>private.command_r_to_iterm</identifier>
+        <identifier>private.option_r_to_iterm</identifier>
         <block>
             <not>iTerm</not>
-            <autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::VK_OPEN_URL_FILE_iTerm</autogen>
+            <autogen>__KeyToKey__ KeyCode::OPTION_R, KeyCode::VK_OPEN_URL_FILE_iTerm</autogen>
         </block>
         <block>
             <only>iTerm</only>
-            <autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::BACKQUOTE, ModifierFlag::COMMAND_L</autogen>
+            <autogen>__KeyToKey__ KeyCode::OPTION_R, KeyCode::BACKQUOTE, ModifierFlag::COMMAND_L</autogen>
         </block>
     </item>
     <item>
-        <name>Option_R to Chrome</name>
+        <name>Command_R to Chrome</name>
         <appendix>switch to Chrome</appendix>
-        <identifier>private.option_r_to_chrome</identifier>
+        <identifier>private.command_r_to_chrome</identifier>
         <block>
             <not>Chrome</not>
-            <autogen>__KeyToKey__ KeyCode::OPTION_R, KeyCode::VK_OPEN_URL_FILE_Chrome</autogen>
+            <autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::VK_OPEN_URL_FILE_Chrome</autogen>
         </block>
         <block>
             <only>Chrome</only>
-            <autogen>__KeyToKey__ KeyCode::OPTION_R, KeyCode::BACKQUOTE, ModifierFlag::COMMAND_L</autogen>
+            <autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::BACKQUOTE, ModifierFlag::COMMAND_L</autogen>
         </block>
     </item>
     <item>
