@@ -1,0 +1,13 @@
+author: Hamilton, Will and Ying, Zhitao and Leskovec, Jure
+booktitle: Advances in Neural Information Processing Systems 30
+editor: I. Guyon and U. V. Luxburg and S. Bengio and H. Wallach and R. Fergus and
+  S. Vishwanathan and R. Garnett
+files:
+- /Users/Roy/Documents/papers/2017-inductive-representation-learning-on-large-graphs.pdf
+pages: 1024--1034
+publisher: Curran Associates, Inc.
+ref: NIPS2017_6703
+title: Inductive Representation Learning on Large Graphs
+type: incollection
+url: http://papers.nips.cc/paper/6703-inductive-representation-learning-on-large-graphs.pdf
+year: '2017'
