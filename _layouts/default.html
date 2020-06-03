@@ -18,6 +18,7 @@
     <script src="https://cdn.jsdelivr.net/npm/viz.js@2.1.2/lite.render.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.2/dist/mermaid.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-yaml@3.13.1/dist/js-yaml.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/countable@3.0.1/Countable.min.js"></script>
     <style>
         input { color: inherit; width: 0; outline: none; background-color: transparent; }
         .icon {
@@ -639,6 +640,12 @@
                 function(svg) { svg.classList.add('centered'); }
             );
         }
+        if (window.location.hostname === 'localhost') Countable.count(doc, function(counter) {
+            var title = doc.querySelector('h1');
+            var wc = document.createElement('p');
+            wc.innerText = '字数：' + counter.characters;
+            title.parentNode.insertBefore(wc, title.nextSibling);
+        });
     });
 
     // Load Citation
