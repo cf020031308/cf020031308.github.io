@@ -16,7 +16,7 @@ for pdf in $pdfs; do
     for pdf_src in $(find "$dir" -type f -name "$pdf"); do
         pdf_dir=$(dirname $pdf_src)
         pdf_dst="$dst/$(basename $pdf_dir).pdf"
-        mv "$pdf_src" "$pdf_dst" && sed -i '' "s $pdf $pdf_dst " "$pdf_dir/info.yaml"
+        mv "$pdf_src" "$pdf_dst" && sed -i '' "s;^- $pdf$;- $pdf_dst;" "$pdf_dir/info.yaml"
         BaiduPCS-Go upload "$pdf_dst" "/文档/papers/"
     done
 done
