@@ -1,13 +1,16 @@
 year,level,conference,author,title,isBest
+2019,"A","ASPLOS","Ao Ren","ADMM-NN: An Algorithm-Hardware Co-Design Framework of DNNs Using Alternating Direction Method of Multipliers.",false
 2019,"A","ASPLOS","Brooks Davis","CheriABI: Enforcing Valid Pointer Provenance and Minimizing Pointer Privilege in the POSIX C Run-time Environment",true
 2019,"A","ASPLOS","Daniel Lehmann","Wasabi: A Framework for Dynamically Analyzing WebAssembly.",true
 2019,"A","ASPLOS","Georgios Tzimpragos","Boosted Race Trees for Low Energy Classification",true
 2019,"A","ASPLOS","Hongyu Miao","StreamBox-HBM: Stream Analytics on High Bandwidth Hybrid Memory.",false
-2019,"A","ASPLOS","Prakash Murali","Noise-Adaptive Compiler Mappings for Noisy Intermediate-Scale Quantum Computers",false
 2019,"A","ASPLOS","Yigong Hu","A Case for Lease-Based, Utilitarian Resource Management on Mobile Devices",true
+2019,"A","PPoPP","Andreas Prodromou","Deciphering Predictive Schedulers for Heterogeneous-ISA Multicore Architectures.",false
 2019,"A","PPoPP","Qingsen Wang","Lightweight hardware transactional memory profiling.",true
+2019,"A","PPoPP","Xiaolong Xie","CuLDA_CGS: Solving Large-scale LDA Problems on GPUs.",false
 2019,"A","SIGMOD","Abolfazl Asudeh","Designing Fair Ranking Schemes.",false
 2019,"A","SIGMOD","Babak Salimi","Interventional Fairness: Causal Database Repair for Algorithmic Fairness",true
+2019,"A","SIGMOD","Thibault Sellam","DeepBase: Deep Inspection of Neural Networks.",false
 2019,"A","SIGMOD","Yingjun Wu","Designing Succinct Secondary Indexing Mechanism by Exploiting Column Correlations.",false
 2019,"B","ISSTA","Aashish Kolluri","Exploiting The Laws of Order in Smart Contracts.",false
 2019,"B","ISSTA","Xia Li","DeepFL: integrating multiple fault diagnosis dimensions for deep fault localization",true
@@ -16,6 +19,7 @@ year,level,conference,author,title,isBest
 2019,"B","IUI","Carrie J. Cai","The effects of example-based explanations in a machine learning interface",true
 2019,"B","IUI","Jonathan Dodge","Explaining models: an empirical study of how explanations impact fairness judgment",true
 2019,"B","IUI","Malin Eiband","When people and algorithms meet: user-reported problems in intelligent everyday applications",true
+2019,"B","IUI","Paridhi Maheshwari","Exemplar based experience transfer",false
 2019,"B","IUI","Pigi Kouki","Personalized explanations for hybrid recommender systems",true
 2019,"B","IUI","Upol Ehsan","Automated Rationale Generation: A Technique for Explainable AI and its Effects on Human Perceptions.",false
 2019,"B","IUI","Vicente Dominguez","The effect of explanations and algorithmic accuracy on visual recommender systems of artistic images",true
@@ -25,21 +29,21 @@ year,level,conference,author,title,isBest
 2019,"B","PODS","Gerald Berger","The Space-Efficient Core of Vadalog.",false
 2019,"B","PODS","Marcelo Arenas","Efficient Logspace Classes for Enumeration, Counting, and Uniform Generation",true
 2019,"B","PODS","Nofar Carmeli","On the Enumeration Complexity of Unions of Conjunctive Queries",true
-2019,"B","VEE","Li Liu","vCPU as a container: towards accurate CPU allocation for VMs",false
+2019,"B","VEE","Hao Li","ACRN: a big little hypervisor for IoT development",false
 2019,"B","VEE","Pierre Olivier","A binary-compatible unikernel",true
 2019,"B","VEE","Wenhao Li","TEEv: virtualizing trusted execution environments on mobile platforms",true
 2018,"A","AAAI","Chenjun Xiao","Memory-Augmented Monte Carlo Tree Search.",true
 2018,"A","AAAI","Matteo Hessel","Rainbow: Combining Improvements in Deep Reinforcement Learning.",false
 2018,"A","AAAI","Peter Henderson","Deep Reinforcement Learning that Matters.",false
-2018,"A","AAAI","Tao Shen","DiSAN: Directional Self-Attention Network for RNN/CNN-free Language Understanding.",false
+2018,"A","AAAI","Sijie Yan","Spatial Temporal Graph Convolutional Networks for Skeleton-Based Action Recognition.",false
 2018,"A","ACM MM","Bei Liu","Beyond Narrative Description: Generating Poetry from Images by Multi-Adversarial Training.",true
-2018,"A","ACM MM","Bo Zhao","Multi-View Image Generation from a Single-View.",false
+2018,"A","ACM MM","Bo Zhao","Multi-View Image Generation from a Single-View",false
 2018,"A","ACM MM","Guanshuo Wang","Learning Discriminative Features with Multiple Granularities for Person Re-Identification.",false
 2018,"A","ACM MM","Jian Zhao","Understanding Humans in Crowded Scenes: Deep Nested Adversarial Learning and A New Benchmark for Multi-Human Parsing.",true
-2018,"A","ACM MM","Lingxiao Song","Geometry Guided Adversarial Facial Expression Synthesis.",false
-2018,"A","CCS","Battista Biggio","Wild Patterns: Ten Years After the Rise of Adversarial Machine Learning.",false
+2018,"A","ACM MM","Lingxiao Song","Geometry Guided Adversarial Facial Expression Synthesis",false
 2018,"A","CCS","Milad Nasr","Machine Learning with Membership Privacy using Adversarial Regularization.",false
 2018,"A","CCS","Petar Tsankov","Securify: Practical Security Analysis of Smart Contracts.",false
+2018,"A","CCS","Shay Gueron","Fast Garbling of Circuits Under Standard Assumptions.",false
 2018,"A","CCS","Wenbo Guo","LEMNA: Explaining Deep Learning based Security Applications.",true
 2018,"A","CCS","Zeyu Ding","Detecting Violations of Differential Privacy.",true
 2018,"A","CHI","Amanda Lazar","Making as Expression: Informing Design with People with Complex Communication Needs through Art Therapy.",true
@@ -52,19 +56,18 @@ year,level,conference,author,title,isBest
 2018,"A","CHI","Francesco Vitale","Hoarding and Minimalism: Tendencies in Digital Data Preservation.",true
 2018,"A","CHI","Jen Liu","Design for Collaborative Survival: An Inquiry into Human-Fungi Relationships.",true
 2018,"A","CHI","Jennifer Jacobs","Extending Manual Drawing Practices with Artist-Centric Programming Tools.",true
-2018,"A","CHI","Mark Diaz","Addressing Age-Related Bias in Sentiment Analysis.",true
+2018,"A","CHI","Kotaro Hara","A Data-Driven Analysis of Workers' Earnings on Amazon Mechanical Turk.",false
+2018,"A","CHI","Mark Díaz","Addressing Age-Related Bias in Sentiment Analysis.",true
 2018,"A","CHI","Martin Porcheron","Voice Interfaces in Everyday Life.",true
 2018,"A","CHI","Megh Marathe","Semi-Automated Coding for Qualitative Research: A User-Centered Inquiry and Initial Prototypes.",true
 2018,"A","CHI","Mikko Kytö","Pinpointing: Precise Head- and Eye-Based Target Selection for Augmented Reality.",true
 2018,"A","CHI","Miro Mannino","Expressive Time Series Querying with Hand-Drawn Scale-Free Sketches.",true
 2018,"A","CHI","Nicholas Vincent","Examining Wikipedia With a Broader Lens: Quantifying the Value of Wikipedia's Relationships with Other Large-Scale Online Communities.",true
 2018,"A","CHI","Nicolas Villar","Project Zanzibar: A Portable and Flexible Tangible Interaction Platform.",true
-2018,"A","CHI","Rita Orji","Personalizing Persuasive Strategies in Gameful Systems to Gamification User Types.",false
 2018,"A","CHI","Sean Peacock","Streets for People: Engaging Children in Placemaking Through a Socio-technical Process.",true
 2018,"A","CHI","Sharifa Sultana","Design Within a Patriarchal Society: Opportunities and Challenges in Designing for Rural Women in Bangladesh.",true
 2018,"A","CHI","Tamy Guberek","Keeping a Low Profile?: Technology, Risk and Privacy among Undocumented Immigrants.",true
 2018,"A","CHI","Yongkwan Kim","Agile 3D Sketching with Air Scaffolding.",true
-2018,"A","CHI","Yvonne Jansen","How Relevant are Incidental Power Poses for HCI?",true
 2018,"A","CHI","Zhicheng Liu","Data Illustrator: Augmenting Vector Design Tools with Lazy Data Binding for Expressive Visualization Authoring.",true
 2018,"A","CVPR","Amir Roshan Zamir","Taskonomy: Disentangling Task Transfer Learning.",true
 2018,"A","CVPR","Barret Zoph","Learning Transferable Architectures for Scalable Image Recognition.",false
@@ -104,10 +107,11 @@ year,level,conference,author,title,isBest
 2018,"A","ICSE","Rijnard van Tonder","Static automated program repair for heap properties.",true
 2018,"A","ICSE","Xinyu Wang","Towards optimal concolic testing.",true
 2018,"A","ICSE","Xinyu Wang","Towards optimal concolic testing.",true
-2018,"A","ICSE","Yuchi Tian","DeepTest: Automated Testing of Deep-Neural-Network-driven Autonomous Cars.",false
-2018,"A","ICSE","Yuchi Tian","DeepTest: Automated Testing of Deep-Neural-Network-driven Autonomous Cars.",false
+2018,"A","ICSE","Yuchi Tian","DeepTest: automated testing of deep-neural-network-driven autonomous cars",false
+2018,"A","ICSE","Yuchi Tian","DeepTest: automated testing of deep-neural-network-driven autonomous cars",false
 2018,"A","ICSE","Zhilei Ren","Automated Localization for Unreproducible Builds.",true
 2018,"A","ICSE","Zhilei Ren","Automated Localization for Unreproducible Builds.",true
+2018,"A","IJCAI","Chaowei Xiao","Generating Adversarial Examples with Adversarial Networks.",false
 2018,"A","IJCAI","Chun Kai Ling","What game are we playing? End-to-end learning in normal and extensive form games.",true
 2018,"A","IJCAI","Cristina Feier","From Conjunctive Queries to Instance Queries in Ontology-Mediated Querying.",true
 2018,"A","IJCAI","Giannis Nikolentzos","A Degeneracy Framework for Graph Similarity.",true
@@ -115,7 +119,6 @@ year,level,conference,author,title,isBest
 2018,"A","IJCAI","Ke Wang","SentiGAN: Generating Sentimental Texts via Mixture Adversarial Networks.",true
 2018,"A","IJCAI","Li Xue","R-SVM+: Robust Learning with Privileged Information.",true
 2018,"A","IJCAI","Masanori Suganuma","A Genetic Programming Approach to Designing Convolutional Neural Network Architectures.",false
-2018,"A","IJCAI","Shirui Pan","Adversarially Regularized Graph Autoencoder for Graph Embedding.",false
 2018,"A","IJCAI","Thorsten Joachims","Unbiased Learning-to-Rank with Biased Feedback.",false
 2018,"A","IJCAI","Vincenzo Auletta","Reasoning about Consensus when Opinions Diffuse through Majority Dynamics.",true
 2018,"A","INFOCOM","Igor Kadota","Optimizing Age of Information in Wireless Networks with Throughput Constraints.",true
@@ -126,6 +129,7 @@ year,level,conference,author,title,isBest
 2018,"A","KDD","Daniel Zügner","Adversarial Attacks on Neural Networks for Graph Data.",true
 2018,"A","KDD","Jianxun Lian","xDeepFM: Combining Explicit and Implicit Feature Interactions for Recommender Systems.",false
 2018,"A","KDD","Rex Ying","Graph Convolutional Neural Networks for Web-Scale Recommender Systems.",false
+2018,"A","KDD","Xiangyu Zhao","Recommendations with Negative Feedback via Pairwise Deep Reinforcement Learning.",false
 2018,"A","MOBICOM","Ju Wang","Challenge: RFID Hacking for Fun and Profit.",false
 2018,"A","MOBICOM","Mehrdad Moradi","SkyCore: Moving Core to the Edge for Untethered and Reliable UAV-based LTE Networks.",true
 2018,"A","MOBICOM","Milan Stute","One Billion Apples' Secret Sauce: Recipe for the Apple Wireless Direct Link Ad hoc Protocol.",true
@@ -141,37 +145,36 @@ year,level,conference,author,title,isBest
 2018,"A","PLDI","He Zhu","A data-driven CHC solver.",true
 2018,"A","PLDI","Uri Alon","A General Path-Based Representation for Predicting Program Properties.",false
 2018,"A","PLDI","Van Chan Ngo","Bounded Expectations: Resource Analysis for Probabilistic Programs.",false
+2018,"A","PPoPP","Joel Matejka","Combining PREM compilation and ILP scheduling for high-performance and predictable MPSoC execution.",false
 2018,"A","PPoPP","Koby Hayashi","Shared-memory parallelization of MTTKRP for dense tensors.",false
 2018,"A","PPoPP","Milind Chabbi","Featherlight on-the-fly false-sharing detection.",true
 2018,"A","S&P","Benedikt Bünz","Bulletproofs: Short Proofs for Confidential Transactions and More.",false
 2018,"A","S&P","Nicholas Carlini","Audio Adversarial Examples: Targeted Attacks on Speech-to-Text.",false
 2018,"A","S&P","Stevens Le Blond","On Enforcing the Digital Immunity of a Large Humanitarian Organization.",true
 2018,"A","S&P","Timon Gehr","AI2: Safety and Robustness Certification of Neural Networks with Abstract Interpretation.",false
-2018,"A","S&P","Vincent Cheval","DEEPSEC: Deciding Equivalence Properties in Security Protocols Theory and Practice.",true
 2018,"A","SIGCOMM","Amogh Dhamdhere","Inferring persistent interdomain congestion.",true
 2018,"A","SIGCOMM","Behnam Montazeri","Homa: A Receiver-Driven Low-Latency Transport Protocol Using Network Priorities.",false
 2018,"A","SIGCOMM","Junchen Jiang","Chameleon: scalable adaptation of video analytics.",false
 2018,"A","SIGCOMM","Zahaib Akhtar","Oboe: auto-tuning video ABR algorithms to network conditions.",false
 2018,"A","SIGMOD","Huanchen Zhang","SuRF: Practical Range Query Filtering with Fast Succinct Tries.",true
+2018,"A","SIGMOD","Lin Ma","Query-based Workload Forecasting for Self-Driving Database Management Systems.",false
 2018,"A","SIGMOD","Nadime Francis","Cypher: An Evolving Query Language for Property Graphs.",false
 2018,"A","SIGMOD","Sidharth Mudgal","Deep Learning for Entity Matching: A Design Space Exploration.",false
-2018,"A","SIGMOD","Tim Kraska","The Case for Learned Index Structures.",false
 2018,"A","STOC","Artur Czumaj","Round Compression for Parallel Matching Algorithms.",false
 2018,"A","STOC","Aviad Rubinstein","Hardness of Approximate Nearest Neighbor Search.",false
 2018,"A","STOC","Irit Dinur","Towards a Proof of the 2-to-1 Games Conjecture?",false
 2018,"A","STOC","Ola Svensson","A Constant-Factor Approximation Algorithm for the Asymmetric Traveling Salesman Problem.",true
 2018,"A","WWW","Guanjie Zheng","DRN: A Deep Reinforcement Learning Framework for News Recommendation.",false
-2018,"A","WWW","Hongwei Wang","DKN: Deep Knowledge-Aware Network for News Recommendation.",false
 2018,"A","WWW","Mehrdad Farajtabar","COEVOLVE: A Joint Point Process Model for Information Diffusion and Network Co-evolution",false
-2018,"A","WWW","Patrick Ernst","HighLife: Higher-arity Fact Harvesting.",true
+2018,"A","WWW","Xiang Wang","TEM: Tree-enhanced Embedding Model for Explainable Recommendation.",false
 2018,"B","ACL","Chris Dyer","Finding syntax in human encephalography with beam search.",true
-2018,"B","ACL","Jianfeng Gao","Neural Approaches to Conversational AI.",false
-2018,"B","ACL","Marcin Junczys-Dowmunt","Marian: Fast Neural Machine Translation in C++.",false
+2018,"B","ACL","Mikel Artetxe","A robust self-learning method for fully unsupervised cross-lingual mappings of word embeddings.",false
 2018,"B","ACL","Pranav Rajpurkar","Know What You Don't Know: Unanswerable Questions for SQuAD.",false
-2018,"B","ACSAC","Dominik Wermke","A Large Scale Investigation of Obfuscation Use in Google Play.",false
+2018,"B","ACL","Saizheng Zhang","Personalizing Dialogue Agents: I have a dog, do you have pets too?",false
 2018,"B","ACSAC","Erik Sy","Tracking Users across the Web via TLS Session Resumption.",true
 2018,"B","ACSAC","Ivica Nikolic","Finding The Greedy, Prodigal, and Suicidal Contracts at Scale.",false
 2018,"B","ACSAC","Lingxiao Wei","I Know What You See: Power Side-Channel Attack on Convolutional Neural Network Accelerators.",false
+2018,"B","ACSAC","Minghong Fang","Poisoning Attacks to Graph-Based Recommender Systems.",false
 2018,"B","ASE","Bo Jiang","ContractFuzzer: Fuzzing Smart Contracts for Vulnerability Detection.",false
 2018,"B","ASE","Jianhui Chen","Control flow-guided SMT solving for program verification.",true
 2018,"B","ASE","Kaifeng Huang","ClDiff: generating concise linked code differences.",true
@@ -197,45 +200,43 @@ year,level,conference,author,title,isBest
 2018,"B","ESEM","Ivan Pashchenko","Vulnerable Open Source Dependencies: Counting Those That Matter.",false
 2018,"B","ESEM","Junji Shimagaki","Automatic topic classification of test cases using text mining at an Android smartphone vendor.",true
 2018,"B","ESEM","Norman Peitek","Simultaneous measurement of program comprehension with fMRI and eye tracking: a case study.",false
-2018,"B","FPGA","Hanqing Zeng","A Framework for Generating High Throughput CNN Implementations on FPGAs.",false
 2018,"B","FPGA","Junzhong Shen","Towards a Uniform Template-based Architecture for Accelerating 2D and 3D CNNs on FPGA.",false
 2018,"B","FPGA","Shijie Zhou","FASTCF: FPGA-based Accelerator for STochastic-Gradient-Descent-based Collaborative Filtering.",true
 2018,"B","FPGA","Shuo Wang","C-LSTM: Enabling Efficient LSTM using Structured Compression Techniques on FPGAs.",false
-2018,"B","HPDC","Anthony Kougkas","Hermes: a heterogeneous-aware multi-tiered distributed I/O buffering system.",false
+2018,"B","FPGA","Yuan Zhou","Rosetta: A Realistic High-Level Synthesis Benchmark Suite for Software Programmable FPGAs.",false
 2018,"B","HPDC","Anwesha Das","Desh: deep learning for system health prediction of lead times to failure in HPC.",false
 2018,"B","HPDC","Atsushi Hori","Process-in-process: techniques for practical address-space sharing.",true
+2018,"B","HPDC","Ragini Sharma","Are Existing Knowledge Transfer Techniques Effective for Deep Learning with Edge Devices?",false
 2018,"B","HPDC","Zhengchun Liu","Cross-geography scientific data transferring trends and behavior.",false
 2018,"B","ICCAD","Alireza Mahzoon","PolyCleaner: clean your polynomials before backward rewriting to verify million-gate multipliers.",true
-2018,"B","ICCAD","Bita Darvish Rouhani","DeepFense: online accelerated defense against adversarial deep learning.",false
 2018,"B","ICCAD","Saransh Gupta","FELIX: fast and energy-efficient logic in memory.",false
+2018,"B","ICCAD","Siyue Wang","Defensive Dropout for Hardening Deep Neural Networks under Adversarial Attacks.",false
 2018,"B","ICCAD","Xiaofan Zhang","DNNBuilder: an automated tool for building high-performance DNN hardware accelerators for FPGAs.",true
 2018,"B","ICMR","Hongzhi Li","PatternNet: Visual Pattern Mining with Deep Neural Network.",true
 2018,"B","ICMR","Kevin Joslyn","Cross-Modal Retrieval Using Deep De-correlated Subspace Ranking Hashing.",true
 2018,"B","ICMR","Nico Hezel","Dynamic Construction and Manipulation of Hierarchical Quartic Image Graphs.",true
 2018,"B","ICMR","Niluthpol Chowdhury Mithun","Learning Joint Embedding with Multimodal Cues for Cross-Modal Video-Text Retrieval.",true
-2018,"B","ICMR","Romain Cohendet","Annotating, Understanding, and Predicting Long-term Video Memorability.",false
 2018,"B","ICMR","Wenjie Zhang","Deep Extreme Multi-label Learning.",false
 2018,"B","ICMR","Xiangyu Yue","A LiDAR Point Cloud Generator: from a Virtual World to Autonomous Driving.",false
 2018,"B","IMC","Costas Iordanou","Tracing Cross Border Web Tracking.",true
 2018,"B","IMC","Platon Kotzias","Coming of Age: A Longitudinal Study of TLS Deployment.",true
 2018,"B","IMC","Quirin Scheitle","A Long Way to the Top: Significance, Structure, and Stability of Internet Top Lists.",true
-2018,"B","IMC","Savvas Zannettou","On the Origins of Memes by Means of Fringe Web Communities.",false
+2018,"B","IMC","Savvas Zannettou","On the Origins of Memes by Means of Fringe Web Communities.",true
 2018,"B","ISSTA","Caroline Lemieux","PerfFuzz: automatically generating pathological inputs.",true
 2018,"B","ISSTA","Chris Cummins","Compiler fuzzing through deep learning.",true
 2018,"B","ISSTA","Jiajun Jiang","Shaping program repair space with existing patches and similar code.",false
 2018,"B","ISSTA","Li Li","CiD: automating the detection of API-related compatibility issues in Android apps.",false
-2018,"B","ISSTA","Lina Qiu","Analyzing the analyzers: FlowDroid/IccTA, AmanDroid, and DroidSafe.",true
 2018,"B","MoDELS","Bernhard Westfechtel","From Single- to Multi-Variant Model Transformations: Trace-Based Propagation of Variability Annotations.",true
 2018,"B","MoDELS","Carlos A. González","Enabling Model Testing of Cyber-Physical Systems.",true
 2018,"B","MoDELS","Fabio Cremona","Hybrid Co-simulation: It's About Time.",false
 2018,"B","MoDELS","Hugo Brunelière","A Feature-based Survey of Model View Approaches.",false
 2018,"B","MoDELS","Hugo Brunelière","Towards Scalable Model Views on Heterogeneous Model Resources.",false
 2018,"B","MoDELS","Loli Burgueño","Expressing Confidence in Models and in Model Transformation Elements.",true
-2018,"B","MobiHoc","Chaoyun Zhang","Long-Term Mobile Traffic Forecasting Using Deep Spatio-Temporal Neural Networks.",false
+2018,"B","MobiHoc","Chaoyun Zhang","Long-Term Mobile Traffic Forecasting Using Deep Spatio-Temporal Neural Networks",false
 2018,"B","MobiHoc","Ning Lu","Age-based Scheduling: Improving Data Freshness for Wireless Real-Time Traffic.",false
-2018,"B","MobiHoc","Rajat Talak","Optimizing Information Freshness in Wireless Networks under General Interference Constraints.",true
+2018,"B","MobiHoc","Yan Meng","WiVo: Enhancing the Security of Voice Control System via Wireless Signal in IoT Environment.",false
 2018,"B","PODS","Mahmoud Abo Khamis","In-Database Learning with Sparse Tensors.",false
-2018,"B","PODS","Mark Bun","Heavy Hitters and the Structure of Local Privacy.",false
+2018,"B","PODS","Mark Bun","Heavy Hitters and the Structure of Local Privacy",false
 2018,"B","PODS","Wolfgang Fischl","General and Fractional Hypertree Decompositions: Hard and Easy Cases.",false
 2018,"B","PODS","Yufei Tao","Entity Matching with Active Monotone Classification.",true
 2018,"B","SIGMETRICS","Debankur Mukherjee","Asymptotically Optimal Load Balancing Topologies.",false
@@ -252,11 +253,11 @@ year,level,conference,author,title,isBest
 2018,"B","UIST","Alok Mysore","Porta: Profiling Software Tutorials Using Operating-System-Wide Activity Tracing.",true
 2018,"B","UIST","Anusha I. Withana","Tacttoo: A Thin and Feel-Through Tattoo for On-Skin Tactile Output.",false
 2018,"B","UIST","David Porfirio","Authoring and Verifying Human-Robot Interactions.",true
-2018,"B","UIST","Gierad Laput","Ubicoustics: Plug-and-Play Acoustic Activity Recognition.",false
 2018,"B","UIST","Huy Viet Le","InfiniTouch: Finger-Aware Interaction on Fully Touch Sensitive Smartphones.",false
 2018,"B","UIST","Patrick Parzer","RESi: A Highly Flexible, Pressure-Sensitive, Imperceptible Textile Interface Based on Resistive Yarns.",true
+2018,"B","UIST","Thomas F. Liu","Learning Design Semantics for Mobile Apps.",false
 2017,"A","AAAI","Christian Szegedy","Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning.",false
-2017,"A","AAAI","Iulian Vlad Serban","A Hierarchical Latent Variable Encoder-Decoder Model for Generating Dialogues.",false
+2017,"A","AAAI","Junbo Zhang","Deep Spatio-Temporal Residual Networks for Citywide Crowd Flows Prediction.",false
 2017,"A","AAAI","Lantao Yu","SeqGAN: Sequence Generative Adversarial Nets with Policy Gradient.",false
 2017,"A","AAAI","Russell Stewart","Label-Free Supervision of Neural Networks with Physics and Domain Knowledge.",true
 2017,"A","ASPLOS","Hari Cherupalli","Determining Application-specific Peak Power and Energy Requirements for Ultra-low Power Processors.",true
@@ -268,6 +269,7 @@ year,level,conference,author,title,isBest
 2017,"A","CCS","Guoming Zhang","DolphinAttack: Inaudible Voice Commands.",true
 2017,"A","CCS","Jack Doerner","Scaling ORAM for Secure Computation.",true
 2017,"A","CCS","Mathy Vanhoef","Key Reinstallation Attacks: Forcing Nonce Reuse in WPA2.",false
+2017,"A","CCS","Min Du","DeepLog: Anomaly Detection and Diagnosis from System Logs through Deep Learning.",false
 2017,"A","CCS","Pramod Subramanyan","A Formal Foundation for Secure Remote Execution of Enclaves.",true
 2017,"A","CCS","Shay Gueron","Better Bounds for Block Cipher Modes of Operation via Nonce-Based Key Derivation.",true
 2017,"A","CCS","Xiao Wang","Authenticated Garbling and Efficient Maliciously Secure Two-Party Computation.",true
@@ -278,7 +280,6 @@ year,level,conference,author,title,isBest
 2017,"A","CHI","César Torres","Illumination Aesthetics: Light as a Creative Material within Computational Design.",true
 2017,"A","CHI","Daniel A. Epstein","Examining Menstrual Tracking to Inform the Design of Personal Informatics Tools.",true
 2017,"A","CHI","Fabius Steinberger","Designing Gamified Applications that Make Safe Driving More Engaging.",true
-2017,"A","CHI","Farnaz Jahanbakhsh","You Want Me to Work with Who?: Stakeholder Perceptions of Automated Team Formation in Project-based Courses.",true
 2017,"A","CHI","Graham Dove","UX Design Innovation: Challenges for Working with Machine Learning as a Design Material.",false
 2017,"A","CHI","Jan Gugenheimer","ShareVR: Enabling Co-Located Experiences for Virtual Reality between HMD and Non-HMD Users.",true
 2017,"A","CHI","Julie Rico Williamson","Understanding Public Evaluation: Quantifying Experimenter Intervention.",true
@@ -286,7 +287,6 @@ year,level,conference,author,title,isBest
 2017,"A","CHI","Kasper Hornbæk","What Is Interaction?",true
 2017,"A","CHI","Lex Fridman","What Can Be Predicted from Six Seconds of Driver Glances?",true
 2017,"A","CHI","Marguerite Barry","mHealth for Maternal Mental Health: Everyday Wisdom in Ethical Design.",true
-2017,"A","CHI","Melissa A. Valentine","Flash Organizations: Crowdsourcing Complex Work by Structuring Crowds As Organizations.",true
 2017,"A","CHI","Petr Slovák","Reflective Practicum: A Framework of Sensitising Concepts to Design for Transformative Reflection.",true
 2017,"A","CHI","Sarah Webber","Kinecting with Orangutans: Zoo Visitors' Empathetic Responses to Animals? Use of Interactive Technology.",true
 2017,"A","CHI","Tara Matthews","Stories from Survivors: Privacy & Security Practices when Coping with Intimate Partner Abuse.",true
@@ -294,15 +294,16 @@ year,level,conference,author,title,isBest
 2017,"A","CHI","Wanyu Liu","BIGnav: Bayesian Information Gain for Guiding Multiscale Navigation.",true
 2017,"A","CHI","Yea-Seul Kim","Explaining the Gap: Visualizing One's Predictions Improves Recall and Comprehension of Data.",true
 2017,"A","CVPR","Abhishek Shrivastava","Learning from Simulated and Unsupervised Images through Adversarial Training.",true
+2017,"A","CVPR","Hengshuang Zhao","Pyramid Scene Parsing Network.",false
 2017,"A","CVPR","Joseph Redmon","YOLO9000: Better, Faster, Stronger.",false
 2017,"A","CVPR","Phillip Isola","Image-to-Image Translation with Conditional Adversarial Networks.",false
-2017,"A","CVPR","Tsung-Yi Lin","Feature Pyramid Networks for Object Detection.",false
 2017,"A","FOCS","Andrei A. Bulatov","A dichotomy theorem for nonuniform CSPs.",true
 2017,"A","FOCS","Dmitriy Zhuk","A Proof of CSP Dichotomy Conjecture.",false
 2017,"A","FOCS","Dmitriy Zhuk","The Proof of CSP Dichotomy Conjecture.",true
 2017,"A","FOCS","Ola Svensson","The Matching Problem in General Graphs is in Quasi-NC.",true
 2017,"A","FOCS","Sara Ahmadian","Better Guarantees for k-Means and Euclidean k-Median by Primal-Dual Algorithms.",false
 2017,"A","FSE/ESEC","Alex Krizhevsky","ImageNet Classification with Deep Convolutional Neural Networks.",false
+2017,"A","FSE/ESEC","Austin T. Clements","The Scalable Commutativity Rule: Designing Scalable Software for Multicore Processors",false
 2017,"A","FSE/ESEC","Benjamin Beurdouche","A Messy State of the Union: Taming the Composite State Machines of TLS",false
 2017,"A","FSE/ESEC","Calvin Smith","Discovering relational specifications",true
 2017,"A","FSE/ESEC","Dan Gopstein","Understanding misunderstandings in source code",true
@@ -311,9 +312,8 @@ year,level,conference,author,title,isBest
 2017,"A","FSE/ESEC","Tim Nelson","The power of \""why\"" and \""why not\"": enriching scenario exploration with provenance",true
 2017,"A","FSE/ESEC","Tyler Sorensen","Cooperative kernels: GPU multitasking for blocking algorithms",true
 2017,"A","FSE/ESEC","Yuchi Tian","Automatically diagnosing and repairing error handling bugs in C",true
-2017,"A","FSE/ESEC","austin t clements","The Scalable Commutativity Rule: Designing Scalable Software for Multicore Processors",false
-2017,"A","ICML","Augustus Odena","Conditional Image Synthesis With Auxiliary Classifier GANs.",false
 2017,"A","ICML","Chelsea Finn","Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks.",false
+2017,"A","ICML","Jonas Gehring","Convolutional Sequence to Sequence Learning.",false
 2017,"A","ICML","Martín Arjovsky","Wasserstein Generative Adversarial Networks.",false
 2017,"A","ICML","Pang Wei Koh","Understanding Black-box Predictions via Influence Functions.",true
 2017,"A","ICSE","August Shi","Optimizing test placement for module-level regression testing.",true
@@ -359,8 +359,8 @@ year,level,conference,author,title,isBest
 2017,"A","SIGIR","Jun Wang","IRGAN: A Minimax Game for Unifying Generative and Discriminative Information Retrieval Models",false
 2017,"A","SIGIR","Xiangnan He","Neural Factorization Machines for Sparse Predictive Analytics",false
 2017,"A","SIGMOD","Dana Van Aken","Automatic Database Management System Tuning Through Large-scale Machine Learning.",false
+2017,"A","SIGMOD","Peter Bailis","MacroBase: Prioritizing Attention in Fast Data.",false
 2017,"A","SIGMOD","Tien Tuan Anh Dinh","BLOCKBENCH: A Framework for Analyzing Private Blockchains.",false
-2017,"A","SIGMOD","Tim Kraska","The Case for Learned Index Structures.",false
 2017,"A","SIGMOD","Wenfei Fan","Parallelizing Sequential Graph Computations.",true
 2017,"A","SOSP","Cheng Tan","The Efficient Server Audit Problem, Deduplicated Re-execution, and the Web.",true
 2017,"A","SOSP","Kexin Pei","DeepXplore: Automated Whitebox Testing of Deep Learning Systems.",true
@@ -372,7 +372,7 @@ year,level,conference,author,title,isBest
 2017,"A","STOC","Satoru Iwata","A weighted linear matroid parity algorithm.",true
 2017,"A","STOC","Zeyuan Allen Zhu","Katyusha: the first direct acceleration of stochastic gradient methods.",false
 2017,"A","VLDB","Daniel Deutch","Provenance for Natural Language Queries.",true
-2017,"A","VLDB","Shuo Shang","Trajectory Similarity Join in Spatial Networks.",false
+2017,"A","VLDB","Paris Carbone","State Management in Apache Flink®: Consistent Stateful Distributed Stream Processing.",false
 2017,"A","VLDB","Theodoros Rekatsinas","HoloClean: Holistic Data Repairs with Probabilistic Inference.",false
 2017,"A","VLDB","Yudian Zheng","Truth Inference in Crowdsourcing: Is the Problem Solved?",false
 2017,"B","ACL","Abigail See","Get To The Point: Summarization with Pointer-Generator Networks.",false
@@ -421,8 +421,7 @@ year,level,conference,author,title,isBest
 2017,"B","NSDI","Muhammad Asim Jamshed","mOS: A Reusable Networking Stack for Flow Monitoring Middleboxes.",true
 2017,"B","NSDI","Omid Alipourfard","CherryPick: Adaptively Unearthing the Best Cloud Configurations for Big Data Analytics.",false
 2017,"B","NSDI","Wenting Zheng","Opaque: An Oblivious and Encrypted Distributed Analytics Platform.",false
-2017,"B","PODS","André Hernich","Dichotomies in Ontology-Mediated Querying with the Guarded Fragment.",true
-2017,"B","PODS","Michael Benedikt","Benchmarking the Chase.",false
+2017,"B","PODS","Behzad Golshan","Data Integration: After the Teenage Years.",false
 2017,"B","PODS","Paris C. Kanellakis","Constraint query languages",false
 2017,"B","PODS","Pierre Bourhis","JSON: data model, query languages and schema specification.",false
 2017,"B","SIGMETRICS","Giuliano Casale","Accelerating Performance Inference over Closed Systems by Asymptotic Methods.",true
@@ -432,7 +431,7 @@ year,level,conference,author,title,isBest
 2017,"B","SOCC","Eric Jonas","Occupy the Cloud: Distributed Computing for the 99%.",true
 2017,"B","SOCC","Haoyu Zhang","SLAQ: quality-driven scheduling for distributed machine learning.",true
 2017,"B","SOCC","Neeraja J. Yadwadkar","Selecting the best VM across multiple public clouds: a data-driven performance modeling approach.",false
-2017,"B","SODA","Alexandr Andoni","Optimal Hashing-based Time-Space Trade-offs for Approximate Near Neighbors.",false
+2017,"B","SODA","Alexandr Andoni","Optimal hashing-based time-space trade-offs for approximate near neighbors",false
 2017,"B","SODA","Kexin Pei","DeepXplore: Automated Whitebox Testing of Deep Learning Systems.",false
 2017,"B","SODA","Sergio Cabello","Subquadratic Algorithms for the Diameter and the Sum of Pairwise Distances in Planar Graphs.",true
 2017,"B","SODA","Themis Palpanas","Front Matter.",false
@@ -440,11 +439,11 @@ year,level,conference,author,title,isBest
 2017,"B","UIST","Inrak Choi","Grabity: A Wearable Haptic Interface for Simulating Weight and Grasping in Virtual Reality.",true
 2017,"B","UIST","Maxime Cordeil","ImAxes: Immersive Axes as Embodied Affordances for Interactive Multivariate Data Visualisation.",false
 2017,"B","UIST","Nora S. Willett","Triggering Artwork Swaps for Live Animation.",true
-2017,"B","UIST","Rubaiat Habib Kazi","DreamSketch: Early Stage 3D Design Explorations with Sketching and Generative Design.",false
+2017,"B","UIST","Zoya Bylinskii","Learning Visual Importance for Graphic Designs and Data Visualizations.",false
+2016,"A","AAAI","Iulian Vlad Serban","Building End-To-End Dialogue Systems Using Generative Hierarchical Neural Network Models",false
 2016,"A","AAAI","Robert C. Holte","Bidirectional Search That Is Guaranteed to Meet in the Middle.",true
 2016,"A","AAAI","Yoon Kim","Character-Aware Neural Language Models.",false
 2016,"A","AAAI","hado van hasselt","Deep Reinforcement Learning with Double Q-learning",false
-2016,"A","AAAI","iulian serban","Building End-To-End Dialogue Systems Using Generative Hierarchical Neural Network Models",false
 2016,"A","ASPLOS","Aasheesh Kolli","High-Performance Transactions for Persistent Memories.",false
 2016,"A","ASPLOS","Huazhe Zhang","Maximizing Performance Under a Power Cap: A Comparison of Hardware, Software, and Hybrid Techniques.",false
 2016,"A","ASPLOS","James Bornholt","A DNA-Based Archival Storage System.",false
@@ -493,28 +492,28 @@ year,level,conference,author,title,isBest
 2016,"A","FSE/ESEC","Emilio Ferrara","The Rise of Social Bots.",false
 2016,"A","FSE/ESEC","Eunsuk Kang","Multi-representational security analysis.",true
 2016,"A","FSE/ESEC","Jianjun Huang","Detecting sensitive data disclosure via bi-directional text correlation analysis.",true
-2016,"A","FSE/ESEC","M Zaharia","Apache Spark: a unified engine for big data processing",false
+2016,"A","FSE/ESEC","Matei Zaharia","Apache Spark: a unified engine for big data processing.",false
 2016,"A","FSE/ESEC","Xiaofei Xie","Proteus: computing disjunctive loop summary via path dependency analysis.",true
 2016,"A","ICML","Aäron Van Den Oord","Pixel Recurrent Neural Networks.",true
 2016,"A","ICML","Scott E. Reed","Generative Adversarial Text to Image Synthesis.",false
 2016,"A","ICML","Volodymyr Mnih","Asynchronous Methods for Deep Reinforcement Learning.",false
-2016,"A","ICML","yarin gal","Dropout as a Bayesian Approximation: Representing Model Uncertainty in Deep Learning",false
+2016,"A","ICML","dario amodei","Deep Speech 2: End-to-End Speech Recognition in English and Mandarin",false
 2016,"A","ICSE","Chakkrit Tantithamthavorn","Automated parameter optimization of classification techniques for defect prediction models.",false
 2016,"A","ICSE","David Menendez","Termination-checking for LLVM peephole optimizations.",true
 2016,"A","ICSE","Eric F. Rizzi","On the techniques we create, the tools we build, and their misalignments: a study of KLEE.",true
 2016,"A","ICSE","Georgios Gousios","Work practices and challenges in pull-based development: the contributor's perspective.",true
 2016,"A","ICSE","Magnus Madsen","Feedback-directed instrumentation for deployed JavaScript applications.",true
+2016,"A","ICSE","Marcello M. Bersani","Efficient Large-scale Trace Checking Using MapReduce",true
 2016,"A","ICSE","Samir Hasan","Energy profiles of Java collections classes.",true
 2016,"A","ICSE","Sergey Mechtaev","Angelix: scalable multiline program patch synthesis via symbolic analysis.",false
 2016,"A","ICSE","Song Wang","Automatically learning semantic features for defect prediction.",false
 2016,"A","ICSE","Tingting Yu","VDTest: an automated framework to support testing for virtual devices.",true
 2016,"A","ICSE","Xin Ye","From word embeddings to document similarities for improved information retrieval in software engineering.",true
-2016,"A","ICSE","m bersani","Efficient Large-scale Trace Checking Using MapReduce",true
 2016,"A","ICSE","maria christakis","Guiding Dynamic Symbolic Execution toward Unverified Program Executions",true
 2016,"A","IJCAI","Javier Segovia Aguas","Hierarchical Finite State Controllers for Generalized Planning.",true
 2016,"A","IJCAI","Kaski, Samuel","Preface.",false
 2016,"A","IJCAI","Pengfei Liu","Recurrent Neural Network for Text Classification with Multi-Task Learning.",false
-2016,"A","IJCAI","wujun li","Feature Learning based Deep Supervised Hashing with Pairwise Labels",false
+2016,"A","IJCAI","Wu-Jun Li","Feature Learning based Deep Supervised Hashing with Pairwise Labels",false
 2016,"A","INFOCOM","Jia Liu","Heavy-ball: A new approach to tame delay and convergence in wireless network optimization.",true
 2016,"A","INFOCOM","Kevin Spiteri","BOLA: Near-Optimal Bitrate Adaptation for Online Videos.",false
 2016,"A","INFOCOM","Liang Tong","A hierarchical edge cloud architecture for mobile computing.",false
@@ -544,6 +543,7 @@ year,level,conference,author,title,isBest
 2016,"A","PLDI","Nicholas Jacek","Assessing the limits of program-specific garbage collection performance.",true
 2016,"A","PLDI","Oded Padon","Ivy: safety verification by interactive generalization.",false
 2016,"A","PLDI","Tomas Petricek","Types from data: Making structured data first-class citizens in F#.",true
+2016,"A","PPoPP","Matt Martineau","An Evaluation of Emerging Many-Core Parallel Programming Models.",false
 2016,"A","PPoPP","Matthieu Perrin","Causal Consistency: Beyond Memory.",false
 2016,"A","PPoPP","Saurabh Kalikar","DomLock: a new multi-granularity locking technique for hierarchies.",true
 2016,"A","PPoPP","Yangzihao Wang","Gunrock: a high-performance graph processing library on the GPU",true
@@ -551,14 +551,14 @@ year,level,conference,author,title,isBest
 2016,"A","S&P","Kaiyuan Yang","A2: Analog Malicious Hardware.",true
 2016,"A","S&P","Yan Shoshitaishvili","SOK: (State of) The Art of War: Offensive Techniques in Binary Analysis.",false
 2016,"A","S&P","nicolas papernot","Distillation as a Defense to Adversarial Perturbations against Deep Neural Networks",false
-2016,"A","SIGCOMM","Arjun Singh","Jupiter Rising: A Decade of Clos Topologies and Centralized Control in Google's Datacenter Network.",false
 2016,"A","SIGCOMM","Deepak Vasisht","Eliminating Channel Feedback in Next-Generation Cellular Networks.",true
+2016,"A","SIGCOMM","Monia Ghobadi","ProjecToR: Agile Reconfigurable Data Center Interconnect.",false
 2016,"A","SIGCOMM","Ryan Beckett","Don't Mind the Gap: Bridging Network-wide Objectives and Device-level Configurations.",true
 2016,"A","SIGCOMM","Vikram Iyer","Inter-Technology Backscatter: Towards Internet Connectivity for Implanted Devices.",true
 2016,"A","SIGCOMM","Yi Sun","CS2P: Improving Video Bitrate Selection and Adaptation with Data-Driven Throughput Prediction.",false
 2016,"A","SIGCOMM","Zaoxing Liu","One Sketch to Rule Them All: Rethinking Network Flow Monitoring with UnivMon.",false
 2016,"A","SIGIR","Chenliang Li","Topic Modeling for Short Texts with Auxiliary Word Embeddings.",false
-2016,"A","SIGIR","Shuai Li","Collaborative Filtering Bandits.",false
+2016,"A","SIGIR","Hanwang Zhang","Discrete Collaborative Filtering.",false
 2016,"A","SIGIR","Xiangnan He","Fast Matrix Factorization for Online Recommendation with Implicit Feedback.",false
 2016,"A","SIGIR","Yashar Moshfeghi","Understanding Information Need: An fMRI Study.",true
 2016,"A","SIGMOD","Dong Xie","Simba: Efficient In-Memory Spatial Analytics.",false
@@ -568,7 +568,6 @@ year,level,conference,author,title,isBest
 2016,"A","STOC","Eshan Chattopadhyay","Explicit Two-Source Extractors and Resilient Functions.",true
 2016,"A","STOC","László Babai","Graph isomorphism in quasipolynomial time [extended abstract].",true
 2016,"A","STOC","Omer Reingold","Constant-Round Interactive Proofs for Delegating Computation.",false
-2016,"A","STOC","Shrinivas Kudekar","Reed-Muller Codes Achieve Capacity on Erasure Channels.",true
 2016,"A","STOC","raef bassily","Algorithmic Stability for Adaptive Data Analysis",false
 2016,"A","UbiComp","Abhinav Mehrotra","PrefMiner: mining user's preferences for intelligent mobile notification management.",true
 2016,"A","UbiComp","Edward Jay Wang","HemaApp: noninvasive blood screening of hemoglobin using smartphone cameras.",true
@@ -580,8 +579,8 @@ year,level,conference,author,title,isBest
 2016,"A","UbiComp","Wei Wang","Gait recognition using wifi signals.",false
 2016,"A","VLDB","Ahmed Elgohary","Compressed Linear Algebra for Large-Scale Machine Learning.",true
 2016,"A","VLDB","MingJie Tang","LocationSpark: A Distributed In-Memory Data Management System for Big Spatial Data.",false
+2016,"A","VLDB","Sanjay Krishnan","ActiveClean: Interactive Data Cleaning For Statistical Modeling.",false
 2016,"A","VLDB","Yongxin Tong","Online Minimum Matching in Real-Time Spatial Data: Experiments and Analysis.",false
-2016,"A","VLDB","Ziawasch Abedjan","Detecting Data Errors: Where are we and what needs to be done?",false
 2016,"A","WWW","Chikashi Nobata","Abusive Language Detection in Online User Content.",false
 2016,"A","WWW","Clayton Allen Davis","BotOrNot: A System to Evaluate Social Bots.",false
 2016,"A","WWW","Daniel M. Romero","Social Networks Under Stress.",true
@@ -601,8 +600,8 @@ year,level,conference,author,title,isBest
 2016,"B","CIKM","Min Xie","Learning Graph-based POI Embedding for Location-based Recommendation",false
 2016,"B","CIKM","Stefan Heindorf","Vandalism Detection in Wikidata",true
 2016,"B","CoNEXT","Bo Han","MP-DASH: Adaptive Video Streaming Over Preference-Aware Multipath.",true
-2016,"B","CoNEXT","Matteo Varvello","EYEORG: A Platform For Crowdsourcing Web Quality Of Experience Measurements.",false
 2016,"B","CoNEXT","Tingjun Chen","Maximizing Broadcast Throughput Under Ultra-Low-Power Constraints.",true
+2016,"B","CoNEXT","Wei Zhang","Flurries: Countless Fine-Grained NFs for Flexible Per-Flow Customization.",false
 2016,"B","CoNEXT","Xenofon Foukas","FlexRAN: A Flexible and Programmable Platform for Software-Defined Radio Access Networks.",false
 2016,"B","DAC","Miao Hu","Dot-product engine for neuromorphic computing: programming 1T1M crossbar to accelerate matrix-vector multiplication.",false
 2016,"B","DAC","Shuangchen Li","Pinatubo: a processing-in-memory architecture for bulk bitwise operations in emerging non-volatile memories.",false
@@ -618,7 +617,7 @@ year,level,conference,author,title,isBest
 2016,"B","FPGA","Guohao Dai","FPGP: Graph Processing Framework on FPGA A Case Study of Breadth-First Search.",false
 2016,"B","FPGA","Jiantao Qiu","Going Deeper with Embedded FPGA Platform for Convolutional Neural Network.",false
 2016,"B","FPGA","Naveen Suda","Throughput-Optimized OpenCL-based FPGA Accelerator for Large-Scale Convolutional Neural Networks.",false
-2016,"B","ICMR","Markus Schedl","The LFM-1b Dataset for Music Retrieval and Recommendation.",false
+2016,"B","ICMR","Eva Mohedano","Bags of Local Convolutional Features for Scalable Instance Search.",false
 2016,"B","ICMR","Nikolaos Pappas","Multilingual Visual Sentiment Concept Matching.",true
 2016,"B","ICMR","Pascal Mettes","The ImageNet Shuffle: Reorganized Pre-training for Video Event Detection.",false
 2016,"B","ICMR","Qing Li","Action Recognition by Learning Deep Multi-Granular Spatio-Temporal Video Representation.",false
@@ -657,8 +656,8 @@ year,level,conference,author,title,isBest
 2016,"B","UIST","Mathieu Le Goc","Zooids: Building Blocks for Swarm User Interfaces.",true
 2016,"B","UIST","Sergio Orts-Escolano","Holoportation: Virtual 3D Teleportation in Real-time.",false
 2015,"A","AAAI","Florian Pommerening","From Non-Negative to General Operator Cost Partitioning.",true
-2015,"A","AAAI","Ryan Rossi","The Network Data Repository with Interactive Graph Analytics and Visualization.",false
 2015,"A","AAAI","Siwei Lai","Recurrent Convolutional Neural Networks for Text Classification.",false
+2015,"A","AAAI","Tom M. Mitchell","Never-Ending Learning.",false
 2015,"A","AAAI","Yankai Lin","Learning Entity and Relation Embeddings for Knowledge Graph Completion.",false
 2015,"A","ACM MM","Andrea Vedaldi","MatConvNet - Convolutional Neural Networks for MATLAB.",false
 2015,"A","ACM MM","Giulia C. Fanti","Spy vs. Spy: Rumor Source Obfuscation",true
@@ -692,7 +691,6 @@ year,level,conference,author,title,isBest
 2015,"A","CHI","gierad laput","Acoustruments: Passive, Acoustically-Driven, Interactive Controls for Handheld Devices",true
 2015,"A","CVPR","Christian Szegedy","Going Deeper with Convolutions.",false
 2015,"A","CVPR","Gao Huang","Densely Connected Convolutional Networks.",true
-2015,"A","CVPR","Jonathan Long","Fully Convolutional Networks for Semantic Segmentation.",false
 2015,"A","CVPR","Jonathan Long","Fully convolutional networks for semantic segmentation.",false
 2015,"A","CVPR","Richard A. Newcombe","DynamicFusion: Reconstruction and tracking of non-rigid scenes in real-time",true
 2015,"A","EUROCRYPT","Anne Canteaut","On the Behaviors of Affine Equivalent Sboxes Regarding Differential and Linear Attacks.",true
@@ -704,21 +702,20 @@ year,level,conference,author,title,isBest
 2015,"A","FAST","Da Zheng","FlashGraph: processing billion-node graphs on an array of commodity SSDs",false
 2015,"A","FAST","Jun Yang","NV-Tree: Reducing Consistency Cost for NVM-based Single Level Systems.",false
 2015,"A","FAST","abutalib aghayev","Skylight: a window on shingled disk operation",true
-2015,"A","FOCS","Benjamin Rossman","An average-case depth hierarchy theorem for Boolean circuits.",true
-2015,"A","FOCS","Charles Bordenave","Non-backtracking spectrum of random graphs: community detection and non-regular Ramanujan graphs.",false
 2015,"A","FOCS","Emmanuel Abbe","Community Detection in General Stochastic Block models: Fundamental Limits and Efficient Algorithms for Recovery",false
-2015,"A","FOCS","Ruoyu Sun","Guaranteed Matrix Completion via Nonconvex Factorization",false
-2015,"A","FSE/ESEC","Daniel A. Reed","Exascale computing and big data",false
+2015,"A","FOCS","Ruoyu Sun","Guaranteed Matrix Completion via Non-convex Factorization.",false
+2015,"A","FOCS","charles bordenave","Non-backtracking spectrum of random graphs: community detection and non-regular Ramanujan graphs",false
+2015,"A","FSE/ESEC","Carl Doersch","What makes Paris look like Paris?",false
 2015,"A","FSE/ESEC","David Lo","How practitioners perceive the relevance of software engineering research",true
 2015,"A","FSE/ESEC","Ermira Daka","Modeling readability to improve unit tests",true
 2015,"A","FSE/ESEC","Farnaz Behrang","Users beware: preference inconsistencies ahead",true
 2015,"A","FSE/ESEC","Koushik Sen","MultiSE: multi-path symbolic execution using value summaries",true
 2015,"A","FSE/ESEC","Mario Linares Vásquez","Optimizing energy consumption of GUIs in Android apps: a multi-objective approach",true
-2015,"A","FSE/ESEC","Michael A. Cusumano","How traditional firms must compete in the sharing economy",false
 2015,"A","FSE/ESEC","Michael S. Bernstein","Soylent: a word processor with a crowd inside",false
 2015,"A","FSE/ESEC","Neil A. Ernst","Measure it? Manage it? Ignore it? software practitioners and technical debt",true
 2015,"A","FSE/ESEC","Ravi Mangal","A user-guided approach to program analysis",true
 2015,"A","FSE/ESEC","Reza Matinnejad","Effective test suites for mixed discrete-continuous stateflow controllers",true
+2015,"A","FSE/ESEC","sylvain paris","Local Laplacian filters: edge-aware image processing with a Laplacian pyramid",false
 2015,"A","HPCA","Cong Xu","Overcoming the challenges of crossbar resistive memory architectures",false
 2015,"A","HPCA","Donghyuk Lee","Adaptive-latency DRAM: Optimizing DRAM timing for the common-case",false
 2015,"A","HPCA","Kaisheng Ma","Architecture exploration for ambient energy harvesting nonvolatile processors",true
@@ -727,8 +724,8 @@ year,level,conference,author,title,isBest
 2015,"A","ICCV","Peter Kontschieder","Deep Neural Decision Forests",true
 2015,"A","ICCV","Ross B. Girshick","Fast R-CNN.",false
 2015,"A","ICCV","du tran","Learning Spatiotemporal Features with 3D Convolutional Networks.",false
-2015,"A","ICDE","Ahmed Eldawy","SpatialHadoop: A MapReduce framework for spatial data.",false
-2015,"A","ICDE","Ke Wu","False rumors detection on Sina Weibo by propagation structures.",false
+2015,"A","ICDE","Ahmed Eldawy","SpatialHadoop: A MapReduce framework for spatial data",false
+2015,"A","ICDE","Ke Wu","False rumors detection on Sina Weibo by propagation structures",false
 2015,"A","ICDE","Muhammad Anis Uddin Nasir","The Power of Both Choices: Practical Load Balancing for Distributed Stream Processing Engines.",false
 2015,"A","ICDE","asamenew demessie bireda","Challenges to the Doctoral Journey: a Case of Female Doctoral Students from Ethiopia",true
 2015,"A","ICDE","ashok gaba","Growth and Development of Distance Education in India and China: A Study on Policy Perspectives",true
@@ -740,7 +737,7 @@ year,level,conference,author,title,isBest
 2015,"A","ICSE","Adrian Nistor","CARAMEL: Detecting and Fixing Performance Problems That Have Non-Intrusive Fixes.",true
 2015,"A","ICSE","Aleksandar Milicevic","Alloy*: a general-purpose higher-order relational constraint solver",true
 2015,"A","ICSE","Janet Siegmund","Views on internal and external validity in empirical software engineering",true
-2015,"A","ICSE","Li Li 0029","IccTA: Detecting Inter-Component Privacy Leaks in Android Apps.",false
+2015,"A","ICSE","Li Li 0029","IccTA: detecting inter-component privacy leaks in Android apps",false
 2015,"A","ICSE","Mathieu Lavallée","Why good developers write bad code: an observational case study of the impacts of organizational factors on software quality",true
 2015,"A","ICSE","Michael Waterman","How much up-front?: a grounded theory of agile architecture",true
 2015,"A","ICSE","Michele Tufano","When and why your code starts to smell bad",true
@@ -760,8 +757,8 @@ year,level,conference,author,title,isBest
 2015,"A","KDD","Hao Wang","Collaborative Deep Learning for Recommender Systems.",false
 2015,"A","KDD","Julian J. McAuley","Inferring Networks of Substitutable and Complementary Products",false
 2015,"A","KDD","Rich Caruana","Intelligible Models for HealthCare: Predicting Pneumonia Risk and Hospital 30-day Readmission",false
+2015,"A","MICRO","Andrew Putnam","A reconfigurable fabric for accelerating large-scale datacenter services",false
 2015,"A","MICRO","Guowei Zhang","Exploiting commutativity to reduce the cost of updates to shared data in cache-coherent systems",true
-2015,"A","MICRO","Jinglei Ren","ThyNVM: enabling software-transparent crash consistency in persistent memory systems",false
 2015,"A","MICRO","Lavanya Subramanian","The application slowdown model: quantifying and controlling the impact of inter-application interference at shared caches and main memory",false
 2015,"A","MICRO","Shinpei Kato","An Open Approach to Autonomous Vehicles",false
 2015,"A","PLDI","Danfeng Zhang","Diagnosing type errors with class",true
@@ -782,7 +779,7 @@ year,level,conference,author,title,isBest
 2015,"A","SC","Lifeng Nai","GraphBIG: understanding graph computing in the context of industrial solutions",false
 2015,"A","SC","Martin Bauer","Massively parallel phase-field simulations for ternary eutectic directional solidification",true
 2015,"A","SC","Torsten Hoefler","Scientific benchmarking of parallel computing systems: twelve ways to tell the masses when reporting performance results",false
-2015,"A","SIGCOMM","Arjun Roy","Inside the Social Network's (Datacenter) Network",false
+2015,"A","SIGCOMM","Arjun Singh","Jupiter Rising: A Decade of Clos Topologies and Centralized Control in Google's Datacenter Network.",false
 2015,"A","SIGCOMM","Manikanta Kotaru","SpotFi: Decimeter Level Localization Using WiFi",false
 2015,"A","SIGCOMM","Stefano Vissicchio","Central Control Over Distributed Routing",true
 2015,"A","SIGCOMM","Xiaoqi Yin","A Control-Theoretic Approach for Dynamic Adaptive Video Streaming over HTTP",false
@@ -802,7 +799,6 @@ year,level,conference,author,title,isBest
 2015,"A","SOSP","Chris Hawblitzel","IronFleet: proving practical distributed systems correct",false
 2015,"A","SOSP","Shoumik Palkar","E2: a framework for NFV applications",false
 2015,"A","SOSP","Zeyuan Allen Zhu","Using Optimization to Break the Epsilon Barrier: A Faster and Simpler Width-Independent Algorithm for Solving Positive Linear Programs in Parallel.",true
-2015,"A","STOC","Anat Ganor","Exponential Separation of Information and Communication for Boolean Functions.",true
 2015,"A","STOC","Cynthia Dwork","Preserving Statistical Validity in Adaptive Data Analysis.",false
 2015,"A","STOC","James R. Lee","Lower bounds on the size of semidefinite programming relaxations.",true
 2015,"A","STOC","Michael B. Cohen","Dimensionality Reduction for k-Means Clustering and Low Rank Approximation.",false
@@ -810,18 +806,17 @@ year,level,conference,author,title,isBest
 2015,"A","STOC","Zeev Dvir","2-Server PIR with sub-polynomial communication.",true
 2015,"A","USENIX ATC","Baptiste Lepers","Thread and memory placement on NUMA systems: asymmetry matters",true
 2015,"A","USENIX ATC","Jacob Nelson","Latency-tolerant software distributed shared memory",true
-2015,"A","USENIX ATC","Jian Huang","WearDrive: Fast and Energy-Efficient Storage for Wearables",true
 2015,"A","USENIX ATC","Xiaowei Zhu","GridGraph: Large-Scale Graph Processing on a Single Machine Using 2-Level Hierarchical Partitioning",false
-2015,"A","USENIX ATC","Xingbo Wu","LSM-trie: an LSM-tree-based ultra-large key-value store for small data",false
+2015,"A","USENIX ATC","Xingbo Wu","LSM-trie: An LSM-tree-based Ultra-Large Key-Value Store for Small Data Items",false
 2015,"A","USENIX Security","David A. Ramos","Under-Constrained Symbolic Execution: Correctness Checking for Real Code",true
 2015,"A","USENIX Security","Ethan Heilman","Eclipse Attacks on Bitcoin's Peer-to-Peer Network.",false
 2015,"A","USENIX Security","Kyle Soska","Measuring the Longitudinal Evolution of the Online Anonymous Marketplace Ecosystem.",false
 2015,"A","USENIX Security","Nicholas Carlini","Control-Flow Bending: On the Effectiveness of Control-Flow Integrity",false
 2015,"A","VLDB","Fei Li","Constructing an Interactive Natural Language Interface for Relational Databases.",true
 2015,"A","VLDB","Narayanan Sundaram","GraphMat: High performance graph analytics made productive.",false
+2015,"A","VLDB","Qi Li","A confidence-aware approach for truth discovery on long-tail data",false
 2015,"A","VLDB","Tyler Akidau","The dataflow model: a practical approach to balancing correctness, latency, and cost in massive-scale, unbounded, out-of-order data processing",false
-2015,"A","VLDB","Viktor Leis","How Good Are Query Optimizers, Really?",false
-2015,"A","WWW","Arnab Sinha","An Overview of Microsoft Academic Service (MAS) and Applications",false
+2015,"A","WWW","Ali Mamdouh Elkahky","A Multi-View Deep Learning Approach for Cross Domain User Modeling in Recommendation Systems",false
 2015,"A","WWW","Jian Tang","LINE: Large-scale Information Network Embedding.",false
 2015,"A","WWW","Philipp Singer","HypTrails: A Bayesian Approach for Comparing Hypotheses About Human Trails on the Web",true
 2015,"A","WWW","Zhe Zhao","Enquiring Minds: Early Detection of Rumors in Social Media from Enquiry Posts",false
@@ -846,9 +841,7 @@ year,level,conference,author,title,isBest
 2015,"B","DAC","Lucas Davi","HAFIX: hardware-assisted flow integrity extension",true
 2015,"B","DAC","Muhammad Shafique","A low latency generic accuracy configurable adder",false
 2015,"B","DAC","Ray Beaulieu","The SIMON and SPECK lightweight block ciphers",false
-2015,"B","DATE","A. Psarras","PhaseNoC: TDM scheduling at the virtual-channel level for efficient network traffic isolation",true
 2015,"B","DATE","Burçin Çakir","Hardware Trojan detection for gate-level ICs using signal correlation based clustering.",true
-2015,"B","DATE","M. Saliva","Digital circuits reliability with in-situ monitors in 28nm fully depleted SOI",true
 2015,"B","DATE","Qian Zhang","ApproxANN: an approximate computing framework for artificial neural network",false
 2015,"B","DATE","Ruan de Clercq","Efficient software implementation of ring-LWE encryption",false
 2015,"B","DATE","Said Hamdioui","Memristor based computation-in-memory architecture for data-intensive applications",false
@@ -869,8 +862,8 @@ year,level,conference,author,title,isBest
 2015,"B","HPDC","Huong Luu","A Multiplatform Study of I/O Behavior on Petascale Supercomputers",false
 2015,"B","HPDC","Maciej Besta","Accelerating Irregular Computations with Hardware Transactional Memory and Active Messages",true
 2015,"B","HPDC","Marius Poke","DARE: High-Performance State Machine Replication on RDMA Networks",false
-2015,"B","ICALP","Georgios Amanatidis","Approximation Algorithms for Computing Maximin Share Allocations.",false
 2015,"B","ICALP","Gregory Pavlov","Optimal mechanism for selling two goods ",true
+2015,"B","ICALP","Hans L. Bodlaender","Deterministic single exponential time algorithms for connectivity problems parameterized by treewidth",false
 2015,"B","ICALP","Piotr Sankowski","Faster dynamic matchings and vertex connectivity",false
 2015,"B","ICCAD","Myung-Chul Kim","ICCAD-2015 CAD Contest in Incremental Timing-driven Placement and Benchmark Suite.",false
 2015,"B","ICCAD","Pai-Yu Chen","Mitigating Effects of Non-ideal Synaptic Device Characteristics for On-chip Learning",false
@@ -914,13 +907,13 @@ year,level,conference,author,title,isBest
 2015,"B","MobiHoc","Xu Zhang","WATCH: WiFi in Active TV Channels",true
 2015,"B","MobiSys","Kyungmin Lee","Outatime: Using Speculation to Enable Low-Latency Continuous Interaction for Mobile Cloud Gaming",true
 2015,"B","MobiSys","Mark S. Gordon","Accelerating Mobile Applications through Flip-Flop Replication",true
-2015,"B","MobiSys","Rajalakshmi Nandakumar","Contactless Sleep Apnea Detection on Smartphones",false
+2015,"B","MobiSys","Rajalakshmi Nandakumar","Contactless Sleep Apnea Detection on Smartphones.",false
 2015,"B","MobiSys","Zhice Yang","Wearables Can Afford: Light-weight Indoor Positioning with Visible Light",false
 2015,"B","NIPS","Alon Orlitsky","Competitive Distribution Estimation: Why is Good-Turing Good",true
 2015,"B","NIPS","Max Jaderberg","Spatial Transformer Networks",false
 2015,"B","NIPS","Shaoqing Ren","Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks",false
-2015,"B","NIPS","Song Han","Learning both Weights and Connections for Efficient Neural Network.",false
 2015,"B","NIPS","Vasilis Syrgkanis","Fast Convergence of Regularized Learning in Games",true
+2015,"B","NIPS","song han","Learning both Weights and Connections for Efficient Neural Networks",false
 2015,"B","NSDI","Ben Pfaff","The Design and Implementation of Open vSwitch.",true
 2015,"B","NSDI","Dan R. K. Ports","Designing Distributed Systems Using Approximate Synchrony in Data Center Networks.",true
 2015,"B","NSDI","Kay Ousterhout","Making Sense of Performance in Data Analytics Frameworks.",false
@@ -928,19 +921,20 @@ year,level,conference,author,title,isBest
 2015,"B","PODS","Jonathan Ullman","Private Multiplicative Weights Beyond Linear Queries.",false
 2015,"B","PODS","Paraschos Koutris","The Data Complexity of Consistent Query Answering for Self-Join-Free Conjunctive Queries Under Primary Key Constraints",false
 2015,"B","PODS","Sudipto Guha","Vertex and Hyperedge Connectivity in Dynamic Graph Streams",false
-2015,"B","RTAS","Alhammad, A.","Memory efficient global scheduling of real-time tasks",false
-2015,"B","RTAS","Hoffmann, M.","dOSEK: the design and implementation of a dependability-oriented static embedded kernel",true
-2015,"B","RTAS","Imes, C.","POET: a portable approach to minimizing energy under soft real-time constraints",false
-2015,"B","RTAS","Mohamed Hassan","A framework for scheduling DRAM memory accesses for multi-core mixed-time critical systems.",false
+2015,"B","RTAS","Connor Imes","POET: a portable approach to minimizing energy under soft real-time constraints",false
+2015,"B","RTAS","Husheng Zhou","GPES: a preemptive execution system for GPGPU computing",false
+2015,"B","RTAS","Martin Hoffmann","dOSEK: the design and implementation of a dependability-oriented static embedded kernel",true
+2015,"B","RTAS","Mohamed Hassan","A framework for scheduling DRAM memory accesses for multi-core mixed-time critical systems",false
 2015,"B","SIGMETRICS","Justin Meza","A Large-Scale Study of Flash Memory Failures in the Field",false
 2015,"B","SIGMETRICS","Kristen Gardner","Reducing Latency via Redundant Requests: Exact Analysis",false
+2015,"B","SIGMETRICS","Peter Kairouz","Spy vs. Spy: Rumor Source Obfuscation.",true
 2015,"B","SIGMETRICS","Sanjib Sur","60 GHz Indoor Networking through Flexible Beams: A Link-Level Profiling",false
 2015,"B","SODA","Amir Abboud","Subcubic equivalences between graph centrality problems, APSP and diameter",false
+2015,"B","SODA","Andrew Chi-Chih Yao","An n-to-1 bidder reduction for multi-item auctions and its applications",false
 2015,"B","SODA","Bingkai Lin","The parameterized complexity of k-biclique",true
 2015,"B","SODA","Jaroslaw Byrka","An improved approximation for k-median, and positive correlation in budgeted optimization",false
-2015,"B","SODA","Michal Feldman","Combinatorial auctions via posted prices",false
-2015,"B","SPAA","Gary L. Miller","Improved Parallel Algorithms for Spanners and Hopsets",false
 2015,"B","SPAA","Kook Jin Ahn","Access to Data and Number of Iterations: Dual Primal Algorithms for Maximum Matching under Resource Constraints.",false
+2015,"B","SPAA","Tao B. Schardl","The Cilkprof Scalability Profiler",false
 2015,"B","SPAA","Yossi Azar","Speed Scaling in the Non-clairvoyant Model",true
 2015,"B","SPAA","Zhen Qiu","Minimizing the Total Weighted Completion Time of Coflows in Datacenter Networks",false
 2015,"B","SenSys","Allan Stisen","Smart Devices are Different: Assessing and MitigatingMobile Sensing Heterogeneities for Activity Recognition",false
@@ -1002,7 +996,6 @@ year,level,conference,author,title,isBest
 2014,"A","FSE/ESEC","William Enck","TaintDroid: an information flow tracking system for real-time privacy monitoring on smartphones",false
 2014,"A","HPCA","Kevin Kai-Wei Chang","Improving DRAM performance by parallelizing refreshes with accesses.",false
 2014,"A","HPCA","Lei Wang","BigDataBench: a Big Data Benchmark Suite from Internet Services.",false
-2014,"A","HPCA","Meng Zhang","PVCoherence: Designing flat coherence protocols for scalable verification",true
 2014,"A","HPCA","Wenhao Jia","MRPB: Memory request prioritization for massively parallel processors",false
 2014,"A","ICML","Danilo Jimenez Rezende","Stochastic Backpropagation and Approximate Inference in Deep Generative Models.",false
 2014,"A","ICML","Jeff Donahue","DeCAF: A Deep Convolutional Activation Feature for Generic Visual Recognition.",false
@@ -1022,9 +1015,7 @@ year,level,conference,author,title,isBest
 2014,"A","ICSE","Yepang Liu","Characterizing and detecting performance bugs for smartphone applications",true
 2014,"A","INFOCOM","Bing Wang","Privacy-preserving multi-keyword fuzzy search over encrypted data in the cloud",false
 2014,"A","INFOCOM","Dong Zhao","How to crowdsource tasks truthfully without sacrificing utility: Online incentive mechanisms with budget constraint",false
-2014,"A","INFOCOM","Virag Shah","Performance evaluation and asymptotics for Content Delivery Networks.",true
 2014,"A","INFOCOM","Zhenni Feng","TRAC: Truthful auction for location-aware collaborative sensing in mobile crowdsourcing",false
-2014,"A","INFOCOM","Zizhong Cao","Joint static and dynamic traffic scheduling in data center networks",true
 2014,"A","INFOCOM","t v lakshman","Joint static and dynamic traffic scheduling in data center networks",true
 2014,"A","KDD","Aaron Q. Li","Reducing the sampling complexity of topic models",true
 2014,"A","KDD","Bryan Perozzi","DeepWalk: online learning of social representations",false
@@ -1042,7 +1033,6 @@ year,level,conference,author,title,isBest
 2014,"A","OSDI","Andrew Baumann","Shielding applications from an untrusted cloud with Haven",true
 2014,"A","OSDI","Joseph E. Gonzalez","GraphX: graph processing in a distributed dataflow framework",false
 2014,"A","OSDI","Mu Li","Scaling distributed machine learning with the parameter server",false
-2014,"A","OSDI","Simon Peter","Arrakis: The Operating System Is the Control Plane.",true
 2014,"A","OSDI","Simon Peter","Arrakis: the operating system is the control plane",true
 2014,"A","PLDI","Jade Alglave","Herding Cats: Modelling, Simulation, Testing, and Data Mining for Weak Memory",false
 2014,"A","PLDI","Steven Arzt","FlowDroid: precise context, flow, field, object-sensitive and lifecycle-aware taint analysis for Android apps",false
@@ -1051,17 +1041,17 @@ year,level,conference,author,title,isBest
 2014,"A","PLDI","Wonsun Ahn","Improving JavaScript performance by deconstructing the type system",true
 2014,"A","PLDI","Xin Zhang","On abstraction refinement for program analyses in Datalog",true
 2014,"A","RTSS","Abusayeed Saifullah","CapNet: A Real-Time Wireless Management Network for Data Center Power Capping.",true
-2014,"A","RTSS","Alan Burns","A Wormhole NoC Protocol for Mixed Criticality Systems.",false
+2014,"A","RTSS","Alan Burns","A Wormhole NoC Protocol for Mixed Criticality Systems",false
 2014,"A","RTSS","Shiguang Wang","Towards Cyber-Physical Systems in Social Spaces: The Data Reliability Challenge",false
 2014,"A","RTSS","Xuefeng Liu","Wi-Sleep: Contactless Sleep Monitoring via WiFi Signals",false
-2014,"A","S&P","Eli Ben-Sasson","Zerocash: Decentralized Anonymous Payments from Bitcoin.",false
+2014,"A","S&P","Ben Sasson, E.","Zerocash: Decentralized Anonymous Payments from Bitcoin",false
 2014,"A","S&P","Enes Göktas","Out of Control: Overcoming Control-Flow Integrity",false
-2014,"A","S&P","Marcin Andrychowicz","Secure Multiparty Computations on Bitcoin",true
+2014,"A","S&P","Marcin Andrychowicz","Secure Multiparty Computations on Bitcoin",false
 2014,"A","S&P","Shayak Sen","Bootstrapping Privacy Compliance in Big Data Systems",true
-2014,"A","SC","Bilge Acun","Parallel programming with migratable objects: charm++ in practice",false
+2014,"A","SC","Acun, B.","Parallel Programming with Migratable Objects: Charm++ in Practice",false
 2014,"A","SC","David E. Shaw","Anton 2: raising the bar for performance and programmability in a special-purpose molecular dynamics supercomputer",false
 2014,"A","SC","Kai Ren","IndexFS: scaling file system metadata performance with stateless caching and bulk insertion",true
-2014,"A","SC","Maciej Besta","Slim fly: a cost effective low-diameter network topology",false
+2014,"A","SC","Maciej Besta","Slim Fly: A Cost Effective Low-Diameter Network Topology",false
 2014,"A","SIGCOMM","Aaron Gember-Jacobson","OpenNF: enabling innovation in network function control",false
 2014,"A","SIGCOMM","David Naylor","Balancing accountability and privacy in the network",true
 2014,"A","SIGCOMM","Mohammad Alizadeh","CONGA: distributed congestion-aware load balancing for datacenters",true
@@ -1110,7 +1100,6 @@ year,level,conference,author,title,isBest
 2014,"B","ACSAC","Tamas K. Lengyel","Scalability, fidelity and stealth in the DRAKVUF dynamic malware analysis system.",false
 2014,"B","ASIACRYPT","Begül Bilgin","Higher-Order Threshold Implementations.",false
 2014,"B","ASIACRYPT","Jérémy Jean","Tweaks and Keys for Block Ciphers: The TWEAKEY Framework.",false
-2014,"B","ASIACRYPT","Qian Guo","Solving LPN Using Covering Codes.",true
 2014,"B","ASIACRYPT","Siwei Sun","Automatic Security Evaluation and (Related-key) Differential Characteristic Search: Application to SIMON, PRESENT, LBlock, DES(L) and Other Bit-Oriented Block Ciphers.",false
 2014,"B","CIKM","George D. Montanez","Cross-Device Search",true
 2014,"B","CIKM","Quan Yuan","Graph-based Point-of-interest Recommendation with Geographical and Temporal Influences",false
@@ -1121,20 +1110,18 @@ year,level,conference,author,title,isBest
 2014,"B","CoNEXT","Jie Xiong","MIDAS: Empowering 802.11ac Networks with Multiple-Input Distributed Antenna Systems.",true
 2014,"B","CoNEXT","Robert Soulé","Merlin: A Language for Provisioning Network Resources.",false
 2014,"B","DAC","Anuj Pathania","Integrated CPU-GPU power management for 3D mobile games",false
-2014,"B","DAC","Athavale, V.","Code coverage of assertions using RTL source code analysis",true
-2014,"B","DAC","Leonidas Kosmidis","Containing Timing-Related Certification Cost in Automotive Systems Deploying Complex Hardware",true
 2014,"B","DAC","Luca Gaetano Amarù","Majority-Inverter Graph: A Novel Data-Structure and Algorithms for Efficient Logic Optimization.",false
 2014,"B","DAC","Muhammad Shafique","The EDA Challenges in the Dark Silicon Era: Temperature, Reliability, and Variability Perspectives",false
+2014,"B","DAC","Viraj Athavale","Code coverage of assertions using RTL source code analysis",true
 2014,"B","DATE","Benoît Dupont de Dinechin","Time-critical computing on a single-chip massively parallel processor",false
 2014,"B","DATE","Cong Liu","A low-power, high-performance approximate multiplier with configurable partial error recovery",false
-2014,"B","DATE","Dominik Erb","Efficient SMT-based ATPG for interconnect open defects",true
-2014,"B","DATE","Michael B. Taylor","A landscape of the new dark silicon design regime",false
 2014,"B","DATE","Mudit Bhargava","An efficient reliable PUF-based cryptographic key generator in 65nm CMOS",true
 2014,"B","DATE","Sofiane Lagraa","Scalability bottlenecks discovery in MPSoC platforms using data mining on simulation traces",true
+2014,"B","DATE","Taylor, Michael B.","A landscape of the new dark silicon design regime",false
 2014,"B","DATE","Weiwei Chen","May-happen-in-parallel analysis based on segment graphs for safe ESL models",true
 2014,"B","ECCV","C. Lawrence Zitnick","Edge Boxes: Locating Object Proposals from Edges.",false
-2014,"B","ECCV","He, K.","Spatial Pyramid Pooling in Deep Convolutional Networks for Visual Recognition",false
 2014,"B","ECCV","Jia Deng","Large-Scale Object Classification Using Label Relation Graphs.",true
+2014,"B","ECCV","Kaiming He","Spatial Pyramid Pooling in Deep Convolutional Networks for Visual Recognition",false
 2014,"B","ECCV","Tsung-Yi Lin","Microsoft COCO: Common Objects in Context.",false
 2014,"B","ECOOP","Cyrus Omar","Safely Composable Type-Specific Languages.",true
 2014,"B","ECOOP","Gavin M. Bierman","Understanding TypeScript.",false
@@ -1156,10 +1143,9 @@ year,level,conference,author,title,isBest
 2014,"B","ICALP","Amir Abboud","Consequences of Faster Alignment of Sequences.",false
 2014,"B","ICALP","Joël Ouaknine","Ultimate Positivity is Decidable for Simple Linear Recurrence Sequences.",true
 2014,"B","ICALP","Mikolaj Bojanczyk","Transducers with Origin Information.",false
-2014,"B","ICALP","Thomas Place","Going Higher in the First-Order Quantifier Alternation Hierarchy on Words.",false
+2014,"B","ICALP","Thomas Place","Going Higher in First-Order Quantifier Alternation Hierarchies on Words",false
 2014,"B","ICDM","François Petitjean","Dynamic Time Warping Averaging of Time Series Allows Faster and More Accurate Classification",false
 2014,"B","ICDM","Nada El-Gendy","Big Data Analytics: A Literature Review Paper.",false
-2014,"B","ICDM","Samuel Maurus","Ternary Matrix Factorization",true
 2014,"B","ICDM","Zhengming Ding","Low-Rank Common Subspace for Multi-view Learning",false
 2014,"B","ICDT","Daniel Deutch","Circuits for Datalog Provenance.",false
 2014,"B","ICDT","Egor V. Kostylev","Containment of Data Graph Queries.",false
@@ -1195,24 +1181,24 @@ year,level,conference,author,title,isBest
 2014,"B","NIPS","Ilya Sutskever","Sequence to Sequence Learning with Neural Networks.",false
 2014,"B","NIPS","Jason Yosinski","How transferable are features in deep neural networks?",false
 2014,"B","NSDI","Fadel Adib","3D tracking via body radio reflections",false
+2014,"B","NSDI","Jinho Hwang","NetVM: High Performance and Flexible Networking Using Virtualization on Commodity Platforms",false
 2014,"B","NSDI","Joao Martins","ClickOS and the art of network function virtualization",false
 2014,"B","NSDI","Mihai Dobrescu","Software dataplane verification",true
-2014,"B","NSDI","Teemu Koponen","Network virtualization in multi-tenant datacenters",false
 2014,"B","PACT","Cheng-Chieh Huang","ATCache: reducing DRAM cache latency via a small SRAM tag cache",false
 2014,"B","PACT","Harshvardhan","KLA: a new algorithmic paradigm for parallel graph computations",true
 2014,"B","PACT","Jason Ansel","OpenTuner: an extensible framework for program autotuning",false
 2014,"B","PACT","Ying Ye","COLORIS: a dynamic cache partitioning system using page coloring",false
-2014,"B","PODS","Cohen, E.","All-Distances Sketches, Revisited: HIP Estimators for Massive Graphs Analysis",false
+2014,"B","PODS","Edith Cohen","All-Distances Sketches, Revisited: HIP Estimators for Massive Graphs Analysis",false
 2014,"B","PODS","Marcelo Arenas","Expressive languages for querying the semantic web",false
 2014,"B","PODS","Paul Beame","Skew in parallel query processing",false
 2014,"B","PODS","Tom J. Ameloot","Weaker forms of monotonicity for declarative networking: a more fine-grained answer to the calm-conjecture",true
 2014,"B","RTAS","Heechul Yun","PALLOC: DRAM bank-aware memory allocator for performance isolation on multicore platforms",false
 2014,"B","RTAS","Hyoseung Kim","Bounding memory interference delay in COTS-based multi-core systems",true
-2014,"B","RTAS","Michael Zimmer","FlexPRET: A processor platform for mixed-criticality systems.",false
+2014,"B","RTAS","Michael Zimmer","FlexPRET: A processor platform for mixed-criticality systems",false
 2014,"B","SDM","Alex Beutel","FlexiFaCT: Scalable Flexible Factorization of Coupled Tensors on Hadoop.",false
+2014,"B","SDM","Hoang Thanh Lam","Mining Compressing Sequential Patterns.",false
 2014,"B","SDM","Sheng Li","Robust Subspace Discovery through Supervised Low-Rank Constraints.",true
 2014,"B","SDM","William S. Cleveland","Data science: An action plan for expanding the technical areas of the field of statistics.",false
-2014,"B","SDM","hoang thanh lam","Mining Compressing Sequential Patterns",false
 2014,"B","SIGMETRICS","Neil Stuart Walton","Concave Switching in Single and Multihop Networks.",true
 2014,"B","SIGMETRICS","Nicolas Viennot","A measurement study of google play",false
 2014,"B","SIGMETRICS","Samira Manabi Khan","The efficacy of error mitigation techniques for DRAM retention failures: a comparative experimental study.",false
@@ -1234,11 +1220,11 @@ year,level,conference,author,title,isBest
 2014,"B","UIST","Daniela Retelny","Expert crowdsourcing with flash teams",true
 2014,"B","UIST","Ken Hinckley","Sensing techniques for tablet+stylus interaction",true
 2014,"B","UIST","Simon Olberding","PrintScreen: fabricating highly customizable thin-film touch-displays",true
+2013,"A","AAAI","Boyang Li","Story Generation with Crowdsourced Plot Graphs.",false
 2013,"A","AAAI","Gary Doran","SMILe: Shuffled Multiple-Instance Learning.",true
 2013,"A","AAAI","Janardhan Rao Doppa","HC-Search: Learning Heuristics and Cost Functions for Structured Prediction.",true
 2013,"A","AAAI","Niveda Krishnamoorthy","Generating Natural-Language Video Descriptions Using Text-Mined Knowledge.",false
 2013,"A","AAAI","Thanh Hong Nguyen","Analyzing the Effectiveness of Adversary Modeling in Security Games.",false
-2013,"A","AAAI","Yueting Zhuang","Supervised Coupled Dictionary Learning with Group Structures for Multi-modal Retrieval.",false
 2013,"A","CHI","Agha Ali Raza","Job opportunities through entertainment: virally spread speech-based services for low-literate users",true
 2013,"A","CHI","Basak Alper","Weighted graph comparison techniques for brain connectivity analysis",true
 2013,"A","CHI","Brett R. Jones","IllumiRoom: peripheral projected illusions for interactive experiences",true
@@ -1247,9 +1233,9 @@ year,level,conference,author,title,isBest
 2013,"A","CHI","Eric B. Hekler","Mind the theoretical gap: interpreting, using, and developing behavioral theory in HCI research",true
 2013,"A","CHI","Harold Thimbleby","Reasons to question seven segment displays",true
 2013,"A","CHI","Jeffrey Bardzell","What is ""critical"" about critical design?",true
+2013,"A","CHI","Joshua G. Tanenbaum","Democratizing technology: pleasure, utility and expressiveness in DIY and maker practice",false
 2013,"A","CHI","Lilly C. Irani","Turkopticon: interrupting worker invisibility in amazon mechanical turk",true
 2013,"A","CHI","Lisa Anthony","Analyzing user-generated youtube videos to understand touchscreen use by people with motor impairments",true
-2013,"A","CHI","Michael S. Bernstein","Quantifying the invisible audience in social networks",false
 2013,"A","CHI","Mohamed Musthag","Labor dynamics in a mobile micro-task market",true
 2013,"A","CHI","Paul Denny","The effect of virtual achievements on student engagement",false
 2013,"A","CHI","Ranjitha Kumar","Webzeitgeist: design mining the web",true
@@ -1277,8 +1263,8 @@ year,level,conference,author,title,isBest
 2013,"A","FOCS","Sanjam Garg","Candidate Indistinguishability Obfuscation and Functional Encryption for all Circuits",false
 2013,"A","HPCA","Donghyuk Lee","Tiered-latency DRAM: A low latency and low cost DRAM architecture",false
 2013,"A","HPCA","Emily Blem","Power struggles: Revisiting the RISC vs. CISC debate on contemporary ARM and x86 architectures",false
+2013,"A","HPCA","Mu-Tien Chang","Technology comparison for large last-level caches (L3Cs): Low-leakage SRAM, low write-energy STT-RAM, and refresh-optimized eDRAM",false
 2013,"A","HPCA","Richard Sampson","Sonic Millip3De: A massively parallel 3D-stacked accelerator for 3D ultrasound",true
-2013,"A","HPCA","mutien chang","Technology comparison for large last-level caches (L 3 Cs): Low-leakage SRAM, low write-energy STT-RAM, and refresh-optimized eDRAM",false
 2013,"A","ICCV","Heng Wang","Action Recognition with Improved Trajectories",false
 2013,"A","ICCV","Piotr Dollár","Structured Forests for Fast Edge Detection",false
 2013,"A","ICCV","Radu Timofte","Anchored Neighborhood Regression for Fast Example-Based Super-Resolution",false
@@ -1286,7 +1272,7 @@ year,level,conference,author,title,isBest
 2013,"A","ICDE","Andy Yuan Xue","Destination prediction by sub-trajectory synthesis and privacy protection against such prediction",false
 2013,"A","ICDE","Michael J. Franklin","Crowdsourced enumeration queries",true
 2013,"A","ICDE","Viktor Leis","The adaptive radix tree: ARTful indexing for main-memory databases",false
-2013,"A","ICDE","Wahbeh H. Qardaji","Differentially private grids for geospatial data.",false
+2013,"A","ICDE","Wahbeh H. Qardaji","Differentially private grids for geospatial data",false
 2013,"A","ICML","Ian J. Goodfellow","Maxout Networks",false
 2013,"A","ICML","Ilya Sutskever","On the importance of initialization and momentum in deep learning.",false
 2013,"A","ICML","Razvan Pascanu","On the difficulty of training recurrent neural networks.",false
@@ -1307,19 +1293,19 @@ year,level,conference,author,title,isBest
 2013,"A","IJCAI","Ziyu Wang","Bayesian optimization in high dimensions via random embeddings",true
 2013,"A","INFOCOM","Boyang Wang","Public auditing for shared data with efficient user revocation in the cloud",false
 2013,"A","INFOCOM","Elisha J. Rosensweig","On the steady-state of cache networks.",true
-2013,"A","INFOCOM","Sugam Agarwal","Traffic engineering in software defined networks.",false
+2013,"A","INFOCOM","Sugam Agarwal","Traffic engineering in software defined networks",false
 2013,"A","INFOCOM","Yang Kan","DAC-MACS: Effective data access control for multiauthority cloud storage systems",false
 2013,"A","KDD","Chris Thornton","Auto-WEKA: combined selection and hyperparameter optimization of classification algorithms",false
 2013,"A","KDD","Edo Liberty","Simple and deterministic matrix sketching",true
 2013,"A","KDD","H. Brendan McMahan","Ad click prediction: a view from the trenches",false
 2013,"A","KDD","Yu Zheng","U-Air: when urban air quality inference meets big data",false
+2013,"A","LICS","Alur, R.","Regular Functions and Cost Register Automata",false
 2013,"A","LICS","Daniel R. Licata","Calculating the Fundamental Group of the Circle in Homotopy Type Theory",false
 2013,"A","LICS","Ioana Cristescu","A Compositional Semantics for the Reversible p-Calculus",false
 2013,"A","LICS","Ori Lahav","From Frame Properties to Hypersequent Rules in Modal Logics",true
-2013,"A","LICS","Rajeev Alur","Regular Functions and Cost Register Automata",false
 2013,"A","MOBICOM","Karthikeyan Sundaresan","FluidNet: a flexible cloud-based radio access network for small cells",false
-2013,"A","MOBICOM","Muhammad Shahzad","Secure unlocking of mobile touch screen devices by simple gestures: you can see it but you can not do it",false
 2013,"A","MOBICOM","Qifan Pu","Whole-home gesture recognition using wireless signals",true
+2013,"A","MOBICOM","Yong Li","Multiple Mobile Data Offloading Through Disruption Tolerant Networks",false
 2013,"A","PLDI","Alexander S. Green","Quipper: a scalable quantum programming language",false
 2013,"A","PLDI","Chinawat Isradisaikul","Reconciling exhaustive pattern matching with objects",true
 2013,"A","PLDI","Jeff Huang","CLAP: recording local executions to reproduce concurrency failures",true
@@ -1330,18 +1316,18 @@ year,level,conference,author,title,isBest
 2013,"A","RTSS","Alexander Wieder","On Spin Locks in AUTOSAR: Blocking Analysis of FIFO, Unordered, and Priority-Ordered Spin Locks",false
 2013,"A","RTSS","Glenn A. Elliott","GPUSync: A Framework for Real-Time GPU Management",false
 2013,"A","RTSS","Yi-Hung Wei","RT-WiFi: Real-Time High-Speed Communication Protocol for Wireless Cyber-Physical Control Applications",true
-2013,"A","S&P","Bryan Parno","Pinocchio: Nearly Practical Verifiable Computation",true
-2013,"A","S&P","Ian Miers","Zerocoin: Anonymous Distributed E-Cash from Bitcoin",false
+2013,"A","S&P","Bryan Parno","Pinocchio: nearly practical verifiable computation.",false
 2013,"A","S&P","Laszlo Szekeres","SoK: Eternal War in Memory",false
+2013,"A","S&P","Miers, I.","Zerocoin: Anonymous Distributed E-Cash from Bitcoin",false
 2013,"A","SC","Cindy Rubio-González","Precimonious: tuning assistant for floating-point precision",false
 2013,"A","SC","Michael S. Warren","2HOT: an improved parallel hashed oct-tree n-body algorithm for cosmological simulation",true
-2013,"A","SC","Nikola Rajovic","Supercomputing with commodity CPUs: are mobile SoCs ready for HPC?",false
-2013,"A","SC","Richard M. Yoo","Performance evaluation of Intel® transactional synchronization extensions for high-performance computing",false
+2013,"A","SC","Rajovic, N.","Supercomputing with commodity CPUs: Are mobile SoCs ready for HPC?",false
+2013,"A","SC","Richard M. Yoo","Performance evaluation of Intel® Transactional Synchronization Extensions for high-performance computing",false
 2013,"A","SIGCOMM","Chi-Yao Hong","Achieving high utilization with software-driven WAN",false
 2013,"A","SIGCOMM","Dinesh Bharadia","Full duplex radios",false
 2013,"A","SIGCOMM","Sushant Jain","B4: experience with a globally-deployed software defined wan",false
 2013,"A","SIGCOMM","Vincent Liu","Ambient backscatter: wireless communication out of thin air",true
-2013,"A","SIGIR","Hao Ma","An experimental study on implicit social recommendation",false
+2013,"A","SIGIR","Jovian Lin","Addressing cold-start in app recommendation: latent user models constructed from twitter followers",false
 2013,"A","SIGIR","Quan Yuan","Time-aware point-of-interest recommendation",false
 2013,"A","SIGIR","Rishabh Mehrotra","Improving LDA topic models for microblogs via tweet pooling and automatic labeling",false
 2013,"A","SIGIR","Ryen White","Beliefs and biases in web search",true
@@ -1363,15 +1349,15 @@ year,level,conference,author,title,isBest
 2013,"A","USENIX ATC","Dejan Novaković","DeepDive: transparently identifying and managing performance interference in virtualized environments",false
 2013,"A","USENIX ATC","Nathan Bronson","TAO: Facebook's distributed data store for the social graph",false
 2013,"A","USENIX ATC","Sooman Jeong","I/O stack optimization for smartphones",true
-2013,"A","USENIX Security","Damien Octeau","Effective Inter-Component Communication Mapping in Android: An Essential Step Towards Holistic Security Analysis.",false
+2013,"A","USENIX Security","Damien Octeau","Effective inter-component communication mapping in Android with Epicc: an essential step towards holistic security analysis",false
 2013,"A","USENIX Security","Frank Imeson","Securing computer hardware using 3D integrated circuit (IC) technology and split manufacturing for obfuscation",true
 2013,"A","USENIX Security","Mingwei Zhang","Control flow integrity for COTS binaries",true
 2013,"A","USENIX Security","Sriram Keelveedhi","DupLESS: Server-Aided Encryption for Deduplicated Storage.",false
 2013,"A","USENIX Security","Zakir Durumeric","ZMap: fast internet-wide scanning and its security applications",false
+2013,"A","VLDB","Ahmed Eldawy","A demonstration of SpatialHadoop: an efficient mapreduce framework for spatial data",false
 2013,"A","VLDB","Christos Doulkeridis","A survey of large-scale analytical query processing in MapReduce",false
 2013,"A","VLDB","Lisi Chen","Spatial keyword query processing: an experimental evaluation",false
 2013,"A","VLDB","Marina Drosou","DisC diversity: result diversification based on dissimilarity and coverage",true
-2013,"A","VLDB","jia xu","Differentially Private Histogram Publication",false
 2013,"A","WWW","Cristian Danescu-Niculescu-Mizil","No country for old members: user lifecycle and linguistic change in online communities",true
 2013,"A","WWW","Jérôme Kunegis","KONECT: the Koblenz network collection",false
 2013,"A","WWW","Nicolas Christin","Traveling the silk road: a measurement analysis of a large anonymous online marketplace",false
@@ -1382,15 +1368,15 @@ year,level,conference,author,title,isBest
 2013,"B","ACL","Ryan T. McDonald","Universal Dependency Annotation for Multilingual Parsing.",false
 2013,"B","ACSAC","Behrad Garmany","PRIME: private RSA infrastructure for memory-less encryption",true
 2013,"B","ACSAC","Ting-Fang Yen","Beehive: large-scale log analysis for detecting suspicious activity in enterprise networks",false
-2013,"B","ACSAC","William Young","Systems thinking for safety and security",false
 2013,"B","ACSAC","Zhui Deng","SPIDER: stealthy binary program instrumentation and debugging via hardware virtualization",false
+2013,"B","ACSAC","william edward young","Systems thinking for safety and security",false
 2013,"B","ASIACRYPT","Charanjit S. Jutla","Shorter Quasi-Adaptive NIZK Proofs for Linear Subspaces",true
 2013,"B","ASIACRYPT","Dan Boneh","Constrained Pseudorandom Functions and Their Applications.",false
 2013,"B","ASIACRYPT","Elena Andreeva","Parallelizable and Authenticated Online Ciphers",false
 2013,"B","CIKM","Ilaria Bordino","Penguins in sweaters, or serendipitous entity search on user-generated content",true
-2013,"B","CIKM","Liu Yang","CQArank: jointly model topics and expertise in community question answering",false
 2013,"B","CIKM","Po-Sen Huang","Learning deep structured semantic models for web search using clickthrough data",false
 2013,"B","CIKM","Xiangnan Kong","Inferring anchor links across multiple heterogeneous social networks",false
+2013,"B","CIKM","Xin Liu","Personalized point-of-interest recommendation by mining users' preference transition",false
 2013,"B","CoNEXT","Alessandro Finamore","Is there a case for mobile phone content pre-staging?",true
 2013,"B","CoNEXT","Ashish Vulimiri","Low latency via redundancy",false
 2013,"B","CoNEXT","Nanxi Kang","Optimizing the ""one big switch"" abstraction in software-defined networks",false
@@ -1399,20 +1385,20 @@ year,level,conference,author,title,isBest
 2013,"B","DASFAA","Hongyu Liang","On the Complexity of t-Closeness Anonymization and Related Problems.",true
 2013,"B","DASFAA","Ladjel Bellatreche","Semantic Data Warehouse Design: From ETL to Deployment à la Carte.",false
 2013,"B","DASFAA","Nguyen Quoc Viet Hung","On Leveraging Crowdsourcing Techniques for Schema Matching Networks.",false
+2013,"B","DATE","Cai, Yu","Threshold voltage distribution in MLC NAND flash memory: Characterization, analysis, and modeling",false
 2013,"B","DATE","Hang Su","An elastic mixed-criticality task model and its scheduling algorithm",false
+2013,"B","DATE","Huang, Ke","Handling discontinuous effects in modeling spatial correlation of wafer-level analog/RF tests",true
 2013,"B","DATE","Jeyavijayan Rajendran","Is split manufacturing secure?",false
-2013,"B","DATE","Ke Huang","Handling discontinuous effects in modeling spatial correlation of wafer-level analog/RF tests",true
 2013,"B","DATE","Nan Guan","FIFO cache analysis for WCET estimation: a quantitative approach",true
 2013,"B","DATE","Roberto Diversi","SCC thermal model identification via advanced bias-compensated least-squares",true
 2013,"B","DATE","Seokin Hong","AVICA: an access-time variation insensitive L1 cache architecture",true
-2013,"B","DATE","Yu Cai","Threshold voltage distribution in MLC NAND flash memory: characterization, analysis, and modeling",false
 2013,"B","ECOOP","Arvind K. Sujeeth","Composition and reuse with compiled domain-specific languages",false
 2013,"B","ECOOP","Cormac Flanagan","RedCard: redundant check elimination for dynamic race detectors",true
 2013,"B","ECOOP","Samira Tasharofi","Why do scala developers mix the actor model with other concurrency models?",false
 2013,"B","ECOOP","Stas Negara","A comparative study of manual and automated refactorings",false
 2013,"B","EMNLP","Jonathan Berant","Semantic Parsing on Freebase from Question-Answer Pairs.",false
+2013,"B","EMNLP","Nal Kalchbrenner","Recurrent Continuous Translation Models.",false
 2013,"B","EMNLP","Valentin I. Spitkovsky","Breaking Out of Local Optima with Count Transforms and Model Recombination: A Study in Grammar Induction.",true
-2013,"B","EMNLP","phil blunsom","Recurrent Continuous Translation Models",false
 2013,"B","EMNLP","richard socher","Recursive Deep Models for Semantic Compositionality Over a Sentiment Treebank",false
 2013,"B","FPGA","Louis-Noel Pouchet","Polyhedral-based data reuse optimization for configurable computing",true
 2013,"B","FPGA","Sai Rahul Chalamalasetti","An FPGA memcached appliance",false
@@ -1422,14 +1408,14 @@ year,level,conference,author,title,isBest
 2013,"B","HPDC","Sriram Lakshminarasimhan","Scalable in situ scientific data encoding for analytical query processing",true
 2013,"B","HPDC","Xiangping Bu","Interference and locality-aware task scheduling for MapReduce applications in virtual clusters",false
 2013,"B","ICALP","Dariusz Dereniowski","Fast collaborative graph exploration",true
+2013,"B","ICALP","George B. Mertzios","Temporal Network Optimization Subject to Connectivity Constraints.",false
 2013,"B","ICALP","John Fearnley","Reachability in two-clock timed automata is PSPACE-Complete",true
 2013,"B","ICALP","Mark Bun","Dual lower bounds for approximate degree and markov-bernstein inequalities",true
 2013,"B","ICALP","Pierre-Malo Deniélou","Multiparty compatibility in communicating automata: characterisation and synthesis of global session types",false
-2013,"B","ICALP","erik d demaine","The Two-Handed Tile Assembly Model Is Not Intrinsically Universal",false
-2013,"B","ICALP","hans l bodlaender","Deterministic single exponential time algorithms for connectivity problems parameterized by treewidth",false
-2013,"B","ICCAD","M. Rostami","Hardware security: threat models and metrics",false
+2013,"B","ICALP","Wojciech Czerwiński","Efficient separability of regular languages by subsequences and suffixes",false
 2013,"B","ICCAD","Rana Muhammad Bilal","ISOMER: integrated selection, partitioning, and placement methodology for reconfigurable architectures",true
 2013,"B","ICCAD","Rong Ye","On reconfiguration-oriented approximate adder design and its application",false
+2013,"B","ICCAD","Rostami, M.","Hardware security: Threat models and metrics",false
 2013,"B","ICCAD","Stephan Eggersglüß","Improved SAT-based ATPG: more constraints, better compaction",true
 2013,"B","ICCAD","Yu, B.","Methodology for Standard Cell Compliance and Detailed Placement for Triple Patterning Lithography",true
 2013,"B","ICDM","Jaewon Yang","Community Detection in Networks with Node Attributes",false
@@ -1437,16 +1423,15 @@ year,level,conference,author,title,isBest
 2013,"B","ICDM","Sejeong Kwon","Prominent Features of Rumor Propagation in Online Social Media",false
 2013,"B","ICDM","Wei Xie","TopicSketch: Real-Time Bursty Topic Detection from Twitter.",false
 2013,"B","ICDT","Chao Li","A theory of pricing private data",true
-2013,"B","ICDT","Leonid Libkin","Querying graph databases with XPath",false
+2013,"B","ICDT","Leopoldo E. Bertossi","Data Cleaning and Query Answering with Matching Dependencies and Matching Functions",false
 2013,"B","ICDT","Susan B. Davidson","Using the crowd for top-k and group-by queries",false
-2013,"B","ICME","Ahmed Kirmani","SPUMIC: Simultaneous phase unwrapping and multipath interference cancellation in time-of-flight cameras using spectral methods.",false
+2013,"B","ICME","Ahmed Kirmani","SPUMIC: Simultaneous phase unwrapping and multipath interference cancellation in time-of-flight cameras using spectral methods",false
 2013,"B","ICME","Ye He","Food image analysis: Segmentation, identification and weight estimation",false
 2013,"B","ICME","Yijuan Lu","Human movement summarization and depiction from videos",true
 2013,"B","ICME","Yuming Fang","Video saliency incorporating spatiotemporal cues and uncertainty weighting.",false
-2013,"B","ICRA","Anirudha Majumdar","Control Design along Trajectories with Sums of Squares Programming",true
 2013,"B","ICRA","Christian Kerl","Robust odometry estimation for RGB-D cameras",false
 2013,"B","ICRA","Sangok Seok","Design principles for highly efficient quadrupeds and implementation on the MIT Cheetah robot",false
-2013,"B","ICRA","Thomas Whelan","Robust real-time visual odometry for dense RGB-D mapping.",false
+2013,"B","ICRA","Whelan, T.","Robust real-time visual odometry for dense RGB-D mapping",false
 2013,"B","IPSN","Chenren Xu","SCPL: Indoor device-free multi-subject counting and localization using radio signal strength",false
 2013,"B","IPSN","Matthew Faulkner","A fresh perspective: learning to sparsify for detection in massive noisy sensor networks",true
 2013,"B","IPSN","Roman Lim","FlockLab: a testbed for distributed, synchronized tracing and profiling of wireless embedded systems",false
@@ -1495,12 +1480,12 @@ year,level,conference,author,title,isBest
 2013,"B","SIGMETRICS","David R. Karger","Efficient crowdsourcing for multi-class labeling",false
 2013,"B","SIGMETRICS","John N. Tsitsiklis","Queueing system topologies with limited flexibility",true
 2013,"B","SIGMETRICS","Ning Ding","Characterizing and modeling the impact of wireless signal strength on smartphone battery drain",false
-2013,"B","SIGMETRICS","Zhenhua Liu","Data center demand response: avoiding the coincident peak via workload shifting and local generation",false
+2013,"B","SIGMETRICS","zhenhua liu","Data center demand response: Avoiding the coincident peak via workload shifting and local generation",false
 2013,"B","SODA","Bruce M. Kapron","Dynamic graph connectivity in polylogarithmic worst case time",true
 2013,"B","SODA","Dan Feldman","Turning big data into tiny data: constant-size coresets for k-means, PCA and projective clustering",false
 2013,"B","SODA","Derek G. Murray","Naiad: a timely dataflow system",false
 2013,"B","SODA","Martin Grohe","A simple algorithm for the graph minor decomposition: logic meets structural graph theory",true
-2013,"B","SODA","austin t clements","The scalable commutativity rule: designing scalable software for multicore processors",false
+2013,"B","SODA","Xi Wang","Towards optimization-safe systems: analyzing the impact of undefined behavior",false
 2013,"B","SPAA","Gary L. Miller","Parallel graph decompositions using random shifts",false
 2013,"B","SPAA","Grey Ballard","Communication optimal parallel multiplication of sparse random matrices",false
 2013,"B","SPAA","Martina Eikel","IRIS: a robust information system against insider dos-attacks",true
@@ -1514,7 +1499,7 @@ year,level,conference,author,title,isBest
 2013,"B","UIST","Lining Yao","PneUI: pneumatically actuated soft composite materials for shape changing interfaces",true
 2013,"B","UIST","Makoto Ono","Touch & activate: adding interactivity to existing objects using active acoustic sensing",true
 2013,"B","UIST","Sean Follmer","inFORM: dynamic physical affordances and constraints through shape and object actuation",false
-2013,"B","UIST","Tom Carter","UltraHaptics: multi-point mid-air haptic feedback for touch surfaces",false
+2013,"B","UIST","tom s carter","UltraHaptics: multi-point mid-air haptic feedback for touch surfaces",false
 2012,"A","AAAI","Chen Cheng","Fused Matrix Factorization with Geographical and Social Influence in Location-Based Social Networks.",false
 2012,"A","AAAI","Oliver Parson","Non-Intrusive Load Monitoring Using Prior Models of General Appliance Types.",false
 2012,"A","AAAI","Suicheng Gu","Learning SVM Classifiers with Indefinite Kernels.",true
@@ -1559,13 +1544,12 @@ year,level,conference,author,title,isBest
 2012,"A","FSE/ESEC","Bradley E. Cossette","Seeking the ground truth: a retroactive study on the evolution and migration of software libraries",true
 2012,"A","FSE/ESEC","Christian Bird","Assessing the value of branches with what-if analysis",true
 2012,"A","FSE/ESEC","Emina Torlak","Scalable test data generation from multidimensional models",true
-2012,"A","FSE/ESEC","Emmanuel Candès","Exact matrix completion via convex optimization",false
+2012,"A","FSE/ESEC","Emmanuel J. Candès","Exact Matrix Completion via Convex Optimization",false
 2012,"A","FSE/ESEC","Pedro Domingos","A few useful things to know about machine learning",false
 2012,"A","FSE/ESEC","Van Jacobson","Networking named content",false
 2012,"A","FSE/ESEC","christopher bird","Appendix to Assessing the Value of Branches with What-if Analysis",true
 2012,"A","HPCA","Arun Raghavan","Computational sprinting",true
 2012,"A","HPCA","Jacob T. Adriaens","The case for GPGPU spatial multitasking",false
-2012,"A","HPCA","John Sartori","Power balanced pipelines",true
 2012,"A","HPCA","Lei Jiang","Improving write operations in MLC phase change memory",false
 2012,"A","HPCA","Steven Battle","Flexible register management using reference counting",true
 2012,"A","ICML","Frank Seide","Conversational Speech Transcription Using Context-Dependent Deep Neural Networks.",false
@@ -1574,20 +1558,17 @@ year,level,conference,author,title,isBest
 2012,"A","ICML","Yoshua Bengio","Deep Learning of Representations for Unsupervised and Transfer Learning.",false
 2012,"A","ICSE","Abram Hindle","On the naturalness of software",false
 2012,"A","ICSE","Claire Le Goues","A systematic study of automated program repair: fixing 55 out of 105 bugs for $8 each",false
-2012,"A","ICSE","Dietz, W.","Understanding integer overflow in C/C++",true
 2012,"A","ICSE","Jian Zhou","Where should the bugs be fixed? - more accurate information retrieval-based bug localization based on bug reports",false
 2012,"A","ICSE","Mehdi Mirakhorli","A tactic-centric approach for automating traceability of quality concerns",true
 2012,"A","ICSE","Michalis Famelis","Partial models: towards modeling and reasoning with uncertainty",true
-2012,"A","ICSE","Pingyu Zhang","Amplifying tests to validate exception handling code",true
-2012,"A","ICSE","Roehm, T.","How do professional developers comprehend software?",true
 2012,"A","ICSE","ThanhVu Nguyen","Using dynamic analysis to discover polynomial and array invariants",true
+2012,"A","ICSE","Tobias Roehm","How do professional developers comprehend software?",true
 2012,"A","ICSE","Will Dietz","Understanding integer overflow in C/C++",true
-2012,"A","INFOCOM","Carlee Joe-Wong","Multi-resource allocation: Fairness-efficiency tradeoffs in a unifying framework.",true
 2012,"A","INFOCOM","Chenshu Wu","WILL: Wireless indoor localization without site survey",false
 2012,"A","INFOCOM","Sokol Kosta","ThinkAir: Dynamic resource allocation and parallel execution in the cloud for mobile code offloading.",false
 2012,"A","INFOCOM","Vijay Kumar Adhikari","Unreeling netflix: Understanding and improving multi-CDN movie delivery.",false
+2012,"A","KDD","Alan Ritter","Open domain event extraction from twitter",false
 2012,"A","KDD","Jing Yuan","Discovering regions of different functions in a city using human mobility and POIs",false
-2012,"A","KDD","Seth A. Myers","Information diffusion and external influence in networks",false
 2012,"A","KDD","Thanawin Rakthanmanon","Searching and mining trillions of time series subsequences under dynamic time warping",true
 2012,"A","LICS","Andre Platzer","Logics of Dynamical Systems",false
 2012,"A","LICS","Andre Platzer","The Complete Proof Theory of Hybrid Systems",false
@@ -1602,23 +1583,19 @@ year,level,conference,author,title,isBest
 2012,"A","OSDI","Joseph E. Gonzalez","PowerGraph: distributed graph-parallel computation on natural graphs",false
 2012,"A","OSDI","Mona Attariyan","X-ray: automating root-cause diagnosis of performance anomalies in production software",true
 2012,"A","PLDI","Guoliang Jin","Understanding and detecting real-world performance bugs",false
-2012,"A","PLDI","Peter Hawkins","Concurrent data representation synthesis",true
 2012,"A","PLDI","Sergey Grebenshchikov","Synthesizing software verifiers from proof rules",false
 2012,"A","PLDI","Volodymyr Kuznetsov","Efficient state merging in symbolic execution",false
-2012,"A","RTSS","Farhana Dewan","Efficient Admission Control for Enforcing Arbitrary Real-Time Demand-Curve Interfaces",true
+2012,"A","RTSS","Baruah, S.","A Generalized Parallel Task Model for Recurrent Real-time Processes",false
 2012,"A","RTSS","Hoon Sung Chwa","Extending Task-level to Job-level Fixed Priority Assignment and Schedulability Analysis Using Pseudo-deadlines",true
 2012,"A","RTSS","Robert I. Davis","Optimal Fixed Priority Scheduling with Deferred Pre-emption",false
-2012,"A","RTSS","Sanjoy Baruah","A Generalized Parallel Task Model for Recurrent Real-time Processes",false
 2012,"A","RTSS","Xin Chen","Taylor Model Flowpipe Construction for Non-linear Hybrid Systems",false
 2012,"A","S&P","Benedikt Driessen","Don't Trust Satellite Phones: A Security Analysis of Two Satphone Standards",true
 2012,"A","S&P","Joseph Bonneau","The Quest to Replace Passwords: A Framework for Comparative Evaluation of Web Authentication Schemes",false
 2012,"A","S&P","Joseph Bonneau","The Science of Guessing: Analyzing an Anonymized Corpus of 70 Million Passwords",false
 2012,"A","S&P","Yajin Zhou","Dissecting Android Malware: Characterization and Evolution",false
-2012,"A","SC","Michael Bauer","Legion: expressing locality and independence with logical regions",false
-2012,"A","SC","Ping Tak Peter Tang","A framework for low-communication 1-D FFT",true
+2012,"A","SC","Fiala, D.","Detection and correction of silent data corruption for large-scale high-performance computing",false
+2012,"A","SC","Michael Bauer","Legion: Expressing locality and independence with logical regions",false
 2012,"A","SC","Scott Beamer","Direction-optimizing breadth-first search",false
-2012,"A","SC","Stephen L. Olivier","Characterizing and mitigating work time inflation in task parallel programs",true
-2012,"A","SC","david fiala","Detection and Correction of Silent Data Corruption for Large-Scale High-Performance Computing",false
 2012,"A","SIGCOMM","Ali Ghodsi","Multi-resource fair queueing for packet processing",true
 2012,"A","SIGCOMM","Chi-Yao Hong","Finishing flows quickly with preemptive scheduling",false
 2012,"A","SIGCOMM","Justine Sherry","Making middleboxes someone else's problem: network processing as a cloud service",false
@@ -1714,7 +1691,7 @@ year,level,conference,author,title,isBest
 2012,"B","HPDC","Florin Dinu","Understanding the effects and implications of compute node related failures in hadoop",true
 2012,"B","HPDC","Koji Ueno","Highly scalable graph search for the Graph500 benchmark",false
 2012,"B","HPDC","Prateek Sharma","Singleton: system-wide page deduplication in virtual environments",false
-2012,"B","ICALP","Justin Hsu","Distributed private heavy hitters",false
+2012,"B","ICALP","Laurent Bulteau","Sorting by transpositions is difficult",false
 2012,"B","ICALP","Luca Gugelmann","Random hyperbolic graphs: degree sequence and clustering",false
 2012,"B","ICALP","Maria Florina Balcan","Clustering under perturbation resilience",false
 2012,"B","ICALP","Piotr Krysta","Online mechanism design (randomized rounding on the fly)",true
@@ -1736,14 +1713,13 @@ year,level,conference,author,title,isBest
 2012,"B","ICRA","Alexander S. Boxerbaum","Worms, waves and robots.",true
 2012,"B","ICRA","Andreas Stolt","Force controlled robotic assembly without a force sensor.",true
 2012,"B","ICRA","Andrew H. C. Gosline","Metal MEMS tools for beating-heart tissue removal.",true
-2012,"B","ICRA","Felix Endres","An evaluation of the RGB-D SLAM system.",false
+2012,"B","ICRA","Endres, F.","An evaluation of the RGB-D SLAM system",false
 2012,"B","ICRA","Hideyuki Tsukagoshi","Fast accessible rescue device by using a flexible sliding actuator.",true
 2012,"B","ICRA","Jaeyong Sung","Unstructured human activity detection from RGBD images.",false
 2012,"B","ICRA","Masaya Hagiwara","High speed microrobot actuation in a microfluidic chip by levitated structure with riblet surface.",true
-2012,"B","ICRA","Michael Milford","SeqSLAM: Visual route-based navigation for sunny summer days and stormy winter nights.",true
+2012,"B","ICRA","Michael Milford","SeqSLAM: Visual route-based navigation for sunny summer days and stormy winter nights",false
 2012,"B","ICRA","Moritz Tenorth","The RoboEarth language: Representing and exchanging knowledge about actions, objects, and environments.",true
 2012,"B","ICRA","Ying Mao","Transition from mechanical arm to human arm with CAREX: A cable driven ARm EXoskeleton (CAREX) for neural rehabilitation",true
-2012,"B","ICRA","Zoe McCarthy","Mechanics and manipulation of planar elastic kinematic chains.",true
 2012,"B","IPSN","Bryan Kate","Simbeeotic: a simulator and testbed for micro-aerial vehicle swarm experiments",true
 2012,"B","IPSN","Dong Wang","On truth discovery in social sensing: a maximum likelihood estimation approach",false
 2012,"B","IPSN","Marco Zimmerling","pTunes: runtime parameter adaptation for low-power MAC protocols",true
@@ -1757,15 +1733,13 @@ year,level,conference,author,title,isBest
 2012,"B","LISA","John A. Hewson","A declarative approach to automated configuration",false
 2012,"B","MobiHoc","Anna-Kaisa Pietilänen","Dissemination in opportunistic social networks: the role of temporal communities",false
 2012,"B","MobiHoc","Cong Shi","Serendipity: enabling remote computing among intermittently connected mobile devices",true
-2012,"B","MobiHoc","Wen Luo","Probabilistic missing-tag detection and energy-time tradeoff in large-scale RFID systems",false
+2012,"B","MobiHoc","Gabriel Y. Keung","The intrusion detection in mobile sensor network",false
 2012,"B","MobiSys","He Wang","No need to war-drive: unsupervised indoor localization",false
 2012,"B","MobiSys","Junxian Huang","A close examination of performance and power characteristics of 4G LTE networks",false
 2012,"B","MobiSys","Michael Grace","RiskRanker: scalable and accurate zero-day android malware detection",false
-2012,"B","MobiSys","Suman Nath","ACE: exploiting correlation for energy-efficient and continuous context sensing",true
 2012,"B","NIPS","Alex Krizhevsky","ImageNet Classification with Deep Convolutional Neural Networks.",false
+2012,"B","NIPS","J Dean","Large Scale Distributed Deep Networks",false
 2012,"B","NIPS","Jasper Snoek","Practical Bayesian Optimization of Machine Learning Algorithms",false
-2012,"B","NIPS","Jeffrey Dean","Large Scale Distributed Deep Networks.",false
-2012,"B","NIPS","Po-Ling Loh","Structure estimation for discrete graphical models: Generalized covariance matrices and their inverses.",true
 2012,"B","NIPS","Robert Gens","Discriminative Learning of Sum-Product Networks.",true
 2012,"B","NSDI","Costin Raiciu","How hard can it be? designing and implementing a deployable multipath TCP",false
 2012,"B","NSDI","Matei Zaharia","Resilient distributed datasets: a fault-tolerant abstraction for in-memory cluster computing",true
@@ -1782,7 +1756,7 @@ year,level,conference,author,title,isBest
 2012,"B","RTAS","Jaewoo Lee","Realizing Compositional Scheduling through Virtualization",false
 2012,"B","RTAS","Jonathan L. Herman","RTOS Support for Multicore Mixed-Criticality Systems",false
 2012,"B","RTAS","Miroslav Pajic","From Verification to Implementation: A Model Translation Tool and a Pacemaker Case Study",true
-2012,"B","RTAS","Sudipta Chattopadhyay","A Unified WCET Analysis Framework for Multi-core Platforms",false
+2012,"B","RTAS","Sudipta Chattopadhyay","A Unified WCET analysis framework for multicore platforms",false
 2012,"B","SDM","Arthur Zimek","A survey on unsupervised outlier detection in high-dimensional numerical data",false
 2012,"B","SDM","Charu C. Aggarwal","Event Detection in Social Streams.",false
 2012,"B","SDM","Dongryeol Lee","A distributed kernel summation framework for general-dimension machine learning.",true
@@ -1841,7 +1815,6 @@ year,level,conference,author,title,isBest
 2011,"A","CVPR"," Heng Wang","Action recognition by dense trajectories",false
 2011,"A","CVPR"," Ming-Ming Cheng","Global Contrast Based Salient Region Detection.",false
 2011,"A","CVPR"," Yunchao Gong","Iterative quantization: A procrustean approach to learning binary codes",false
-2011,"A","CVPR","J. Shotton","Real-time human pose recognition in parts from single depth images",true
 2011,"A","EUROCRYPT","Allison Lewkoand","Decentralizing Attribute-Based Encryption",false
 2011,"A","EUROCRYPT","Amir Moradi","Pushing the limits: a very compact and a threshold implementation of AES",false
 2011,"A","EUROCRYPT","Craig Gentry","Implementing Gentry's fully-homomorphic encryption scheme",false
@@ -1853,11 +1826,10 @@ year,level,conference,author,title,isBest
 2011,"A","FOCS","Craig Gentry","Fully Homomorphic Encryption without Squashing Using Depth-3 Arithmetic Circuits",false
 2011,"A","FOCS","Dutch T. Meyer","A Study of Practical Deduplication",true
 2011,"A","FOCS","Nitin Agrawal","Emulating Goliath storage systems with David",true
-2011,"A","FOCS","Shayan Oveis Gharan","A Randomized Rounding Approach to the Traveling Salesman Problem",true
 2011,"A","FOCS","Tobias Moemke","Approximating Graphic TSP by Matchings",true
 2011,"A","FOCS","Zvika Brakerski","Efficient Fully Homomorphic Encryption from (Standard) LWE",false
+2011,"A","FSE/ESEC","Albert G. Greenberg","VL2: a scalable and flexible data center network",false
 2011,"A","FSE/ESEC","Anhai Doan","Crowdsourcing systems on the World-Wide Web",false
-2011,"A","FSE/ESEC","Christine Hofmeister","Applied Software Architecture.",false
 2011,"A","FSE/ESEC","Sameer Agarwal","Building Rome in a day",false
 2011,"A","FSE/ESEC","Swarat Chaudhuri","Proving Programs Robust",true
 2011,"A","FSE/ESEC","Yuriy Brun","Proactive detection of collaboration conflicts",true
@@ -1866,10 +1838,7 @@ year,level,conference,author,title,isBest
 2011,"A","HPCA","Clinton Wills Smullen IV","Relaxing non-volatility for fast and energy-efficient STT-RAM caches",false
 2011,"A","HPCA","Feng Chen","Essential roles of exploiting internal parallelism of flash memory based solid state drives in high-speed data processing",false
 2011,"A","HPCA","Hung-Wei Tseng","Data-triggered threads: Eliminating redundant computation",true
-2011,"A","HPCA","Jeffery A. Brown","Fast thread migration via cache working set prediction",true
-2011,"A","HPCA","Michael Ferdman","Cuckoo directory: A scalable directory for many-core systems",true
 2011,"A","HPCA","Yao Zhang","A quantitative performance analysis model for GPU architectures",false
-2011,"A","ICCV","Devi Parikh","Relative attributes",true
 2011,"A","ICCV","Ethan Rublee","ORB: An efficient alternative to SIFT or SURF",false
 2011,"A","ICCV","Sam Hare","Struck: Structured output tracking with kernels",false
 2011,"A","ICCV","Stefan Leutenegger","BRISK: Binary Robust invariant scalable keypoints",false
@@ -1880,10 +1849,9 @@ year,level,conference,author,title,isBest
 2011,"A","ICDE","Yongqiang He","RCFile: A fast and space-efficient data placement structure in MapReduce-based warehouse systems",false
 2011,"A","ICSE","Andrea Arcuri","A practical guide for using statistical tests to assess randomized algorithms in software engineering",false
 2011,"A","ICSE","Antonio Filieri","Run-time efficient probabilistic model checking",true
-2011,"A","ICSE","Cordeiro, L.","Verifying multi-threaded software using smt-based context-bounded model checking",true
 2011,"A","ICSE","Cristian Cadar","Symbolic execution for software testing in practice: preliminary assessment",false
-2011,"A","ICSE","H Dumitru","On-demand feature recommendations derived from mining public product descriptions",true
 2011,"A","ICSE","John Hutchinson","Empirical assessment of MDE in industry",false
+2011,"A","ICSE","Lucas Cordeiro","Verifying multi-threaded software using smt-based context-bounded model checking",true
 2011,"A","ICSE","Matt Staats","Programs, tests, and oracles: the foundations of testing revisited",true
 2011,"A","ICSE","Narayan Ramasubbu","Configuring global software teams: a multi-company analysis of project productivity, quality, and profits",true
 2011,"A","IJCAI","Christopher D. Rosin","Nested rollout policy adaptation for Monte Carlo tree search",true
@@ -1902,7 +1870,6 @@ year,level,conference,author,title,isBest
 2011,"A","LICS","Diego Figueira","Ackermannian and Primitive-Recursive Bounds with Dickson's Lemma",false
 2011,"A","LICS","Lars Birkedal","First Steps in Synthetic Guarded Domain Theory: Step-Indexing in the Topos of Trees",false
 2011,"A","LICS","Mikolaj Bojanczyk","Automata with Group Actions",false
-2011,"A","LICS","Willem Heijltjes","Proof Nets for Additive Linear Logic with Units",true
 2011,"A","MOBICOM","Hui Zang","Anonymization of location data does not work: a large-scale measurement study",false
 2011,"A","MOBICOM","Jie Yang","Detecting driver phone use leveraging car speakers",true
 2011,"A","MOBICOM","Kiran K. Rachuri","SociableSense: exploring the trade-offs of adaptive sampling and computation offloading for social sensing",false
@@ -1913,12 +1880,11 @@ year,level,conference,author,title,isBest
 2011,"A","PLDI","Peter Hawkins","Data representation synthesis",true
 2011,"A","PLDI","Xuejun Yang","Finding and understanding bugs in C compilers",false
 2011,"A","RTSS","Abusayeed Saifullah","Multi-core Real-Time Scheduling for Generalized Parallel Task Models",true
-2011,"A","RTSS","Paul Regnier","RUN: Optimal Multiprocessor Real-Time Scheduling via Reduction to Uniprocessor",true
+2011,"A","RTSS","Regnier, P.","RUN: Optimal Multiprocessor Real-Time Scheduling via Reduction to Uniprocessor",false
 2011,"A","RTSS","S. K. Baruah","Response-Time Analysis for Mixed Criticality Systems",false
-2011,"A","S&P","Andrew M. White","Phonotactic Reconstruction of Encrypted VoIP Conversations: Hookt on Fon-iks",true
 2011,"A","S&P","David Gullasch","Cache Games -- Bringing Access-Based Cache Attacks on AES to Practice",false
-2011,"A","S&P","Kurt Thomas","Design and Evaluation of a Real-Time URL Spam Filtering Service",false
 2011,"A","S&P","Reza Shokri","Quantifying Location Privacy",false
+2011,"A","S&P","Thomas, K.","Design and Evaluation of a Real-Time URL Spam Filtering Service",false
 2011,"A","SC","John K. Salmon","Parallel random numbers: as easy as 1, 2, 3",true
 2011,"A","SC","Ming Mao","Auto-scaling to minimize cost and meet application deadlines in cloud workflows",false
 2011,"A","SC","Trevor E. Carlson","Sniper: exploring the level of abstraction for scalable and accurate parallel multi-core simulation",false
@@ -1965,9 +1931,9 @@ year,level,conference,author,title,isBest
 2011,"B","ACSAC","Tongbo Luo","Attacks on WebView in the Android system",false
 2011,"B","ACSAC","Tyler Bletsch","Mitigating code-reuse attacks with control-flow locking",false
 2011,"B","ACSAC","Yazan Boshmaf","The socialbot network: when bots socialize for fame and money",true
+2011,"B","CIKM","Deguang Kong","Robust nonnegative matrix factorization using L21-norm",false
 2011,"B","CIKM","Ibrahim Uysal","User oriented tweet ranking: a filtering approach to microblogs",false
 2011,"B","CIKM","Jiafeng Guo","Intent-aware query similarity",true
-2011,"B","CIKM","Ou Jin","Transferring topical knowledge from auxiliary long texts for short text clustering",false
 2011,"B","CIKM","Xiaolong Wang","Topic sentiment analysis in twitter: a graph-based hashtag sentiment classification approach",false
 2011,"B","CONCUR","Byron Cook","Tractable reasoning in a fragment of separation logic",false
 2011,"B","CONCUR","Joel Ouaknine","Static livelock analysis in CSP",true
@@ -2007,7 +1973,7 @@ year,level,conference,author,title,isBest
 2011,"B","ICALP","Michael T. Goodrich","Privacy-preserving access of outsourced data via oblivious RAM simulation",false
 2011,"B","ICALP","Olivier Carton","Regular languages of words over countable linear orderings",true
 2011,"B","ICALP","Sanjeev Arora","New algorithms for learning in presence of errors",false
-2011,"B","ICALP","laurent bulteau","Sorting by transpositions is difficult",false
+2011,"B","ICALP","Vince Bárány","Guarded negation",false
 2011,"B","ICCAD","Bei Yu","Layout decomposition for triple patterning lithography",false
 2011,"B","ICCAD","Matthias Althoff","Formal verification of phase-locked loops using reachability analysis and continuization",true
 2011,"B","ICCAD","Muhammet Mustafa Ozdal","Gate sizing and device technology selection algorithms for high-performance industrial designs",true
@@ -2017,21 +1983,17 @@ year,level,conference,author,title,isBest
 2011,"B","ICDM","Jierui Xie","SLPA: Uncovering Overlapping Communities in Social Networks via a Speaker-Listener Interaction Dynamic Process",false
 2011,"B","ICDM","Victor S. Sheng","Fast data acquisition in cost-sensitive learning",true
 2011,"B","ICDM","Xia Ning","SLIM: Sparse Linear Methods for Top-N Recommender Systems",false
+2011,"B","ICDT","Abhay Kumar Jha","Knowledge Compilation Meets Database Theory: Compiling Queries to Decision Diagrams",false
 2011,"B","ICDT","Claire David","Efficient reasoning about data trees via integer linear programming",true
 2011,"B","ICDT","Daniel Deutch","Querying probabilistic business processes for sub-flows",true
 2011,"B","ICDT","Elio Damaggio","Artifact systems with data dependencies and arithmetic",false
-2011,"B","ICDT","Leopoldo E. Bertossi","Data cleaning and query answering with matching dependencies and matching functions",false
 2011,"B","ICDT","Susan B. Davidson","On provenance and privacy",false
 2011,"B","ICME"," Cha Zhang","Calibration between depth and color sensors for commodity depth cameras",false
 2011,"B","ICME","Bankoski, J.","Technical overview of VP8, an open source video codec for the web",false
 2011,"B","ICME","Jinesh J. Jain","Analysis of driver behaviors during common tasks using frontal video camera and CAN-Bus information",true
 2011,"B","ICME","Lucas Terissi","Animation of generic 3D head models driven by speech",true
 2011,"B","ICME","xuan dong","Fast efficient algorithm for enhancement of low lighting video",false
-2011,"B","ICRA","Daniel H. Grollman","Donut as I do: Learning from failed demonstrations.",true
-2011,"B","ICRA","Daniel Mellinger","Minimum snap trajectory generation and control for quadrotors.",true
-2011,"B","ICRA","Jianzhong Shang","An articulated universal joint based flexible access robot for minimally invasive surgery.",true
-2011,"B","ICRA","Kevin Lai","A large-scale hierarchical multi-view RGB-D object dataset.",false
-2011,"B","ICRA","Kevin Lai","Sparse distance learning for object recognition combining RGB and depth information.",true
+2011,"B","ICRA","Kevin Lai","A large-scale hierarchical multi-view RGB-D object dataset",false
 2011,"B","ICRA","Masaya Hagiwara","High performance magnetically driven microtools with ultrasonic vibration for biomedical innovations.",true
 2011,"B","ICRA","Radu Bogdan Rusu","3D is here: Point Cloud Library (PCL).",false
 2011,"B","ICRA","Yajing Shen","Characterization of oscillating nano knife for single cell cutting by nanorobotic manipulation system inside ESEM",true
@@ -2042,11 +2004,10 @@ year,level,conference,author,title,isBest
 2011,"B","IPSN","Matteo Ceriotti","Is there light at the ends of the tunnel? Wireless sensor networks for adaptive lighting in road tunnels",true
 2011,"B","IPSN","Varick L. Erickson","OBSERVE: Occupancy-based system for efficient reduction of HVAC energy",false
 2011,"B","ISSTA","Chris Parnin","Are automated debugging techniques actually helping programmers?",false
+2011,"B","ISSTA","Domagoj Babić","Statically-directed dynamic automated test generation",false
 2011,"B","ISSTA","Nathan Rosenblum","Recovering the toolchain provenance of binary code",true
 2011,"B","ISSTA","Patrice Godefroid","Automatic partial loop summarization in dynamic test generation",true
-2011,"B","ISSTA","Sai Zhang","Combined static and dynamic automated test generation",false
 2011,"B","ISSTA","Salvatore Guarnieri","Saving the world wide web from vulnerable JavaScript",false
-2011,"B","ISSTA","Takaaki Tateishi","Path- and index-sensitive string analysis based on monadic second-order logic",true
 2011,"B","LISA","Fred Douglis","Content-aware load balancing for distributed backup",false
 2011,"B","LISA","Herry Herry","Automated planning for configuration changes",true
 2011,"B","LISA","Philip J. Guo","CDE: run any Linux application on-demand without installation",false
@@ -2071,7 +2032,6 @@ year,level,conference,author,title,isBest
 2011,"B","PACT","Saeed Maleki","An Evaluation of Vectorizing Compilers",false
 2011,"B","PACT","Sungpack Hong","Efficient Parallel Graph Exploration on Multi-Core CPU and GPU",false
 2011,"B","PODS","M. Tamer zsu","Principles of Distributed Database Systems",false
-2011,"B","PODS","Marcelo Arenas","Data exchange beyond complete data",true
 2011,"B","PODS","Marcelo Arenas","Querying semantic web data with SPARQL",false
 2011,"B","PODS","Yael Amsterdamer","Provenance for aggregate queries",false
 2011,"B","RTAS","Hassan Ghasemzadeh","Ultra Low Power Granular Decision Making Using Cross Correlation: Optimizing Bit Resolution for Template Matching",true
@@ -2088,11 +2048,11 @@ year,level,conference,author,title,isBest
 2011,"B","SIGMETRICS","Animashree Anandkumar","Topology Discovery of Sparse Random Graphs With Few Participants",true
 2011,"B","SIGMETRICS","M. Zubair Shafiq","Characterizing and modeling internet traffic dynamics of cellular devices",false
 2011,"B","SIGMETRICS","Rahul Urgaonkar","Optimal power cost management using stored energy in data centers",false
-2011,"B","SIGMETRICS","Zhenhua Liu","Greening Geographical Load Balancing.",false
+2011,"B","SIGMETRICS","zhenhua liu","Greening Geographical Load Balancing",false
+2011,"B","SODA","David G. Andersen","FAWN: a fast array of wimpy nodes",false
 2011,"B","SODA","Jeremy Andrus","Cells: a virtual mobile smartphone architecture",false
 2011,"B","SODA","Nir Ailon","An Almost Optimal Unrestricted Fast Johnson-Lindenstrauss Transform",true
 2011,"B","SODA","Thomas Kesselheim","A constant-factor approximation for wireless capacity maximization with power control in the SINR model",false
-2011,"B","SODA","Vahideh H. Manshadi","Online stochastic matching: online actions based on offline statistics",false
 2011,"B","SPAA","Benjamin Moseley","On scheduling in map-reduce and flow-shops",false
 2011,"B","SPAA","Grey Ballard","Graph expansion and communication costs of fast matrix multiplication: regular submission",true
 2011,"B","SPAA","Silvio Lattanzi","Filtering: a method for solving graph problems in MapReduce",false
