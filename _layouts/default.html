@@ -102,7 +102,7 @@
     </footer>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/anchor-js@4.1.0/anchor.min.js" crossorigin="anonymous"></script>
 <script>
     function HTTP(method, url, callback) {
         var req = window.XMLHttpRequest? (new XMLHttpRequest()): (new ActiveXObject("Microsoft.XMLHTTP"));
@@ -144,6 +144,19 @@
         doc.appendChild(tip404);
     }
 
+    var codes = doc.querySelectorAll('pre code.language-javascript');
+    if (codes.length === 0)
+        codes = doc.querySelectorAll('div.language-javascript pre.highlight code');
+    if (codes.length) {
+        let jsCode = null;
+        Array.prototype.forEach.call(codes, (code, i) => {
+            js = code.textContent;
+            if (js.trim().split('\n').pop().trim().startsWith('return')) {
+                eval(`jsCode = () => {${js}};`)
+                code.parentNode.outerHTML = marked(jsCode());
+            }
+        });
+    }
     // Chart: parse tables, append charts
     var tables = doc.querySelectorAll('table'), chartOptions = [];
     for (var i = 0; i < tables.length; i++) {
@@ -198,6 +211,16 @@
                 } else if (allNumByY[k] === undefined) allNumByY[k] = true;
                 yValues.push(y);
                 series[k].data.push(y);
+            }
+        }
+        if (xNameAllNum) {
+            xNameAllNum = false;
+            var delta = xNames[1] - xNames[0];
+            for (var j = 2; j < xNames.length; j++) {
+                if (xNames[j] != parseInt(xNames[j]) ||  xNames[j] - xNames[j - 1] !== delta) {
+                    xNameAllNum = true;
+                    break;
+                }
             }
         }
 
