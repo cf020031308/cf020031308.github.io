@@ -1,0 +1,47 @@
+abstract: 'This publication presents a relation computation or calculus for
+
+  international relations using a mathematical modeling. It examined trust for
+
+  international relations and its calculus, which related to Bayesian inference,
+
+  Dempster-Shafer theory and subjective logic. Based on an observation in the
+
+  literature, we found no literature discussing the calculus method for the
+
+  international relations. To bridge this research gap, we propose a relation
+
+  algebra method for international relations computation. The proposed method
+
+  will allow a relation computation which is previously subjective and
+
+  incomputable. We also present three international relations as case studies to
+
+  demonstrate the proposed method is a real-world scenario. The method will
+
+  deliver the relation computation for the international relations that to
+
+  support decision makers in a government such as foreign ministry, defense
+
+  ministry, presidential or prime minister office. The Department of Defense
+
+  (DoD) may use our method to determine a nation that can be identified as a
+
+  friendly, neutral or hostile nation.'
+archiveprefix: arXiv
+author: Mohd Anuar Mat Isa and Ramlan Mahmod and Nur Izura Udzir and Jamalul-lail
+  Ab Manan and Audun Jøsang and Ali Dehghan Tanha
+doi: 10.13140/RG.2.1.3796.6321
+eprint: 1606.02239v1
+file: 1606.02239v1.pdf
+files:
+- /Users/Roy/Documents/papers/2016-a-formal-calculus-for-international-relations-computation-and-evaluation.pdf
+month: Apr
+note: 'Journal of Current Research in Science, Issn 2322-5009, 4(2),
+
+  2016: 177-194'
+primaryclass: cs.CR
+ref: 1606.02239v1
+title: A Formal Calculus for International Relations Computation and Evaluation
+type: article
+url: http://arxiv.org/abs/1606.02239v1
+year: '2016'
