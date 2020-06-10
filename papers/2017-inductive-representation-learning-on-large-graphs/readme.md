@@ -1,7 +1,7 @@
 # 大型动态图中的归纳式表示学习
 
 
-通过采样加速了大规模图中的应用，归纳式的学习使得模型不依赖全部节点的信息，从而适应工业中常见的动态图。
+通过采样加速了大规模图中的应用，归纳式的学习使得模型不依赖全部节点，从而适应工业中常见的动态图。
 
 ## 采样
 
@@ -12,6 +12,10 @@ GraphSAGE: Graph SAmple and aggreGatE
 
 Best Practice: $K=2, S_1 \cdot S_2 \le 500$
 
+WL图同构测试
+Graph Isomorphism Networks, GIN
+Node2Vec, GraphSAGE
+How Powerfull are Graph Neural Networks?
 
 ## 模型
 
@@ -29,7 +33,6 @@ $$h_v^{(k)} = \text{NORM}(\sigma (W^{(k)} \cdot (h_v^{(k-1)} \oplus f_k(\\{ h_u^
 
 * 损失函数（用于无监督任务） $$J_G(z_u) = -\log(\sigma(z_u^T z_v)) - Q \cdot E_{v_n \sim P_n(v)} \log(\sigma(-z_u^T z_{v_n}))$$
   * 使相近节点有相似表示，不相近的节点差异大
-  * $z_u$ 是节点局部特征的表示（比如节点的度以及文档摘要的词向量），不是隐状态也不一定是节点单独的表示
   * $P_n$ 是逆样
 
 ## 实验
@@ -37,6 +40,13 @@ $$h_v^{(k)} = \text{NORM}(\sigma (W^{(k)} \cdot (h_v^{(k-1)} \oplus f_k(\\{ h_u^
 * Citation: 在引用数据之上预测论文的分类
 * Reddit：预测帖子所属的版块
 * PPI (Protein-Protein Interaction): 在不同人体组织的 PPI 图中分类 Protein Roles
+
+[Micro F1 Score](/wiki/performance-measure/)：正确分类数占比
+
+| 数据集   | Features                      | Connections  | labels | 来源                                               |
+|----------|-------------------------------|--------------|--------|----------------------------------------------------|
+| Citation | 引用数、被引数、摘要          | 引用关系     | 领域   | the Thomson Reuters Web of Science Core Collection |
+| Reddit   | 标题、评论、Reddit 分、评论数 | 有相同评论者 | 版块   | 爬虫                                               |
 
 
 LSTM 与 Pooling 效果都比较好
