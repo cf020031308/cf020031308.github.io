@@ -38,7 +38,7 @@ $$H^{(k)} = f(W^{(k)} \odot (D^{-1}A)^k X$$
 
 论文中使用的可学习的权重函数： a Gauusian Mixture Model (GMM)
 $$w_j(u) = \exp (-\frac{1}{2} (u-\mu_j)^T \Sigma_j^{-1} (u - mu_j))$$
-其中 $Sigma_j$ 是 d x d 的协方差矩阵且限制为对角的（也就是假设各分量独立），$mu_j$ 是 d 维的均值向量。这样共 2dj 个参数需要学习。
+其中 $\Sigma_j$ 是 d x d 的协方差矩阵且限制为对角的（也就是假设各分量独立），$\mu_j$ 是 d 维的均值向量。这样共 2dJ 个参数需要学习。
 
 ## 实验
 
