@@ -10,11 +10,11 @@
 # To download: `mkdir output && python2 $0`
 # To upload into Boox/Kindle: `zip bundle.cbz output/*`
 # To upload to Android for DuoKan:
-#     python2 -c "import glob;
-#     print('\n'.join(
-#         '![%s](%s)' % (fp, fp)
-#         for fp in sorted(glob.glob('output/*.jpg'))))
-#     " | pandoc -o bundle.epub
+#     python2 -c 'import glob;
+#     print("\n".join(
+#         "![%s](%s)" % (fp, fp)
+#         for fp in sorted(glob.glob("output/*.jpg"))))
+#     ' | pandoc -o bundle.epub
 
 import os
 import re
