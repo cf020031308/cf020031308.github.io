@@ -148,12 +148,17 @@
     if (codes.length === 0)
         codes = doc.querySelectorAll('div.language-javascript pre.highlight code');
     if (codes.length) {
-        let jsCode = null;
+        const _G = {}, jsResult = [];
+        const write = buf => jsResult.push(buf);
         Array.prototype.forEach.call(codes, (code, i) => {
-            js = code.textContent;
-            if (js.trim().split('\n').pop().trim().startsWith('return')) {
-                eval(`jsCode = () => {${js}};`)
-                code.parentNode.outerHTML = marked(jsCode());
+            if (code.textContent.indexOf('write(') > -1) {
+                try {
+                    jsResult.splice(0, jsResult.length);
+                    eval(`(function() { ${code.textContent} })()`);
+                    if (jsResult.length) code.parentNode.outerHTML = marked(jsResult.join('\n'));
+                } catch (error) {
+                    console.log(error);
+                }
             }
         });
     }
@@ -174,6 +179,8 @@
         // Headcell format: '[xAxis[[\yAxis]\title]]'
         var meta = ths[0].textContent.trim();
         meta = meta && meta.split('\\');
+        // Do not convert if backslash '\\' is not found
+        if (meta.length === 1) continue;
         var xAxisName = meta[0] || '', yAxisName = '', chartTitle = meta[1] || '';
         if (meta.length > 2) {
             yAxisName = chartTitle;

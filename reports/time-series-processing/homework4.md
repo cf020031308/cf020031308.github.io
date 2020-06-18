@@ -18,7 +18,7 @@ for (var t = 1; t <= N; t++) {
   ret.push([t, eps, x, s / t].join('|'));
 }
 ret.splice(0, 0, '时间\\\\模拟数据（均值：' + s / N + '）|.噪声|-X|-X均值', '-|-|-|-')
-return ret.join('\n');
+write(ret.join('\n'));
 ```
 
 ### 2. 求序列均值 $X_N$ 的置信度为 95% 的置信区间。
