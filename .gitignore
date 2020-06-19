@@ -2,5 +2,5 @@
 *.swp
 *.pyc
 __pycache__
-sitemap.xml
 assets
+draft
