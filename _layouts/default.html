@@ -132,7 +132,7 @@
 
     var doc = document.getElementById('doc');
     if (doc.textContent.trim() === '{' + '{ content }' + '}') {
-        var req = HTTP('get', mdlink.pathname);
+        var req = HTTP('get', mdlink.pathname + (loc.hostname === 'localhost' ? ('?v=' + Math.random()) : ''));
         if (req.status < 400) doc.innerHTML = marked(req.responseText);
         else doc.innerHTML = '';
     }
