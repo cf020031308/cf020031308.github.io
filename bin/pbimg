@@ -17,10 +17,14 @@ elif [ -d "$1" ]; then
 else
     dir="$(cd $(dirname $1); pwd)"
     fn="$(basename $1)"
-    alt="${fn%.png}"
+    fn="${fn%.png}"
+    alt="$fn"
+    if [ -f "${1%.png}.png" ]; then
+        fn="$fn-$(uuid)"
+    fi
 fi
 
-fp="$dir/${fn%.png}.png"
+fp="$dir/$fn.png"
 osascript \
     -e "set png to the clipboard as «class PNGf»" \
     -e "set fp to POSIX path of (POSIX file \"$fp\")"\
