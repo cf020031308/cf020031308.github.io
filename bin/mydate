@@ -1,0 +1,9 @@
+#!/bin/bash
+
+adjust="-v$1"
+if [ -z "$1" ]; then
+    adjust=""
+fi
+days="日月火水木金土"
+day=$(date $adjust +'%w')
+date $adjust +"%Y%m%d${days:day:1}%H:%M"
