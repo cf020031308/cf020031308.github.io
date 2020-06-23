@@ -104,10 +104,9 @@ And again, most importantly, it should be suitable for your own work.
 
 * `todo.md`
   1. Emergency
-  2. Overtime
-  3. Doing
-  5. Done
-  6. To Do
+  2. Doing
+  3. Done
+  4. To Do
 
 
 * `inbox.md`
@@ -123,7 +122,6 @@ And again, most importantly, it should be suitable for your own work.
 
 ```dot
 digraph {
-    task [shape=none];
     node[shape=box];
     subgraph cluster_inbox {
         label="Weekly: inbox.md";
@@ -136,21 +134,18 @@ digraph {
     }
     subgraph cluster_todo {
         label="Daily: todo.md";
-        labeljust=r;
+        labeljust=l;
         todo[label="To Do"];
-        Emergency -> Done;
-        { rank=same; Overtime -> Done; }
-        Overtime -> Doing [label="one hour", dir=back];
-        Done -> Doing [dir=back];
-        { rank=same; todo -> Doing; }
+        { rank=same; Done -> Emergency [dir=back]; }
+        Done -> Doing -> todo [dir=back];
     }
     task -> { Inbox; Emergency; }
+    task [shape=none];
     can -> todo [constraint=false, label="split"];
-    Overtime -> OKR [constraint=false, label="analyse"];
-    log [label="Monthly: ChangeLog"]
-    can -> log [style=invis];
-    Done -> log [constraint=false, label="summary"];
-    OKR -> log [dir=back, label="amend"];
+    Done -> Inbox [constraint=false, label="suspend"];
+    log [label="Monthly:\nChangeLog"]
+    Done -> log [label="summary"];
+    log -> OKR [label="amend"];
 }
 
 
@@ -160,26 +155,24 @@ digraph {
   2. put other tasks into inbox/Inbox
 
 
-* daily: working on `todo.md`
-  1. work on Doing (maybe with Pomodoro). Every task is assigned an hour at most.
-  2. put tasks not done in an hour into Overtime
-  3. put tasks done into Done
+* daily: work on `todo.md`
+  1. do tasks: To Do -> Doing -> Done
+  2. tag tasks with #abort and reason, move into Done
+  3. tag tasks with #suspend and restart condition, move into Done
 
 
-* weekly: planning on `inbox.md`
-  1. following OKR, move tasks from Inbox into Don't Do, Maybe Later and Can do
-  2. analyse why tasks in todo/Overtime are suspended. Then following OKR
-     1. split the task into parts that can be worked on, move them to Can Do
-     2. tagged #abort with reason, move the task into Don't Do
-     3. tagged #suspend with restart condition, move the task into Maybe Later
+* weekly: plan with `inbox.md`
+  1. move suspended tasks from todo/Done into Inbox
+  2. following OKR, move tasks from Inbox into Don't Do, Maybe Later and Can do
   3. move tasks in Can Do which can be worked on in the following week to todo/To Do
 
 
-* monthly: reviewing on ChangeLogs
-  1. organize todo/Done
-  2. review ChangeLog of the same month in last year
-  3. amend inbox/OKR
-  4. publish ChangeLog of last month
+* monthly: review ChangeLogs
+  1. move aborted tasks in todo/Done into inbox/Don't Do
+  2. summarize todo/Done
+  3. review ChangeLog of the same month in last year
+  4. amend inbox/OKR
+  5. publish ChangeLog of last month
 
 
 [todo.txt]: <https://github.com/todotxt/todo.txt> "todo.txt"
