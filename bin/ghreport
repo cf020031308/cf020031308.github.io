@@ -1,5 +1,0 @@
-#!/bin/bash -
-
-token=$(cat ~/.config/hub | sed -n '/oauth_token/p' | awk '{print $2}')
-colid=4870766
-curl -H "Authorization: bearer $token" -H"Accept: application/vnd.github.inertia-preview+json" "https://api.github.com/projects/columns/$colid/cards" | jq -r '.[] | {date:.updated_at|fromdate|strflocaltime("%Y%m%d"), note:(.note + .content_url)|split("\r\n")|.[0]} | "\(.date) \(.note)"'
