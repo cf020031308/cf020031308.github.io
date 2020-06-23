@@ -547,7 +547,7 @@
                 scores = scores.filter(function(x) { return !x.used; });
                 scores.sort(function(x, y) { return y.value / y.fname.length - x.value / x.fname.length; });
                 // If not 404, append at most 4 pages only from wiki or the same folder, and all drafts if any
-                if (content) {
+                if (content && !loc.pathname.startsWith('drafts')) {
                     scores = scores.filter(function(x) {
                         return x.uri.startsWith('/wiki/') || (dirname !== '/' && x.uri.startsWith(dirname)); }
                     ).slice(0, 4).concat(scores.filter(function(x) { return x.uri.startsWith('/draft/'); }));
