@@ -17,4 +17,6 @@ During this period, I got into the use of some awesome command line tools like [
 So in the next phase, I would try to extract the good features related to markdown from agentDoc into some other useful isolated scripts like `mdmv` which moves markdown files from one place (remote or local) to another with all the referenced images and links still available.  
 As to agentDoc itself, it would be left as it is, in case someone else may think it valuable.
 
+> This commit contains my recent tools to replace agentDoc: [fe34a11](https://github.com/cf020031308/cf020031308.github.io/commit/fe34a11b10fb5a71da177fa0cac25400ba435ad0) @20200627土17:21
+
 ## [Comments](https://github.com/cf020031308/cf020031308.github.io/issues/35)
