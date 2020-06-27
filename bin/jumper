@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Find frecently used files and files in my documents folder by file name or content
+# If a folder is found, jump into it, else open it with editor.
+# Best practice: alias j="source $0"
+
+wiki="$HOME/Workplace/roy.log"
+fn=$({
+    { pwd; fasd -Rla "$1" | grep -Fv '/.md' } | uniq | sed '1d;2q'
+    fd --type f -I "$1" "$wiki"
+} | grep -vi '\.\(png\|jpg\)$' | uniq | fzf -1 -0 --preview="if [ -d {} ]; then; lsd -al --color always {}; else; bat --color=always --line-range :100 {}; fi" --preview-window=up)
+if [ "$1" -a ! "$fn" ]; then
+    fn=$(rg -l "$1" "$wiki" | fzf -1 -0 --preview="rg -A5 -B3 -p '$1' {}" --preview-window=up)
+fi
+if [ -d "$fn" ]; then
+    echo "$fn"
+    cd "$fn"
+elif [ "$fn" ]; then
+    if [ "${fn: -3}" = ".md" ]; then
+        # For the sake of pbimg
+        echo "$(dirname $fn)"
+        cd "$(dirname $fn)"
+    fi
+    vim "$fn"
+fi

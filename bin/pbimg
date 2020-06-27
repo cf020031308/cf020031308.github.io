@@ -3,8 +3,8 @@
 # Save image from clipboard as a PNG file
 # And output a markdown-format image block for the convenience of Vim
 # Usage:
-#   in Shell: pbimg [OUTPUT PATH]
-#   in Vim: r!pbimg [OUTPUT PATH]
+#   in Shell: pbimg [Path/]ImageTitle
+#   in Vim: r!pbimg [Path/]ImageTitle
 
 if [ -z "$1" ]; then
     dir="$PWD"
@@ -17,9 +17,9 @@ elif [ -d "$1" ]; then
 else
     dir="$(cd $(dirname $1); pwd)"
     fn="$(basename $1)"
-    fn="${fn%.png}"
-    alt="$fn"
-    if [ -f "${1%.png}.png" ]; then
+    alt="${fn%.png}"
+    fn="$(printf $alt | tr -c '[:alnum:]' '-' | tr '[:upper:]' '[:lower:]')"
+    if [ -f "$dir/$fn.png" ]; then
         fn="$fn-$(uuid)"
     fi
 fi

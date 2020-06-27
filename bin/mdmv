@@ -1,0 +1,57 @@
+#!/bin/bash -
+
+# Migrate markdown file and its images
+# Usage: mdmv SOURCE_FILE DESTINATION [BASE]
+
+if [ ! -f "$1" ]; then
+    echo "File Not Found: $1"
+    exit 1
+fi
+src="$1"
+base="${3:-$(dirname $src)}"
+
+# Print a santinized name for markdown file by the way
+# Can be used like this:
+#     mdmv srcfile.md dstdir/$(mdmv srcfile.md)
+sed 1q "$src" | tr -c '[:alnum:]' '-' | tr '[:upper:]' '[:lower:]' | sed 's/^-*//;s/-*$/.md/'
+
+if [ -z "$2" ]; then
+    echo "Usage: $(basename $0) SOURCE_FILE DSTINATION [BASE]" 1>&2
+    exit 1
+elif [ -d "$2" -o "${2: -1}" = "/" ]; then
+    dst="${2%/}/$(basename $src)"
+elif [ -f "$2" ]; then
+    dst="$2"
+else
+    dst="${2%.md}.md"
+fi
+dir="$(dirname $dst)"
+mkdir -p "$dir"
+
+# Migrate images and convert its links
+rpl=()
+i=0
+grep -on '!\[[^]]*\]([^)]\+)' "$src" | grep -v '(https\{0,1\}://' | while read line; do
+    lineno=${line%%:*}
+    imgpath=$(expr "$line" : "[0-9]\{1,\}:!\[[^]]*\](\([^)]\{0,\}\))")
+    if [ "${imgpath:0:1}" != "/" ]; then
+        realimgpath="$base/$imgpath"
+    else
+        realimgpath="$imgpath"
+    fi
+    if [ -e "$realimgpath" ]; then
+        imgname="$(basename $imgpath)"
+        if [ "$imgpath" != "$imgname" ]; then
+            rpl[i++]="-e ${lineno}s ]($imgpath) ]($imgname) "
+        fi
+        if [ ! "$realimgpath" -ef "$dir/$imgname" ]; then
+            mv "$realimgpath" "$dir/$imgname"
+        fi
+    fi
+done
+if [ ! "$src" -ef "$dst" ]; then
+    test $i -eq 0 && cat "$src" >> "$dst" || sed "${rpl[@]}" "$src" >> "$dst"
+    rm "$src"
+elif [ $i -gt 0 ]; then
+    sed -i "" "${rpl[@]}" "$src"
+fi

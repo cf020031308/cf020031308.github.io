@@ -1,0 +1,33 @@
+#!/bin/bash -
+
+# Review git-managed files wrt the time gaps between commit time, modified time, and file size
+# Usage:
+#   $0
+#   $0 wiki/
+#   $0 . '*.md'
+
+now=$(date +%s)
+left_fn=$(for fn in $(find "${1:-.}" -type f -iname "${2:-*.md}"); do
+    git -P log -1 --format=%ct -- "$fn" | xargs -I{} stat -f "$now %m {} %z %N" "$fn"
+done | awk '
+BEGIN {
+    max0 = 0; name0 = "";
+    max= 0; name = "";
+    counter = 0;
+}
+{
+    score0 = ($1 - $2) / ($2 > $3 ? $2 - $3: 1);
+    if (score0 > max0) { max0 = score0; name0 = $5; }
+    score = (score0 - 1) * $4;
+    if (score > 0) { counter++; }
+    if (score > max) { max = score; name = $5; }
+}
+END {
+    print(counter ? counter - 1 : 0, name ? name : name0);
+}')
+left="${left_fn%% *}"
+fn="${left_fn#* }"
+if [ "$fn" ]; then
+    vim "$fn" && touch "$fn"
+fi
+echo "$left docs to review"
