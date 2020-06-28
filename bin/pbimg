@@ -6,19 +6,20 @@
 #   in Shell: pbimg [Path/]ImageTitle
 #   in Vim: r!pbimg [Path/]ImageTitle
 
-if [ -z "$1" ]; then
+title="$@"
+if [ -z "$title" ]; then
     dir="$PWD"
     fn="$(uuid)"
     alt=""
-elif [ -d "$1" ]; then
-    dir="$(cd $1; pwd)"
+elif [ -d "$title" ]; then
+    dir="$(cd "$title"; pwd)"
     fn="$(uuid)"
     alt=""
 else
-    dir="$(cd $(dirname $1); pwd)"
-    fn="$(basename $1)"
+    dir=$(cd $(dirname "$title"); pwd)
+    fn=$(basename "$title")
     alt="${fn%.png}"
-    fn="$(printf $alt | tr -c '[:alnum:]' '-' | tr '[:upper:]' '[:lower:]')"
+    fn=$(printf "$alt" | tr -c '[:alnum:]' '-' | tr '[:upper:]' '[:lower:]')
     if [ -f "$dir/$fn.png" ]; then
         fn="$fn-$(uuid)"
     fi

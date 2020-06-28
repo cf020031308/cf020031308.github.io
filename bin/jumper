@@ -5,12 +5,13 @@
 # Best practice: alias j="source $0"
 
 wiki="$HOME/Workplace/roy.log"
+q="$@"
 fn=$({
-    { pwd; fasd -Rla "$1" | grep -Fv '/.md' } | uniq | sed '1d;2q'
-    fd --type f -I "$1" "$wiki"
+    { pwd; fasd -Rla "$q" | grep -Fv '/.md' } | uniq | sed '1d;2q'
+    fd --type f -I "$q" "$wiki"
 } | grep -vi '\.\(png\|jpg\)$' | uniq | fzf -1 -0 --preview="if [ -d {} ]; then; lsd -al --color always {}; else; bat --color=always --line-range :100 {}; fi" --preview-window=up)
-if [ "$1" -a ! "$fn" ]; then
-    fn=$(rg -l "$1" "$wiki" | fzf -1 -0 --preview="rg -A5 -B3 -p '$1' {}" --preview-window=up)
+if [ "$q" -a ! "$fn" ]; then
+    fn=$(rg -l "$q" "$wiki" | fzf -1 -0 --preview="rg -A5 -B3 -p '$q' {}" --preview-window=up)
 fi
 if [ -d "$fn" ]; then
     echo "$fn"
@@ -21,5 +22,5 @@ elif [ "$fn" ]; then
         echo "$(dirname $fn)"
         cd "$(dirname $fn)"
     fi
-    vim "$fn"
+    vim "+/$q\c" "$fn"
 fi
