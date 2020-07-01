@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Find files in my documents folder by content and then open it.
+# Best practice: alias f="source finder"
+
+wiki="$HOME/Workplace/roy.log"
+q="$@"
+
+fn=$(rg --no-ignore -l "$q" "$wiki" | fzf -1 -0 --preview="rg -A5 -B3 -p '$q' {}" --preview-window=up)
+if [ "${fn: -3}" = ".md" ]; then
+    dir="$(dirname $1)"
+    echo "$dir"
+    # For the sake of pbimg
+    cd "$dir"
+fi
+if [ "$fn" ]; then
+    vim "+/$q\c" "$fn"
+fi
