@@ -1,0 +1,106 @@
+#!/bin/bash -
+
+# Search from arXiv/DBLP, select with fzf, download via papis.
+# Usage:
+#     search-paper [arxiv|dblp] [query]"
+
+function cacheFile() {
+    key=$(md5 -q -s "$(date +'%Y%m%d')-$2")
+    echo "${TMPDIR:-/tmp/}${1}-query-${key:0:7}"
+}
+
+self="$(basename $0)"
+if [ "$1" = "arxiv" ]; then
+    if [ ! "$2" ]; then
+        cat <<USAGE
+Usage:
+    $self $1 [query]
+Query Example:
+    '(ti:causal and au:\"judea pearl\") or (ti:predict andnot ti:forecast)'"
+Prefices:
+    | prefix | explanation              |
+    | ------ | ------------------------ |
+    | ti     | Title                    |
+    | au     | Author                   |
+    | abs    | Abstract                 |
+    | co     | Comment                  |
+    | jr     | Journal Reference        |
+    | cat    | Subject Category         |
+    | rn     | Report Number            |
+    | id     | Id (use id_list instead) |
+    | all    | All of the above         |
+References:
+    * https://arxiv.org/help/api/user-manual
+USAGE
+        exit 1;
+    fi
+    q="$2 and (cat:cs.* or cat:math.* or cat:stat.*)"
+    q="${q// and / AND }"
+    q="${q// or / OR }"
+    q="${q// andnot / ANDNOT }"
+    q="${q//\(/%28}"
+    q="${q//\)/%29}"
+    q="${q//\"/%22}"
+    q="${q// /+}"
+    fn=$(cacheFile "$1" "$q").html
+    if [ ! -f "$fn" ]; then
+        curl "http://export.arxiv.org/api/query?search_query=$q&max_results=50" | sed '2s/^.*$/<feed>/' > "$fn"
+    fi
+    xmllint --xpath '//entry/title | //entry/published | //entry/author//text()' "$fn"\
+        | sed -E 's/<published>([0-9-]{7}).*<title>/[\1] /;s/<\/title>/ -- /'\
+        | xargs\
+        | sed -E 's/(\[[0-9-]{7}\] )/\
+\1/g'\
+        | sed 1d\
+        | grep -n '.'\
+        | sed 's/:/ /'\
+        | sort -rk2\
+        | fzf --with-nth="2..-1" --bind=tab:toggle+up -m -0 --header="$2" --preview="xmllint --xpath '//entry[{1} + 1]/summary/text()' '$fn'"\
+        | while read line; do
+            url=$(xmllint --xpath "//entry[${line%% *}]/id/text()" "$fn")
+            echo "$url"
+            papis add --from-url "$url"
+        done
+elif [ "$1" = "dblp" ]; then
+    if [ ! "$2" ]; then
+        cat <<USAGE
+Usage:
+    $self $1 [query]
+Query Example:
+    'test search'
+Features:
+	| Feature       | Query                            | Example                                                              |
+	| ------------- | -------------------------------- | -------------------------------------------------------------------- |
+	| prefix search | default                          | "sig" matches "SIGIR" as well as "signal"                            |
+	| exact word    | append dollar sign ($)           | "graph$" matches "graph", but not "graphics"                         |
+	| boolean AND   | separate words by space          | "codd model" matches "Codd's Relational Model" and "A Model by Codd" |
+	| boolean OR    | connect words by pipe symbol (|) | "graph|network" matches "graph algorithm" and "Network Analysis"     |
+References:
+    * https://dblp.uni-trier.de/faq/13501473
+    * https://dblp.uni-trier.de/faq/1474589.html
+USAGE
+    exit 1
+    fi
+    q="${2// /+}"
+    q="${q// or / OR }"
+    fn=$(cacheFile "$1" "$q").html
+    if [ ! -f "$fn" ]; then
+        curl "https://dblp.org/search/publ/api?q=$q&format=json&h=50" > "$fn"
+    fi
+    jq -r '.result.hits.hit[] | .info as $e | "[\($e.year)] \($e.title) -- \($e | .authors.author[0]?.text)"' "$fn"\
+        | grep -n '.'\
+        | sed 's/:/ /'\
+        | sort -rk2\
+        | fzf --with-nth="2..-1" --bind=tab:toggle+up -m -0 --header="$(jq -r '.result.query' $fn)" --preview="jq -C '.result.hits.hit[{1}].info | del (.authors)' '$fn'"\
+        | while read line; do
+            doi=$(jq -r ".result.hits.hit[${line%% *}].info.doi" "$fn")
+            echo "$doi"
+            papis add --from-doi "$doi"
+        done
+else
+    cat <<USAGE
+Usage:
+    $self [arxiv|dblp] [query]"
+USAGE
+    exit 1;
+fi
