@@ -75,3 +75,4 @@ http://googleaiblog.blogspot.com/atom.xml
 https://rsshub.app/owspace/read/1
 https://rsshub.app/zhihu/hotlist
 https://css-tricks.com/feed/
+http://export.arxiv.org/api/query?search_query=ti:forecast+OR+ti:predict+AND+%28cat:cs.*+OR+cat:math.*+OR+cat:stat.*%29&max_results=50
