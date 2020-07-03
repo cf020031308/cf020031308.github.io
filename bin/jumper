@@ -16,7 +16,7 @@ if [ -d "$fn" ]; then
     cd "$fn"
 elif [ -f "$fn" ]; then
     if [ "${fn: -3}" = ".md" ]; then
-        dir="$(dirname $1)"
+        dir="$(dirname $fn)"
         echo "$dir"
         # For the sake of pbimg
         cd "$dir"
