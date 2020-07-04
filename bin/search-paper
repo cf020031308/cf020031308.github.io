@@ -34,7 +34,7 @@ References:
 USAGE
         exit 1;
     fi
-    q="$2 and (cat:cs.* or cat:math.* or cat:stat.*)"
+    q="($2) and (cat:cs.* or cat:math.* or cat:stat.*)"
     q="${q// and / AND }"
     q="${q// or / OR }"
     q="${q// andnot / ANDNOT }"
@@ -47,10 +47,8 @@ USAGE
         curl "http://export.arxiv.org/api/query?search_query=$q&max_results=50" | sed '2s/^.*$/<feed>/' > "$fn"
     fi
     xmllint --xpath '//entry/title | //entry/published | //entry/author//text()' "$fn"\
-        | sed -E 's/<published>([0-9-]{7}).*<title>/[\1] /;s/<\/title>/ -- /'\
-        | xargs\
-        | sed -E 's/(\[[0-9-]{7}\] )/\
-\1/g'\
+        | sed -nE 's/<published>([0-9-]{7}).*<title>/[\1] /;s/<\/title>/ -- /;H;${x;s/(\n| )+/ /g;s/(\[[0-9-]{7}\] )/\
+\1/g;p;}'\
         | sed 1d\
         | grep -n '.'\
         | sed 's/:/ /'\
