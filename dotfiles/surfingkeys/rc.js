@@ -7,3 +7,4 @@ addSearchAlias('gh', 'github', 'https://github.com/search?o=desc&s=stars&type=Re
 addSearchAlias('so', 'stackoverflow', 'http://stackoverflow.com/search?q=');
 addSearchAlias('tb', 'taobao', 'http://s.taobao.com/search?oe=utf-8&f=8&q=');
 addSearchAlias('gs', 'google scholar', 'https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&btnG=&q=');
+addSearchAlias('dd', 'devdocs', 'https://devdocs.io/#q=');

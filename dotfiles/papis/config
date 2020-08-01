@@ -9,3 +9,5 @@ editor = vim
 default-library = cs
 add-name = {doc[year]}-{doc[title]}
 add-edit = True
+# opentool = zathura -l error
+opentool = open -a 'Google Chrome'
