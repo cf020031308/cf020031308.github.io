@@ -34,7 +34,6 @@
 * 其它
   * [(2008) 大规模流量数据中重基数的发现与在异常侦测中的应用](2008-finding-cardinality-heavy-hitters-in-massive-traffic-data-and-its-application-to-anomaly-detection/readme.md)
   * [(2016) 建立像人一样思考与学习的机器](2016-building-machines-that-learn-and-think-like-people/readme.md)
-  * [近年 A、B 类会议高引或最佳论文（每月更新）](bests.csv)
 * 水论文
   * [(2015) 利用机器学习和社交媒体预测稀有事件](2015-on-predictability-of-rare-events-leveraging-social-media-a-machine-learning-perspective/readme.md)
   * [(2016) EmoGram：基于时间序列的开源情感跟踪器及其创新应用](2016-emogram-an-open-source-time-sequence-based-emotion-tracker-and-its-innovative-applications/readme.md)
