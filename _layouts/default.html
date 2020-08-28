@@ -156,17 +156,23 @@
     if (codes.length === 0)
         codes = doc.querySelectorAll('div.language-javascript pre.highlight code');
     if (codes.length) {
-        const _G = {}, jsResult = [];
-        const write = buf => jsResult.push(buf);
+        const _G = {};
         Array.prototype.forEach.call(codes, (code, i) => {
             if (code.textContent.indexOf('write(') > -1) {
-                try {
-                    jsResult.splice(0, jsResult.length);
-                    eval(`(function() { ${code.textContent} })()`);
-                    if (jsResult.length) code.parentNode.outerHTML = marked(jsResult.join('\n'));
-                } catch (error) {
-                    console.log(error);
-                }
+                const jsResult = Function(`"use strict;"
+                    const jsBuffer = [];
+                    const write = buf => jsBuffer.push(buf);
+                    return function(_G, HTTP){
+                        const loadfile = path => Object.assign(_G, Function(HTTP('get', path).responseText)() || {});
+                        try {
+                            Object.assign(_G, (function() {${code.textContent};})() || {});
+                        } catch (error) {
+                            console.log(error);
+                        }
+                        return (jsBuffer.length) ? jsBuffer.join('\\n') : '';
+                    };
+                `)()(_G, HTTP);
+                if (jsResult) code.parentNode.outerHTML = marked(jsResult);
             }
         });
     }
