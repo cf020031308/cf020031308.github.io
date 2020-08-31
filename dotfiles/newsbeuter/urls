@@ -27,7 +27,6 @@ https://blog.github.com/all.atom
 http://ifeve.com/feed/
 https://jvns.ca/atom.xml
 https://rsshub.app/hackernews/best
-https://rsshub.app/hackernews/best/comments
 https://blog.evernote.com/feed/
 https://www.yinxiang.com/blog/feed/
 http://feeds.bbci.co.uk/news/world/rss.xml
@@ -76,6 +75,5 @@ https://rsshub.app/owspace/read/1
 https://rsshub.app/zhihu/hotlist
 https://css-tricks.com/feed/
 http://export.arxiv.org/api/query?search_query=%28ti:forecast+OR+ti:predict+OR+ti:reinforcement%29+AND+%28cat:cs.*+OR+cat:math.*+OR+cat:stat.*%29&max_results=50
-https://www.producthunt.com/feed
 https://rsshub.app/mi/golden
 https://rsshub.app/cneb/guoneinews
