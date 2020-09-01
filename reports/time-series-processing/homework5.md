@@ -33,83 +33,32 @@ $$(\phi_{31}, \phi_{32}, \phi_{33}) \approx (0.749, -0.225, 0.047)$$
 ## 2. 对于 ARMA(2, 2) 模型 $X_t - 0.1X_{t-1} - 0.12X_{t-1} = \epsilon_t - 0.6\epsilon_{t-1} + 0.7\epsilon_{t-2}$，$\epsilon_t$ 是高斯白噪声 WN(0, 1)。请模拟产生一个长度为 1000 的动态数据。计算前 10 个样本自协方差值 $\hat\gamma_k$ 与偏相关系数 $\hat\phi_{kk}$，并画出动态数据散布图、自相关图与偏相关图。
 
 ```javascript
-const toTable = _G.toTable = (title, headers, lines) => [
-  (title ? [headers[0] + '\\\\' + title, ...headers.slice(1)] : headers).join('|'),
-  headers.map(_ => '-').join('|'),
-  ...lines.map(line => line.join('|')),
-].join('\n');
+loadfile('ts.js');
+const { ARMA, corr, forecast, parCorr, toTable } = _G;
 
-const sum = _G.sum = arr => arr.reduce((s, x) => s + x, 0);
-const conv = _G.conv = (arr1, arr2) => arr1.map((x, i) => x * (arr2[i] || 0));
-const rconv = _G.rconv = (arr1, arr2) => arr1.map((x, i) => x * (arr2[arr2.length - 1 - i] || 0));
+const xs = ARMA(1000, [1, -0.1, -0.12], [1, -0.6, 0.7]);
+const gs = corr(xs, 10);
+const hs = parCorr(forecast(gs));
 
-const ARMA = _G.ARMA = (N, phis = [1], thetas = [1], mu = 0, sigma2 = 1) => {
-  const M = Math;
-  const sigma = M.sqrt(sigma2);
-  const N_ = parseInt(N * 1.1 + 10);
-  let es = [], xs = [];
-  for (let t = 0; t < N_; t++) {
-    es.push(M.cos(2 * M.PI * M.random()) * M.sqrt(-2 * M.log(1 - M.random())) * sigma + mu);
-    xs.push((sum(rconv(thetas, es.slice(0, t + 1))) - sum(rconv(phis.slice(1), xs.slice(0, t)))) / phis[0]);
-  }
-  return xs.slice(-N);
-};
+write(`
+${toTable('模拟数据散布图', ['t', '.X'], xs.map((x, i) => [i + 1, x]))}
 
-const iCorr = _G.iCorr = xs => {
-  let k = 0;
-  return () => sum(conv(xs, xs.slice(k++))) / xs.length;
-};
+${toTable('自相关图', ['k', '$\\hat\\gamma_k$'], gs.map((g, k) => [k, g]))}
 
-const iPartialCorr = _G.partialCorr = xs => {
-  const ig = iCorr(xs);
-  let gs = [ig()], hs = [[-1]], k = 0;
-  return () => {
-    gs.push(ig()); hs.push([-1]); k++;
-    hs[k][k] = sum(rconv(hs[k - 1], gs.slice(0, k + 1))) / sum(conv(hs[k - 1], gs));
-    for (let j = 1; j < k; j++) hs[k][j] = hs[k - 1][j] - hs[k][k] * hs[k - 1][k - j];
-    return hs[k];
-  }
-};
-
-const corr = _G.corr = (xs, K) => {
-  const ig = iCorr(xs);
-  let gs = [];
-  for (i = 0; i <= K; i++) gs.push(ig()); 
-  return gs;
-};
-
-const partialCorr = _G.partialCorr = (xs, K) => {
-  const ih = iPartialCorr(xs);
-  let hs = [[-1]];
-  for (i = 0; i< K; i++) hs.push(ih());
-  return hs;
-};
-
-Object.assign(_G, { toTable, sum, conv, rconv, ARMA, corr, partialCorr });
-
-const xs = _G.ARMA(1000, [1, -0.1, -0.12], [1, -0.6, 0.7]);
-const gs = _G.corr(xs, 10);
-const hs = _G.partialCorr(xs, 10);
-
-write(
-`${_G.toTable('模拟数据散布图', ['t', '.X'], xs.map((x, i) => [i + 1, x]))}
-
-${_G.toTable('自相关图', ['k', '$\\hat\\gamma_k$'], gs.map((g, k) => [k, g]))}
-
-${_G.toTable('偏相关图', ['k', '$\\hat\\phi_{kk}$'], hs.slice(1).map((hsk, i) => [i + 1, hsk[i + 1]]))}
+${toTable('偏相关图', ['k', '$\\hat\\phi_{kk}$'], hs.map((h, i) => [i + 1, h]))}
 `);
 ```
 
 ## 3. $X_t$ 满足 AR(5) 模型 $X_t - 1.4833 X_{t-1} + 0.8483 X_{t-2} - 0.2350 X_{t-3} + 0.0317 X_{t-4} - 0.0017 X_{t-5} = \epsilon_t \sim \text{WN}(0, 1)$。请模拟生成 500 个数据点，对模型的自回归系数和白噪声方差进行估计，并给出自回归系数为 0 的置信区间。
 
 ```javascript
-const { ARMA, corr, partialCorr, sum, conv, toTable } = _G;
+const { ARMA, corr, forecast, sum, conv, toTable } = _G;
 const N = 500;
 const phis = [1, -1.4833, 0.8483, -0.2350, 0.0317, -0.0017];
 const p = phis.length - 1;
 const xs = ARMA(N, phis);
 const gs = corr(xs, 20);
-const hs = partialCorr(xs, p)[p];
+const hs = forecast(gs.slice(0, p + 1))[p];
 const sigma2 = sum(conv(phis, gs));
 const belief = 1.96 / Math.sqrt(N);
 
@@ -120,7 +69,7 @@ ${toTable('自相关系数的估计', ['h', '-$\\hat\\gamma_h$'], gs.map((g, h) 
 
 自回归系数的估计：
 
-${hs.slice(1).map((h, i) => `* $\\phi_${i + 1} = ${h}$`).join('\n')}
+${hs.slice(1).map((h, i) => `* $\\phi_${i + 1} = ${-h}$`).join('\n')}
 
 $\\epsilon_t$ 方差的估计：$\\hat{\\sigma}^2_\\epsilon = ${sigma2}$
 
@@ -138,7 +87,6 @@ const q = thetas.length - 1;
 const M = Math.max(2 * q, parseInt(N ** (1 / 3) + 0.5));
 const xs = ARMA(N, [1], thetas);
 const gs = corr(xs, M);
-_G.buf = { N, thetas, q, M, gs };
 
 write(`
 ${toTable('模拟数据', ['t', '-X'], xs.map((x, i) => [i + 1, x]))}
@@ -147,6 +95,7 @@ ${toTable('样本自相关系数', ['h', '-$\\hat\\gamma_h$'], gs.map((g, h) => 
 
 样本自相函数是 ${q} 步截尾的，可以用 MA(${q}） 拟合。
 `);
+return {buf: { N, thetas, q, M, gs }};
 ```
 
 ### 1. 直接求解法
@@ -219,14 +168,8 @@ ${toTable('',
 ### 3. 新息估计法
 
 ```javascript
-const { sum, rconv, toTable, buf: { thetas, q, M, gs, ds } } = _G;
-let ts = [[]], vs = [gs[0]];
-for (let m = 1; m <= M; m++) {
-  ts[m] = [1];
-  for (let k = 0; k < m; k++)
-    ts[m][m - k] = (gs[m - k] - sum(rconv(rconv(vs.slice(0, k), ts[m]), ts[k].slice(0, k + 1)))) / vs[k];
-  vs[m] = gs[0] - sum(rconv(rconv(vs, ts[m]), ts[m]));
-}
+const { newInfo, toTable, buf: { thetas, q, M, gs, ds } } = _G;
+const [ts, vs] = newInfo(gs);
 write(`
 终止条件：
 
