@@ -1,5 +1,12 @@
 # ChangeLog of Me
 
+## Aug 2020
+
+* wiki
+  * [Zathura: vi 键位的 PDF 阅读器](/wiki/zathura.md) (b3eeada)
+  * [概率论与数理统计](/wiki/probability-statistics/) (a03be23)
+* OKR: 完成论文初稿
+
 ## Jul 2020
 
 * site
@@ -18,9 +25,6 @@
 * dotfiles
   * replace [cvim](https://github.com/cf020031308/cf020031308.github.io/blob/master/dotfiles/cvim/cvimrc) with [SurfingKeys](https://github.com/cf020031308/cf020031308.github.io/blob/master/dotfiles/surfingkeys/rc.js) (c82d6e8)
 * OKR: 完成本学期的课业
-  * [ ] 完成时间序列作业
-  * [ ] 输出时间序列笔记
-  * [ ] 输出数据统计笔记
 
 ## Jun 2020
 
