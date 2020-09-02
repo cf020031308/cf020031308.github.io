@@ -55,10 +55,17 @@
 ![区间估计](interval-estimation.png)
 
 
+上图枢轴量的分布易由以下三点推出来：
+
+1. $\bar X \sim N(\mu, \sigma^2 / n)$
+2. $\frac{(n-1)S^2}{\sigma^2} \sim x^2(n-1)$
+3. $\bar X$ 与 $S^2$ 相互独立
+
+
 大子样（比如超过 50）时可以有一些近似估计：
 
 * 用子样的方差近似母体的方差
-* 母体均值近似服从正态分布
+* 由中心极限定理，母体均值近似服从正态分布
 * 由中心极限定理，n 很大时 $x^2(n)$ 近似于 N(n, 2n)，所以 n > 45 时 $x^2$ 表里查不到上侧分位数，可以去查标准正态分布的表，然后乘以 $\sqrt{2n}$ 再加 n。
 * t 分布是对称的，且随 n 增大趋近于标准正态分布，所以也可以查标准正态分布的表确定上侧分位数。
 
@@ -105,16 +112,14 @@ l 与 n 的关系有如下经验：
 做 n 次（至少 50 次）独立重复试验，$m_i$ 是 $A_i$ 的频数。  
 按 $P\\{x^2 \ge x_\alpha^2(l - 1)\\} \approx \alpha$ 拒绝假设。
 
-### 独立性假设检验：$x^2$ 检验法
-
-假设 $H_0: P(x, y) = P_1(x) P_2(y)$
+#### 假设 $H_0: P(x, y) = P_1(x) P_2(y)$ （独立性假设检验）
 
 有 n 组观测值 $(x_1, y_1), (x_2, y_2), \cdots, (x_n, y_n)$
 
 将二维平面分为 r 行 s 列，设 $m_{ij}, m_i, m_j$ 分别为第 i 列第 j 行的矩形范围内的频数、第 i 列的频数和第 j 行的频数，并记 $n_{ij} = \frac{n_{i*}n_{*j}}{n}$，则在原假设成立时有
 $$x^2 = \sum\limits_{i=1}^{s} \sum\limits_{k=1}^{r} \frac{(m_{ij} - n_{ij})^2}{n_{ij}} \sim x^2((r-1)(s-1))$$
 
-### 独立性假设检验：离差分析法
+## 方差分析：离差分析法
 
 **分解定理**：设
 
@@ -123,7 +128,7 @@ $$x^2 = \sum\limits_{i=1}^{s} \sum\limits_{k=1}^{r} \frac{(m_{ij} - n_{ij})^2}{n
 
 则 $\sum\limits_{i=1}^{k} f_i = n$ 等价于 $Q_1, Q_2, \cdots, Q_k$ 相互独立且 $Q_i \sim x^2(f_i)$
 
-#### 一元方差分析
+### 一元方差分析
 
 因子 A 有 r 种水平：$A_1, A_2, \cdots, A_r$，在水平 $A_i$ 时实验结果服从正态分布：$X_i \sim N(\mu_i, \sigma^2)$（假定不同水平的方差都相等）。现在想知道该因子的不同水平是否对实验结果有显著影响（而不通过两两做检验进行比较）。
 
@@ -141,13 +146,13 @@ $$x^2 = \sum\limits_{i=1}^{s} \sum\limits_{k=1}^{r} \frac{(m_{ij} - n_{ij})^2}{n
 * 直观上都是根据显著性水平取 F 分布的右侧分位数划分接受域与拒绝域（组间均方离差越大说明影响越显著）
 * 如果原假设被拒绝，可以根据 $\frac{\bar X_i - \bar X_j - (\mu_i - \mu_j)}{\sqrt{\frac1{n_i} + \frac1{n_j}} \frac{Q_E}{n - r}} \sim t(n - r)$ 对两个水平之间的差异 $\mu_i - \mu_j$ 做区间估计。
 
-#### 二元方差分析
+### 二元方差分析
 
 因子 A、B 分别有 r、s 种水平，在每组 $(A_i, B_j) \in A \times B$ 上各做 c 次实验，母体 $X_{ij}$ 服从方差为 $\sigma^2$ 的正态分布。子样为 {$X_{ijk}, k = 1, 2, \cdots, c$}。设
 
 * 组内均值 $\bar X_{ij} = \frac1c \sum\limits_{k=1}^{c} X_{ijk}$
-* 条件均值（A）$\bar X_{i*} = \frac1s \sum\limits_{j=1}^{s} \bar X_{ij}$
-* 条件均值（B）$\bar X_{*j} = \frac1r \sum\limits_{i=1}^{r} \bar X_{ij}$
+* 边缘均值（A）$\bar X_{i*} = \frac1s \sum\limits_{j=1}^{s} \bar X_{ij}$
+* 边缘均值（B）$\bar X_{*j} = \frac1r \sum\limits_{i=1}^{r} \bar X_{ij}$
 * 总均值 $\bar X = \frac1{sr} \sum\limits_{i=1}^{r} \sum\limits_{j=1}^{s} \bar X_{ij}$
 
 | 两个因子 | 离差平方和                                                                                                 | 均方离差                     | 原假设                     | 假设成立时的分布                            | 检验分布（c > 1）                                         | 检验分布（c = 1）                                     |
@@ -160,7 +165,7 @@ $$x^2 = \sum\limits_{i=1}^{s} \sum\limits_{k=1}^{r} \frac{(m_{ij} - n_{ij})^2}{n
 * $\\{S_A, S_B\\} \ge S_I \ge S_E$，等号成立当且仅当对应的假设成立
 * 直观上都是根据显著性水平取 F 分布的右侧分位数划分接受域与拒绝域（越大说明检验的因素影响越显著）
 
-#### 多个因子：正交试验设计
+### 多个因子：正交试验设计
 
 按照 $L_n(s^r)$ 正交表安排 n 次试验，希望能替代 $s^r$ 次试验检验 r 个（或略少于 r 个）各有 s 种水平的因子是否对试验结果有显著影响。
 
@@ -176,9 +181,9 @@ $$x^2 = \sum\limits_{i=1}^{s} \sum\limits_{k=1}^{r} \frac{(m_{ij} - n_{ij})^2}{n
 2. 任意两列各组合水平出现的个数相同
 
 
-按照正交表进行试验后，仅用已有结果求平均近似得到总均值与各个因子的条件均值，进一步得
+按照正交表进行试验后，仅用已有结果求平均近似得到总均值与各个因子的边缘均值，进一步得
 
-1. 因子的离差平方和：(n / s) * 该因子各个水平时的 (条件均值 - 总均值) 的平方和，自由度为 r - 1
+1. 因子的离差平方和：(n / s) * 该因子各个水平时的 (边缘均值 - 总均值) 的平方和，自由度为 s - 1
 2. 总离差：各次试验 (结果 - 总均值) 的平方和，自由度为 n - 1
 3. 误差：总离差减去各个因子的离差平方和，自由度为 (n - 1) - r * (s - 1)
 
@@ -206,17 +211,17 @@ $$\begin{cases}
 \frac1{\sigma^2}\sum\limits_{i=1}^{n} \hat\epsilon_i^2 & \sim x^2(n - p - 1)
 \end{cases}$$
 
-### 线性回归的显著性检验
+### 模型的检验
 
 设 $\bar Y$为所有 y 的试验值的均值。用离差分析法，假设 $H_0: \vec\beta = 0 $ 成立，则有
 $$F = \frac{n - p - 1}{p} \cdot (\frac{\sum\limits_{i=1}^{n}(Y_i - \bar Y)^2}{\sum\limits_{i=1}^{n} \hat\epsilon_i^2} - 1) \sim F(p, n - p - 1)$$
 F 值大于分位数时则拒绝假设，认为线性回归显著。
 
-### 回归系数的显著性检验
+### 系数的检验
 
 $\hat\beta$ 的第 i 个分量可由
 $$ T_i = \frac{\hat\beta_i - \tilde\beta_i}{\sqrt{\frac{c_{ii}}{n - p - 1} \sum\limits_{i=1}^{n} \hat\epsilon_i^2}} \sim t(n - p - 1)$$
-单独检验是否显著地等于 $\tilde\beta_i$，其中 $c_{ij}$ 是协方差矩阵 $(\tilde X^T \tilde X)^{-1}$ 中元素。特别地
+单独检验是否显著地等于 $\tilde\beta_i$，其中 $c_{ij}$ 是协方差矩阵 $C = (\tilde X^T \tilde X)^{-1}$ 中元素。特别地
 
 * 取 $\tilde\beta_i = 0$ 可以检验相应的自变量分量是否重要；
 * 取 $\tilde\beta_i = 0$ 且 p = 1 时也可以用这个分布检验线性回归是否显著。
@@ -226,7 +231,7 @@ $$ T_i = \frac{\hat\beta_i - \tilde\beta_i}{\sqrt{\frac{c_{ii}}{n - p - 1} \sum\
 对任一点 $\vec x$ 做估计 $\hat y = \hat\beta \cdot (1, \vec x)$ 有
 $$T = \frac{y - \hat y}{\sqrt{\frac{d}{n - p - 1} \sum\limits_{i=1}^{n} \hat\epsilon_i^2}} \sim t(n - p - 1)$$
 其中
-$$d = 1 + \frac1n + \sum\limits_{i=1}^{p} \sum\limits_{i=1}^{p} c_{ij} (x_i - \bar x_i)(x_j - \bar x_j)$$
+$$d = 1 + \frac1n + \sum\limits_{i=1}^{p} \sum\limits_{i=1}^{p} c_{ij} (x_i - \bar x_i)(x_j - \bar x_j) = 1 + \frac1n + (x - \bar x)^T C (x - \bar x)$$
 可导出该估计的置信区间
 
 ### 古典假定的违背
