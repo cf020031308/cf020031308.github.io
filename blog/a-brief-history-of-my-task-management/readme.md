@@ -23,7 +23,9 @@ In the meantime, [Github Milestones](https://github.com/cf020031308/cf020031308.
 
 
 Since all the work was placed at cloud, they became platform-independent.  
-But actually Github was sometimes slow, plusing that I am a heavy keyboard user and always awkward with mouses and browsers.  
+But actually Github was sometimes slow, plusing that I am a heavy keyboard user and always awkward with mouses and browsers.
+
+
 All these reduced my willingness.
 
 ## Plaintext
@@ -35,6 +37,7 @@ Recently almost all my documents are written in Markdown.
 So it's natural for me to manage my work tasks in Markdown files.  
 In fact nowadays when I am working on a project I always create a file named `worklog.md` in the project directory, recoding logs, tasks, and troubleshootings.  
 And earlier when I was studying I experienced to [manage tasks with Evernote](/blog/mobile-management/)。
+
 
 Therefore, I believe plaintext competent to manage tasks of learning and R&D which are in a stable schedule and with light planning.
 
@@ -49,6 +52,7 @@ It can be convenient to manage markdown files with [agentDoc](https://github.com
 
 With [Nutstore](https://www.jianguoyun.com) files are synced to cloud and become accessible with phones.  
 Below is a snapshot of Nutstore Markdown Editor, a tool to sync and edit markdown files stored remotely in Nutstore.
+
 
 ![Nutstore Markdown Editor](WechatIMG590.jpeg)
 
@@ -73,6 +77,8 @@ descriptions and notes
 
 * the beginning `@20200622月` stands for Scheduled Date (can be quickly inputted via [snippets](https://github.com/cf020031308/cf020031308.github.io/blob/master/dotfiles/vim/vim-snippets/markdown.snippets)). After the task is started, Scheduled Date can be removed or remained as a record. After the `@` there can also be a condition for the suspended task to restart such as `@sometool @someone`.
 * task surrounded by `~~` is aborted. when previewing some editors would render the text with a stroke line.
+
+
 * the following exclamation mark (`!`) stands for Priority. The more `!`, the higher priority.
 * the following `!20200626金17:04` stands for Due.
 * the following `@20200622月15:59` stands for Completion Date. If you complete a task in time, place it before Due. Otherwise, place it after Due.
@@ -87,6 +93,8 @@ descriptions and notes
 - **Completion**. In Markdown you can divide sections with headings to simulate Kanban. And in Kanban a task is regarded as completed not by marks but placing it into a specific lane.
 - **Priority**. I seldom use it. So I choose a brief `!` as part of the text to represent the importance.
 - **Completion Date and Creation Date**.  I think these two dates are more like records and not so often used by the human that they should not be kept at this 'good location'.
+
+
 - **Tag**. `@` at Github may refer to other users. So I use `#` as a leading letter of tags, leaving `@` to dates.
   - **Project Tag**. A task flowing through Kanban can have a `#project.subproject` to briefly point out what project it belongs to. After it is done, the Project Tag can be deleted, because project hierarchy can be implemented with headings.
   - **Context Tag**. I never use it. I don't need to change my context at work.
@@ -102,12 +110,14 @@ I have four markdown files to manage my tasks.
 
 But again, most importantly, it should be suitable for your own work.
 
+
 * `inbox.md`
   1. **Inbox**. Collect whatever stuff.
   2. **OKR**. The Objective Keys and Results. Monthly ammended. With all its history.
   3. **Don't Do**. Anything not meet the current OKR. You may repeatedly come up with the same idea once in a long period, with the same time-wasting procedures to deal with it. So the best solution is just to write it down as a notice.
   4. **Maybe Later**. Tasks that are not to be started immediately.
   5. **Can do**. Tasks that can be started by the end of next week. Every week I will check this section and move some tasks into `todo.md`.
+
 
 * `todo.md`
   1. **List**. Lists are good. For example before I call it a work day, I alway have a long check list with some basic principles covering communication, habbits, projects and so on, to help me improve myself and avoid mistakes.
@@ -116,9 +126,11 @@ But again, most importantly, it should be suitable for your own work.
   4. **Task**. Most tasks are here.
   5. **Done**. Move aborted, suspended or completed Schedule & Task here temporarily. Every month move aborted ones to `inbox.md/Don't do`, suspended ones to `inbox.md/Maybe Later`, and completed ones to `done.md/Task`.
 
+
 * `done.md`
   1. **Log**. Every month move `todo.md/Log` here.
   2. **Task**. Every month move `todo.md/Done` here.
+
 
 * [changelog.md](../../changelog.md). Summarize and publish the achievements of the last month.
 
