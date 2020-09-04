@@ -5,7 +5,7 @@
 Once I used a task management software in terminal called [Taskwarrior](https://taskwarrior.org/) and then developed my own [Pomodoro-Warriors](https://github.com/cf020031308/pomodoro-warriors)。
 
 
-But they were platform-dependent thus useless once I was away from keyboard.
+But they were platform-dependent thus useless once I was away from keyboard.  
 So I only used them to manage my tasks at work.
 
 ## Web
@@ -22,18 +22,18 @@ So [Github Projects](https://github.com/cf020031308/cf020031308.github.io/projec
 In the meantime, [Github Milestones](https://github.com/cf020031308/cf020031308.github.io/milestones?state=closed) was used to practising OKR。
 
 
-Since all the work was placed at cloud, they became platform-independent.
-But actually Github was sometimes slow, plusing that I am a heavy keyboard user and always awkward with mouses and browsers.
+Since all the work was placed at cloud, they became platform-independent.  
+But actually Github was sometimes slow, plusing that I am a heavy keyboard user and always awkward with mouses and browsers.  
 All these reduced my willingness.
 
 ## Plaintext
 
-Long ago when I was keen on task management tools I noticed [todo.txt][todo.txt].
-Not long ago I read an article [*My productivity app for the past 12 years has been a single .txt file*](https://jeffhuang.com/productivity_text_file/).
+Long ago when I was keen on task management tools I noticed [todo.txt][todo.txt].  
+Not long ago I read an article [*My productivity app for the past 12 years has been a single .txt file*](https://jeffhuang.com/productivity_text_file/).  
 Recently almost all my documents are written in Markdown.
 
-So it's natural for me to manage my work tasks in Markdown files.
-In fact nowadays when I am working on a project I always create a file named `worklog.md` in the project directory, recoding logs, tasks, and troubleshootings.
+So it's natural for me to manage my work tasks in Markdown files.  
+In fact nowadays when I am working on a project I always create a file named `worklog.md` in the project directory, recoding logs, tasks, and troubleshootings.  
 And earlier when I was studying I experienced to [manage tasks with Evernote](/blog/mobile-management/)。
 
 Therefore, I believe plaintext competent to manage tasks of learning and R&D which are in a stable schedule and with light planning.
@@ -47,7 +47,8 @@ This is my Markdown Kanban populated with tasks migrated from my Github Kanban.
 It can be convenient to manage markdown files with [agentDoc](https://github.com/cf020031308/agentDoc) that I develped earlier (Optional).
 
 
-With Nustore files are synced to cloud and become accessible with phones.
+With [Nutstore](https://www.jianguoyun.com) files are synced to cloud and become accessible with phones.  
+Below is a snapshot of Nutstore Markdown Editor, a tool to sync and edit markdown files stored remotely in Nutstore.
 
 ![Nutstore Markdown Editor](WechatIMG590.jpeg)
 
@@ -64,13 +65,14 @@ Most importantly, it should be suitable for your own work.
 This is my example:
 
 ```markdown
-## @20200622月15:59 an example!! @20200622月15:59 !20200626金17:04
+## @20200622月 ~~ an example!! ~~ @20200622月15:59 !20200626金17:04
 
 descriptions and notes
 ```
 
 
-* the beginning `@20200622月15:59` stands for Scheduled Date (can be quickly inputted via [snippets](https://github.com/cf020031308/cf020031308.github.io/blob/master/dotfiles/vim/vim-snippets/markdown.snippets)). After the task is started, Scheduled Date can be removed or remained as a record.
+* the beginning `@20200622月` stands for Scheduled Date (can be quickly inputted via [snippets](https://github.com/cf020031308/cf020031308.github.io/blob/master/dotfiles/vim/vim-snippets/markdown.snippets)). After the task is started, Scheduled Date can be removed or remained as a record. After the `@` there can also be a condition for the suspended task to restart such as `@sometool @someone`.
+* task surrounded by `~~` is aborted. when previewing some editors would render the text with a stroke line.
 * the following exclamation mark (`!`) stands for Priority. The more `!`, the higher priority.
 * the following `!20200626金17:04` stands for Due.
 * the following `@20200622月15:59` stands for Completion Date. If you complete a task in time, place it before Due. Otherwise, place it after Due.
@@ -96,26 +98,29 @@ P.S. Tasks with `!` are either dued or with high priority (we are managing tasks
 
 ### Files and Sections
 
-I have two markdown files to manage my tasks.
-The design of sections references GTD.
+I have four markdown files to manage my tasks.
 
-And again, most importantly, it should be suitable for your own work.
-
-
-* `todo.md`
-  1. Emergency
-  2. Doing
-  3. Done
-  4. To Do
-
+But again, most importantly, it should be suitable for your own work.
 
 * `inbox.md`
-  1. Inbox
-  2. OKR
-  3. Don't Do
-  4. Maybe Later
-  5. Can Do
+  1. **Inbox**. Collect whatever stuff.
+  2. **OKR**. The Objective Keys and Results. Monthly ammended. With all its history.
+  3. **Don't Do**. Anything not meet the current OKR. You may repeatedly come up with the same idea once in a long period, with the same time-wasting procedures to deal with it. So the best solution is just to write it down as a notice.
+  4. **Maybe Later**. Tasks that are not to be started immediately.
+  5. **Can do**. Tasks that can be started by the end of next week. Every week I will check this section and move some tasks into `todo.md`.
 
+* `todo.md`
+  1. **List**. Lists are good. For example before I call it a work day, I alway have a long check list with some basic principles covering communication, habbits, projects and so on, to help me improve myself and avoid mistakes.
+  2. **Log**. Everyday I start my work with a line `### @20200904金10:08` and append a tick `### @20200904金10:08 @20200904金19:09` when finish. Anything about work that day can be write down in the section below this log.
+  3. **Schedule**. Tasks with specific starting date.
+  4. **Task**. Most tasks are here.
+  5. **Done**. Move aborted, suspended or completed Schedule & Task here temporarily. Every month move aborted ones to `inbox.md/Don't do`, suspended ones to `inbox.md/Maybe Later`, and completed ones to `done.md/Task`.
+
+* `done.md`
+  1. **Log**. Every month move `todo.md/Log` here.
+  2. **Task**. Every month move `todo.md/Done` here.
+
+* [changelog.md](../../changelog.md). Summarize and publish the achievements of the last month.
 
 ### Workflow
 
@@ -130,49 +135,26 @@ digraph {
         dont[label="Don't Do"];
         later[label="Maybe Later"];
         can[label="Can Do"];
-        Inbox -> OKR -> {dont; later; can}
+        Inbox -> OKR -> { rank=same; can -> later -> dont [style=invis] }
     }
     subgraph cluster_todo {
         label="Daily: todo.md";
         labeljust=l;
-        todo[label="To Do"];
-        { rank=same; Done -> Emergency [dir=back]; }
-        Done -> Doing -> todo [dir=back];
+        todo[label="Task & Schedule"];
+        Done [label="Done & Log"];
+        Done -> todo [dir=back];
     }
-    task -> { Inbox; Emergency; }
+    task -> Inbox;
     task [shape=none];
-    can -> todo [constraint=false, label="split"];
-    Done -> Inbox [constraint=false, label="suspend"];
-    log [label="Monthly:\nChangeLog"]
+    can -> todo [constraint=false];
+    Done -> Inbox [constraint=false, label="suspend/aborted"];
+    log [label="Monthly:\ndone.md\nchangelog.md"]
     Done -> log [label="summary"];
     log -> OKR [label="amend"];
 }
-
-
 ```
-* usually
-  1. put emergency tasks into todo/Emergency
-  2. put other tasks into inbox/Inbox
-
-
-* daily: work on `todo.md`
-  1. do tasks: To Do -> Doing -> Done
-  2. tag tasks with #abort and reason, move into Done
-  3. tag tasks with #suspend and restart condition, move into Done
-
-
-* weekly: plan with `inbox.md`
-  1. move suspended tasks from todo/Done into Inbox
-  2. following OKR, move tasks from Inbox into Don't Do, Maybe Later and Can do
-  3. move tasks in Can Do which can be worked on in the following week to todo/To Do
-
-
-* monthly: review ChangeLogs
-  1. move aborted tasks in todo/Done into inbox/Don't Do
-  2. summarize todo/Done
-  3. review ChangeLog of the same month in last year
-  4. amend inbox/OKR
-  5. publish ChangeLog of last month
 
 
 [todo.txt]: <https://github.com/todotxt/todo.txt> "todo.txt"
+
+## [Comment](https://github.com/cf020031308/cf020031308.github.io/issues/53)
