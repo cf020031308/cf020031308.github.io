@@ -74,6 +74,6 @@ http://googleaiblog.blogspot.com/atom.xml
 https://rsshub.app/owspace/read/1
 https://rsshub.app/zhihu/hotlist
 https://css-tricks.com/feed/
-http://export.arxiv.org/api/query?search_query=%28ti:forecast+OR+ti:predict+OR+ti:reinforcement%29+AND+%28cat:cs.*+OR+cat:math.*+OR+cat:stat.*%29&max_results=50
+http://export.arxiv.org/api/query?search_query=%28ti:"knowledge graph"+OR+ti:forecast+OR+ti:predict+OR+ti:reinforcement%29+AND+%28cat:cs.*+OR+cat:math.*+OR+cat:stat.*%29&max_results=50
 https://rsshub.app/mi/golden
 https://rsshub.app/cneb/guoneinews
