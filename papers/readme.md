@@ -19,6 +19,7 @@
   * [(2016) 使用混合模型的卷积神经网络做图与流形的几何深度学习](2016-geometric-deep-learning-on-graphs-and-manifolds-using-mixture-model-cnns/readme.md)
   * [(2017) 大型动态图中的归纳式表示学习](2017-inductive-representation-learning-on-large-graphs/readme.md)
   * [(2018) 关系归纳偏置、深度学习与图网络](2018-a-relational-inductive-biases-deep-learning-and-graph-networks/readme.md)
+  * [(2019) 图神经网络全面综述](2019-a-comprehensive-survey-on-graph-neural-networks/readme.md)
 * 强化学习
   * [(2019) 用颠倒强化学习训练智能体](2019-training-agents-using-upside-down-reinforcement-learning/readme.md)
   * [(2019) 颠倒强化学习：不要预测回报，直接得到动作](2019-reinforcement-learning-upside-down-don-t-predict-rewards-just-map-them-to-actions/readme.md)
