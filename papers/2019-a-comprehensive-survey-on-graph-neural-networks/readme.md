@@ -121,7 +121,7 @@ Spectrul-based 方法的缺点
    * 通常的网络在上规模后效率都成问题，GraphSage 只采样部分邻居节点，是一个工业可用的模型
 
 
-7. Graph Attention Network (GAT)
+7. [Graph Attention Network (GAT)](../2017-graph-attention-networks/)
    * 使用注意力网络为节点之间的连接分配权重，在节点分类任务上效果远超 GraphSage ![att](att.png)
    * 用了多头注意力，但权重相等
    * Gated Attention Network (GAAN) 又加了个自注意力给每个头加权
