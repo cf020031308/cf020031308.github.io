@@ -1,5 +1,20 @@
 # ChangeLog of Me
 
+## Sep 2020
+
+* site
+  * add a issue template to encourage comments (b50541a)
+* wiki
+  * [Flex 与 Grid 布局](/wiki/css-flex-grid.md) (66c3893)
+  * [《好妈妈胜过好老师》尹建莉](/wiki/《好妈妈胜过好老师》尹建莉.md) (d8f5e3a)
+* blog
+  * [桌面作为容器装的是什么？](/blog/what-desktop-contains/) (0a9a293)
+* academic notes
+  * [图神经网络全面综述](/papers/2019-a-comprehensive-survey-on-graph-neural-networks/) (a89f53b)
+  * [图深度学习简单入门](/papers/2019-a-gentle-introduction-to-deep-learning-for-graphs/) (a9212ee)
+  * [图注意力网络](/papers/2017-graph-attention-networks/) (2d24ae5)
+* OKR: 完成论文初稿
+
 ## Aug 2020
 
 * wiki
