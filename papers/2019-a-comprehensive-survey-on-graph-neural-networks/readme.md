@@ -212,7 +212,7 @@ $$H^{(t)} = \sigma (\text{Gconv}(X^{(t)}, A; W) + \text{Gconv}(H^{(t-1)}, A; U) 
 * Structural-RNN 则是 edge-RNN 后接 node-RNN
 
 
-CNN-based 的方法能并行、内存更低、梯度更稳定，如图
+CNN-based 的方法能并行、内存更低、梯度更稳定，比如 [STGCN](../2017-spatio-temporal-graph-convolutional-networks-a-deep-learning-framework-for-traffic-forecasting/)：
 
 ![STGNN](stgnn.png)
 

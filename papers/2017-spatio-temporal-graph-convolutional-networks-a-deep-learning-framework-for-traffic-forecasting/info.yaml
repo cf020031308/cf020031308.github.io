@@ -1,0 +1,41 @@
+abstract: 'Timely accurate traffic forecast is crucial for urban traffic control and
+
+  guidance. Due to the high nonlinearity and complexity of traffic flow,
+
+  traditional methods cannot satisfy the requirements of mid-and-long term
+
+  prediction tasks and often neglect spatial and temporal dependencies. In this
+
+  paper, we propose a novel deep learning framework, Spatio-Temporal Graph
+
+  Convolutional Networks (STGCN), to tackle the time series prediction problem in
+
+  traffic domain. Instead of applying regular convolutional and recurrent units,
+
+  we formulate the problem on graphs and build the model with complete
+
+  convolutional structures, which enable much faster training speed with fewer
+
+  parameters. Experiments show that our model STGCN effectively captures
+
+  comprehensive spatio-temporal correlations through modeling multi-scale traffic
+
+  networks and consistently outperforms state-of-the-art baselines on various
+
+  real-world traffic datasets.'
+archiveprefix: arXiv
+author: Bing Yu and Haoteng Yin and Zhanxing Zhu
+doi: 10.24963/ijcai.2018/505
+eprint: 1709.04875v4
+file: 1709.04875v4.pdf
+files:
+- /Users/Roy/Documents/papers/2017-spatio-temporal-graph-convolutional-networks-a-deep-learning-framework-for-traffic-forecasting.pdf
+month: Sep
+primaryclass: cs.LG
+ref: 1709.04875v4
+title: 'Spatio-Temporal Graph Convolutional Networks: A Deep Learning Framework
+
+  for Traffic Forecasting'
+type: article
+url: http://arxiv.org/abs/1709.04875v4
+year: '2017'
