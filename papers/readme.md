@@ -21,6 +21,7 @@
   * [(2017) 大型动态图中的归纳式表示学习](2017-inductive-representation-learning-on-large-graphs)
   * [(2017) 时空图卷积网络：用于交通预测的深度学习框架](2017-spatio-temporal-graph-convolutional-networks-a-deep-learning-framework-for-traffic-forecasting)
   * [(2018) 关系归纳偏置、深度学习与图网络](2018-a-relational-inductive-biases-deep-learning-and-graph-networks)
+  * [(2018) FastGCN：通过重要性采样快速训练图卷积网络](2018-fastgcn-fast-learning-with-graph-convolutional-networks-via-importance-sampling)
   * [(2019) 图神经网络全面综述](2019-a-comprehensive-survey-on-graph-neural-networks)
 * 强化学习
   * [(2019) 用颠倒强化学习训练智能体](2019-training-agents-using-upside-down-reinforcement-learning)
