@@ -1,0 +1,49 @@
+abstract: 'Graph Neural Networks (GNNs) are known to have an expressive power bounded
+  by
+
+  that of the vertex coloring algorithm (Xu et al., 2019a; Morris et al., 2018).
+
+  However, for rich node features, such a bound does not exist and GNNs can be
+
+  shown to be universal, namely, have the theoretical ability to approximate
+
+  arbitrary graph functions. It is well known, however, that expressive power
+
+  alone does not imply good generalization.
+
+  In an effort to improve generalization of GNNs we suggest the Low-Rank Global
+
+  Attention (LRGA) module, taking advantage of the efficiency of low rank
+
+  matrix-vector multiplication, that improves the algorithmic alignment (Xu et
+
+  al., 2019b) of GNNs with the 2-folklore Weisfeiler-Lehman (FWL) algorithm;
+
+  2-FWL is a graph isomorphism algorithm that is strictly more powerful than
+
+  vertex coloring. Concretely, we: (i) formulate 2-FWL using polynomial kernels;
+
+  (ii) show LRGA aligns with this 2-FWL formulation; and (iii) bound the sample
+
+  complexity of the kernel''s feature map when learned with a randomly initialized
+
+  two-layer MLP. The latter means the generalization error can be made
+
+  arbitrarily small when training LRGA to learn the 2-FWL algorithm. From a
+
+  practical point of view, augmenting existing GNN layers with LRGA produces
+
+  state of the art results on most datasets in a GNN standard benchmark.'
+archiveprefix: arXiv
+author: Omri Puny and Heli Ben-Hamu and Yaron Lipman
+eprint: 2006.07846v1
+file: 2006.07846v1.pdf
+files:
+- /Users/Roy/Documents/papers/2020-from-graph-low-rank-global-attention-to-2-fwl-approximation.pdf
+month: Jun
+primaryclass: cs.LG
+ref: 2006.07846v1
+title: From Graph Low-Rank Global Attention to 2-FWL Approximation
+type: article
+url: http://arxiv.org/abs/2006.07846v1
+year: '2020'

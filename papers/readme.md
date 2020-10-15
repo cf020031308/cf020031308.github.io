@@ -23,6 +23,7 @@
   * [(2018) 关系归纳偏置、深度学习与图网络](2018-a-relational-inductive-biases-deep-learning-and-graph-networks)
   * [(2018) FastGCN：通过重要性采样快速训练图卷积网络](2018-fastgcn-fast-learning-with-graph-convolutional-networks-via-importance-sampling)
   * [(2019) 图神经网络全面综述](2019-a-comprehensive-survey-on-graph-neural-networks)
+  * [(2020) 从图的低秩全局注意力到 2-FWL 的近似](2020-from-graph-low-rank-global-attention-to-2-fwl-approximation)
 * 强化学习
   * [(2019) 用颠倒强化学习训练智能体](2019-training-agents-using-upside-down-reinforcement-learning)
   * [(2019) 颠倒强化学习：不要预测回报，直接得到动作](2019-reinforcement-learning-upside-down-don-t-predict-rewards-just-map-them-to-actions)
