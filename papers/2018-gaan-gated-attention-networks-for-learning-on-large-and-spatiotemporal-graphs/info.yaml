@@ -1,0 +1,34 @@
+abstract: 'We propose a new network architecture, Gated Attention Networks (GaAN),
+  for
+
+  learning on graphs. Unlike the traditional multi-head attention mechanism,
+
+  which equally consumes all attention heads, GaAN uses a convolutional
+
+  sub-network to control each attention head''s importance. We demonstrate the
+
+  effectiveness of GaAN on the inductive node classification problem. Moreover,
+
+  with GaAN as a building block, we construct the Graph Gated Recurrent Unit
+
+  (GGRU) to address the traffic speed forecasting problem. Extensive experiments
+
+  on three real-world datasets show that our GaAN framework achieves
+
+  state-of-the-art results on both tasks.'
+archiveprefix: arXiv
+author: Jiani Zhang and Xingjian Shi and Junyuan Xie and Hao Ma and Irwin King and
+  Dit-Yan Yeung
+eprint: 1803.07294v1
+file: 1803.07294v1.pdf
+files:
+- /Users/Roy/Documents/papers/2018-gaan-gated-attention-networks-for-learning-on-large-and-spatiotemporal-graphs.pdf
+month: Mar
+primaryclass: cs.LG
+ref: 1803.07294v1
+title: 'GaAN: Gated Attention Networks for Learning on Large and Spatiotemporal
+
+  Graphs'
+type: article
+url: http://arxiv.org/abs/1803.07294v1
+year: '2018'

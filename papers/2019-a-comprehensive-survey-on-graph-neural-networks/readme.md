@@ -124,7 +124,7 @@ Spectrul-based 方法的缺点
 7. [Graph Attention Network (GAT)](../2017-graph-attention-networks/)
    * 使用注意力网络为节点之间的连接分配权重，在节点分类任务上效果远超 GraphSage ![att](att.png)
    * 用了多头注意力，但权重相等
-   * Gated Attention Network (GAAN) 又加了个自注意力给每个头加权
+   * [Gated Attention Network (GaAN)](../2018-gaan-gated-attention-networks-for-learning-on-large-and-spatiotemporal-graphs/) 又加了个自注意力给每个头加权
 8. [Mixture Model Network (MoNet)](../2016-geometric-deep-learning-on-graphs-and-manifolds-using-mixture-model-cnns/)
    * 把 GNN 的方法用到了流形的深度学习上，将流形中的点视为图的节点，用相对坐标来决定边的权重
 9. PATCHY-SAN
@@ -220,7 +220,7 @@ CNN-based 的方法能并行、内存更低、梯度更稳定，比如 [STGCN](.
 Graph WaveNet 提出既然有了各节点在不同时刻的值，就可以据此学到节点间的关系，即 $A = \text{SoftMax}(\text{ReLU}(E_1E_2^T))$，其中 E 是节点的表示。这样就不需要图本身的邻接矩阵。
 
 
-GaAn 和 ASTGCN 又引入了注意力机制。
+[GaAN](../2018-gaan-gated-attention-networks-for-learning-on-large-and-spatiotemporal-graphs/) 和 ASTGCN 又引入了注意力机制。
 
 ## 其它
 

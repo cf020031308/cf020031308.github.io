@@ -22,6 +22,7 @@
   * [(2017) 时空图卷积网络：用于交通预测的深度学习框架](2017-spatio-temporal-graph-convolutional-networks-a-deep-learning-framework-for-traffic-forecasting)
   * [(2018) 关系归纳偏置、深度学习与图网络](2018-a-relational-inductive-biases-deep-learning-and-graph-networks)
   * [(2018) FastGCN：通过重要性采样快速训练图卷积网络](2018-fastgcn-fast-learning-with-graph-convolutional-networks-via-importance-sampling)
+  * [(2018) GaAN: 用于大型图与时空图的门控注意力网络](2018-gaan-gated-attention-networks-for-learning-on-large-and-spatiotemporal-graphs)
   * [(2019) 图神经网络全面综述](2019-a-comprehensive-survey-on-graph-neural-networks)
   * [(2020) 从图的低秩全局注意力到 2-FWL 的近似](2020-from-graph-low-rank-global-attention-to-2-fwl-approximation)
 * 强化学习
