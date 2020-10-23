@@ -21,13 +21,6 @@
         <script src="https://cdn.bootcss.com/echarts/4.4.0-rc.1/echarts-en.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/viz.js@2.1.2/viz.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/viz.js@2.1.2/lite.render.js"></script>
-
-        <style>
-            .reveal .slides { text-align: left }
-            .reveal .slides .cols { display: flex; justify-content: space-around; align-items: center }
-            .reveal .slides h2 { text-align: center }
-            .reveal .slides h3 { text-align: center }
-        </style>
 	</head>
 	<body>
 		<div class="reveal">
@@ -35,11 +28,13 @@
                 <section id="markdown-section"
                          data-markdown="readme.md"
                          data-separator="^\r?\n(?=#)|^(\r?\n){3}|\r?\n---\r?\n"
-                         data-separator-vertical="^(\r?\n){2}|\r?\n___\r?\n">
+                         data-separator-vertical="^(\r?\n){2}|\r?\n___\r?\n"
+                 >
                 </section>
 			</div>
 		</div>
 		<script src="https://cdn.bootcss.com/reveal.js/3.8.0/js/reveal.min.js"></script>
+        <style> .reveal .slides { text-align: left } </style>
 		<script src="index.js"></script>
         <script>
             var configs = {
@@ -47,12 +42,14 @@
 					{ src: 'https://cdn.bootcss.com/reveal.js/3.8.0/plugin/math/math.js' },
 					{ src: 'https://cdn.bootcss.com/reveal.js/3.8.0/plugin/markdown/marked.js' },
 					{ src: 'https://cdn.bootcss.com/reveal.js/3.8.0/plugin/markdown/markdown.min.js' },
-					{ src: 'https://cdn.bootcss.com/reveal.js/3.8.0/plugin/notes/notes.min.js', async: true },
-					{ src: 'https://cdn.bootcss.com/reveal.js/3.8.0/plugin/highlight/highlight.min.js' }
+					{ src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/plugin/notes/notes.js', async: true },
+					{ src: 'https://cdn.bootcss.com/reveal.js/3.8.0/plugin/highlight/highlight.min.js' },
+                    { src: 'https://cdn.bootcss.com/reveal.js/3.8.0/plugin/zoom-js/zoom.js', async: true },
 				],
                 markdown: {
                     gfm: true,
                 },
+                controls: false,
                 hash: true,
                 navigationMode: "linear",
                 loop: true,
@@ -104,6 +101,19 @@
             };
             Reveal.addEventListener('slidechanged', DIYLangHandler);
             Reveal.addEventListener('ready', DIYLangHandler);
+            Reveal.addEventListener('ready', function() {
+                if (document.querySelectorAll('.fragment')[0] !== undefined) return;
+                [].slice.call(
+                    document.querySelectorAll('section')
+                ).forEach(function(section) {
+                    [].slice.call(
+                        section.querySelectorAll('li')
+                    ).forEach(function(li, i) {
+                        li.classList.add('fragment');
+                        li.setAttribute('data-fragment-index', i.toString());
+                    });
+                });
+            });
 
             // Requests from wechat will be followed by some more queries.
             var fp = location.search.substr(1).split("&")[0];
@@ -140,7 +150,7 @@
             }
 
             mermaid.initialize({theme: 'dark', startOnLoad: false});
-			Reveal.initialize(configs);
+            Reveal.initialize(configs);
 		</script>
 	</body>
 </html>
