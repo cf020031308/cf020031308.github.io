@@ -1,5 +1,18 @@
 # ChangeLog of Me
 
+## Oct 2020
+
+* site
+  * in PPT display list items step by step (d079a51)
+* academic notes
+  * [时空图卷积网络：用于交通预测的深度学习框架](/papers/2017-spatio-temporal-graph-convolutional-networks-a-deep-learning-framework-for-traffic-forecasting/) (1970916)
+  * [FastGCN：通过重要性采样快速训练图卷积网络](/papers/2018-fastgcn-fast-learning-with-graph-convolutional-networks-via-importance-sampling/) (3406c67)
+  * [图的低秩全局注意力](/papers/2018-fastgcn-fast-learning-with-graph-convolutional-networks-via-importance-sampling/) (868b6c2)
+  * [GaAN: 用于大型图与时空图的门控注意力网络](/papers/2018-gaan-gated-attention-networks-for-learning-on-large-and-spatiotemporal-graphs/) (a462faf)
+  * [位置感知图神经网络](/papers/2019-position-aware-graph-neural-networks/) (b428bb8)
+  * [记忆网络](/papers/2014-memory-networks/) (d94a213)
+* OKR: 投出第一篇论文并总结提高
+
 ## Sep 2020
 
 * site
