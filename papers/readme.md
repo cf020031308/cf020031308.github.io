@@ -28,6 +28,7 @@
   * [(2020) 从图的低秩全局注意力到 2-FWL 的近似](2020-from-graph-low-rank-global-attention-to-2-fwl-approximation)
 * NLP
   * [(2014) 记忆网络](2014-memory-networks)
+  * [(2020) Reformer：高效的 Transformer](2020-reformer-the-efficient-transformer)
 * 强化学习
   * [(2019) 用颠倒强化学习训练智能体](2019-training-agents-using-upside-down-reinforcement-learning)
   * [(2019) 颠倒强化学习：不要预测回报，直接得到动作](2019-reinforcement-learning-upside-down-don-t-predict-rewards-just-map-them-to-actions)
@@ -41,7 +42,9 @@
   * [(2018) 机器学习的理论困境与因果革命的七个启示](2018-theoretical-impediments-to-machine-learning-with-seven-sparks-from-the-causal-revolution)
   * [(2019) 因果模型的抽象](2019-abstracting-causal-models)
 * 其它
+  * [(2007) 高维相似搜索中的多探头 LSH 索引](2007-multi-probe-lsh-efficient-indexing-for-high-dimensional-similarity-search)
   * [(2008) 大规模流量数据中重基数的发现与在异常侦测中的应用](2008-finding-cardinality-heavy-hitters-in-massive-traffic-data-and-its-application-to-anomaly-detection)
+  * [(2015) 实用且最优的角距离局部敏感哈希算法](2015-practical-and-optimal-lsh-for-angular-distance)
   * [(2016) 建立像人一样思考与学习的机器](2016-building-machines-that-learn-and-think-like-people)
 * 水论文
   * [(2015) 利用机器学习和社交媒体预测稀有事件](2015-on-predictability-of-rare-events-leveraging-social-media-a-machine-learning-perspective)

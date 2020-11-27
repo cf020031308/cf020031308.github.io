@@ -1,0 +1,19 @@
+author: 'Nikita Kitaev and
+
+  Lukasz Kaiser and
+
+  Anselm Levskaya'
+bibsource: dblp computer science bibliography, https://dblp.org\
+biburl: https://dblp.org/rec/conf/iclr/KitaevKL20.bib
+booktitle: '8th International Conference on Learning Representations, {ICLR} 2020,
+
+  Addis Ababa, Ethiopia, April 26-30, 2020'
+files:
+- /Users/Roy/Documents/papers/2020-reformer-the-efficient-transformer.pdf
+publisher: OpenReview.net
+ref: DBLP:conf/iclr/KitaevKL20
+timestamp: Thu, 07 May 2020 17:11:48 +0200
+title: 'Reformer: The Efficient Transformer'
+type: inproceedings
+url: https://openreview.net/forum?id=rkgNKkHtvB
+year: '2020'

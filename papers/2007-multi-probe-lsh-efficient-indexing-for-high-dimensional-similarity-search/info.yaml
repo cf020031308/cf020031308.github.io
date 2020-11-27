@@ -1,0 +1,49 @@
+author: 'Qin Lv and
+
+  William Josephson and
+
+  Zhe Wang and
+
+  Moses Charikar and
+
+  Kai Li'
+bibsource: dblp computer science bibliography, https://dblp.org
+biburl: https://dblp.org/rec/conf/vldb/LvJWCL07.bib
+booktitle: 'Proceedings of the 33rd International Conference on Very Large Data
+
+  Bases, University of Vienna, Austria, September 23-27, 2007'
+editor: 'Christoph Koch and
+
+  Johannes Gehrke and
+
+  Minos N. Garofalakis and
+
+  Divesh Srivastava and
+
+  Karl Aberer and
+
+  Anand Deshpande and
+
+  Daniela Florescu and
+
+  Chee Yong Chan and
+
+  Venkatesh Ganti and
+
+  Carl{-}Christian Kanne and
+
+  Wolfgang Klas and
+
+  Erich J. Neuhold'
+files:
+- /Users/Roy/Documents/papers/2007-multi-probe-lsh-efficient-indexing-for-high-dimensional-similarity-search.pdf
+pages: 950--961
+publisher: '{ACM}'
+ref: DBLP:conf/vldb/LvJWCL07
+timestamp: Thu, 12 Mar 2020 11:33:45 +0100
+title: 'Multi-Probe {LSH:} Efficient Indexing for High-Dimensional Similarity
+
+  Search'
+type: inproceedings
+url: http://www.vldb.org/conf/2007/papers/research/p950-lv.pdf
+year: '2007'
