@@ -1,5 +1,16 @@
 # ChangeLog of Me
 
+## Nov 2020
+ 
+* academic notes
+  * 局部敏感哈希相关论文 (c6f0795)
+    * [(2007) 高维相似搜索中的多探头 LSH 索引](/papers/2007-multi-probe-lsh-efficient-indexing-for-high-dimensional-similarity-search/)
+    * [(2015) 实用且最优的角距离局部敏感哈希算法](/papers/2015-practical-and-optimal-lsh-for-angular-distance/)
+    * [(2020) Reformer：高效的 Transformer](/papers/2020-reformer-the-efficient-transformer/)
+* wiki
+  * [《潜规则》吴思](/wiki/《潜规则》吴思.md) (64816aa)
+* OKR: 投出第一篇论文并总结提高
+
 ## Oct 2020
 
 * site
