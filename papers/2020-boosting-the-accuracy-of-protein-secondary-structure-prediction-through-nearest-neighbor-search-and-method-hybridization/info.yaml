@@ -1,0 +1,36 @@
+abstract: '{Protein secondary structure prediction is a fundamental precursor to many
+  bioinformatics tasks. Nearly all state-of-the-art tools when computing their secondary
+  structure prediction do not explicitly leverage the vast number of proteins whose
+  structure is known. Leveraging this additional information in a so-called template-based
+  method has the potential to significantly boost prediction accuracy.We present a
+  new hybrid approach to secondary structure prediction that gains the advantages
+  of both template- and non-template-based methods. Our core template-based method
+  is an algorithmic approach that uses metric-space nearest neighbor search over a
+  template database of fixed-length amino acid words to determine estimated class-membership
+  probabilities for each residue in the protein. These probabilities are then input
+  to a dynamic programming algorithm that finds a physically valid maximum-likelihood
+  prediction for the entire protein. Our hybrid approach exploits a novel accuracy
+  estimator for our core method, which estimates the unknown true accuracy of its
+  prediction, to discern when to switch between template- and non-template-based methods.On
+  challenging CASP benchmarks, the resulting hybrid approach boosts the state-of-the-art
+  Q8 accuracy by more than 2–10\\%, and Q3 accuracy by more than 1–3\\%, yielding
+  the most accurate method currently available for both 3- and 8-state secondary structure
+  prediction.A preliminary implementation in a new tool we call Nnessy is available
+  free for non-commercial use at http://nnessy.cs.arizona.edu.}'
+author: Krieger, Spencer and Kececioglu, John
+doi: 10.1093/bioinformatics/btaa336
+eprint: https://academic.oup.com/bioinformatics/article-pdf/36/Supplement\_1/i317/33488847/btaa336.pdf
+files:
+- /Users/Roy/Documents/papers/2020-boosting-the-accuracy-of-protein-secondary-structure-prediction-through-nearest-neighbor-search-and-method-hybridization.pdf
+issn: 1367-4803
+journal: Bioinformatics
+month: '07'
+number: Supplement_1
+pages: i317-i325
+ref: 10.1093/bioinformatics/btaa336
+title: '{Boosting the accuracy of protein secondary structure prediction through nearest
+  neighbor search and method hybridization}'
+type: article
+url: https://doi.org/10.1093/bioinformatics/btaa336
+volume: '36'
+year: '2020'
