@@ -1,5 +1,11 @@
 # ChangeLog of Me
 
+## Dec 2020
+
+* academic notes:
+  * [(2020) 标签传播与简单模型结合可超越图神经网络](/papers/2020-combining-label-propagation-and-simple-models-out-performs-graph-neural-networks/) (4c197e6)
+* OKR: 完成开题报告并扩展投中文期刊
+
 ## Nov 2020
  
 * academic notes
