@@ -1,5 +1,9 @@
 # ChangeLog of Me
 
+## Jan 2021
+
+* OKR: 扩写两篇期刊
+
 ## Dec 2020
 
 * academic notes:
