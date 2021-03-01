@@ -1,5 +1,11 @@
 # ChangeLog of Me
 
+## Feb 2021
+
+* publications
+  * [Yi Luo and Aiguo Chen and Bei Hui and Ke Yan. Memory-Associated Differential Learning.   Feb 2021](https://github.com/cf020031308/mad-learning)
+* OKR: 扩写完 MAD Learning 和 ResLPA 的期刊文章
+
 ## Jan 2021
 
 * OKR: 扩写两篇期刊
