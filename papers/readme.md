@@ -23,6 +23,7 @@
   * [(2018) 关系归纳偏置、深度学习与图网络](2018-a-relational-inductive-biases-deep-learning-and-graph-networks)
   * [(2018) FastGCN：通过重要性采样快速训练图卷积网络](2018-fastgcn-fast-learning-with-graph-convolutional-networks-via-importance-sampling)
   * [(2018) GaAN: 用于大型图与时空图的门控注意力网络](2018-gaan-gated-attention-networks-for-learning-on-large-and-spatiotemporal-graphs)
+  * [(2018) 使用 Jumping Knowledge Networks 的图表示学习](2018-representation-learning-on-graphs-with-jumping-knowledge-networks)
   * [(2019) 图神经网络全面综述](2019-a-comprehensive-survey-on-graph-neural-networks)
   * [(2019) 位置感知图神经网络](2019-position-aware-graph-neural-networks)
   * [(2020) 从图的低秩全局注意力到 2-FWL 的近似](2020-from-graph-low-rank-global-attention-to-2-fwl-approximation)
