@@ -2,18 +2,18 @@
 
 * [选举预测](election.md)
   * [(2013) 基于贝叶斯的美国总统选举动态预测](2013-dynamic-bayesian-forecasting-of-presidential-elections-in-the-states)
-  * [(2014) 基于情感分析的巴基斯坦 2013 年选举预测与分析](2014-prediction-and-analysis-of-pakistan-election-2013-based-on-sentiment-analysis)
-  * [(2015) 用于预测推特总统选举结果的蜂鸣器检测和情感分析](2015-buzzer-detection-and-sentiment-analysis-for-predicting-presidential-election-results-in-a-twitter-nation)
-  * [(2015) 利用 Twitter 情绪预测巴基斯坦2013年选举和印度2014年选举](2015-using-twitter-sentiment-to-forecast-the-2013-pakistani-election-and-the-2014-indian-election)
-  * [(2016) 用 Twitter 预测加拿大选举](2016-forecasting-canadian-elections-using-twitter)
-  * [(2016) 在社会论坛上提高人群智慧选举预测的准确性](2016-boosting-election-prediction-accuracy-by-crowd-wisdom-on-social-forums)
+  <!-- * [(2014) 基于情感分析的巴基斯坦 2013 年选举预测与分析](2014-prediction-and-analysis-of-pakistan-election-2013-based-on-sentiment-analysis) -->
+  <!-- * [(2015) 用于预测推特总统选举结果的蜂鸣器检测和情感分析](2015-buzzer-detection-and-sentiment-analysis-for-predicting-presidential-election-results-in-a-twitter-nation) -->
+  <!-- * [(2015) 利用 Twitter 情绪预测巴基斯坦2013年选举和印度2014年选举](2015-using-twitter-sentiment-to-forecast-the-2013-pakistani-election-and-the-2014-indian-election) -->
+  <!-- * [(2016) 用 Twitter 预测加拿大选举](2016-forecasting-canadian-elections-using-twitter) -->
+  <!-- * [(2016) 在社会论坛上提高人群智慧选举预测的准确性](2016-boosting-election-prediction-accuracy-by-crowd-wisdom-on-social-forums) -->
   * [(2017) 大规模预测](2017-forecasting-at-scale)
-  * [(2017) 使用术语加权的推特数据分析预测2017年法国大选](2017-prediction-of-the-2017-french-election-based-on-twitter-data-analysis)
-  * [(2017) 挖掘网络数据预测台湾市长选举](2017-web-mining-for-the-mayoral-election-prediction-in-taiwan)
+  <!-- * [(2017) 使用术语加权的推特数据分析预测2017年法国大选](2017-prediction-of-the-2017-french-election-based-on-twitter-data-analysis) -->
+  <!-- * [(2017) 挖掘网络数据预测台湾市长选举](2017-web-mining-for-the-mayoral-election-prediction-in-taiwan) -->
   * [(2018) 用神经网络预测2018中期选举](2018-using-neural-networks-to-predict-the-2018-midterm-election)
-  * [(2018) 社交媒体不会说谎：用多种在线信息预测2016台湾选举](2018-social-media-would-not-lie-prediction-of-the-2016-taiwan-election-via-online-heterogeneous-data)
-  * [(2018) 使用传染病的隔室模型预测选举](2018-forecasting-elections-using-compartmental-models-of-infection)
-  * [(2018) 基于 Twitter 情感分析的印度尼西亚总结选举预测与分析](2018-prediction-and-analysis-of-indonesia-presidential-election-from-twitter-using-sentiment-analysis)
+  * [(2018) 社交媒体不会说谎：用多种在线信息预测2016台湾选举](2018-social-media-would-not-lie-prediction-of-the-2016-taiwan-election-via-online-heterogeneous-data/readme2.md)
+  <!-- * [(2018) 使用传染病的隔室模型预测选举](2018-forecasting-elections-using-compartmental-models-of-infection) -->
+  <!-- * [(2018) 基于 Twitter 情感分析的印度尼西亚总结选举预测与分析](2018-prediction-and-analysis-of-indonesia-presidential-election-from-twitter-using-sentiment-analysis) -->
   * [(2019) 用 pymc3 预测以色列选举](2019-forecasting-the-israeli-elections-using-pymc3)
 * 图神经网络
   * [(2016) 使用混合模型的卷积神经网络做图与流形的几何深度学习](2016-geometric-deep-learning-on-graphs-and-manifolds-using-mixture-model-cnns)
