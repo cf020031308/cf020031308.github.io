@@ -55,5 +55,6 @@
   * [(2016) 从行星科学文献中提取信息建立火星目标百科全书](2016-creating-a-mars-target-encyclopedia-by-extracting-information-from-the-planetary-science-literature)
   * [(2016) 国际关系的计算与评估](2016-a-formal-calculus-for-international-relations-computation-and-evaluation)
   * [(2017) 深度 Q 学习中基于注意力的经验回放](2017-attention-based-experience-replay-in-deep-q-learning)
+  * [(2018) 用于标签分布学习的标签强化](2018-label-enhancement-for-label-distribution-learning)
   * [(2019) 结合深度学习与空间定性推理从带噪音的稀疏例子中学习复杂结构](2019-combining-deep-learning-and-qualitative-spatial-reasoning-to-learn-complex-structures-from-sparse-examples-with-noise)
   * [(2019) 图深度学习简单入门](2019-a-gentle-introduction-to-deep-learning-for-graphs)
