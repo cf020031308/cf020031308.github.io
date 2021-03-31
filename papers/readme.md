@@ -17,6 +17,7 @@
   * [(2019) 用 pymc3 预测以色列选举](2019-forecasting-the-israeli-elections-using-pymc3)
 * 图神经网络
   * [(2016) 使用混合模型的卷积神经网络做图与流形的几何深度学习](2016-geometric-deep-learning-on-graphs-and-manifolds-using-mixture-model-cnns)
+  * [(2016) 图变分自编码器](2016-variational-graph-auto-encoders)
   * [(2017) 图注意力网络](2017-graph-attention-networks)
   * [(2017) 大型动态图中的归纳式表示学习](2017-inductive-representation-learning-on-large-graphs)
   * [(2017) 时空图卷积网络：用于交通预测的深度学习框架](2017-spatio-temporal-graph-convolutional-networks-a-deep-learning-framework-for-traffic-forecasting)
