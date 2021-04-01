@@ -1,0 +1,34 @@
+author: 'Hogun Park and
+
+  Jennifer Neville'
+bibsource: dblp computer science bibliography, https://dblp.org
+biburl: https://dblp.org/rec/conf/pakdd/ParkN20.bib
+booktitle: 'Advances in Knowledge Discovery and Data Mining - 24th Pacific-Asia
+
+  Conference, {PAKDD} 2020, Singapore, May 11-14, 2020, Proceedings,
+
+  Part {II}'
+doi: 10.1007/978-3-030-47436-2\_42
+editor: 'Hady W. Lauw and
+
+  Raymond Chi{-}Wing Wong and
+
+  Alexandros Ntoulas and
+
+  Ee{-}Peng Lim and
+
+  See{-}Kiong Ng and
+
+  Sinno Jialin Pan'
+files:
+- /Users/Roy/Documents/papers/2020-role-equivalence-attention-for-label-propagation-in-graph-neural-networks.pdf
+pages: 555--567
+publisher: Springer
+ref: DBLP:conf/pakdd/ParkN20
+series: Lecture Notes in Computer Science
+timestamp: Mon, 11 May 2020 15:50:21 +0200
+title: Role Equivalence Attention for Label Propagation in Graph Neural Networks
+type: inproceedings
+url: https://doi.org/10.1007/978-3-030-47436-2\_42
+volume: '12085'
+year: '2020'

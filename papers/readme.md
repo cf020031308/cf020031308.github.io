@@ -59,3 +59,4 @@
   * [(2018) 用于标签分布学习的标签强化](2018-label-enhancement-for-label-distribution-learning)
   * [(2019) 结合深度学习与空间定性推理从带噪音的稀疏例子中学习复杂结构](2019-combining-deep-learning-and-qualitative-spatial-reasoning-to-learn-complex-structures-from-sparse-examples-with-noise)
   * [(2019) 图深度学习简单入门](2019-a-gentle-introduction-to-deep-learning-for-graphs)
+  * [(2020) 图神经网络上的注意力标签传播](2020-role-equivalence-attention-for-label-propagation-in-graph-neural-networks)
