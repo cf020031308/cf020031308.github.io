@@ -1,0 +1,42 @@
+abstract: 'Semi-supervised node classification in graphs is a fundamental problem
+  in
+
+  graph mining, and the recently proposed graph neural networks (GNNs) have
+
+  achieved unparalleled results on this task. Due to their massive success, GNNs
+
+  have attracted a lot of attention, and many novel architectures have been put
+
+  forward. In this paper we show that existing evaluation strategies for GNN
+
+  models have serious shortcomings. We show that using the same
+
+  train/validation/test splits of the same datasets, as well as making
+
+  significant changes to the training procedure (e.g. early stopping criteria)
+
+  precludes a fair comparison of different architectures. We perform a thorough
+
+  empirical evaluation of four prominent GNN models and show that considering
+
+  different splits of the data leads to dramatically different rankings of
+
+  models. Even more importantly, our findings suggest that simpler GNN
+
+  architectures are able to outperform the more sophisticated ones if the
+
+  hyperparameters and the training procedure are tuned fairly for all models.'
+archiveprefix: arXiv
+author: Oleksandr Shchur and Maximilian Mumme and Aleksandar Bojchevski and Stephan
+  Günnemann
+eprint: 1811.05868v2
+file: 1811.05868v2.pdf
+files:
+- /Users/Roy/Documents/papers/2018-pitfalls-of-graph-neural-network-evaluation.pdf
+month: Nov
+primaryclass: cs.LG
+ref: 1811.05868v2
+title: Pitfalls of Graph Neural Network Evaluation
+type: article
+url: http://arxiv.org/abs/1811.05868v2
+year: '2018'

@@ -50,13 +50,14 @@
   * [(2008) 大规模流量数据中重基数的发现与在异常侦测中的应用](2008-finding-cardinality-heavy-hitters-in-massive-traffic-data-and-its-application-to-anomaly-detection)
   * [(2015) 实用且最优的角距离局部敏感哈希算法](2015-practical-and-optimal-lsh-for-angular-distance)
   * [(2016) 建立像人一样思考与学习的机器](2016-building-machines-that-learn-and-think-like-people)
-* 水论文
+* 收获不大的论文
   * [(2015) 利用机器学习和社交媒体预测稀有事件](2015-on-predictability-of-rare-events-leveraging-social-media-a-machine-learning-perspective)
   * [(2016) EmoGram：基于时间序列的开源情感跟踪器及其创新应用](2016-emogram-an-open-source-time-sequence-based-emotion-tracker-and-its-innovative-applications)
   * [(2016) 从行星科学文献中提取信息建立火星目标百科全书](2016-creating-a-mars-target-encyclopedia-by-extracting-information-from-the-planetary-science-literature)
   * [(2016) 国际关系的计算与评估](2016-a-formal-calculus-for-international-relations-computation-and-evaluation)
   * [(2017) 深度 Q 学习中基于注意力的经验回放](2017-attention-based-experience-replay-in-deep-q-learning)
   * [(2018) 用于标签分布学习的标签强化](2018-label-enhancement-for-label-distribution-learning)
+  * [(2018) 图神经网络评估的不足](2018-pitfalls-of-graph-neural-network-evaluation)
   * [(2019) 结合深度学习与空间定性推理从带噪音的稀疏例子中学习复杂结构](2019-combining-deep-learning-and-qualitative-spatial-reasoning-to-learn-complex-structures-from-sparse-examples-with-noise)
   * [(2019) 图深度学习简单入门](2019-a-gentle-introduction-to-deep-learning-for-graphs)
   * [(2020) 图神经网络上的注意力标签传播](2020-role-equivalence-attention-for-label-propagation-in-graph-neural-networks)
