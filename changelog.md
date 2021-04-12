@@ -1,5 +1,20 @@
 # ChangeLog of Me
 
+## Mar 2021
+
+* academic notes
+  * [(2018) 使用 Jumping Knowledge Networks 的图表示学习](/papers/2018-representation-learning-on-graphs-with-jumping-knowledge-networks/) (5499028)
+  * [(2020) 统一图卷积神经网络与标签传播](/papers/2020-unifying-graph-convolutional-neural-networks-and-label-propagation/) (19cd369)
+  * [(2018) 用于标签分布学习的标签强化](/papers/2018-label-enhancement-for-label-distribution-learning/) (fb10910)
+  * [(2016) 图变分自编码器](/papers/2016-variational-graph-auto-encoders/) (1147efd)
+* wiki
+  * 更新 [EM 算法、VAE、GAN](/wiki/probabilistic-density-estimation.md) (473bb91)
+* site
+  * add [Academic Publications](/pub.html) page (7b2c983)
+* tools
+  * [a script to generate qrcode at console](https://github.com/cf020031308/cf020031308.github.io/blob/master/bin/gen_qr.py) (b162da4)
+  * [a script to format markdown for external sites](https://github.com/cf020031308/cf020031308.github.io/blob/master/bin/pubmd.py) (a1d7045)
+
 ## Feb 2021
 
 * publications
