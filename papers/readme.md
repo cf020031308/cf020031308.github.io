@@ -30,6 +30,7 @@
   * [(2020) 从图的低秩全局注意力到 2-FWL 的近似](2020-from-graph-low-rank-global-attention-to-2-fwl-approximation)
   * [(2020) 标签传播与简单模型结合可超越图神经网络](2020-combining-label-propagation-and-simple-models-out-performs-graph-neural-networks)
   * [(2020) 统一图卷积神经网络与标签传播](2020-unifying-graph-convolutional-neural-networks-and-label-propagation)
+  * [(2021) 图神经网络中半监督分类的一些涨点技巧](2021-bag-of-tricks-of-semi-supervised-classification-with-graph-neural-networks)
 * NLP
   * [(2014) 记忆网络](2014-memory-networks)
   * [(2020) Reformer：高效的 Transformer](2020-reformer-the-efficient-transformer)

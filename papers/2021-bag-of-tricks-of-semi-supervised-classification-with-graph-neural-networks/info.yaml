@@ -1,0 +1,40 @@
+abstract: 'Much of the recent progress made in node classification on graphs can be
+
+  credited to the careful design on graph neural networks (GNN) and label
+
+  propagation algorithms. However, in the literature, in addition to improvements
+
+  to the model architecture, there are a number of improvements either briefly
+
+  mentioned as implementation details or visible only in source code, and these
+
+  overlooked techniques may play a pivotal role in their practical use. In this
+
+  paper, we first summarize a collection of existing refinements, and then
+
+  propose several novel techniques regarding these model designs and label usage.
+
+  We empirically evaluate their impacts on the final model accuracy through
+
+  ablation studies, and show that we are able to significantly improve various
+
+  GNN models to the extent that they outweigh the gains from model architecture
+
+  improvement. Notably, many of the top-ranked models on Open Graph Benchmark
+
+  benefit from our techniques.'
+archiveprefix: arXiv
+author: Yangkun Wang
+eprint: 2103.13355v1
+file: 2103.13355v1.pdf
+files:
+- /Users/Roy/Documents/papers/2021-bag-of-tricks-of-semi-supervised-classification-with-graph-neural-networks.pdf
+month: Mar
+primaryclass: cs.LG
+ref: 2103.13355v1
+title: 'Bag of Tricks of Semi-Supervised Classification with Graph Neural
+
+  Networks'
+type: article
+url: http://arxiv.org/abs/2103.13355v1
+year: '2021'
