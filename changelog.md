@@ -1,5 +1,12 @@
 # ChangeLog of Me
 
+## Apr 2021
+
+* academic notes
+  * [(2021) 图神经网络中半监督分类的一些涨点技巧](/papers/2021-bag-of-tricks-of-semi-supervised-classification-with-graph-neural-networks) (d537bbd)
+* wiki
+  * [《第七天》余华](/wiki/《第七天》余华) (4f0a082)
+
 ## Mar 2021
 
 * academic notes
