@@ -1,0 +1,9 @@
+#!/bin/bash -
+
+# Encrypt a file or a folder and store it into my SSD
+# If you want to encrypt multiple files, place them into a folder first
+# To decrypt, use `decto`
+
+dn=$(dirname "$1")
+fn=$(basename "$1")
+tar -P -czvf - -C "$dn" "$1" | gpg --encrypt -r luoy -o "/Volumes/Extreme SSD/enc/${fn}.gpg"

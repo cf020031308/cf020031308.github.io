@@ -1,0 +1,5 @@
+#!/bin/bash -
+
+# Delete a file completely
+
+shred -n 36 -fvzu "$1"

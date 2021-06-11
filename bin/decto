@@ -1,0 +1,6 @@
+#!/bin/bash -
+
+# Decrypt a file (encrypted with `encup`) and copy it to my udisk
+# To purge a file, use `rm36`
+
+gpg --decrypt "$1" | tar xzf - -C /Volumes/UNTITLED/
