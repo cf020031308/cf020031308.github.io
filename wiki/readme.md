@@ -36,6 +36,7 @@
   * [ledger: 命令行的复式记账系统](ledger.md)
   * [Calcurse: 命令行日历与日程管理工具](calcurse/readme.md)
   * [Zathura: vi 键位的 PDF 阅读器](zathura.md)
+  * [Ways to Encrypt Files](encrypt-files.md)
 * 效率与管理
   * [《自控力》凯利·麦格尼格尔](《自控力》凯利·麦格尼格尔.md)
   * [Procrastination is about managing emotions, not time](procrastination.md)

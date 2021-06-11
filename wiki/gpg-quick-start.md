@@ -30,6 +30,17 @@ sub   rsa4096 2020-02-28 [E]
 > gpg --keyserver hkp://pgp.mit.edu:80 --send-keys [ID]
 ```
 
+### 公钥与密钥导入导出
+
+```bash
+# 导入
+gpg --import
+# 导出公钥
+gpg --armor -o gpg.pub --export
+# 导出私钥
+gpg --armor -o gpg.sec --export-secret-keys
+```
+
 ### 导入他人公钥
 
 ```bash
