@@ -1,0 +1,47 @@
+abstract: 'Graph Neural Network (GNN) has been demonstrated its effectiveness in dealing
+
+  with non-Euclidean structural data. Both spatial-based and spectral-based GNNs
+
+  are relying on adjacency matrix to guide message passing among neighbors during
+
+  feature aggregation. Recent works have mainly focused on powerful message
+
+  passing modules, however, in this paper, we show that none of the message
+
+  passing modules is necessary. Instead, we propose a pure
+
+  multilayer-perceptron-based framework, Graph-MLP with the supervision signal
+
+  leveraging graph structure, which is sufficient for learning discriminative
+
+  node representation. In model-level, Graph-MLP only includes multi-layer
+
+  perceptrons, activation function, and layer normalization. In the loss level,
+
+  we design a neighboring contrastive (NContrast) loss to bridge the gap between
+
+  GNNs and MLPs by utilizing the adjacency information implicitly. This design
+
+  allows our model to be lighter and more robust when facing large-scale graph
+
+  data and corrupted adjacency information. Extensive experiments prove that even
+
+  without adjacency information in testing phase, our framework can still reach
+
+  comparable and even superior performance against the state-of-the-art models in
+
+  the graph node classification task.'
+archiveprefix: arXiv
+author: Yang Hu and Haoxuan You and Zhecan Wang and Zhicheng Wang and Erjin Zhou and
+  Yue Gao
+eprint: 2106.04051v1
+file: 2106.04051v1.pdf
+files:
+- /Users/Roy/Documents/papers/2021-graph-mlp-node-classification-without-message-passing-in-graph.pdf
+month: Jun
+primaryclass: cs.LG
+ref: 2106.04051v1
+title: 'Graph-MLP: Node Classification without Message Passing in Graph'
+type: article
+url: http://arxiv.org/abs/2106.04051v1
+year: '2021'
