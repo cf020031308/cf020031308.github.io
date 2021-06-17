@@ -1,0 +1,40 @@
+abstract: 'Nowadays, Graph Neural Networks (GNNs) following the Message Passing paradigm
+
+  become the dominant way to learn on graphic data. Models in this paradigm have
+
+  to spend extra space to look up adjacent nodes with adjacency matrices and
+
+  extra time to aggregate multiple messages from adjacent nodes. To address this
+
+  issue, we develop a method called LinkDist that distils self-knowledge from
+
+  connected node pairs into a Multi-Layer Perceptron (MLP) without the need to
+
+  aggregate messages. Experiment with 8 real-world datasets shows the MLP derived
+
+  from LinkDist can predict the label of a node without knowing its adjacencies
+
+  but achieve comparable accuracy against GNNs in the contexts of semi- and
+
+  full-supervised node classification. Moreover, LinkDist benefits from its
+
+  Non-Message Passing paradigm that we can also distil self-knowledge from
+
+  arbitrarily sampled node pairs in a contrastive way to further boost the
+
+  performance of LinkDist.'
+archiveprefix: arXiv
+author: Yi Luo and Aiguo Chen and Ke Yan and Ling Tian
+eprint: 2106.08541v1
+file: 2106.08541v1.pdf
+files:
+- /Users/Roy/Documents/papers/2021-distilling-self-knowledge-from-contrastive-links-to-classify-graph-nodes-without-passing-messages.pdf
+month: Jun
+primaryclass: cs.LG
+ref: 2106.08541v1
+title: 'Distilling Self-Knowledge From Contrastive Links to Classify Graph Nodes
+
+  Without Passing Messages'
+type: article
+url: http://arxiv.org/abs/2106.08541v1
+year: '2021'
