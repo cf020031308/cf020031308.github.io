@@ -1,5 +1,17 @@
 # ChangeLog of Me
 
+## Jun 2021
+
+* wiki
+  * [Ways to Encrypt Files](/wiki/encrypt-files) (aa04c50)
+* academic notes
+  * [(2021) 从对比链接中蒸馏自知识：非消息传递的图节点分类](papers/2021-distilling-self-knowledge-from-contrastive-links-to-classify-graph-nodes-without-passing-messages/) (82ecae6)
+  * [(2021) Graph-MLP: 非消息传递的图节点分类](/papers/2021-graph-mlp-node-classification-without-message-passing-in-graph/) (020be5e)
+* publication
+  * [Distilling Self-Knowledge From Contrastive Links to Classify Graph Nodes Without Passing Messages](/pub.html) (6b6c15f)
+* code
+  * [scripts to encrypt, decrypt and purge files](https://github.com/cf020031308/cf020031308.github.io/commit/a2a920a73b77a5661eba7949d44fcaff56c55c7c) (a2a920a)
+
 ## May 2021
 
 * wiki
