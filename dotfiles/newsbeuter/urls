@@ -36,7 +36,13 @@ https://www.economist.com/feeds/print-sections/79/finance-and-economics.xml
 https://cf020031308.github.io/blog/atom.xml
 http://www.michael-noll.com/feed.xml
 https://www.soimort.org/feed.atom
-exec:~/.newsbeuter/feeds/uestc_yz.sh
+exec:~/.newsbeuter/feeds/uestc_is.sh
+"exec:~/.newsbeuter/feeds/uestc_news.sh 66"
+"exec:~/.newsbeuter/feeds/uestc_news.sh 67"
+"exec:~/.newsbeuter/feeds/uestc_news.sh 68"
+exec:~/.newsbeuter/feeds/uestc_jwc.sh
+"exec:~/.newsbeuter/feeds/uestc_jwc.sh 255"
+"exec:~/.newsbeuter/feeds/uestc_jwc.sh 256"
 "exec:~/.newsbeuter/feeds/uestc_gr.sh 119"
 "exec:~/.newsbeuter/feeds/uestc_gr.sh 120"
 "exec:~/.newsbeuter/feeds/uestc_gr.sh 121"
@@ -47,18 +53,6 @@ exec:~/.newsbeuter/feeds/uestc_yz.sh
 "exec:~/.newsbeuter/feeds/uestc_gr.sh 130"
 "exec:~/.newsbeuter/feeds/uestc_gr.sh 133"
 "exec:~/.newsbeuter/feeds/uestc_gr.sh 146"
-https://rsshub.app/uestc/jwc/important
-https://rsshub.app/uestc/jwc/teacher
-https://rsshub.app/uestc/jwc/student
-https://rsshub.app/uestc/news/academy
-https://rsshub.app/uestc/news/culture
-https://rsshub.app/uestc/news/announcement
-https://rsshub.app/uestc/news/notification
-https://rsshub.app/uestc/cs/xwzx*xyxw
-https://rsshub.app/uestc/cs/tzgg*xsk
-https://rsshub.app/uestc/cs/tzgg*jwk
-https://rsshub.app/uestc/cs/tzgg*ygk
-https://rsshub.app/uestc/cs/ztlj*xskb
 http://rsshub.app/toutiao/today
 https://www.scs.cmu.edu/feed/rss.xml
 https://www.ml.cmu.edu/cmsint/mldcmu.rss
@@ -74,6 +68,7 @@ http://googleaiblog.blogspot.com/atom.xml
 https://rsshub.app/owspace/read/1
 https://rsshub.app/zhihu/hotlist
 https://css-tricks.com/feed/
-http://export.arxiv.org/api/query?search_query=%28ti:"knowledge graph"+OR+ti:forecast+OR+ti:predict+OR+ti:reinforcement%29+AND+%28cat:cs.*+OR+cat:math.*+OR+cat:stat.*%29&max_results=50
+http://export.arxiv.org/api/query?search_query=%28ti:review+OR+ti:survey+OR+ti:differential+OR+ti:memory+OR+ti:graph+OR+ti:forecast+OR+ti:predict+OR+ti:reinforcement%29+AND+%28cat:cs.*+OR+cat:math.*+OR+cat:stat.*%29&max_results=50
 https://rsshub.app/mi/golden
 https://rsshub.app/cneb/guoneinews
+https://api.quantamagazine.org/feed/
