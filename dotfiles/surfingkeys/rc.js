@@ -1,3 +1,4 @@
+const { aceVimMap, mapkey, imap, iunmap, imapkey, getClickableElements, vmapkey, map, unmap, cmap, addSearchAlias, removeSearchAlias, tabOpenLink, readText, Clipboard, Front, Hints, Visual, RUNTIME, } = api;
 addSearchAlias('zh', 'zhihu', 'https://www.zhihu.com/search?type=content&sort=upvote&q=');
 addSearchAlias('bk', 'douban book', 'http://book.douban.com/subject_search?cat=1001&search_text=');
 addSearchAlias('mv', 'douban movie', 'http://movie.douban.com/subject_search?cat=1002&search_text=');
@@ -12,3 +13,4 @@ addSearchAlias('dd', 'devdocs', 'https://devdocs.io/#q=');
 addSearchAlias('sp', 'sspai', 'https://sspai.com/search/post/');
 addSearchAlias('ax', 'arxiv', 'https://arxiv.org/search/?searchtype=all&source=header&query=');
 addSearchAlias('db', 'dblp', 'https://dblp.org/search?q=');
+addSearchAlias('wp', 'wiki pedia', 'https://en.wikipedia.org/w/index.php?search=');
