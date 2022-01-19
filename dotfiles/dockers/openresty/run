@@ -4,4 +4,4 @@ docker run --rm\
     -v $PWD/www:/usr/local/openresty/nginx/www:ro\
     -p 0.0.0.0:80:80\
     -p 8080:8080\
-    openresty/openresty:trusty
+    openresty/openresty:latest

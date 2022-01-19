@@ -28,6 +28,9 @@ END {
 left="${left_fn%% *}"
 fn="${left_fn#* }"
 if [ "$fn" ]; then
+    url="${fn%readme.md}"
+    url="https://cf020031308.github.io/${url/%.md/.html}"
+    open "$url"
     vim "$fn" && touch "$fn"
 fi
 echo "$left docs to review"

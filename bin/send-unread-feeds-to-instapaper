@@ -2,7 +2,7 @@
 
 fp=~/.newsboat/cache.db
 from="Roy <cf020031308@163.com>"
-to=$(cat ~/Nutstore/muttalias| sed -n '/instapaper/s/^.*instapaper //p')
+to=$(cat ~/Nutstore/mail/alias | sed -n '/instapaper/s/^.*instapaper //p')
 if [ -z "$to" ]; then
     echo "No instapaper address found."
     exit 1

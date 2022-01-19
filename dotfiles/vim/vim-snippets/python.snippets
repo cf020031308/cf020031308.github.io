@@ -501,3 +501,18 @@ snippet tornado
 	        (tornado.options.options.ip, tornado.options.options.port),
 	        app
 	    ).serve_forever()
+snippet nn.Module
+	nn.Module):
+	    def __init__(self, ${0}):
+		    super(self.__class__, self).__init__()
+
+		def forward(self, ):
+		    pass
+snippet importtorch
+	import torch
+	import torch.nn as nn
+	import torch.optim as optim
+	import torch.nn.functional as F
+	from torch.utils.data import DataLoader
+snippet UA
+	Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36

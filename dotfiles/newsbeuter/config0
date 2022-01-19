@@ -18,7 +18,7 @@ save-path "~/workplace/cf020031308.github.io/draft"
 browser "lynx -accept_all_cookies -cookie_file=$PREFIX/tmp/nsb_cookie -cookie_save_file=$PREFIX/tmp/nsb_cookie %u"
 macro o set browser "open %u" ; open-in-browser-and-mark-read ; set browser "lynx -accept_all_cookies -cookie_file=$PREFIX/tmp/nsb_cookie -cookie_save_file=$PREFIX/tmp/nsb_cookie %u"
 
-highlight articlelist "四川|productivity|javascript|react|echarts|antd|ant design|简悦|UESTC|电子科大|电子科技大学|成都|算法|数据|分布式|cdn|go|广告|DSP|RTB|量化|交易|加速乐|创宇|notion|nginx|redis|openresty|quant|python|lua|julia|zcash|china|chinese|evernote|印象笔记|lynx|newsbeuter|newsboat|taskwarrior|mutt|karabiner|termux|南开|成外|外国语|cloudflare|instapaper|Artificial Intelligence|Machine Learning|knowledge|automated|explainable|reasonable|Traceable|understandable|causal effect|small sample" red default bold
+highlight articlelist "cf020031308|四川|productivity|javascript|react|echarts|antd|ant design|简悦|UESTC|电子科大|电子科技大学|成都|算法|数据|分布式|cdn|go|广告|DSP|RTB|量化|交易|加速乐|创宇|notion|nginx|redis|openresty|quant|python|lua|julia|zcash|china|chinese|evernote|印象笔记|lynx|newsbeuter|newsboat|taskwarrior|mutt|karabiner|termux|南开|成外|外国语|cloudflare|instapaper|Artificial Intelligence|Machine Learning|knowledge|automated|explainable|reasonable|Traceable|understandable|causal effect|small sample" red default bold
 highlight article "Artificial Intelligence|Machine Learning|knowledge|automated|explainable|reasonable|Traceable|understandable|causal effect|small sample" yellow default
 ignore-article "https://www.v2ex.com/index.xml" "title =~ \"^\\[(问与答|天黑以后)\\]\""
 

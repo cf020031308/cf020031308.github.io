@@ -1,0 +1,47 @@
+snippet \floor
+	\lfloor ${0} \rfloor
+snippet \ceil
+	\lceil ${0} \rceil
+snippet #
+	\section{${1}}
+	\label{sec:${2}}
+snippet ##
+	\subsection{${1}}
+	\label{ssec:${2}}
+snippet ###
+	\subsubsection{${1}}
+	\label{sssec:${2}}
+snippet *
+	\emph{${1}}
+snippet **
+	\textbf{${1}}
+snippet figure
+	\begin{figure}
+	\centering
+	\includegraphics{${1}}
+	\caption{${2}}
+	\label{fig:${3}}
+	\end{figure}
+snippet table
+	\begin{table}
+	\centering
+	\begin{tabular}{${1}}
+	\toprule
+	${2}
+	\midrule
+	${0}
+	\bottomrule
+	\end{tabular}
+	\caption{${3}}
+	\label{tbl:${4}}
+	\end{table}
+snippet [@
+	~\cite{${1}}
+snippet -
+	\begin{itemize}
+		\item $0
+	\end{itemize}
+snippet 1.
+	\begin{enumerate}
+		\item $0
+	\end{enumerate}

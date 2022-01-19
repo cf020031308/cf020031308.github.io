@@ -24,5 +24,5 @@ BEGIN{print "\
 END{prnit "</feed>"}
 AWK
 )
-curl ${host}/best 2>&- | xmllint --html --xpath "//table[@class='itemlist']/tr[@class='athing']/@id | //table[@class='itemlist']/tr[@class='athing']/td[@class='title'][last()]/a[1]/text() | //table[@class='itemlist']/tr[@class='athing']/td[@class='title'][last()]/a[1]/@href" - 2>&- | sed -e 's/id="/\
+curl -kL ${host}/best 2>&- | xmllint --html --xpath "//table[@class='itemlist']/tr[@class='athing']/@id | //table[@class='itemlist']/tr[@class='athing']/td[@class='title'][last()]/a[1]/text() | //table[@class='itemlist']/tr[@class='athing']/td[@class='title'][last()]/a[1]/@href" - 2>&- | sed -e 's/id="/\
 /g' -e 's/" href=//g' | sed '1d' | awk -F'"' "$tpl"

@@ -19,7 +19,7 @@ set shiftwidth=4
 set softtabstop=4
 set laststatus=2
 set t_Co=256
-set conceallevel=2
+" set conceallevel=2
 
 " TODO: :BundleInstall to install new plugins
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -58,7 +58,7 @@ filetype plugin indent on
 " let g:syntastic_loc_list_height = 2
 let g:syntastic_enable_balloons = 0
 let g:syntastic_auto_jump = 1
-let g:syntastic_quiet_messages = {"regex": ['F812', 'module level import not at top of file', 'basestring', 'E731', 'reload', 'apply', 'raw_input', 'reduce', 'letter not allowed here', 'invalid syntax'] }
+let g:syntastic_quiet_messages = {"regex": ['F812', 'module level import not at top of file', 'basestring', 'E731', 'reload', 'apply', 'raw_input', 'reduce', 'letter not allowed here', 'invalid syntax', 'Import statements are in the wrong order.', 'import groups'] }
 let g:syntastic_lua_checkers = ["luacheck"]
 let g:syntastic_lua_luacheck_args = "--no-unused-args"
 

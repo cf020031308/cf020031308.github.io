@@ -5,7 +5,7 @@ cat <<FEED | sed '/^ \{1,\}<published>/s/\([0-9]\{4\}\)年\([0-9]\{1,2\}\)月\([
 <feed xmlns='http://www.w3.org/2005/Atom' xml:base="http://gr.uestc.edu.cn">
   <id> uestc:graduate </id>
   <updated>$(date -u +"%Y-%m-%dT%H:%M:%SZ")</updated>"
-$(curl -L "https://gr.uestc.edu.cn/tongzhi/$1" 2>&- | pup 'title, .topic_item_c json{}' | jq -r '.[] | if .tag == "title" then
+$(curl -kL "https://gr.uestc.edu.cn/tongzhi/$1" 2>&- | pup 'title, .topic_item_c json{}' | jq -r '.[] | if .tag == "title" then
 "  <title> \(.text) </title>" else "
 <entry>
   <title>\(.children[0].children[0].text)</title>

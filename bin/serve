@@ -7,5 +7,5 @@ docker run --rm\
     -v $SRC/nginx.conf:$DST/conf/nginx.conf:ro\
     -v $SRC/lua:$DST/lua:ro\
     -v $WWW:$DST/www:ro\
-    -p 0.0.0.0:80:80\
-    openresty/openresty:trusty
+    -p 127.0.0.1:80:80\
+    openresty/openresty:latest

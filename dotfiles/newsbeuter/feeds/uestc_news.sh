@@ -5,7 +5,7 @@ echo "<?xml version='1.0' encoding='utf-8'?>
   <title> 成电新闻网 </title>
   <id> uestc:is </id>
   <updated>$(date -u +"%Y-%m-%dT%H:%M:%SZ")</updated>"
-curl "https://news.uestc.edu.cn/?n=UestcNews.Front.Category.Page&CatId=$1" 2>&- | pup 'div#Degas_news_list > ul li json{}' | jq -r '.[] | if .children[0].class == "thumb" then .children[1:] else .children end | . as $li | "
+curl -kL "https://news.uestc.edu.cn/?n=UestcNews.Front.Category.Page&CatId=$1" 2>&- | pup 'div#Degas_news_list > ul li json{}' | jq -r '.[] | if .children[0].class == "thumb" then .children[1:] else .children end | . as $li | "
 <entry>
   <title>\($li[0].children[0].text)</title>
   <id>\($li[0].children[0].href)</id>

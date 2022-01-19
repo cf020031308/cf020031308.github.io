@@ -10,7 +10,7 @@ echo "<?xml version='1.0' encoding='utf-8'?>
   <title> 电子科大教务处 </title>
   <id> uestc:is </id>
   <updated>$(date -u +"%Y-%m-%dT%H:%M:%SZ")</updated>"
-curl "${url}" 2>&- | pup 'div.section_Content div.textAreo json{}' | jq -r '.[] as $li | "
+curl -kL "${url}" 2>&- | pup 'div.section_Content div.textAreo json{}' | jq -r '.[] as $li | "
 <entry>
   <title>\($li.children[0].text)</title>
   <id>\($li.children[0].newsid)</id>

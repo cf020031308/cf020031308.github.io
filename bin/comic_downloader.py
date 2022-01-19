@@ -33,7 +33,9 @@ def http(url):
         if resp.content.strip() == '404':
             return
         time.sleep(10)
-        resp = requests.get(url, verify=False)
+        resp = requests.get(
+            url, verify=False, headers={'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36'}
+        )
         print('[%s] %s' % (resp.status_code, url))
     if resp.status_code == 404 or resp.content.strip() == '404':
         return ''
@@ -41,9 +43,17 @@ def http(url):
 
 
 def fzdm(record,
-         host='https://manhua.fzdm.com',
-         static='http://p1.manhuapan.com'):
-    for chapter in range(record['next'], record['next'] + 999):
+         # host='https://manhua.fzdm.com',
+         host='https://manhua.fffdm.com',
+         # static='http://www-mipengine-org.mipcdn.com/i/p3.manhuapan.com'):
+         static='https://p5.fzacg.com/'):
+    # 解析麻烦，遇到意外就改 next 为目标章吧
+    i_next = int(re.sub(r'\D', '', str(record['next'])))
+    if str(i_next) == str(record['next']):
+        chaps = range(i_next, i_next + 999)
+    else:
+        chaps = [record['next']]
+    for chapter in chaps:
         for page in range(0, 999):
             content = http(
                 '%s/%s/%s/index_%s.html' % (host, record['id'], chapter, page))
@@ -57,8 +67,9 @@ def fzdm(record,
 
 
 def pufei(record,
-          host='http://www.pufei8.com',
-          static='http://res.img.fffmanhua.com'):
+          host='http://www.pufei5.com/',
+          # static='http://res.img.fffmanhua.com'):
+          static='http://res.img.jituoli.com'):
     dir = '/manhua/%(id)d' % record
     cids = sorted(map(int, set(
         re.findall(r'href="%s/(\d+)\.html"' % dir, http(host + dir)))))

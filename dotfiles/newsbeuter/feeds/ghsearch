@@ -5,7 +5,7 @@ echo "<?xml version='1.0' encoding='utf-8'?>
   <title>Github Search: $1</title>
   <id>$1</id>
   <updated>$(date -u +'%Y-%m-%dT%H:%M:%SZ')</updated>"
-curl "https://api.github.com/search/repositories?q=$1&sort=$2&order=desc" | jq -r '.items[] as $e | "
+curl -kL "https://api.github.com/search/repositories?q=$1&sort=$2&order=desc" | jq -r '.items[] as $e | "
   <entry>
     <title>\($e.name)</title>
     <id>\($e.id)</id>

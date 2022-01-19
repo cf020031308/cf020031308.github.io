@@ -1,8 +1,9 @@
 #!/bin/bash -
 
 # Search from arXiv/DBLP, select with fzf, download via papis.
+# Search from DBLP, select with fzf, output bibtex.
 # Usage:
-#     search-paper [arxiv|dblp] [query]"
+#     search-paper [arxiv|dblp|bibtex] [query]"
 
 function cacheFile() {
     key=$(md5 -q -s "$(date +'%Y%m%d')-$2")
@@ -31,6 +32,8 @@ Prefices:
     | all    | All of the above         |
 References:
     * https://arxiv.org/help/api/user-manual
+TODO:
+    - there is a sort bug with arxiv, use dblp
 USAGE
         exit 1;
     fi
@@ -77,7 +80,7 @@ References:
     * https://dblp.uni-trier.de/faq/13501473
     * https://dblp.uni-trier.de/faq/1474589.html
 USAGE
-    exit 1
+        exit 1
     fi
     q="${2// /+}"
     q="${q// or / OR }"
@@ -89,16 +92,67 @@ USAGE
         | grep -n '.'\
         | sed 's/:/ /'\
         | sort -rk2\
-        | fzf --with-nth="2..-1" --bind=tab:toggle+up -m -0 --header="$(jq -r '.result.query' $fn)" --preview="jq -C '.result.hits.hit[{1}].info | del (.authors)' '$fn'"\
+        | fzf --with-nth="2..-1" --bind=tab:toggle+up -m -0 --header="$(jq -r '.result.query' $fn)" --preview="jq -C '.result.hits.hit[{1}].info | del (.authors), .authors' '$fn'"\
         | while read line; do
             doi=$(jq -r ".result.hits.hit[${line%% *}].info.doi" "$fn")
             echo "$doi"
             papis add --from-doi "$doi"
         done
+    q="${2// /+}"
+    q="${q// or / OR }"
+    fn=$(cacheFile "dblp" "$q").html
+    if [ ! -f "$fn" ]; then
+        curl "https://dblp.org/search/publ/api?q=$q&format=json&h=50"\
+            | jq -r '{query: .result.query, hits: .result.hits.hit | sort_by(.info.year) | reverse}' > "$fn"
+    fi
+    jq -r '.hits[].info as $e | "[\($e.year)] \($e.title) -- \($e | .authors.author | .text?, .[0]?.text)"' "$fn"\
+        | grep -n '.'\
+        | sed 's/:/ /'\
+        | fzf --with-nth="2..-1" --bind=tab:toggle+up -m -0 --header="$(jq -r '.query' $fn)" --preview="jq -C '.hits[{1}-1].info | del (.authors)' '$fn'"\
+        | while read line; do
+            doi=$(jq -r ".result.hits.hit[${line%% *}-1].info.doi" "$fn")
+            echo "$doi"
+            papis add --from-doi "$doi"
+        done
+elif [ "$1" = "bibtex" ]; then
+    if [ ! "$2" ]; then
+        cat <<USAGE
+Usage:
+    $self $1 [query]
+Query Example:
+    'test search'
+Features:
+	| Feature       | Query                            | Example                                                              |
+	| ------------- | -------------------------------- | -------------------------------------------------------------------- |
+	| prefix search | default                          | "sig" matches "SIGIR" as well as "signal"                            |
+	| exact word    | append dollar sign ($)           | "graph$" matches "graph", but not "graphics"                         |
+	| boolean AND   | separate words by space          | "codd model" matches "Codd's Relational Model" and "A Model by Codd" |
+	| boolean OR    | connect words by pipe symbol (|) | "graph|network" matches "graph algorithm" and "Network Analysis"     |
+References:
+    * https://dblp.uni-trier.de/faq/13501473
+    * https://dblp.uni-trier.de/faq/1474589.html
+USAGE
+        exit 1
+    fi
+    q="${2// /+}"
+    q="${q// or / OR }"
+    fn=$(cacheFile "dblp" "$q").html
+    if [ ! -f "$fn" ]; then
+        curl "https://dblp.org/search/publ/api?q=$q&format=json&h=50"\
+            | jq -r '{query: .result.query, hits: .result.hits.hit | sort_by(.info.year) | reverse}' > "$fn"
+    fi
+    jq -r '.hits[].info as $e | "[\($e.year)] \($e.title) -- \($e | .authors.author | .text?, .[0]?.text)"' "$fn"\
+        | grep -n '.'\
+        | sed 's/:/ /'\
+        | fzf --with-nth="2..-1" --bind=tab:toggle+up -m -0 --header="$(jq -r '.query' $fn)" --preview="jq -C '.hits[{1}-1].info | del (.authors), .authors' '$fn'"\
+        | while read line; do
+            url=$(jq -r ".hits[${line%% *}-1].info.url" "$fn")
+            curl "${url}.bib"
+        done
 else
     cat <<USAGE
 Usage:
-    $self [arxiv|dblp] [query]"
+    $self [arxiv|dblp|bibtex] [query]"
 USAGE
     exit 1;
 fi

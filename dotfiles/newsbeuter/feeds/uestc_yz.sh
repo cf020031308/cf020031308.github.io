@@ -5,7 +5,7 @@ echo "<?xml version='1.0' encoding='utf-8'?>
   <title> 电子科大研究生招生网 </title>
   <id> uestc:recuite </id>
   <updated>$(date -u +"%Y-%m-%dT%H:%M:%SZ")</updated>"
-curl "https://yz.uestc.edu.cn/shuoshizhaosheng/" 2>&- | pup 'table.box li:parent-of(span) json{}' | jq -r '.[] as $li | "
+curl -kL "https://yz.uestc.edu.cn/shuoshizhaosheng/" 2>&- | pup 'table.box li:parent-of(span) json{}' | jq -r '.[] as $li | "
 <entry>
   <title>\($li.children[0].title)</title>
   <id>\($li.children[0].href)</id>
