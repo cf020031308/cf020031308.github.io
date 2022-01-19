@@ -17,6 +17,8 @@ E_{X \sim p}[f(x)]
 
 然后计算 $\frac{p(x)}{q(x)} f(x)$ 的均值作为 $E_{X \sim p}[f(x)]$ 的估计，即 f(x) 在重要性权重 $\frac{p(x)}{q(x)}$ 下的加权平均。
 
+在q的分布有多个选择时方差较小的更优，所以有时候即使p是容易采样的，也会构造出另一个使估计方差更小的q，见《方差削减（Variance Reduction）》。
+
 ## 分布未归一化时
 
 只知道未归一化分布 $\hat{p} \propto p$ 时：
@@ -33,7 +35,7 @@ E_{X \sim p}[f(x)]
 
 可以从分布 $q_1, q_2$ 采样（通常 $q_1 = q_2$）后计算 $\frac{\hat{p}(x)}{q_1(x)} \cdot f(x)$ 和 $\frac{\hat{p}(x)}{q_2(x)}$ 的均值相除作为 $E_{X \sim p}[f(x)]$ 的估计。
 
-## 估算 softmax
+## 估算 softmax 的梯度
 
 > Yoshua Bengio and Jean-S{\'{e}}bastien Senecal. Adaptive Importance Sampling to Accelerate Training of a Neural Probabilistic Language Model. {IEEE} Trans. Neural Networks 713--722  2008
 
@@ -97,3 +99,5 @@ $$E_{i \sim P}(\triangledown_\theta h_i)
 
 比如在 q = r 为均匀分布中采样出了两个样本 1 和 n，则 $$\triangledown_\theta log P_i \approx \triangledown_\theta h_i - \frac{\triangledown_\theta s_1 + \triangledown_\theta s_n}{s_1 + s_n}$$
 按图中加红加粗的路径反向微分（Automatic Differentiation）即可得式中所需的导数。
+
+同理在用最大似然法估计没有隐变量的马尔可夫随机场的参数时也可以用这方法估算梯度。
