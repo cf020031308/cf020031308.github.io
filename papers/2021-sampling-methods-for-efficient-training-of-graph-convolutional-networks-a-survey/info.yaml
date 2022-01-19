@@ -1,0 +1,42 @@
+abstract: 'Graph Convolutional Networks (GCNs) have received significant attention
+  from
+
+  various research fields due to the excellent performance in learning graph
+
+  representations. Although GCN performs well compared with other methods, it
+
+  still faces challenges. Training a GCN model for large-scale graphs in a
+
+  conventional way requires high computation and storage costs. Therefore,
+
+  motivated by an urgent need in terms of efficiency and scalability in training
+
+  GCN, sampling methods have been proposed and achieved a significant effect. In
+
+  this paper, we categorize sampling methods based on the sampling mechanisms and
+
+  provide a comprehensive survey of sampling methods for efficient training of
+
+  GCN. To highlight the characteristics and differences of sampling methods, we
+
+  present a detailed comparison within each category and further give an overall
+
+  comparative analysis for the sampling methods in all categories. Finally, we
+
+  discuss some challenges and future research directions of the sampling methods.'
+archiveprefix: arXiv
+author: Xin Liu and Mingyu Yan and Lei Deng and Guoqi Li and Xiaochun Ye and Dongrui
+  Fan
+eprint: 2103.05872v3
+file: 2103.05872v3.pdf
+files:
+- /Users/Roy/Documents/papers/2021-sampling-methods-for-efficient-training-of-graph-convolutional-networks-a-survey.pdf
+month: Mar
+primaryclass: cs.LG
+ref: 2103.05872v3
+title: 'Sampling methods for efficient training of graph convolutional networks:
+
+  A survey'
+type: article
+url: http://arxiv.org/abs/2103.05872v3
+year: '2021'

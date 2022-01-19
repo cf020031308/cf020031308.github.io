@@ -1,0 +1,42 @@
+abstract: 'Graph Convolutional Networks (GCNs) have become a crucial tool on learning
+
+  representations of graph vertices. The main challenge of adapting GCNs on
+
+  large-scale graphs is the scalability issue that it incurs heavy cost both in
+
+  computation and memory due to the uncontrollable neighborhood expansion across
+
+  layers. In this paper, we accelerate the training of GCNs through developing an
+
+  adaptive layer-wise sampling method. By constructing the network layer by layer
+
+  in a top-down passway, we sample the lower layer conditioned on the top one,
+
+  where the sampled neighborhoods are shared by different parent nodes and the
+
+  over expansion is avoided owing to the fixed-size sampling. More importantly,
+
+  the proposed sampler is adaptive and applicable for explicit variance
+
+  reduction, which in turn enhances the training of our method. Furthermore, we
+
+  propose a novel and economical approach to promote the message passing over
+
+  distant nodes by applying skip connections. Intensive experiments on several
+
+  benchmarks verify the effectiveness of our method regarding the classification
+
+  accuracy while enjoying faster convergence speed.'
+archiveprefix: arXiv
+author: Wenbing Huang and Tong Zhang and Yu Rong and Junzhou Huang
+eprint: 1809.05343v3
+file: 1809.05343v3.pdf
+files:
+- /Users/Roy/Documents/papers/2018-adaptive-sampling-towards-fast-graph-representation-learning.pdf
+month: Sep
+primaryclass: cs.CV
+ref: 1809.05343v3
+title: Adaptive Sampling Towards Fast Graph Representation Learning
+type: article
+url: http://arxiv.org/abs/1809.05343v3
+year: '2018'

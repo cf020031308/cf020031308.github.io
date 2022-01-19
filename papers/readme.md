@@ -33,6 +33,7 @@
   * [(2021) 图神经网络中半监督分类的一些涨点技巧](2021-bag-of-tricks-of-semi-supervised-classification-with-graph-neural-networks)
   * [(2021) 从对比链接中蒸馏自知识：非消息传递的图节点分类](2021-distilling-self-knowledge-from-contrastive-links-to-classify-graph-nodes-without-passing-messages)
   * [(2021) Graph-MLP: 非消息传递的图节点分类](2021-graph-mlp-node-classification-without-message-passing-in-graph)
+  * [(2021) 综述：基于采样的图卷积网络高效训练](2021-sampling-methods-for-efficient-training-of-graph-convolutional-networks-a-survey)
 * NLP
   * [(2014) 记忆网络](2014-memory-networks)
   * [(2020) Reformer：高效的 Transformer](2020-reformer-the-efficient-transformer)
