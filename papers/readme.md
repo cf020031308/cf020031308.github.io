@@ -16,7 +16,7 @@
   <!-- * [(2017) 使用术语加权的推特数据分析预测2017年法国大选](2017-prediction-of-the-2017-french-election-based-on-twitter-data-analysis) -->
   <!-- * [(2017) 挖掘网络数据预测台湾市长选举](2017-web-mining-for-the-mayoral-election-prediction-in-taiwan) -->
   * [(2018) 用神经网络预测2018中期选举](2018-using-neural-networks-to-predict-the-2018-midterm-election)
-  * [(2018) 社交媒体不会说谎：用多种在线信息预测2016台湾选举](2018-social-media-would-not-lie-prediction-of-the-2016-taiwan-election-via-online-heterogeneous-data/readme2.md)
+  * [(2018) 社交媒体不会说谎：用多种在线信息预测2016台湾选举](2018-social-media-would-not-lie-prediction-of-the-2016-taiwan-election-via-online-heterogeneous-data)
   <!-- * [(2018) 使用传染病的隔室模型预测选举](2018-forecasting-elections-using-compartmental-models-of-infection) -->
   <!-- * [(2018) 基于 Twitter 情感分析的印度尼西亚总结选举预测与分析](2018-prediction-and-analysis-of-indonesia-presidential-election-from-twitter-using-sentiment-analysis) -->
   * [(2019) 用 pymc3 预测以色列选举](2019-forecasting-the-israeli-elections-using-pymc3)
