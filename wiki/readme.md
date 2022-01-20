@@ -13,6 +13,7 @@
   * [神经网络中的自动微分与反向传播](automatic-differentiation-and-back-propagation/readme.md)
   * [重要性采样](importance-sampling.md)
   * [概率论与数理统计](probability-statistics/readme.md)
+  * [方差削减（Variance Reduction）](variance-reduction.md)
 * 工程与软件
   * [Flex 与 Grid 布局](css-flex-grid.md)
   * [计算机网络](计算机网络/readme.md)
