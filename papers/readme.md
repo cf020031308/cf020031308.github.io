@@ -1,5 +1,10 @@
 # 论文阅读笔记
 
+* [决策](decision-making.md)
+  * [(2014) ](2014-complex-events-recognition-under-uncertainty-in-a-sensor-network)
+  * [(2019) 大数据时代的智能决策——进展、挑战和研究议程](2019-artificial-intelligence-for-decision-making-in-the-era-of-big-data-evolution-challenges-and-research-agenda)
+  * [(2019) ](2019-decision-making-under-uncertainty-in-energy-systems-state-of-the-art)
+  * [(2021) ](2021-game-theoretic-frameworks-for-epidemic-spreading-and-human-decision-making-a-review)
 * [选举预测](election.md)
   * [(2013) 基于贝叶斯的美国总统选举动态预测](2013-dynamic-bayesian-forecasting-of-presidential-elections-in-the-states)
   <!-- * [(2014) 基于情感分析的巴基斯坦 2013 年选举预测与分析](2014-prediction-and-analysis-of-pakistan-election-2013-based-on-sentiment-analysis) -->
@@ -34,6 +39,7 @@
   * [(2021) 从对比链接中蒸馏自知识：非消息传递的图节点分类](2021-distilling-self-knowledge-from-contrastive-links-to-classify-graph-nodes-without-passing-messages)
   * [(2021) Graph-MLP: 非消息传递的图节点分类](2021-graph-mlp-node-classification-without-message-passing-in-graph)
   * [(2021) 综述：基于采样的图卷积网络高效训练](2021-sampling-methods-for-efficient-training-of-graph-convolutional-networks-a-survey)
+  * [(2021) 图自监督学习：对比式、生成式与预测式](2021-self-supervised-on-graphs-contrastive-generative-or-predictive)
 * NLP
   * [(2014) 记忆网络](2014-memory-networks)
   * [(2020) Reformer：高效的 Transformer](2020-reformer-the-efficient-transformer)

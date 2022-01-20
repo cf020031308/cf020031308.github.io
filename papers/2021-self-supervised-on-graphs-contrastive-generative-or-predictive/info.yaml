@@ -1,0 +1,48 @@
+abstract: 'Deep learning on graphs has recently achieved remarkable success on a variety
+
+  of tasks while such success relies heavily on the massive and carefully labeled
+
+  data. However, precise annotations are generally very expensive and
+
+  time-consuming. To address this problem, self-supervised learning (SSL) is
+
+  emerging as a new paradigm for extracting informative knowledge through
+
+  well-designed pretext tasks without relying on manual labels. In this survey,
+
+  we extend the concept of SSL, which first emerged in the fields of computer
+
+  vision and natural language processing, to present a timely and comprehensive
+
+  review of the existing SSL techniques for graph data. Specifically, we divide
+
+  existing graph SSL methods into three categories: contrastive, generative, and
+
+  predictive. More importantly, unlike many other surveys that only provide a
+
+  high-level description of published research, we present an additional
+
+  mathematical summary of the existing works in a unified framework. Furthermore,
+
+  to facilitate methodological development and empirical comparisons, we also
+
+  summarize the commonly used datasets, evaluation metrics, downstream tasks, and
+
+  open-source implementations of various algorithms. Finally, we discuss the
+
+  technical challenges and potential future directions for improving graph
+
+  self-supervised learning.'
+archiveprefix: arXiv
+author: Lirong Wu and Haitao Lin and Zhangyang Gao and Cheng Tan and Stan. Z. Li
+eprint: 2105.07342v3
+file: 2105.07342v3.pdf
+files:
+- /Users/Roy/Documents/papers/2021-self-supervised-on-graphs-contrastive-generative-or-predictive.pdf
+month: May
+primaryclass: cs.LG
+ref: 2105.07342v3
+title: 'Self-supervised on Graphs: Contrastive, Generative,or Predictive'
+type: article
+url: http://arxiv.org/abs/2105.07342v3
+year: '2021'
