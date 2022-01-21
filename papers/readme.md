@@ -35,6 +35,7 @@
   * [(2020) 从图的低秩全局注意力到 2-FWL 的近似](2020-from-graph-low-rank-global-attention-to-2-fwl-approximation)
   * [(2020) 标签传播与简单模型结合可超越图神经网络](2020-combining-label-propagation-and-simple-models-out-performs-graph-neural-networks)
   * [(2020) 统一图卷积神经网络与标签传播](2020-unifying-graph-convolutional-neural-networks-and-label-propagation)
+  * [(2020) UniMP：用于半监督分类的统一信息传递模型](2020-masked-label-prediction-unified-message-passing-model-for-semi-supervised-classification)
   * [(2021) 图神经网络中半监督分类的一些涨点技巧](2021-bag-of-tricks-of-semi-supervised-classification-with-graph-neural-networks)
   * [(2021) 从对比链接中蒸馏自知识：非消息传递的图节点分类](2021-distilling-self-knowledge-from-contrastive-links-to-classify-graph-nodes-without-passing-messages)
   * [(2021) Graph-MLP: 非消息传递的图节点分类](2021-graph-mlp-node-classification-without-message-passing-in-graph)
