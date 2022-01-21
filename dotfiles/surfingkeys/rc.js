@@ -8,7 +8,7 @@ addSearchAlias('gh', 'github', 'https://github.com/search?o=desc&s=stars&type=Re
 addSearchAlias('so', 'stackoverflow', 'http://stackoverflow.com/search?q=');
 addSearchAlias('tb', 'taobao', 'http://s.taobao.com/search?oe=utf-8&f=8&q=');
 addSearchAlias('gs', 'google scholar', 'https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&btnG=&q=');
-addSearchAlias('gs', 'semantic scholar', 'https://www.semanticscholar.org/search?sort=relevance&q=');
+addSearchAlias('ss', 'semantic scholar', 'https://www.semanticscholar.org/search?sort=relevance&q=');
 addSearchAlias('dd', 'devdocs', 'https://devdocs.io/#q=');
 addSearchAlias('sp', 'sspai', 'https://sspai.com/search/post/');
 addSearchAlias('ax', 'arxiv', 'https://arxiv.org/search/?searchtype=all&source=header&query=');
