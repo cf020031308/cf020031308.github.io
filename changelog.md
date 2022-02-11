@@ -1,11 +1,24 @@
 # ChangeLog of Me
 
+## Jan 2022
+
+* academic notes
+  * [(2020) UniMP：用于半监督分类的统一信息传递模型](/papers/2020-masked-label-prediction-unified-message-passing-model-for-semi-supervised-classification) (ffbbc1c)
+  * [(2021) 图自监督学习：对比式、生成式与预测式](/papers/2021-self-supervised-on-graphs-contrastive-generative-or-predictive) (164b230)
+  * [(2021) 综述：基于采样的高效图神经网络训练](/papers/2021-sampling-methods-for-efficient-training-of-graph-convolutional-networks-a-survey) (417cc28)
+* report
+  * [基于采样的高效图神经网络训练](https://github.com/cf020031308/cf020031308.github.io/blob/master/reports/20211119-%E7%BD%97%E6%84%8F-%E5%9F%BA%E4%BA%8E%E9%87%87%E6%A0%B7%E7%9A%84%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E9%AB%98%E6%95%88%E8%AE%AD%E7%BB%83.pdf)
+* wiki
+  * [方差削减（Variance Reduction）](/wiki/variance-reduction.md) (cd3b397)
+* other:
+  * leisure exercises on [projecteuler](https://github.com/cf020031308/cf020031308.github.io/tree/master/exercise/projecteuler) (fb42f3b)
+
 ## Jun 2021
 
 * wiki
   * [Ways to Encrypt Files](/wiki/encrypt-files) (aa04c50)
 * academic notes
-  * [(2021) 从对比链接中蒸馏自知识：非消息传递的图节点分类](papers/2021-distilling-self-knowledge-from-contrastive-links-to-classify-graph-nodes-without-passing-messages/) (82ecae6)
+  * [(2021) 从对比链接中蒸馏自知识：非消息传递的图节点分类](/papers/2021-distilling-self-knowledge-from-contrastive-links-to-classify-graph-nodes-without-passing-messages/) (82ecae6)
   * [(2021) Graph-MLP: 非消息传递的图节点分类](/papers/2021-graph-mlp-node-classification-without-message-passing-in-graph/) (020be5e)
 * publication
   * [Distilling Self-Knowledge From Contrastive Links to Classify Graph Nodes Without Passing Messages](/pub.html) (6b6c15f)
