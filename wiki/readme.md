@@ -14,6 +14,7 @@
   * [重要性采样](importance-sampling.md)
   * [概率论与数理统计](probability-statistics/readme.md)
   * [方差削减（Variance Reduction）](variance-reduction.md)
+  * [学习强化学习中的小问题](reinforcement-learning-supplements.md)
 * 工程与软件
   * [Flex 与 Grid 布局](css-flex-grid.md)
   * [计算机网络](计算机网络/readme.md)
