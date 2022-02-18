@@ -32,6 +32,7 @@
   * [(2018) 使用 Jumping Knowledge Networks 的图表示学习](2018-representation-learning-on-graphs-with-jumping-knowledge-networks)
   * [(2019) 图神经网络全面综述](2019-a-comprehensive-survey-on-graph-neural-networks)
   * [(2019) 位置感知图神经网络](2019-position-aware-graph-neural-networks)
+  * [(2019) GraphSAINT: 基于采样的归纳式图学习方法](2019-graphsaint-graph-sampling-based-inductive-learning-method)
   * [(2020) 从图的低秩全局注意力到 2-FWL 的近似](2020-from-graph-low-rank-global-attention-to-2-fwl-approximation)
   * [(2020) 标签传播与简单模型结合可超越图神经网络](2020-combining-label-propagation-and-simple-models-out-performs-graph-neural-networks)
   * [(2020) 统一图卷积神经网络与标签传播](2020-unifying-graph-convolutional-neural-networks-and-label-propagation)
