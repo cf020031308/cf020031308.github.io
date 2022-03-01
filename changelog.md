@@ -1,5 +1,12 @@
 # ChangeLog of Me
 
+## Feb 2022
+
+* wiki
+  * [学习强化学习中的小问题](/wiki/reinforcement-learning-supplements.md) (5efdb08)
+* academic notes
+  * [(2019) GraphSAINT: 基于采样的归纳式图学习方法](/papers/2019-graphsaint-graph-sampling-based-inductive-learning-method) (3747aef)
+
 ## Jan 2022
 
 * academic notes
