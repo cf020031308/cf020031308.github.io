@@ -1,5 +1,10 @@
 # ChangeLog of Me
 
+## Apr 2022
+
+* docs(reports): [20220406-罗意-CDN技术架构方案和选型](https://github.com/cf020031308/cf020031308.github.io/blob/master/reports/20220406-%E7%BD%97%E6%84%8F-CDN%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84%E6%96%B9%E6%A1%88%E5%92%8C%E9%80%89%E5%9E%8B.pdf) (244f02d)
+* docs(publication): [3ference https://doi.org/10.3390/math10081262 ](https://github.com/cf020031308/3ference)(8e26309)
+
 ## Feb 2022
 
 * wiki
