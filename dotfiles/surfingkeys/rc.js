@@ -14,3 +14,4 @@ addSearchAlias('sp', 'sspai', 'https://sspai.com/search/post/');
 addSearchAlias('ax', 'arxiv', 'https://arxiv.org/search/?searchtype=all&source=header&query=');
 addSearchAlias('db', 'dblp', 'https://dblp.org/search?q=');
 addSearchAlias('wp', 'wiki pedia', 'https://en.wikipedia.org/w/index.php?search=');
+addSearchAlias('cp', 'connected papers', 'https://www.connectedpapers.com/search?q=');
