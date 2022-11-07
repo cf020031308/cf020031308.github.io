@@ -1,9 +1,9 @@
 const { aceVimMap, mapkey, imap, iunmap, imapkey, getClickableElements, vmapkey, map, unmap, cmap, addSearchAlias, removeSearchAlias, tabOpenLink, readText, Clipboard, Front, Hints, Visual, RUNTIME, } = api;
-addSearchAlias('zh', 'zhihu', 'https://www.zhihu.com/search?type=content&sort=upvote&q=');
+addSearchAlias('zh', 'zhihu', 'https://www.zhihu.com/search?type=content&sort=upvoted_count&q=');
 addSearchAlias('bk', 'douban book', 'http://book.douban.com/subject_search?cat=1001&search_text=');
 addSearchAlias('mv', 'douban movie', 'http://movie.douban.com/subject_search?cat=1002&search_text=');
-addSearchAlias('cn', 'translate to zh-CN', 'http://translate.google.cn/#auto/zh-CN/');
-addSearchAlias('en', 'translate to en', 'http://translate.google.cn/#auto/en/');
+addSearchAlias('cn', 'translate to zh-CN', 'http://translate.google.com.hk/#auto/zh-CN/');
+addSearchAlias('en', 'translate to en', 'http://translate.google.com.hk/#auto/en/');
 addSearchAlias('gh', 'github', 'https://github.com/search?o=desc&s=stars&type=Repositories&utf8=%E2%9C%93&q=');
 addSearchAlias('so', 'stackoverflow', 'http://stackoverflow.com/search?q=');
 addSearchAlias('tb', 'taobao', 'http://s.taobao.com/search?oe=utf-8&f=8&q=');
@@ -15,3 +15,4 @@ addSearchAlias('ax', 'arxiv', 'https://arxiv.org/search/?searchtype=all&source=h
 addSearchAlias('db', 'dblp', 'https://dblp.org/search?q=');
 addSearchAlias('wp', 'wiki pedia', 'https://en.wikipedia.org/w/index.php?search=');
 addSearchAlias('cp', 'connected papers', 'https://www.connectedpapers.com/search?q=');
+addSearchAlias('dk', 'docker images', 'https://hub.docker.com/search?q=');
