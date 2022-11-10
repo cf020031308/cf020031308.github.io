@@ -160,15 +160,17 @@ $$\begin{cases}
 \frac{da_t(t)}{dt} = - a_h(t) \cdot \frac{\partial{f(h(t), t, \theta)}}{\partial{t}}
 \end{cases}$$
 
-
 对应的最终时刻的值
 
 1. $a_h(T) = \frac{\partial{L}}{\partial{h(T)}} $ 可由损失函数的定义计算出
-2. 作者说“setting $a_\theta(T) = 0$”没说为什么，我也没推出来
+2. 作者说“setting $a_\theta(T) = 0$”没说为什么，我猜是因为优化问题最终就是要让损失函数相对参数的梯度为0
 3. $a_t(T) = \frac{\partial{L}}{\partial{t}} |_T = \frac{\partial{L}}{\partial{h}} \cdot \frac{\partial{h}}{\partial{t}} |_T = a_t(T) \cdot f(h(T), T, \theta)$
 
+于是反向递推可得到损失函数相对于初始时刻的状态、模型参数和时间 t 的梯度 $a_h(0), a_\theta(0), a_t(0)$。
 
-于是反向递推可得到损失函数相对于初始时刻的状态、模型参数和时间 $\theta$ 的梯度 $a_h(0), a_\theta(0), a_t(0)$。
+以优化$\theta$为例，记$\alpha = \frac{\partial{L}}{\partial{h(t_N)}}$，$\beta$为学习率，因为
+$$\frac{\partial{L}}{\partial{\theta(t_0)}} = \frac{\partial{L}}{\partial{\theta(t_N)}} - \int_{t_N}^{t_0} \alpha \cdot \frac{\partial{f(\theta)}}{\partial{\theta(t)}} dt$$
+其中第一项按前面设置是0，$\alpha \cdot \frac{\partial{f(\theta)}}{\partial{\theta(t)}}$可以在使用`f(*args).backward(alpha)`后通过`theta.grad`得到，而且很多时候神经网络里的参数都是可以让输出值随便线性调整的（最后一层不是非线性），所以时间间隔具体是多少也不重要，省略了也可以。
 
 
 ## 监督学习

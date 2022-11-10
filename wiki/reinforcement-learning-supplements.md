@@ -56,7 +56,7 @@ $$\mathbb E \sum\limits_{t=0}^{T-1} \frac{\partial{}}{\partial{\theta}} \log \pi
 
 
 该算法后面会学习一个带基线的REINFORCE算法，证明了为策略梯度引入一个和$a_t$无关的基准函数$b(s_t)$后期望不变，即（过程书上有）：
-$$\mathbb E b(s_t) \frac{\partial{}}{\partial{\theta}} \log \pi_\theta (a_t | s_t) = 0$$
+$$\mathbb E \sum\limits_{t=0}^{T-1} b(s_t) \frac{\partial{}}{\partial{\theta}} \log \pi_\theta (a_t | s_t) = 0$$
 因为$G(\tau_{0:t-1})$也跟$a_t$无关，所以代入$b(s_t) = G(\tau_{0:t-1})$同理可证。
 
 
