@@ -50,6 +50,7 @@
 * 强化学习
   * [(2019) 用颠倒强化学习训练智能体](2019-training-agents-using-upside-down-reinforcement-learning)
   * [(2019) 颠倒强化学习：不要预测回报，直接得到动作](2019-reinforcement-learning-upside-down-don-t-predict-rewards-just-map-them-to-actions)
+  * [(2020) 自解释智能体的神经进化](2020-neuroevolution-of-self-interpretable-agents)
 * 神经网络
   * [(2018) 神经常微分方程](2018-neural-ordinary-differential-equations)
   * [(2019) 快速与准确的最小二乘求解器](2019-fast-and-accurate-least-mean-squares-solvers)
