@@ -57,6 +57,8 @@
 * 因果推理
   * [(2018) 机器学习的理论困境与因果革命的七个启示](2018-theoretical-impediments-to-machine-learning-with-seven-sparks-from-the-causal-revolution)
   * [(2019) 因果模型的抽象](2019-abstracting-causal-models)
+* 知识蒸馏
+  * [(2022) 理解知识蒸馏中Mixup的作用：一项实证研究](2022-understanding-the-role-of-mixup-in-knowledge-distillation-an-empirical-study)
 * 其它
   * [(2007) 高维相似搜索中的多探头 LSH 索引](2007-multi-probe-lsh-efficient-indexing-for-high-dimensional-similarity-search)
   * [(2008) 大规模流量数据中重基数的发现与在异常侦测中的应用](2008-finding-cardinality-heavy-hitters-in-massive-traffic-data-and-its-application-to-anomaly-detection)
