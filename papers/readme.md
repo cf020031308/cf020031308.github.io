@@ -27,6 +27,7 @@
   * [(2017) 图注意力网络](2017-graph-attention-networks)
   * [(2017) 大型动态图中的归纳式表示学习](2017-inductive-representation-learning-on-large-graphs)
   * [(2017) 时空图卷积网络：用于交通预测的深度学习框架](2017-spatio-temporal-graph-convolutional-networks-a-deep-learning-framework-for-traffic-forecasting)
+  * [(2017) 综述：图嵌入方法、应用、效果](2017-graph-embedding-techniques-applications-and-performance-a-survey)
   * [(2018) 关系归纳偏置、深度学习与图网络](2018-a-relational-inductive-biases-deep-learning-and-graph-networks)
   * [(2018) FastGCN：通过重要性采样快速训练图卷积网络](2018-fastgcn-fast-learning-with-graph-convolutional-networks-via-importance-sampling)
   * [(2018) GaAN: 用于大型图与时空图的门控注意力网络](2018-gaan-gated-attention-networks-for-learning-on-large-and-spatiotemporal-graphs)
