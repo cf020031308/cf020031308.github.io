@@ -1,0 +1,23 @@
+#!/bin/sh
+global_flag="false"
+lst="$(git diff --cached --name-only --diff-filter=A -- ~/workplace/roy.log/papers)"
+for fp in "$lst"; do
+    fn="${fp%readme.md}info.yaml"
+    if [ "${fp##*/}" == "readme.md" -a -f "$fn" ]; then
+        local_flag="true"
+        for fp2 in "$lst"; do
+            if [ "$fp2" = "$fn" ]; then
+                local_flag="false"
+            fi
+        done
+        if [ "$local_flag" = "true" ]; then
+            global_flag="true"
+            git add -f "$fn"
+            echo "Added $fn"
+        fi
+    fi
+done
+if [ "$global_flag" = "true" ]; then
+    echo "Please rerun git-commit."
+    exit 1
+fi
