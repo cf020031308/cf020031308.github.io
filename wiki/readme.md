@@ -16,6 +16,7 @@
   * [方差削减（Variance Reduction）](variance-reduction.md)
   * [学习强化学习中的小问题](reinforcement-learning-supplements.md)
 * 工程与软件
+  * [FATE联邦学习平台](fate.md)
   * [Flex 与 Grid 布局](css-flex-grid.md)
   * [计算机网络](计算机网络/readme.md)
   * [如何下载电视剧](scrape-video-series/readme.md)
