@@ -702,12 +702,13 @@
             if (this.status !== 200) return;
             var info = jsyaml.load(this.responseText);
             var origin = document.createElement('p');
-            origin.innerHTML = [['年份', 'year'], ['题目', 'title'], ['作者', 'author'], ['地址', 'url']].map(function(kv) {
+            origin.innerHTML = [['期刊', 'journal'], ['出版方', 'publisher'], ['年份', 'year'], ['题目', 'title'], ['作者', 'author'], ['地址', 'url'], ['摘要', 'abstract']].map(function(kv) {
                 var v = info[kv[1]];
                 if (!v) return '';
+                if (kv[1] === "abstract") return '<details><summary>' + kv[0] + '</summary>' + v + '</details>';
                 if (v.match(/^https?:\/\//i)) v = '<a href="' + v + '" target="_blank">' + v + '</a>';
                 return kv[0] + '：' + v;
-            }).join('<br />');
+            }).filter(function(x) { return x ;}).join('<br />');
             var title = document.querySelector('#doc h1');
             title.parentNode.insertBefore(origin, title.nextSibling);
         });
