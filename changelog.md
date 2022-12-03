@@ -1,5 +1,20 @@
 # ChangeLog of Me
 
+## Nov 2022
+
+* academic notes
+  * (2022) 理解知识蒸馏中Mixup的作用：一项实证研究 (7f0a3a2)
+  * (2016) SDNE：深度图神经网络嵌入 (4bc2bc5)
+  * (2017) 综述：图嵌入方法、应用、效果 (ed5583e)
+  * (2019) 大数据时代的智能决策——进展、挑战和研究议程 (85c08e1)
+  * (2020) 自解释智能体的神经进化 (4d1c4b8)
+* wiki
+  * survey of FATE (39dd6dd)
+* misc
+  * Remove papers' info.yaml files without notes from git (9a572ed) (a187cdb)
+  * Replace pub.md with the link to SemanticScholar (82e5aa8)
+  * Display abstract and journal name of papers (6abb5fd)
+
 ## Apr 2022
 
 * docs(reports): [20220406-罗意-CDN技术架构方案和选型](https://github.com/cf020031308/cf020031308.github.io/blob/master/reports/20220406-%E7%BD%97%E6%84%8F-CDN%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84%E6%96%B9%E6%A1%88%E5%92%8C%E9%80%89%E5%9E%8B.pdf) (244f02d)
