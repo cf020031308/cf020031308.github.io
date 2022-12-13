@@ -1,0 +1,61 @@
+author: Deng, Yongheng and Lyu, Feng and Ren, Ju and Zhang, Yongmin and Zhou, Yuezhi
+  and Zhang, Yaoxue and Yang, Yuanyuan
+author_list:
+- given_name: Yongheng
+  surname: Deng
+- given_name: Feng
+  surname: Lyu
+- given_name: Ju
+  surname: Ren
+- given_name: Yongmin
+  surname: Zhang
+- given_name: Yuezhi
+  surname: Zhou
+- given_name: Yaoxue
+  surname: Zhang
+- given_name: Yuanyuan
+  surname: Yang
+booktitle: 2021 IEEE 41st International Conference on Distributed Computing Systems
+  (ICDCS)
+citations:
+- doi: 10.1109/MSP.2020.2975749
+- doi: 10.1109/JIOT.2020.2967772
+- doi: 10.1109/INFOCOM.2019.8737416
+- doi: 10.1109/TPDS.2020.2975189
+- doi: 10.1109/RTSS46320.2019.00043
+- doi: 10.1109/INFOCOM.2019.8737464
+- doi: 10.1109/TMC.2020.2994639
+- doi: 10.1109/TWC.2019.2961673
+- doi: 10.1109/ICDCS.2019.00099
+- doi: 10.18653/v1/D17-1045
+- doi: 10.1109/JIOT.2019.2956615
+- doi: 10.1109/ICCD46524.2019.00038
+- doi: 10.1109/JPROC.2019.2918951
+- doi: 10.1109/INFOCOM.2018.8485963
+- doi: 10.1109/JSAC.2019.2906789
+- doi: 10.1007/s00779-017-1067-4
+- doi: 10.1109/INFOCOM.2018.8486403
+- doi: 10.1109/TMC.2020.2984261
+- doi: 10.1109/JIOT.2019.2898113
+- doi: 10.1145/3362031
+- doi: 10.1109/INFOCOM41043.2020.9155399
+- doi: 10.1109/SFCS.2001.959907
+- doi: 10.1109/TWC.2020.3003744
+- doi: 10.1109/CVPR.2016.90
+- doi: 10.1109/ICC40277.2020.9148862
+- doi: 10.1109/ICC.2017.7997144
+- doi: 10.2307/2309088
+- doi: 10.1109/JSAC.2011.111002
+doc_url: http://xplorestaging.ieee.org/ielx7/9546301/9546401/09546457.pdf?arnumber=9546457
+doi: 10.1109/ICDCS51616.2021.00012
+files:
+- /Users/Roy/Documents/papers/2021-share-shaping-data-distribution-at-edge-for-communication-efficient-hierarchical-federated-learning.pdf
+first_page: '24'
+last_page: '34'
+month: '7'
+pages: 24--34
+ref: 10.1109/ICDCS51616.2021.00012
+title: 'SHARE: Shaping Data Distribution at Edge for Communication-Efficient Hierarchical
+  Federated Learning'
+type: inproceedings
+year: '2021'

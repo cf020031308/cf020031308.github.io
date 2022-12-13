@@ -62,6 +62,8 @@
   * [(2019) 因果模型的抽象](2019-abstracting-causal-models/readme.md)
 * 知识蒸馏
   * [(2022) 理解知识蒸馏中Mixup的作用：一项实证研究](2022-understanding-the-role-of-mixup-in-knowledge-distillation-an-empirical-study/readme.md)
+* 联邦学习
+  * [(2021) SHARE: 通信节约的层次联邦学习中边缘数据整形](2021-share-shaping-data-distribution-at-edge-for-communication-efficient-hierarchical-federated-learning/readme.md)
 * 其它
   * [(2007) 高维相似搜索中的多探头 LSH 索引](2007-multi-probe-lsh-efficient-indexing-for-high-dimensional-similarity-search/readme.md)
   * [(2008) 大规模流量数据中重基数的发现与在异常侦测中的应用](2008-finding-cardinality-heavy-hitters-in-massive-traffic-data-and-its-application-to-anomaly-detection/readme.md)
