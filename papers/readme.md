@@ -44,6 +44,7 @@
   * [(2021) Graph-MLP: 非消息传递的图节点分类](2021-graph-mlp-node-classification-without-message-passing-in-graph/readme.md)
   * [(2021) 综述：基于采样的图卷积网络高效训练](2021-sampling-methods-for-efficient-training-of-graph-convolutional-networks-a-survey/readme.md)
   * [(2021) 图自监督学习：对比式、生成式与预测式](2021-self-supervised-on-graphs-contrastive-generative-or-predictive/readme.md)
+  * [(2023) 图网络知识蒸馏综述](2023-knowledge-distillation-on-graphs-a-survey/readme.md)
 * NLP
   * [(2014) 记忆网络](2014-memory-networks/readme.md)
   * [(2020) Reformer：高效的 Transformer](2020-reformer-the-efficient-transformer/readme.md)
@@ -63,7 +64,7 @@
 * 知识蒸馏
   * [(2022) 理解知识蒸馏中Mixup的作用：一项实证研究](2022-understanding-the-role-of-mixup-in-knowledge-distillation-an-empirical-study/readme.md)
 * 联邦学习
-  * [(2021) SHARE: 通信节约的层次联邦学习中边缘数据整形](2021-share-shaping-data-distribution-at-edge-for-communication-efficient-hierarchical-federated-learning/readme.md)
+  * [(2021) SHARE: 通过层次化和边缘数据整形减小联邦学习通信开销](2021-share-shaping-data-distribution-at-edge-for-communication-efficient-hierarchical-federated-learning/readme.md)
 * 其它
   * [(2007) 高维相似搜索中的多探头 LSH 索引](2007-multi-probe-lsh-efficient-indexing-for-high-dimensional-similarity-search/readme.md)
   * [(2008) 大规模流量数据中重基数的发现与在异常侦测中的应用](2008-finding-cardinality-heavy-hitters-in-massive-traffic-data-and-its-application-to-anomaly-detection/readme.md)

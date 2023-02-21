@@ -1,0 +1,43 @@
+abstract: 'Graph Neural Networks (GNNs) have attracted tremendous attention by
+
+  demonstrating their capability to handle graph data. However, they are
+
+  difficult to be deployed in resource-limited devices due to model sizes and
+
+  scalability constraints imposed by the multi-hop data dependency. In addition,
+
+  real-world graphs usually possess complex structural information and features.
+
+  Therefore, to improve the applicability of GNNs and fully encode the
+
+  complicated topological information, knowledge distillation on graphs (KDG) has
+
+  been introduced to build a smaller yet effective model and exploit more
+
+  knowledge from data, leading to model compression and performance improvement.
+
+  Recently, KDG has achieved considerable progress with many studies proposed. In
+
+  this survey, we systematically review these works. Specifically, we first
+
+  introduce KDG challenges and bases, then categorize and summarize existing
+
+  works of KDG by answering the following three questions: 1) what to distillate,
+
+  2) who to whom, and 3) how to distillate. Finally, we share our thoughts on
+
+  future research directions.'
+archiveprefix: arXiv
+author: Yijun Tian and Shichao Pei and Xiangliang Zhang and Chuxu Zhang and Nitesh
+  V. Chawla
+eprint: 2302.00219v1
+file: 2302.00219v1.pdf
+files:
+- /Users/Roy/Documents/papers/2023-knowledge-distillation-on-graphs-a-survey.pdf
+month: Feb
+primaryclass: cs.LG
+ref: 2302.00219v1
+title: 'Knowledge Distillation on Graphs: A Survey'
+type: article
+url: http://arxiv.org/abs/2302.00219v1
+year: '2023'
