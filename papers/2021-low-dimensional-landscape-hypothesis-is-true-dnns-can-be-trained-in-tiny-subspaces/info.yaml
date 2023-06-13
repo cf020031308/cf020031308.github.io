@@ -1,0 +1,37 @@
+abstract: 'Deep neural networks (DNNs) usually contain massive parameters, but there
+  is
+
+  redundancy such that it is guessed that the DNNs could be trained in
+
+  low-dimensional subspaces. In this paper, we propose a Dynamic Linear
+
+  Dimensionality Reduction (DLDR) based on low-dimensional properties of the
+
+  training trajectory. The reduction is efficient, which is supported by
+
+  comprehensive experiments: optimization in 40 dimensional spaces can achieve
+
+  comparable performance as regular training over thousands or even millions of
+
+  parameters. Since there are only a few optimization variables, we develop a
+
+  quasi-Newton-based algorithm and also obtain robustness against label noises,
+
+  which are two follow-up experiments to show the advantages of finding
+
+  low-dimensional subspaces.'
+archiveprefix: arXiv
+author: Tao Li and Lei Tan and Qinghua Tao and Yipeng Liu and Xiaolin Huang
+eprint: 2103.11154v2
+file: 2103.11154v2.pdf
+files:
+- /Users/Roy/Documents/papers/2021-low-dimensional-landscape-hypothesis-is-true-dnns-can-be-trained-in-tiny-subspaces.pdf
+month: Mar
+primaryclass: cs.LG
+ref: 2103.11154v2
+title: 'Low Dimensional Landscape Hypothesis is True: DNNs can be Trained in
+
+  Tiny Subspaces'
+type: article
+url: http://arxiv.org/abs/2103.11154v2
+year: '2021'

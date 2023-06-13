@@ -58,6 +58,7 @@
   * [(2019) 神经逻辑机](2019-neural-logic-machines/readme.md)
   * [(2019) 权重无关神经网络](2019-weight-agnostic-neural-networks/readme.md)
   * [(2020) 实用二阶优化](2020-second-order-optimization-made-practical/readme.md)
+  * [(2021) 深度神经网络的低维猜想](2021-low-dimensional-landscape-hypothesis-is-true-dnns-can-be-trained-in-tiny-subspaces/readme.md)
 * 因果推理
   * [(2018) 机器学习的理论困境与因果革命的七个启示](2018-theoretical-impediments-to-machine-learning-with-seven-sparks-from-the-causal-revolution/readme.md)
   * [(2019) 因果模型的抽象](2019-abstracting-causal-models/readme.md)
