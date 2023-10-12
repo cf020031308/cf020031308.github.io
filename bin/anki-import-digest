@@ -23,26 +23,26 @@ fi
 IFS="
 "
 chunk=""
-for spath in "${src}"
-do if [ -e "${spath}" ]; then
-    imgd="$GITHUB_REL/$(dirname ${spath})/_img/"
-    for line in $(cat "${spath}" && echo "___")
-    do if [ -n "${line}" ]; then
-        if [ "${line}" == "___" ]; then
-            case "${chunk}" in
-                *\<c1\>*)
-                    fname="${F_CLOZE}";;
-                *)
-                    fname="${F_BASIC}";;
-            esac
-            echo "\"${chunk}${IFS}\"" | sed 's,!\[[^]]*\](\./_img/\([^)]*\)),<img src='"'$imgd"'\1'"'"' />,g' >> "${fname}"
-            chunk=""
-        else
-            chunk="${chunk}${IFS}${line}"
-        fi
+for spath in "${src}"; do
+    if [ -e "${spath}" ]; then
+        imgd="$GITHUB_REL/$(dirname ${spath})/"
+        ( cat "${spath}" && echo "___" ) | while read -r line; do
+            if [ "${line}" == "___" ]; then
+                case "${chunk}" in
+                    *\<c1\>*)
+                        fname="${F_CLOZE}";;
+                    *)
+                        fname="${F_BASIC}";;
+                esac
+                echo "\"${chunk//\"/\"\"}\";" | sed 's,!\[[^]]*\](\([^)]*\)),<img src='"'$imgd"'\1'"'"' />,g' >> "${fname}"
+                chunk=""
+            elif [ -n "${chunk}" ]; then
+                chunk="${chunk}${IFS}${line}"
+            else
+                chunk="${line}"
+            fi
+        done
     fi
-    done
-fi
 done
 if [ -e "${F_CLOZE}" ]; then
     sed -i '' 's/<c\([0-9]\)>/{{c\1::/g;s/<\/c[0-9]>/}}/g' "${F_CLOZE}"
