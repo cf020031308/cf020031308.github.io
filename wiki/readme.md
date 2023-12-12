@@ -15,6 +15,7 @@
   * [概率论与数理统计](probability-statistics/readme.md)
   * [方差削减（Variance Reduction）](variance-reduction.md)
   * [学习强化学习中的小问题](reinforcement-learning-supplements.md)
+  * [进化算法](evolution/readme.md)
 * 工程与软件
   * [FATE联邦学习平台](fate.md)
   * [Flex 与 Grid 布局](css-flex-grid.md)
