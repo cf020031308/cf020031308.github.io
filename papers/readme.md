@@ -66,6 +66,8 @@
   * [(2022) 理解知识蒸馏中Mixup的作用：一项实证研究](2022-understanding-the-role-of-mixup-in-knowledge-distillation-an-empirical-study/readme.md)
 * 联邦学习
   * [(2021) SHARE: 通过层次化和边缘数据整形减小联邦学习通信开销](2021-share-shaping-data-distribution-at-edge-for-communication-efficient-hierarchical-federated-learning/readme.md)
+* 协同推理
+  * [(2023) HEAL: 异质开放场景协同感知](2023-an-extensible-framework-for-open-heterogeneous-collaborative-perception/readme.md)
 * 其它
   * [(2007) 高维相似搜索中的多探头 LSH 索引](2007-multi-probe-lsh-efficient-indexing-for-high-dimensional-similarity-search/readme.md)
   * [(2008) 大规模流量数据中重基数的发现与在异常侦测中的应用](2008-finding-cardinality-heavy-hitters-in-massive-traffic-data-and-its-application-to-anomaly-detection/readme.md)
