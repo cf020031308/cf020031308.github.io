@@ -1,0 +1,32 @@
+abstract: After the success of Graph Convolutional Networks (GCN), many stochastic
+  training methods have been proposed to resolve the scalability and efficiency issues
+  of GCN by sampling. In mini-batch training, a common phase of these methods is to
+  form a small-scale subgraph rooting in the given batch. The subgraph formation leads
+  to heavy time consumption, additional space occupation, and complex implementation.
+  To rectify these issues, we eliminate the subgraph formation phase and propose Edge
+  Convolutional Network (ECN), which is trained with independently sampled edges.
+  It has constant time complexity for sampling, reducing the sampling time by orders
+  of magnitude without compromising convergence speed. Specifically, when there are
+  two convolutional layers, as in the most common situation, GCN can also be trained
+  with the techniques behind ECN, gaining substantial sampling time reduction without
+  trade-offs. We prove that the expressiveness difference between ECN and GCN is theoretically
+  bounded and examine the inference performance of ECN through excessive experiments
+  on real-world, large-scale graphs. Furthermore, we improve ECN with advanced mechanisms
+  of GCN, including skip connection, identity mapping, embedding, and attention. With
+  proper mechanisms integrated, ECN rivals state-of-the-art (SotA) baselines in inductive
+  node classification and produces new SotA accuracy on the dataset of Flickr. The
+  code is available at https://github.com/cf020031308/ECN.
+author: Yi Luo and Yan Huang and Guangchun Luo and Ke Qin and Aiguo Chen
+doi: https://doi.org/10.1016/j.neucom.2023.126430
+files:
+- /Users/Roy/Documents/papers/2023-edge-convolutional-networks-decomposing-graph-convolutional-networks-for-stochastic-training-with-independent-edges.pdf
+issn: 0925-2312
+journal: Neurocomputing
+keywords: Graph Convolutional Network, Stochastic Training, Sampling, Attention
+pages: '126430'
+ref: LUO2023126430
+title: 'Edge Convolutional Networks: Decomposing Graph Convolutional Networks for
+  Stochastic Training with Independent Edges'
+type: article
+url: https://www.sciencedirect.com/science/article/pii/S0925231223005532
+year: '2023'
