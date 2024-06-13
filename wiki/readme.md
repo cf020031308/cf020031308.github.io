@@ -17,6 +17,7 @@
   * [学习强化学习中的小问题](reinforcement-learning-supplements.md)
   * [进化算法](evolution/readme.md)
 * 工程与软件
+  * [Optuna：超参优化框架](optuna/readme.md)
   * [FATE联邦学习平台](fate.md)
   * [Flex 与 Grid 布局](css-flex-grid.md)
   * [计算机网络](计算机网络/readme.md)
