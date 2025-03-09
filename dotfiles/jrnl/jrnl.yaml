@@ -1,0 +1,19 @@
+colors:
+  body: none
+  date: black
+  tags: yellow
+  title: cyan
+default_hour: 9
+default_minute: 0
+editor: vim
+encrypt: false
+highlight: true
+indent_character: '|'
+journals:
+  default:
+    journal: /home/luoy/.local/share/jrnl/journal.txt
+linewrap: 79
+tagsymbols: '@'
+template: false
+timeformat: '%Y-%m-%d %H:%M'
+version: v4.2
