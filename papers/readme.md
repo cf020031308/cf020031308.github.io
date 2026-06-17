@@ -46,6 +46,7 @@
   * [(2021) 图自监督学习：对比式、生成式与预测式](2021-self-supervised-on-graphs-contrastive-generative-or-predictive/readme.md)
   * [(2023) 图网络知识蒸馏综述](2023-knowledge-distillation-on-graphs-a-survey/readme.md)
   * [(2023) 边卷积网络：基于独立边采样的GCN高效训练【Neurocom, 2023】](2023-edge-convolutional-networks-decomposing-graph-convolutional-networks-for-stochastic-training-with-independent-edges/readme.md)
+  * [(2026) ALS：注意力长短程消息传递的图表示学习【Pattern Recognition, 2026】](2026-als-attentive-long-short-range-message-passing-for-graph-representation-learning/readme.md)
 * NLP
   * [(2014) 记忆网络](2014-memory-networks/readme.md)
   * [(2020) Reformer：高效的 Transformer](2020-reformer-the-efficient-transformer/readme.md)

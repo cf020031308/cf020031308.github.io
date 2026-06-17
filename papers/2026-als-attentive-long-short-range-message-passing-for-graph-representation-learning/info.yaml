@@ -1,0 +1,12 @@
+abstract: The graph attention (GAT) mechanism has been instrumental in enabling nodes to aggregate information from their neighbours based on relevancies, significantly enhancing the adaptiveness of graph neural networks across various graph representation learning tasks. Recent research has sought to further leverage the power of GAT for tasks that require capturing long-range data dependencies. However, the conventional stacking of L GAT layers leads to excessive memory footprint and computation overhead, with complexities of O(L) for its optimization. To address these challenges, this study proposes Attentive Long-Short-range message passing (ALS), which follows the successful integration of GAT and the personalized PageRank to capture complex and long-range data dependencies, with implicit differentiation to achieve O(1) memory footprint and acceleration techniques like conjugate gradient to reduce up to 89.51% computation time. Extensive experiments validate ALS’s robustness and state-of-the-art performance on homophilic graphs, heterophilic graphs, and long-range graph benchmarks, with strong baselines including recently studied Graph Transformers and Graph Mamba. Code is available at https://github.com/cf020031308/ALS.
+author: Yi Luo and Xu Sun and Guangchun Luo and Aiguo Chen
+doi: https://doi.org/10.1016/j.patcog.2026.114235
+issn: 0031-3203
+journal: Pattern Recognition
+keywords: Graph neural network, Personalized pageRank, Attention mechanism
+pages: '114235'
+ref: LUO2026114235
+title: 'ALS: Attentive long-short-range message passing for graph representation learning'
+type: article
+url: https://www.sciencedirect.com/science/article/abs/pii/S0031320326012008
+year: '2026'
